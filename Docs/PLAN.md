@@ -44,6 +44,14 @@
 
 ## Gate 00 狀態
 
-- 狀態：進行中。
+- 狀態：完成並已推送。
 - 範圍：建立中文文件、研究副本、macOS 環境報告、Scripts 與初始 content lint。
-- 已知限制：目前常見路徑與 Spotlight 尚未找到 UE5 Editor；active developer directory 是 Command Line Tools，不是完整 Xcode。
+- Gate commit：`9e0a3c5c3730d397c108b2410eb6d683dc05a43a`。
+- Gate 00 推送狀態記錄 commit：`c5de7ef072ce8090bb960c8a3f0c57ad4cc6b160`。
+
+## Gate 01 狀態
+
+- 狀態：環境 blocker。
+- 原因：目前常見路徑與 Spotlight 尚未找到 UE5 Editor；`/Applications` 也未找到 `Xcode.app`，active developer directory 是 Command Line Tools，不是完整 Xcode。
+- 影響：無法誠實建立 UE5 `.umap`、編譯 C++ module、驗證 UE project 可開啟，或產出 macOS `.app`。
+- 下一步：安裝或提供 UE5 Editor 路徑，並安裝 / 指定完整 Xcode 後重跑 Gate 01。

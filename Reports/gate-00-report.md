@@ -41,8 +41,9 @@ Gate 00 目標是建立 macOS 工作區、中文文件、GitHub remote 檢查、
 
 ## Commit / Push
 
-- Gate commit：待 `Scripts/commit_gate.sh` 驗證通過後回填。
-- Push 狀態：待推送。
+- Gate commit：`9e0a3c5c3730d397c108b2410eb6d683dc05a43a`
+- Push 狀態：已推送到 `origin/main`。
+- Gate 00 推送狀態記錄 commit：`c5de7ef072ce8090bb960c8a3f0c57ad4cc6b160`
 
 ## 推送紀錄
 
