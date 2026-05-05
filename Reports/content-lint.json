@@ -1,0 +1,8 @@
+{
+  "status": "pass",
+  "files": [],
+  "issues": [],
+  "warnings": [
+    "Gate 00 尚未建立 Content/Data；已跳過深度內容檢查，Gate 02 必須加入實際資料。"
+  ]
+}
