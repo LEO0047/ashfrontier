@@ -41,6 +41,15 @@
 - 目前 `/Users/Shared/Epic Games` 仍不存在，尚未安裝 UE5 Engine。
 - 可用空間約 `54GiB`，完整 Xcode 加 UE5 Engine 可能需要先釋放更多磁碟空間。
 
+## 2026-05-06 07:50 CST 環境更新
+
+- 使用者已在 Xcode GUI 按下 `Agree`，Apple SDK agreement 已完成。
+- `xcodebuild -version` 已可正常回報 `Xcode 26.4.1` / `Build version 17E202`。
+- `xcode-select -p` 目前為 `/Applications/Xcode.app/Contents/Developer`，代表 active developer directory 已切到完整 Xcode。
+- Epic Games Launcher 正在安裝 `Unreal Engine 5.7`。下載管理器顯示約 `1004.97 MB of 11.78 GB`，速度約 `1.67 Mbps`。
+- `/Users/Shared/Epic Games/UE_5.7` 已存在，大小約 `9.0G`，但尚未找到 `UnrealEditor.app`。
+- 可用空間約 `38GiB`。UE5 安裝完成前仍需監控磁碟空間；若 Epic Launcher 因空間不足中止，會更新 blocker report。
+
 ## Git
 
 - Repo root：`/Users/leo/Library/Mobile Documents/com~apple~CloudDocs/Coding/Projects/Ashfrontier`

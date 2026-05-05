@@ -2,18 +2,18 @@
 
 ## Summary
 
-Gate 01 需要建立 UE5 專案骨架、C++ module、可啟動 playable map 與 smoke tests。目前本機找不到 UE5 Editor，也沒有 active full Xcode，因此無法誠實完成 Gate 01 的 UE build / open / map 驗證。
+Gate 01 需要建立 UE5 專案骨架、C++ module、可啟動 playable map 與 smoke tests。目前完整 Xcode 已可用，但本機仍找不到已完成安裝的 UE5 Editor，因此無法誠實完成 Gate 01 的 UE build / open / map 驗證。
 
 ## 已檢查項目
 
-- `/Users/Shared/Epic Games`：不存在。
+- `/Users/Shared/Epic Games/UE_5.7`：已存在，約 `9.0G`。
 - `/Applications` 搜尋 `UnrealEditor.app`：未找到。
 - `$HOME/Applications` 搜尋 `UnrealEditor.app`：未找到。
 - `$HOME/Library/Application Support/Epic`：不存在。
 - Spotlight 搜尋 `UnrealEditor.app` 與 `UnrealEditor`：未找到。
-- `/Applications` 搜尋 `Xcode*.app`：未找到。
-- `xcode-select -p`：`/Library/Developer/CommandLineTools`。
-- `xcodebuild -version`：回報目前 active developer directory 是 Command Line Tools，不是完整 Xcode。
+- `/Applications/Xcode.app`：已存在。
+- `xcode-select -p`：`/Applications/Xcode.app/Contents/Developer`。
+- `xcodebuild -version`：`Xcode 26.4.1` / `Build version 17E202`。
 
 ## 2026-05-06 安裝嘗試
 
@@ -25,10 +25,17 @@ Gate 01 需要建立 UE5 專案骨架、C++ module、可啟動 playable map 與 
 - 目前仍需使用者在 GUI 中完成 Apple ID / Epic 帳號登入與下載。
 - 目前可用空間約 `54GiB`，可能不足以同時容納完整 Xcode 與 UE5 Engine。
 
+## 2026-05-06 07:50 CST 更新
+
+- 使用者已在 Xcode agreement 視窗按下 `Agree`，完整 Xcode 驗證通過。
+- Epic Games Launcher 下載管理器顯示 `Unreal Engine 5.7` 正在安裝，約 `1004.97 MB of 11.78 GB`，速度約 `1.67 Mbps`。
+- `UnrealEditor.app` 尚未出現在 `/Users/Shared/Epic Games/UE_5.7`，因此 UE5 仍不可用。
+- 目前可用空間約 `38GiB`，需要持續監控安裝是否因磁碟空間不足而失敗。
+
 ## 影響
 
 - 無法建立可信的 `Content/Maps/L_Ashfrontier_Prototype.umap`。
-- 無法編譯 `Source/Ashfrontier/` UE5 C++ module。
+- 在 UE5 Editor 完成安裝前，無法編譯 `Source/Ashfrontier/` UE5 C++ module。
 - 無法證明 `Ashfrontier.uproject` 可由 UE5 在 macOS 開啟。
 - 無法執行 UE automation / functional tests。
 - 無法嘗試 macOS package。
@@ -41,8 +48,8 @@ Gate 01 需要建立 UE5 專案骨架、C++ module、可啟動 playable map 與 
 
 ## 下一步
 
-1. 在 Mac App Store 或 Xcodes.app 中完成完整 Xcode 安裝。
-2. 在 Epic Games Launcher 中登入 Epic 帳號，進入 Unreal Engine / Library，安裝 UE5。
+1. 等 Epic Games Launcher 完成 `Unreal Engine 5.7` 安裝。
+2. 安裝完成後確認 `/Users/Shared/Epic Games/UE_5.7/Engine/Binaries/Mac/UnrealEditor.app` 或等效路徑存在。
 3. 若磁碟空間不足，先釋放至少足以容納 Xcode 與 UE5 Engine 的空間，或指定外接磁碟作為 UE5 安裝位置。
 4. 安裝完成後執行：
 
