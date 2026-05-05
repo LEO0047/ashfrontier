@@ -43,3 +43,10 @@ Gate 00 目標是建立 macOS 工作區、中文文件、GitHub remote 檢查、
 
 - Gate commit：待 `Scripts/commit_gate.sh` 驗證通過後回填。
 - Push 狀態：待推送。
+
+## 推送紀錄
+
+- Gate commit：9e0a3c5c3730d397c108b2410eb6d683dc05a43a
+- Push 狀態：已推送到 origin/main
+- Remote SHA：9e0a3c5c3730d397c108b2410eb6d683dc05a43a
+- 記錄時間：2026-05-06 05:53:32 CST
