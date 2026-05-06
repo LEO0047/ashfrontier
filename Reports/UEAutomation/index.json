@@ -2,8 +2,8 @@
 	"devices": [
 		{
 			"deviceName": "LEOs-MacBook-Pro.local",
-			"instance": "DE1C4FC65B4B91F1EACD13979232D299",
-			"instanceName": "LEOs-MacBook-Pro.local-73943",
+			"instance": "7B595521D24B8CB8FE31578068B24009",
+			"instanceName": "LEOs-MacBook-Pro.local-91529",
 			"platform": "MacEditor",
 			"oSVersion": "macOS 26.4.1 25E253",
 			"model": "Default",
@@ -15,26 +15,41 @@
 			"appInstanceLog": ""
 		}
 	],
-	"reportCreatedOn": "2026.05.06-11.00.30",
-	"succeeded": 1,
+	"reportCreatedOn": "2026.05.06-11.14.55",
+	"succeeded": 2,
 	"succeededWithWarnings": 0,
 	"failed": 0,
 	"notRun": 0,
 	"inProcess": 0,
-	"totalDuration": 0.0085392072796821594,
+	"totalDuration": 0.016319330781698227,
 	"comparisonExported": false,
 	"comparisonExportDirectory": "",
 	"tests": [
+		{
+			"testDisplayName": "ContentJsonLoads",
+			"fullTestPath": "Ashfrontier.Data.ContentJsonLoads",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"7B595521D24B8CB8FE31578068B24009"
+			],
+			"duration": 0.0080111250281333923,
+			"dateTime": "2026.05.06-11.14.55",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
 		{
 			"testDisplayName": "ModuleLoads",
 			"fullTestPath": "Ashfrontier.Smoke.ModuleLoads",
 			"tags": [],
 			"state": "Success",
 			"deviceInstance": [
-				"DE1C4FC65B4B91F1EACD13979232D299"
+				"7B595521D24B8CB8FE31578068B24009"
 			],
-			"duration": 0.0085392072796821594,
-			"dateTime": "2026.05.06-11.00.30",
+			"duration": 0.0083082057535648346,
+			"dateTime": "2026.05.06-11.14.55",
 			"entries": [],
 			"warnings": 0,
 			"errors": 0,

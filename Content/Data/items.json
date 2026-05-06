@@ -1,0 +1,113 @@
+{
+  "type": "items",
+  "records": [
+    {
+      "id": "item_ash_credit",
+      "name_zh": "灰印幣",
+      "description_zh": "鹽脊周邊通行的壓印金屬幣，用於交易與雇用。",
+      "category": "currency",
+      "base_price": 1,
+      "stack_size": 999,
+      "weight": 0.01
+    },
+    {
+      "id": "item_cooked_ration",
+      "name_zh": "烤行糧",
+      "description_zh": "用乾穀與鹹水烤成的耐放口糧，可支撐短途行軍。",
+      "category": "consumable",
+      "base_price": 14,
+      "stack_size": 10,
+      "weight": 0.35
+    },
+    {
+      "id": "item_raw_grain",
+      "name_zh": "乾穀袋",
+      "description_zh": "粗糙但耐旱的穀物，能在營火灶加工成行糧。",
+      "category": "material",
+      "base_price": 5,
+      "stack_size": 20,
+      "weight": 0.3
+    },
+    {
+      "id": "item_water_flask",
+      "name_zh": "鹹水壺",
+      "description_zh": "經簡單過濾的鹹水，仍需加熱後才適合長期飲用。",
+      "category": "consumable",
+      "base_price": 8,
+      "stack_size": 8,
+      "weight": 0.6
+    },
+    {
+      "id": "item_scrap_ore",
+      "name_zh": "碎鐵礦袋",
+      "description_zh": "從舊機具與岩層裡敲下的雜質礦，可進一步冶煉。",
+      "category": "material",
+      "base_price": 7,
+      "stack_size": 25,
+      "weight": 0.8
+    },
+    {
+      "id": "item_crude_ingot",
+      "name_zh": "粗鐵錠",
+      "description_zh": "成色不穩但足以做成簡易工具與建材的金屬錠。",
+      "category": "material",
+      "base_price": 18,
+      "stack_size": 15,
+      "weight": 1.4
+    },
+    {
+      "id": "item_salvaged_plank",
+      "name_zh": "回收木板",
+      "description_zh": "從棄置棚架拆下的木料，可用於儲物箱與防線。",
+      "category": "material",
+      "base_price": 6,
+      "stack_size": 30,
+      "weight": 0.7
+    },
+    {
+      "id": "item_building_plate",
+      "name_zh": "拼裝建材板",
+      "description_zh": "粗鐵與木料固定成的建材板，是野外基地的基礎材料。",
+      "category": "material",
+      "base_price": 26,
+      "stack_size": 12,
+      "weight": 1.8
+    },
+    {
+      "id": "item_field_bandage",
+      "name_zh": "野外繃帶",
+      "description_zh": "粗布與藥粉製成的臨時包紮用品，可降低流血速度。",
+      "category": "consumable",
+      "base_price": 18,
+      "stack_size": 5,
+      "weight": 0.2
+    },
+    {
+      "id": "item_medic_wrap",
+      "name_zh": "草藥壓布",
+      "description_zh": "浸過藥草汁液的壓布，能在戰後穩定重傷隊員。",
+      "category": "consumable",
+      "base_price": 32,
+      "stack_size": 4,
+      "weight": 0.25
+    },
+    {
+      "id": "item_rustblade",
+      "name_zh": "鏽刃短刀",
+      "description_zh": "用回收鋼片磨出的近戰武器，可靠但不精緻。",
+      "category": "weapon",
+      "base_price": 48,
+      "stack_size": 1,
+      "weight": 1.2
+    },
+    {
+      "id": "item_quilted_vest",
+      "name_zh": "絎縫護背",
+      "description_zh": "布片與皮革縫成的輕護具，可保護胸腹但擋不住重擊。",
+      "category": "armor",
+      "base_price": 42,
+      "stack_size": 1,
+      "weight": 1.6
+    }
+  ]
+}

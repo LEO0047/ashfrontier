@@ -1,0 +1,41 @@
+{
+  "type": "legal_rules",
+  "records": [
+    {
+      "id": "legal_saltwardens_city",
+      "name_zh": "鹽脊城市法規",
+      "description_zh": "主城內的守衛反應規則，偏向先警告再追捕。",
+      "faction_id": "faction_saltwardens",
+      "rules": [
+        { "event": "theft", "reaction": "warning", "memory_seconds": 300, "relation_delta": -3 },
+        { "event": "attack", "reaction": "pursuit", "memory_seconds": 900, "relation_delta": -12 },
+        { "event": "self_defense", "reaction": "allow", "memory_seconds": 120, "relation_delta": 0 },
+        { "event": "restricted_area", "reaction": "warning", "memory_seconds": 240, "relation_delta": -2 }
+      ]
+    },
+    {
+      "id": "legal_glasshouse_market",
+      "name_zh": "玻璃屋市場合約",
+      "description_zh": "商盟地盤重視財物與交易秩序，偷竊與攻擊會快速留下事件記憶。",
+      "faction_id": "faction_glasshouse",
+      "rules": [
+        { "event": "theft", "reaction": "pursuit", "memory_seconds": 600, "relation_delta": -8 },
+        { "event": "attack", "reaction": "hostile", "memory_seconds": 900, "relation_delta": -15 },
+        { "event": "self_defense", "reaction": "allow", "memory_seconds": 120, "relation_delta": 0 },
+        { "event": "restricted_area", "reaction": "warning", "memory_seconds": 180, "relation_delta": -1 }
+      ]
+    },
+    {
+      "id": "legal_dustrunners_camp",
+      "name_zh": "塵路營規",
+      "description_zh": "野外營地的簡化規則，容忍自衛但會記住掠奪與闖營。",
+      "faction_id": "faction_dustrunners",
+      "rules": [
+        { "event": "theft", "reaction": "hostile", "memory_seconds": 480, "relation_delta": -10 },
+        { "event": "attack", "reaction": "hostile", "memory_seconds": 900, "relation_delta": -16 },
+        { "event": "self_defense", "reaction": "allow", "memory_seconds": 90, "relation_delta": 0 },
+        { "event": "restricted_area", "reaction": "warning", "memory_seconds": 180, "relation_delta": -2 }
+      ]
+    }
+  ]
+}

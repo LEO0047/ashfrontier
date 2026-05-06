@@ -29,7 +29,7 @@
 ## Gate 01 到 Gate 09 驗收重點
 
 - Gate 01：UE5 專案可開啟、編譯、啟動空白 playable map，smoke tests 通過。
-- Gate 02：資料驅動初始內容通過 content lint，UE 可載入資料。
+- Gate 02：資料驅動初始內容通過 content lint，且 `Ashfrontier.Data.ContentJsonLoads` 以 UE automation 證明 `Content/Data/*.json` 可由 Editor 載入與解析。
 - Gate 03：小隊選取、移動、跟隨、待命、鏡頭切換與 UI placeholder 通過 functional tests；必須能在 UE Editor 內控制至少 2 名小隊成員移動。
 - Gate 04：主城、前哨、野外建造區與巡邏路線可導航，perf capture 有輸出。
 - Gate 05：近戰、部位傷害、流血、倒地、搬運與醫療通過 combat tests；必須能在 UE Editor 內完成「移動 → 戰鬥 → 受傷 → 倒地 → 搬運 → 醫療」流程。
@@ -68,3 +68,10 @@ Gate 09 必須提供 5 分鐘 golden path，從新遊戲開始驗證：
 - `Scripts/create_gate01_map.sh` 會呼叫 UE Editor 與 `BuildScripts/create_gate01_map.py`，建立真正的 `/Game/Maps/L_Ashfrontier_Prototype` map asset。
 - `Scripts/run_tests.sh --smoke` 在 `Ashfrontier.uproject` 存在後必須使用 `UE5_EDITOR` 執行 UE automation；若 `UE5_EDITOR` 未設定或不可執行，驗證必須失敗，不得宣稱 Gate 01 通過。
 - `Content/Maps/L_Ashfrontier_Prototype.umap` 必須由 UE Editor / commandlet 建立並可啟動；不得以 placeholder 文字檔替代。
+
+## Gate 02 Content Data Test 策略
+
+- `Scripts/content_lint.py` 必須檢查 Gate 02 的最低內容量：3 個派系、12 種物品、5 種資源、5 種建築、2 條以上 recipe、3 組 NPC schedule、legal rules 與 dialogue conditions。
+- Content lint 必須阻擋缺欄、ID 格式錯誤、重複 ID、無效 faction / item / resource / building reference、價格或成本非法、recipe 循環、非法 legal event / reaction 與 dialogue condition。
+- UE automation test `Ashfrontier.Data.ContentJsonLoads` 必須確認每個 `Content/Data/*.json` 檔案存在、可解析、`type` 正確、`records` 非空且基本筆數符合 Gate 02。
+- Gate 02 的通過只代表資料基礎可用，不代表 gameplay loop 已完成；Gate 03 起必須開始交付 Editor playable 行為。

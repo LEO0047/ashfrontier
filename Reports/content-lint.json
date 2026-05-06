@@ -1,8 +1,15 @@
 {
   "status": "pass",
-  "files": [],
+  "files": [
+    "Content/Data/buildings.json",
+    "Content/Data/dialogue_conditions.json",
+    "Content/Data/factions.json",
+    "Content/Data/items.json",
+    "Content/Data/legal_rules.json",
+    "Content/Data/npc_schedules.json",
+    "Content/Data/recipes.json",
+    "Content/Data/resources.json"
+  ],
   "issues": [],
-  "warnings": [
-    "Gate 00 尚未建立 Content/Data；已跳過深度內容檢查，Gate 02 必須加入實際資料。"
-  ]
+  "warnings": []
 }

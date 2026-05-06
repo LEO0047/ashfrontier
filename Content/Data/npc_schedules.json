@@ -1,0 +1,41 @@
+{
+  "type": "npc_schedules",
+  "records": [
+    {
+      "id": "schedule_saltwardens_gate_patrol",
+      "name_zh": "城門巡邏",
+      "description_zh": "鹽脊守望在主城門、市集與禁區外緣巡邏的基礎路線。",
+      "faction_id": "faction_saltwardens",
+      "entries": [
+        { "time": "06:00", "action": "move_to", "target": "wp_city_gate" },
+        { "time": "08:00", "action": "move_to", "target": "wp_market_square" },
+        { "time": "12:00", "action": "move_to", "target": "wp_restricted_yard" },
+        { "time": "18:00", "action": "move_to", "target": "wp_city_gate" }
+      ]
+    },
+    {
+      "id": "schedule_glasshouse_caravan",
+      "name_zh": "商隊往返",
+      "description_zh": "玻璃屋商盟車隊在主城市集、前哨與野外補給點之間移動。",
+      "faction_id": "faction_glasshouse",
+      "entries": [
+        { "time": "07:00", "action": "move_to", "target": "wp_market_square" },
+        { "time": "10:00", "action": "move_to", "target": "wp_outpost_well" },
+        { "time": "15:00", "action": "move_to", "target": "wp_wilderness_trade_post" },
+        { "time": "20:00", "action": "move_to", "target": "wp_market_square" }
+      ]
+    },
+    {
+      "id": "schedule_dustrunner_scavenge_loop",
+      "name_zh": "廢料巡撿",
+      "description_zh": "塵路行者在乾河床、碎鐵採集點與前哨邊緣巡撿可用材料。",
+      "faction_id": "faction_dustrunners",
+      "entries": [
+        { "time": "05:30", "action": "move_to", "target": "wp_dry_riverbed" },
+        { "time": "09:30", "action": "move_to", "target": "wp_scrap_mine" },
+        { "time": "14:00", "action": "move_to", "target": "wp_outpost_edge" },
+        { "time": "19:00", "action": "move_to", "target": "wp_dry_riverbed" }
+      ]
+    }
+  ]
+}

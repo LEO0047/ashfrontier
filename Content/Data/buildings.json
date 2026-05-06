@@ -1,0 +1,60 @@
+{
+  "type": "buildings",
+  "records": [
+    {
+      "id": "building_camp_kitchen",
+      "name_zh": "營火灶",
+      "description_zh": "以石塊圍起的簡易烹飪點，可把穀物與水加工成行糧。",
+      "category": "production",
+      "cost": [
+        { "id": "item_salvaged_plank", "count": 2 },
+        { "id": "item_scrap_ore", "count": 1 }
+      ],
+      "allowed_zone": "wilderness_build_zone"
+    },
+    {
+      "id": "building_storage_crate",
+      "name_zh": "粗木儲物箱",
+      "description_zh": "可存放材料與行糧的簡易箱，是野外基地的基本儲物點。",
+      "category": "storage",
+      "cost": [
+        { "id": "item_salvaged_plank", "count": 4 }
+      ],
+      "allowed_zone": "wilderness_build_zone"
+    },
+    {
+      "id": "building_scrap_mine",
+      "name_zh": "碎鐵採集點",
+      "description_zh": "在淺層礦脈與廢料堆旁架起的採集點，可穩定取得碎鐵礦。",
+      "category": "gathering",
+      "cost": [
+        { "id": "item_salvaged_plank", "count": 3 },
+        { "id": "item_building_plate", "count": 1 }
+      ],
+      "allowed_zone": "wilderness_build_zone",
+      "resource_id": "resource_scrap_ore"
+    },
+    {
+      "id": "building_field_workshop",
+      "name_zh": "野地工坊",
+      "description_zh": "用篷布與工作台搭出的簡易工坊，可處理金屬與建材配方。",
+      "category": "production",
+      "cost": [
+        { "id": "item_salvaged_plank", "count": 5 },
+        { "id": "item_crude_ingot", "count": 2 }
+      ],
+      "allowed_zone": "wilderness_build_zone"
+    },
+    {
+      "id": "building_palisade_wall",
+      "name_zh": "釘板防線",
+      "description_zh": "由木板與金屬片拼成的低矮防線，可阻擋野外襲擊路徑。",
+      "category": "defense",
+      "cost": [
+        { "id": "item_salvaged_plank", "count": 6 },
+        { "id": "item_building_plate", "count": 2 }
+      ],
+      "allowed_zone": "wilderness_build_zone"
+    }
+  ]
+}

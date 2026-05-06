@@ -2,7 +2,7 @@
 
 Ashfrontier 是一個原創世界觀的 UE5 3D 單機小隊沙盒 RPG playable prototype。專案以「Kenshi 2 公開資訊與設計方向」作為系統設計標竿，但所有派系、角色、地點、文本與資產都必須使用 Ashfrontier 原創內容或 placeholder / 自有資產，不得複製 Kenshi / Kenshi 2 的名稱、角色、派系、美術、地圖、文本或商標。
 
-目前階段是 Gate 01：已建立 UE5 `.uproject`、C++ 核心模組骨架、初始 Config 與 automation smoke test。完整 Xcode 已安裝並完成 Apple SDK agreement；`Unreal Engine 5.7` 仍在 Epic Games Launcher 安裝中，`UnrealEditor.app` 出現前不能宣稱 Gate 01 通過。
+目前階段是 Gate 02：Gate 01 已完成並推送，`Unreal Engine 5.7.4` 位於 `/Users/Shared/Epic Games/UE_5.7`，Xcode 已完成 Apple SDK agreement。Gate 02 正在建立 `Content/Data/` 原創資料、強化 content lint，並用 UE automation 確認資料可由 Editor 載入。此階段仍不代表 prototype 已可玩；Gate 03 必須開始交付 Editor 內可控制小隊移動。
 
 ## macOS 開啟方式
 
@@ -28,7 +28,7 @@ cp Scripts/env.example .env.local
 ./Scripts/validate.sh
 ```
 
-Gate 01 起，`Ashfrontier.uproject` 已存在，因此 `Scripts/run_tests.sh` 會要求 `UE5_EDITOR` 可執行，並要求 `Content/Maps/L_Ashfrontier_Prototype.umap` 是由 UE Editor 建立的真實 map asset。若 UE5 尚未完成安裝，驗證會失敗並要求更新 blocker report，不得假裝通過。
+Gate 01 起，`Ashfrontier.uproject` 已存在，因此 `Scripts/run_tests.sh` 會要求 `UE5_EDITOR` 可執行，並要求 `Content/Maps/L_Ashfrontier_Prototype.umap` 是由 UE Editor 建立的真實 map asset。Gate 02 起，`Scripts/content_lint.py` 會把缺少 `Content/Data/`、資料筆數不足、無效引用或 recipe 循環視為失敗；UE automation test 也會載入 JSON 資料。
 
 可單獨執行：
 

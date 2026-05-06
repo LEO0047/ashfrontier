@@ -1,0 +1,35 @@
+{
+  "type": "factions",
+  "records": [
+    {
+      "id": "faction_saltwardens",
+      "name_zh": "鹽脊守望",
+      "description_zh": "守住灰鹽盆地主城與商路的自治衛隊，重視秩序、糧水配給與城門安全。",
+      "starting_relation": {
+        "faction_glasshouse": 15,
+        "faction_dustrunners": -10
+      },
+      "legal_profile_id": "legal_saltwardens_city"
+    },
+    {
+      "id": "faction_glasshouse",
+      "name_zh": "玻璃屋商盟",
+      "description_zh": "由水販、車隊與工匠行會組成的商業同盟，控制修復零件與長途交易。",
+      "starting_relation": {
+        "faction_saltwardens": 15,
+        "faction_dustrunners": 0
+      },
+      "legal_profile_id": "legal_glasshouse_market"
+    },
+    {
+      "id": "faction_dustrunners",
+      "name_zh": "塵路行者",
+      "description_zh": "在廢墟與乾河床間移動的拾荒者聯群，熟悉野外路線但不信任城邦法規。",
+      "starting_relation": {
+        "faction_saltwardens": -10,
+        "faction_glasshouse": 0
+      },
+      "legal_profile_id": "legal_dustrunners_camp"
+    }
+  ]
+}

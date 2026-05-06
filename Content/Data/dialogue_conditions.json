@@ -1,0 +1,31 @@
+{
+  "type": "dialogue_conditions",
+  "records": [
+    {
+      "id": "dialogue_trade_glasshouse_vendor",
+      "name_zh": "商盟攤販交易條件",
+      "description_zh": "玩家未被玻璃屋商盟敵視時，可開啟基礎買賣對話。",
+      "conditions": [
+        { "type": "relation_at_least", "faction_id": "faction_glasshouse", "value": -20 }
+      ]
+    },
+    {
+      "id": "dialogue_recruit_dustrunner_scout",
+      "name_zh": "塵路斥候招募條件",
+      "description_zh": "玩家與塵路行者關係未惡化，且支付灰印幣後可招募斥候。",
+      "conditions": [
+        { "type": "relation_at_least", "faction_id": "faction_dustrunners", "value": -10 },
+        { "type": "has_item_count", "item_id": "item_ash_credit", "value": 80 }
+      ]
+    },
+    {
+      "id": "dialogue_recruit_saltwardens_medic",
+      "name_zh": "守望醫士招募條件",
+      "description_zh": "玩家在主城沒有近期犯罪記憶時，可與守望醫士談臨時加入。",
+      "conditions": [
+        { "type": "relation_at_least", "faction_id": "faction_saltwardens", "value": 0 },
+        { "type": "no_recent_crime", "faction_id": "faction_saltwardens", "value": 300 }
+      ]
+    }
+  ]
+}

@@ -19,6 +19,9 @@ public class Ashfrontier : ModuleRules
             "GameplayTasks"
         });
 
-        PrivateDependencyModuleNames.AddRange(new string[] {});
+        PrivateDependencyModuleNames.AddRange(new[]
+        {
+            "Json"
+        });
     }
 }

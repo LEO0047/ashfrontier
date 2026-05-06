@@ -1,0 +1,40 @@
+{
+  "type": "resources",
+  "records": [
+    {
+      "id": "resource_dry_grain",
+      "name_zh": "旱地穀穗",
+      "description_zh": "在灰鹽裂土旁收成的乾硬穀穗，是食物鏈的起點。",
+      "gather_time_seconds": 6,
+      "produces_item_id": "item_raw_grain"
+    },
+    {
+      "id": "resource_brackish_water",
+      "name_zh": "鹹井水",
+      "description_zh": "從淺井汲出的鹹水，需要烹煮或過濾後才適合飲用。",
+      "gather_time_seconds": 5,
+      "produces_item_id": "item_water_flask"
+    },
+    {
+      "id": "resource_scrap_ore",
+      "name_zh": "碎鐵礦",
+      "description_zh": "可冶煉成粗鐵的低純度礦石，常混在舊牆基與廢料堆中。",
+      "gather_time_seconds": 8,
+      "produces_item_id": "item_scrap_ore"
+    },
+    {
+      "id": "resource_salvage_wood",
+      "name_zh": "舊棚木料",
+      "description_zh": "可拆解成回收木板的風化木料。",
+      "gather_time_seconds": 7,
+      "produces_item_id": "item_salvaged_plank"
+    },
+    {
+      "id": "resource_medic_herb",
+      "name_zh": "苦根藥草",
+      "description_zh": "生長在鹽霧邊緣的苦味植物，可用於急救壓布。",
+      "gather_time_seconds": 9,
+      "produces_item_id": "item_medic_wrap"
+    }
+  ]
+}

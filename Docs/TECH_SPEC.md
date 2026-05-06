@@ -51,6 +51,17 @@ Blocker report 只能代表目前環境阻塞，不能代表 goal 完成。若 p
 
 Gate 02 起資料可放在 `Content/Data/` 或 `Source/Data/`，格式需符合 `Docs/CONTENT_SCHEMA.md`。資料 ID 使用穩定 ASCII slug，使用者可見名稱與描述使用繁體中文。
 
+Gate 02 初始內容已採 `Content/Data/*.json`：
+
+- 派系：鹽脊守望、玻璃屋商盟、塵路行者。
+- 物品：12 種基礎交易、食物、材料、醫療、武器與護具項目。
+- 資源：5 種野外可取得資源，並可映射到 item。
+- 建築：營火灶、粗木儲物箱、碎鐵採集點、野地工坊、釘板防線。
+- 配方：食物鏈與金屬 / 建材鏈。
+- NPC schedule、dialogue conditions 與 legal rules：作為 Gate 04、Gate 06 與 Gate 08 的可載入資料基礎。
+
+`Scripts/content_lint.py` 會檢查最低筆數、必填欄位、ID 格式、重複 ID、價格與成本、recipe 循環、faction reference、building / item / resource reference、legal event / reaction 與 dialogue condition。UE automation test `Ashfrontier.Data.ContentJsonLoads` 會確認 UE Editor 可以從 `Content/Data/` 載入並解析這些 JSON。
+
 ## AI 架構
 
 - 高階狀態：StateTree 或自訂狀態機。
@@ -106,7 +117,13 @@ SaveGame schema 必須包含 `schema_version`。Gate 09 前至少保存：
 ## Gate 01 專案骨架
 
 - `Ashfrontier.uproject` 宣告 `Ashfrontier` runtime module，啟用 `EnhancedInput`。
-- `Source/Ashfrontier/` 目前包含 Game / Editor target、module rules、GameMode、PlayerController、Character、HUD 與 C++ automation smoke test。
+- `Source/Ashfrontier/` 目前包含 Game / Editor target、module rules、GameMode、PlayerController、Character、HUD、C++ automation smoke test 與內容資料載入測試。
 - `Config/DefaultEngine.ini` 指向 `/Game/Maps/L_Ashfrontier_Prototype` 作為 startup / default map；此 `.umap` 必須由 UE Editor 建立，不得用文字檔或空檔偽造。
 - 完整 Xcode 已安裝並完成 agreement；active developer directory 是 `/Applications/Xcode.app/Contents/Developer`。
-- UE5 仍在 Epic Games Launcher 安裝中。`UnrealEditor.app` 出現並可執行前，C++ build、map 建立與 UE automation tests 仍是 Gate 01 blocker。
+- UE5.7.4 已安裝於 `/Users/Shared/Epic Games/UE_5.7`，Gate 01 的 C++ build、map 建立與 UE automation smoke test 已通過。
+
+## Gate 02 資料載入
+
+- C++ module 新增 `Json` private dependency，讓 automation test 可用 UE 原生 JSON parser 載入 `Content/Data/*.json`。
+- Gate 02 不把 Python lint 當成唯一證據；`Scripts/run_tests.sh` 會執行 `Automation RunTests Ashfrontier`，包含 `Ashfrontier.Data.ContentJsonLoads`。
+- 這一階段仍不代表 playable prototype；它只建立後續小隊、世界、戰鬥、交易、建造與法規系統可共用的資料基底。

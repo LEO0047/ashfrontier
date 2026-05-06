@@ -83,8 +83,16 @@
 
 ## Gate 01 狀態
 
-- 狀態：本機驗證中。
+- 狀態：完成並已推送。
 - 已完成：完整 Xcode 已安裝並完成 Apple SDK agreement；UE5.7 Editor 已安裝於 `/Users/Shared/Epic Games/UE_5.7`；本機已建立 `Ashfrontier.uproject`、`Source/Ashfrontier/` C++ module、初始 Config、HUD / Controller / Character placeholder、C++ automation smoke test 與真正的 `Content/Maps/L_Ashfrontier_Prototype.umap`。
 - 已驗證：`AshfrontierEditor` C++ build 成功；Gate 01 map 由 UE Editor 建立並 MapCheck 0 errors / 0 warnings；`Ashfrontier.Smoke.ModuleLoads` automation test 通過。
-- 仍需完成：執行完整 `./Scripts/validate.sh`，通過後用 `Scripts/commit_gate.sh` commit / push Gate 01。
+- Gate commit：`7b68327b2975a13746c88921508d5e8738e24a90`。
+- Gate 01 推送狀態記錄 commit：`15add1786bedf258e93a9c0c696c5f580b611bc2`。
 - 風險：磁碟可用空間約 `12-16GiB`，後續 Gate 的 DerivedDataCache、cook 或 package 可能需要釋放空間。
+
+## Gate 02 狀態
+
+- 狀態：本機驗證通過，等待 commit gate 執行最終 validate / commit / push。
+- 目標：建立 `Content/Data/` 初始原創資料，強化 `Scripts/content_lint.py`，並用 UE automation test 確認資料可由 Editor 載入。
+- 已驗證：`python3 Scripts/content_lint.py` 通過；`AshfrontierEditor` C++ build 通過；`Ashfrontier.Data.ContentJsonLoads` 與 `Ashfrontier.Smoke.ModuleLoads` automation tests 通過；`./Scripts/validate.sh` 通過。
+- 已納入 playable contract：Gate 02 不宣稱可玩；它只建立後續小隊、戰鬥、招募、交易、建造、生產、法規與存讀檔可共用的資料基底。Gate 03 必須交付 UE Editor 內可控制小隊移動。

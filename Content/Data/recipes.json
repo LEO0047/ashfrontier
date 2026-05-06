@@ -1,0 +1,64 @@
+{
+  "type": "recipes",
+  "records": [
+    {
+      "id": "recipe_grain_to_ration",
+      "name_zh": "烤行糧",
+      "description_zh": "把乾穀與鹹水加熱成可攜帶的行軍口糧。",
+      "chain": "food",
+      "inputs": [
+        { "id": "item_raw_grain", "count": 2 },
+        { "id": "item_water_flask", "count": 1 }
+      ],
+      "outputs": [
+        { "id": "item_cooked_ration", "count": 1 }
+      ],
+      "work_seconds": 20,
+      "station_id": "building_camp_kitchen"
+    },
+    {
+      "id": "recipe_herb_to_medic_wrap",
+      "name_zh": "草藥壓布",
+      "description_zh": "把苦根藥草與野外繃帶加工成較穩定的醫療用品。",
+      "chain": "food",
+      "inputs": [
+        { "id": "resource_medic_herb", "count": 1 },
+        { "id": "item_field_bandage", "count": 1 }
+      ],
+      "outputs": [
+        { "id": "item_medic_wrap", "count": 1 }
+      ],
+      "work_seconds": 18,
+      "station_id": "building_camp_kitchen"
+    },
+    {
+      "id": "recipe_ore_to_ingot",
+      "name_zh": "冶煉粗鐵",
+      "description_zh": "在野地工坊把碎鐵礦袋冶成粗鐵錠。",
+      "chain": "metal",
+      "inputs": [
+        { "id": "item_scrap_ore", "count": 3 }
+      ],
+      "outputs": [
+        { "id": "item_crude_ingot", "count": 1 }
+      ],
+      "work_seconds": 30,
+      "station_id": "building_field_workshop"
+    },
+    {
+      "id": "recipe_ingot_to_plate",
+      "name_zh": "拼裝建材板",
+      "description_zh": "把粗鐵錠與回收木板固定成可用於建築的建材板。",
+      "chain": "metal",
+      "inputs": [
+        { "id": "item_crude_ingot", "count": 1 },
+        { "id": "item_salvaged_plank", "count": 2 }
+      ],
+      "outputs": [
+        { "id": "item_building_plate", "count": 1 }
+      ],
+      "work_seconds": 24,
+      "station_id": "building_field_workshop"
+    }
+  ]
+}
