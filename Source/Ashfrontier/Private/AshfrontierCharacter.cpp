@@ -1,5 +1,6 @@
 #include "AshfrontierCharacter.h"
 
+#include "AshfrontierDamageModelComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/StaticMeshComponent.h"
@@ -35,6 +36,8 @@ AAshfrontierCharacter::AAshfrontierCharacter()
     FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
     FollowCamera->bUsePawnControlRotation = false;
 
+    DamageModel = CreateDefaultSubobject<UAshfrontierDamageModelComponent>(TEXT("DamageModel"));
+
     static ConstructorHelpers::FObjectFinder<UStaticMesh> CubeMesh(TEXT("/Engine/BasicShapes/Cube.Cube"));
 
     PlaceholderBody = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("PlaceholderBody"));
@@ -66,6 +69,7 @@ void AAshfrontierCharacter::Tick(float DeltaSeconds)
     Super::Tick(DeltaSeconds);
 
     UpdateSquadOrder(DeltaSeconds);
+    UpdateCarriedPose();
 }
 
 void AAshfrontierCharacter::SetSquadIndex(int32 NewIndex)
@@ -172,9 +176,59 @@ float AAshfrontierCharacter::GetCameraArmLength() const
     return CameraBoom ? CameraBoom->TargetArmLength : 0.0f;
 }
 
+UAshfrontierDamageModelComponent* AAshfrontierCharacter::GetDamageModel() const
+{
+    return DamageModel;
+}
+
+void AAshfrontierCharacter::SetCharacterTeam(EAshfrontierCharacterTeam NewTeam)
+{
+    CharacterTeam = NewTeam;
+}
+
+EAshfrontierCharacterTeam AAshfrontierCharacter::GetCharacterTeam() const
+{
+    return CharacterTeam;
+}
+
+bool AAshfrontierCharacter::IsHostileToPlayer() const
+{
+    return CharacterTeam == EAshfrontierCharacterTeam::Hostile;
+}
+
+void AAshfrontierCharacter::SetCarriedTarget(AAshfrontierCharacter* Target)
+{
+    CarriedTarget = Target;
+}
+
+AAshfrontierCharacter* AAshfrontierCharacter::GetCarriedTarget() const
+{
+    return CarriedTarget.Get();
+}
+
+void AAshfrontierCharacter::SetCarrier(AAshfrontierCharacter* NewCarrier)
+{
+    Carrier = NewCarrier;
+}
+
+AAshfrontierCharacter* AAshfrontierCharacter::GetCarrier() const
+{
+    return Carrier.Get();
+}
+
+bool AAshfrontierCharacter::IsBeingCarried() const
+{
+    return Carrier.IsValid();
+}
+
 void AAshfrontierCharacter::UpdateSquadOrder(float DeltaSeconds)
 {
     (void)DeltaSeconds;
+
+    if (IsBeingCarried() || (DamageModel && DamageModel->IsDownedOrUnconscious()))
+    {
+        return;
+    }
 
     if (CurrentOrder == EAshfrontierSquadOrder::Moving)
     {
@@ -207,4 +261,17 @@ void AAshfrontierCharacter::UpdateSquadOrder(float DeltaSeconds)
             AddMovementInput((TargetLocation - CurrentLocation).GetSafeNormal2D(), 1.0f);
         }
     }
+}
+
+void AAshfrontierCharacter::UpdateCarriedPose()
+{
+    AAshfrontierCharacter* CurrentCarrier = Carrier.Get();
+    if (!IsValid(CurrentCarrier))
+    {
+        return;
+    }
+
+    const FVector CarryOffset = CurrentCarrier->GetActorForwardVector() * -90.0f + FVector(0.0f, 0.0f, 85.0f);
+    SetActorLocation(CurrentCarrier->GetActorLocation() + CarryOffset);
+    SetActorRotation(CurrentCarrier->GetActorRotation());
 }

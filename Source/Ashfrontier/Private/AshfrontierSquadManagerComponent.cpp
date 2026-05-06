@@ -66,6 +66,7 @@ void UAshfrontierSquadManagerComponent::EnsureStartingSquad(APlayerController* O
         {
             Member->SetSquadIndex(Index);
             Member->SetSquadDisplayName(MakeDefaultSquadName(Index));
+            Member->SetCharacterTeam(EAshfrontierCharacterTeam::PlayerSquad);
         }
     }
 

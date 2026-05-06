@@ -6,6 +6,9 @@
 
 class AAshfrontierCharacter;
 class UAshfrontierCameraControllerComponent;
+class UAshfrontierCarrySystemComponent;
+class UAshfrontierCombatResolverComponent;
+class UAshfrontierMedicalSystemComponent;
 class UAshfrontierOrderSystemComponent;
 class UAshfrontierSquadManagerComponent;
 
@@ -20,6 +23,9 @@ public:
     UAshfrontierSquadManagerComponent* GetSquadManager() const;
     UAshfrontierOrderSystemComponent* GetOrderSystem() const;
     UAshfrontierCameraControllerComponent* GetCameraController() const;
+    UAshfrontierCombatResolverComponent* GetCombatResolver() const;
+    UAshfrontierCarrySystemComponent* GetCarrySystem() const;
+    UAshfrontierMedicalSystemComponent* GetMedicalSystem() const;
 
 protected:
     virtual void BeginPlay() override;
@@ -30,6 +36,8 @@ private:
     void HandleIssueMovePressed();
     void HandleFollowPressed();
     void HandleHoldPressed();
+    void HandleCarryPressed();
+    void HandleMedicalPressed();
     void HandleSelectAllPressed();
     void HandleSelectNextPressed();
     void HandleToggleTacticalCamera();
@@ -49,4 +57,13 @@ private:
 
     UPROPERTY(VisibleAnywhere, Category = "Camera")
     TObjectPtr<UAshfrontierCameraControllerComponent> CameraController;
+
+    UPROPERTY(VisibleAnywhere, Category = "Combat")
+    TObjectPtr<UAshfrontierCombatResolverComponent> CombatResolver;
+
+    UPROPERTY(VisibleAnywhere, Category = "Combat")
+    TObjectPtr<UAshfrontierCarrySystemComponent> CarrySystem;
+
+    UPROPERTY(VisibleAnywhere, Category = "Combat")
+    TObjectPtr<UAshfrontierMedicalSystemComponent> MedicalSystem;
 };

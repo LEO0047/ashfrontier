@@ -36,4 +36,27 @@ void AAshfrontierGameMode::SpawnPrototypeWorld()
     {
         WorldBlockoutDirector->BuildPrototypeWorld();
     }
+
+    SpawnGate05Hostile();
+}
+
+void AAshfrontierGameMode::SpawnGate05Hostile()
+{
+    UWorld* World = GetWorld();
+    if (!World || IsValid(Gate05Hostile))
+    {
+        return;
+    }
+
+    FActorSpawnParameters SpawnParams;
+    SpawnParams.Owner = this;
+    SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+
+    Gate05Hostile = World->SpawnActor<AAshfrontierCharacter>(AAshfrontierCharacter::StaticClass(), FVector(420.0f, -260.0f, 120.0f), FRotator::ZeroRotator, SpawnParams);
+    if (Gate05Hostile)
+    {
+        Gate05Hostile->SetSquadDisplayName(TEXT("塵路劫手"));
+        Gate05Hostile->SetCharacterTeam(EAshfrontierCharacterTeam::Hostile);
+        Gate05Hostile->SpawnDefaultController();
+    }
 }

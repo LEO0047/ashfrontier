@@ -1,10 +1,12 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AshfrontierCombatTypes.h"
 #include "AshfrontierSquadTypes.h"
 #include "GameFramework/Character.h"
 #include "AshfrontierCharacter.generated.h"
 
+class UAshfrontierDamageModelComponent;
 class UCameraComponent;
 class UStaticMeshComponent;
 class USpringArmComponent;
@@ -40,6 +42,18 @@ public:
     void SetCameraArmLength(float NewArmLength);
     float GetCameraArmLength() const;
 
+    UAshfrontierDamageModelComponent* GetDamageModel() const;
+
+    void SetCharacterTeam(EAshfrontierCharacterTeam NewTeam);
+    EAshfrontierCharacterTeam GetCharacterTeam() const;
+    bool IsHostileToPlayer() const;
+
+    void SetCarriedTarget(AAshfrontierCharacter* Target);
+    AAshfrontierCharacter* GetCarriedTarget() const;
+    void SetCarrier(AAshfrontierCharacter* NewCarrier);
+    AAshfrontierCharacter* GetCarrier() const;
+    bool IsBeingCarried() const;
+
 protected:
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
     TObjectPtr<USpringArmComponent> CameraBoom;
@@ -53,8 +67,12 @@ protected:
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Prototype")
     TObjectPtr<UStaticMeshComponent> SelectionMarker;
 
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Damage")
+    TObjectPtr<UAshfrontierDamageModelComponent> DamageModel;
+
 private:
     void UpdateSquadOrder(float DeltaSeconds);
+    void UpdateCarriedPose();
 
     UPROPERTY(VisibleAnywhere, Category = "Squad")
     int32 SquadIndex = INDEX_NONE;
@@ -79,4 +97,13 @@ private:
 
     UPROPERTY(EditDefaultsOnly, Category = "Squad")
     float FollowDistance = 180.0f;
+
+    UPROPERTY(VisibleAnywhere, Category = "Combat")
+    EAshfrontierCharacterTeam CharacterTeam = EAshfrontierCharacterTeam::Neutral;
+
+    UPROPERTY(Transient)
+    TWeakObjectPtr<AAshfrontierCharacter> CarriedTarget;
+
+    UPROPERTY(Transient)
+    TWeakObjectPtr<AAshfrontierCharacter> Carrier;
 };

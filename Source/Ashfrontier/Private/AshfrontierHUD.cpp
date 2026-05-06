@@ -2,6 +2,7 @@
 
 #include "AshfrontierCameraControllerComponent.h"
 #include "AshfrontierCharacter.h"
+#include "AshfrontierDamageModelComponent.h"
 #include "AshfrontierPlayerController.h"
 #include "AshfrontierSquadManagerComponent.h"
 
@@ -38,7 +39,9 @@ void AAshfrontierHUD::DrawHUD()
 
         const FLinearColor Color = Member->IsSelected() ? FLinearColor(0.2f, 0.9f, 0.6f, 1.0f) : FLinearColor::White;
         const FString Marker = Member->IsSelected() ? TEXT("[X]") : TEXT("[ ]");
-        DrawText(FString::Printf(TEXT("%s %d  %s  %s"), *Marker, Member->GetSquadIndex() + 1, *Member->GetSquadDisplayName(), *Member->GetOrderLabelZh()), Color, 32.0f, Y);
+        const UAshfrontierDamageModelComponent* DamageModel = Member->GetDamageModel();
+        const FString HealthLabel = DamageModel ? DamageModel->GetStateLabelZh() : TEXT("未知");
+        DrawText(FString::Printf(TEXT("%s %d  %s  %s  %s"), *Marker, Member->GetSquadIndex() + 1, *Member->GetSquadDisplayName(), *Member->GetOrderLabelZh(), *HealthLabel), Color, 32.0f, Y);
         Y += 24.0f;
     }
 }

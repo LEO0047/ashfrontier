@@ -4,6 +4,7 @@
 #include "GameFramework/GameModeBase.h"
 #include "AshfrontierGameMode.generated.h"
 
+class AAshfrontierCharacter;
 class AAshfrontierWorldBlockoutDirector;
 
 UCLASS()
@@ -19,7 +20,11 @@ protected:
 
 private:
     void SpawnPrototypeWorld();
+    void SpawnGate05Hostile();
 
     UPROPERTY(Transient)
     TObjectPtr<AAshfrontierWorldBlockoutDirector> WorldBlockoutDirector;
+
+    UPROPERTY(Transient)
+    TObjectPtr<AAshfrontierCharacter> Gate05Hostile;
 };

@@ -3,6 +3,7 @@
 AAshfrontierRouteAgent::AAshfrontierRouteAgent()
 {
     PrimaryActorTick.bCanEverTick = true;
+    SetCharacterTeam(EAshfrontierCharacterTeam::Neutral);
 }
 
 void AAshfrontierRouteAgent::Tick(float DeltaSeconds)

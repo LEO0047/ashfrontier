@@ -1,7 +1,11 @@
 #include "AshfrontierPlayerController.h"
 
 #include "AshfrontierCameraControllerComponent.h"
+#include "AshfrontierCarrySystemComponent.h"
 #include "AshfrontierCharacter.h"
+#include "AshfrontierCombatResolverComponent.h"
+#include "AshfrontierDamageModelComponent.h"
+#include "AshfrontierMedicalSystemComponent.h"
 #include "AshfrontierOrderSystemComponent.h"
 #include "AshfrontierSquadManagerComponent.h"
 #include "Components/InputComponent.h"
@@ -15,6 +19,9 @@ AAshfrontierPlayerController::AAshfrontierPlayerController()
     SquadManager = CreateDefaultSubobject<UAshfrontierSquadManagerComponent>(TEXT("SquadManager"));
     OrderSystem = CreateDefaultSubobject<UAshfrontierOrderSystemComponent>(TEXT("OrderSystem"));
     CameraController = CreateDefaultSubobject<UAshfrontierCameraControllerComponent>(TEXT("CameraController"));
+    CombatResolver = CreateDefaultSubobject<UAshfrontierCombatResolverComponent>(TEXT("CombatResolver"));
+    CarrySystem = CreateDefaultSubobject<UAshfrontierCarrySystemComponent>(TEXT("CarrySystem"));
+    MedicalSystem = CreateDefaultSubobject<UAshfrontierMedicalSystemComponent>(TEXT("MedicalSystem"));
 }
 
 void AAshfrontierPlayerController::BeginPlay()
@@ -48,6 +55,8 @@ void AAshfrontierPlayerController::SetupInputComponent()
     InputComponent->BindAction(TEXT("IssueMove"), IE_Pressed, this, &AAshfrontierPlayerController::HandleIssueMovePressed);
     InputComponent->BindAction(TEXT("FollowOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleFollowPressed);
     InputComponent->BindAction(TEXT("HoldOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleHoldPressed);
+    InputComponent->BindAction(TEXT("CarryOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleCarryPressed);
+    InputComponent->BindAction(TEXT("MedicalOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleMedicalPressed);
     InputComponent->BindAction(TEXT("SelectAllSquad"), IE_Pressed, this, &AAshfrontierPlayerController::HandleSelectAllPressed);
     InputComponent->BindAction(TEXT("SelectNextSquad"), IE_Pressed, this, &AAshfrontierPlayerController::HandleSelectNextPressed);
     InputComponent->BindAction(TEXT("ToggleTacticalCamera"), IE_Pressed, this, &AAshfrontierPlayerController::HandleToggleTacticalCamera);
@@ -70,6 +79,21 @@ UAshfrontierOrderSystemComponent* AAshfrontierPlayerController::GetOrderSystem()
 UAshfrontierCameraControllerComponent* AAshfrontierPlayerController::GetCameraController() const
 {
     return CameraController;
+}
+
+UAshfrontierCombatResolverComponent* AAshfrontierPlayerController::GetCombatResolver() const
+{
+    return CombatResolver;
+}
+
+UAshfrontierCarrySystemComponent* AAshfrontierPlayerController::GetCarrySystem() const
+{
+    return CarrySystem;
+}
+
+UAshfrontierMedicalSystemComponent* AAshfrontierPlayerController::GetMedicalSystem() const
+{
+    return MedicalSystem;
 }
 
 void AAshfrontierPlayerController::HandleSelectPressed()
@@ -105,6 +129,17 @@ void AAshfrontierPlayerController::HandleIssueMovePressed()
     FVector Destination = FVector::ZeroVector;
     if (TraceCursor(Hit, ECC_Visibility))
     {
+        if (AAshfrontierCharacter* HitCharacter = Cast<AAshfrontierCharacter>(Hit.GetActor()))
+        {
+            if (HitCharacter->IsHostileToPlayer() && CombatResolver)
+            {
+                for (AAshfrontierCharacter* Attacker : SquadManager->GetSelectedMembers())
+                {
+                    CombatResolver->ResolveMeleeAttack(Attacker, HitCharacter, EAshfrontierBodyPart::Chest, 38.0f);
+                }
+                return;
+            }
+        }
         Destination = Hit.ImpactPoint;
     }
     else if (AAshfrontierCharacter* ViewCharacter = CurrentViewCharacter())
@@ -136,6 +171,55 @@ void AAshfrontierPlayerController::HandleHoldPressed()
     if (SquadManager && OrderSystem)
     {
         OrderSystem->IssueHold(SquadManager->GetSelectedMembers());
+    }
+}
+
+void AAshfrontierPlayerController::HandleCarryPressed()
+{
+    if (!SquadManager || !CarrySystem)
+    {
+        return;
+    }
+
+    AAshfrontierCharacter* Carrier = SquadManager->GetPrimarySelected();
+    if (!Carrier)
+    {
+        return;
+    }
+
+    FHitResult Hit;
+    if (TraceCursor(Hit, ECC_Pawn))
+    {
+        if (AAshfrontierCharacter* Patient = Cast<AAshfrontierCharacter>(Hit.GetActor()))
+        {
+            CarrySystem->CarryDownedCharacter(Carrier, Patient);
+        }
+    }
+}
+
+void AAshfrontierPlayerController::HandleMedicalPressed()
+{
+    if (!SquadManager || !MedicalSystem)
+    {
+        return;
+    }
+
+    AAshfrontierCharacter* Medic = SquadManager->GetPrimarySelected();
+    if (!Medic)
+    {
+        return;
+    }
+
+    AAshfrontierCharacter* Patient = Medic->GetCarriedTarget();
+    FHitResult Hit;
+    if (!Patient && TraceCursor(Hit, ECC_Pawn))
+    {
+        Patient = Cast<AAshfrontierCharacter>(Hit.GetActor());
+    }
+
+    if (Patient)
+    {
+        MedicalSystem->Bandage(Medic, Patient);
     }
 }
 

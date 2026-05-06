@@ -111,8 +111,18 @@
 
 ## Gate 04 狀態
 
-- 狀態：本機 `./Scripts/validate.sh` 通過，等待 commit gate 執行最終 validate / commit / push。
+- 狀態：完成並已推送。
 - 目標：建立主城 blockout、小型前哨、野外建造區、城市巡邏路線、商隊路線與 macOS perf capture 初版。
 - 已完成：`AAshfrontierWorldBlockoutDirector` runtime world builder、`AAshfrontierRouteAgent` route follower、主城 / 前哨 / 野外建造區 zone records、城市守衛巡邏與玻璃屋商隊 route records、route markers、route agents 與 `Ashfrontier.World.BlockoutRoutes` automation test。
 - 已驗證：`AshfrontierEditor` C++ build 通過；`Ashfrontier.World.BlockoutRoutes`、`Ashfrontier.Squad.OrderStateFlow`、`Ashfrontier.Data.ContentJsonLoads` 與 `Ashfrontier.Smoke.ModuleLoads` automation tests 通過；`Reports/perf-summary.md` 已輸出 Gate 04 初版效能摘要；`./Scripts/validate.sh` 通過。
+- Gate commit：`532981c723b37d7e90b31ad6c161aa9cf6ea1a7b`。
+- Gate 04 推送狀態記錄 commit：`7513977b10752ca1760b465364f74b7d4059e0f4`。
 - 已知限制：Gate 04 world blockout 目前以 runtime actors 產生，NavMesh 尚未烘焙成正式 map asset；Gate 05 前可繼續使用直接 movement，Gate 04 後續若要嚴格驗證 NavMesh，需建立正式 level geometry 或 editor-time navmesh build。
+
+## Gate 05 狀態
+
+- 狀態：本機 `./Scripts/validate.sh` 通過，等待 commit gate 執行最終 validate / commit / push。
+- 目標：完成「移動 → 戰鬥 → 受傷 → 倒地 → 搬運 → 醫療」Editor playable flow。
+- 已完成：`UAshfrontierDamageModelComponent`、`UAshfrontierCombatResolverComponent`、`UAshfrontierCarrySystemComponent`、`UAshfrontierMedicalSystemComponent`、部位血量、流血、倒地 / 昏迷 / 穩定狀態、敵對角色 spawn、右鍵攻擊、`C` 搬運、`M` 包紮與 `Ashfrontier.Combat.DamageCarryMedical` automation test。
+- 已驗證：`AshfrontierEditor` C++ build 通過；`Ashfrontier.Combat.DamageCarryMedical`、`Ashfrontier.World.BlockoutRoutes`、`Ashfrontier.Squad.OrderStateFlow`、`Ashfrontier.Data.ContentJsonLoads` 與 `Ashfrontier.Smoke.ModuleLoads` automation tests 通過；`./Scripts/validate.sh` 通過。
+- Playable milestone：Gate 05 結束後，Editor / PIE 內應可在現有 world blockout 中移動小隊、攻擊敵人、造成部位傷害與流血，讓角色倒地 / 昏迷，並用搬運與包紮流程穩定患者。

@@ -149,3 +149,13 @@ SaveGame schema 必須包含 `schema_version`。Gate 09 前至少保存：
   - `route_glasshouse_caravan`：商隊 / NPC 移動路線，4 個 waypoint。
 - Gate 04 仍使用直接 movement input 執行 route movement；正式 NavMesh 與路徑尋路會在世界 geometry 穩定後接上。
 - `Scripts/perf_capture.sh` Gate 04 會輸出 macOS、Apple Silicon、顯示環境與主城壓力區設定。此階段尚不是 UE Insights 或 Metal frame capture 的最終效能報告。
+
+## Gate 05 戰鬥、傷害、搬運與醫療
+
+- `EAshfrontierBodyPart` 定義 7 個部位：頭、胸、腹、左臂、右臂、左腿、右腿。
+- `UAshfrontierDamageModelComponent` 維護每個部位的 `FAshfrontierBodyPartHealth`、流血速度與意識狀態。
+- 意識狀態包含 `Conscious`、`Downed`、`Unconscious` 與 `Stable`。頭、胸、腹歸零會導致昏迷；腿部或總血量過低會導致倒地。
+- `UAshfrontierCombatResolverComponent` 提供簡化即時近戰 resolve，將攻擊轉為指定部位傷害與流血。
+- `UAshfrontierCarrySystemComponent` 允許角色搬運倒地、昏迷或已穩定的角色，並在搬運時更新患者位置與碰撞。
+- `UAshfrontierMedicalSystemComponent` 提供簡化包紮，能停止流血並把倒地 / 昏迷患者標記為已穩定。
+- `AAshfrontierGameMode` Gate 05 會在 world blockout 內產生 1 名敵對 placeholder 角色，供 Editor playable smoke 使用。

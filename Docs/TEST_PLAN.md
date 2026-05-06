@@ -88,3 +88,15 @@ Gate 09 必須提供 5 分鐘 golden path，從新遊戲開始驗證：
 - `Scripts/run_tests.sh --smoke` 必須同時通過 `Ashfrontier.Smoke.ModuleLoads`、`Ashfrontier.Data.ContentJsonLoads`、`Ashfrontier.Squad.OrderStateFlow` 與 `Ashfrontier.World.BlockoutRoutes`。
 - `Scripts/perf_capture.sh --gate04` 必須輸出 `Reports/perf-summary.md`，記錄 macOS 版本、CPU 架構、Apple Silicon / 顯示晶片、解析度與主城壓力區設定。
 - Gate 04 的 NavMesh 驗證目前以路線資料與可移動 route agent 作替代；正式 NavMesh build 與 15 分鐘巡邏 soak 需要在 geometry 轉成穩定 map asset 後強化。
+
+## Gate 05 Combat Flow Test 策略
+
+- UE automation test `Ashfrontier.Combat.DamageCarryMedical` 必須驗證：
+  - 近戰攻擊會造成指定部位傷害。
+  - 傷害會造成流血。
+  - 重複攻擊可讓角色倒地或昏迷。
+  - 倒地 / 昏迷角色可被搬運。
+  - 醫療包紮可停止流血並穩定患者。
+  - 搬運者可放下患者。
+- `Scripts/run_tests.sh --smoke` 必須同時通過 `Ashfrontier.Combat.DamageCarryMedical`、`Ashfrontier.World.BlockoutRoutes`、`Ashfrontier.Squad.OrderStateFlow`、`Ashfrontier.Data.ContentJsonLoads` 與 `Ashfrontier.Smoke.ModuleLoads`。
+- Gate 05 的人工 playable smoke 重點是在 UE Editor / PIE 中完成「移動 → 攻擊敵人 → 造成部位傷害 → 倒地 / 昏迷 → 搬運 → 包紮」流程。
