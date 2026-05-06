@@ -13,6 +13,7 @@ REPORTS = ROOT / "Reports"
 REPORT_MD = REPORTS / "content-lint.md"
 REPORT_JSON = REPORTS / "content-lint.json"
 DATA_DIRS = [ROOT / "Content" / "Data", ROOT / "Source" / "Data", ROOT / "Data"]
+SKIPPED_DATA_DIRS = {ROOT / "Content" / "Data" / "Art"}
 ID_RE = re.compile(r"^[a-z0-9_]+$")
 TRADITIONAL_ONLY_CHECK = set("简汉语开发测试验证构项")
 REQUIRED_DATASET_COUNTS = {
@@ -246,7 +247,10 @@ def main() -> int:
     json_files: list[Path] = []
     for data_dir in DATA_DIRS:
         if data_dir.exists():
-            json_files.extend(sorted(data_dir.rglob("*.json")))
+            for json_file in sorted(data_dir.rglob("*.json")):
+                if any(json_file.is_relative_to(skipped_dir) for skipped_dir in SKIPPED_DATA_DIRS):
+                    continue
+                json_files.append(json_file)
 
     if not json_files:
         warnings.append("Gate 00 尚未建立 Content/Data；已跳過深度內容檢查，Gate 02 必須加入實際資料。")

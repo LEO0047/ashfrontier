@@ -13,11 +13,17 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 REPORT_DIR="$PROJECT_ROOT/Reports"
 STATUS_REPORT="$REPORT_DIR/git-push-status.md"
 FAILURE_REPORT="$REPORT_DIR/gate-failure.md"
-GATE_REPORT="$REPORT_DIR/${GATE_ID}-report.md"
+ROOT_GATE_REPORT="$REPORT_DIR/${GATE_ID}-report.md"
+ART_GATE_REPORT="$REPORT_DIR/Art/${GATE_ID}-report.md"
+GATE_REPORT="$ROOT_GATE_REPORT"
 EXPECTED_REMOTE="https://github.com/LEO0047/ashfrontier.git"
 
 mkdir -p "$REPORT_DIR"
 cd "$PROJECT_ROOT"
+
+if [[ -f "$ART_GATE_REPORT" ]]; then
+  GATE_REPORT="$ART_GATE_REPORT"
+fi
 
 if [[ "$(git branch --show-current)" != "main" ]]; then
   cat > "$FAILURE_REPORT" <<EOF

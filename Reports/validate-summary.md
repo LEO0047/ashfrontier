@@ -1,12 +1,18 @@
 # Gate 驗證摘要
 
-- 時間：2026-05-06 21:44:23 CST
+- 時間：2026-05-06 22:38:54 CST
 - 專案根目錄：/Users/leo/Library/Mobile Documents/com~apple~CloudDocs/Coding/Projects/Ashfrontier
 
 ## Git
 - 通過：目前在 git repo 內
 - 通過：目前 branch 是 main
 - 通過：origin remote 正確
+- 通過：本機 HEAD 與 origin/main 同步
+- 通過：v0.1-gate09-editor-playable 仍指向 5fdb114
+
+## Git LFS
+- 警告：git-lfs 不可用，後續圖片與 UE 二進位資產提交前必須處理
+- 通過：Reports/git-lfs-blocker.md 已記錄 git-lfs blocker
 - 通過：git diff --check 通過
 - 通過：沒有 unresolved merge conflicts
 
@@ -22,12 +28,20 @@
 - 通過：Docs/ADR/ADR-004-git-validation-gates.md 存在
 - 通過：Docs/ADR/ADR-005-macos-first-target.md 存在
 - 通過：Docs/Research/Kenshi2_DeepResearch_zh-TW.md 存在
+- 通過：Docs/Art/ART_DIRECTION.md 存在
+- 通過：Docs/Art/GENERATED_ART_PIPELINE.md 存在
+- 通過：Docs/Art/Prompts/ashfrontier_style_bible.md 存在
 - 通過：Scripts/env.example 存在
 - 通過：Scripts/validate.sh 存在
 - 通過：Scripts/content_lint.py 存在
+- 通過：Scripts/art_prompt_lint.py 存在
+- 通過：Scripts/art_manifest_lint.py 存在
 - 通過：Scripts/commit_gate.sh 存在
+- 通過：.gitattributes 存在
+- 通過：Content/Data/Art/ArtGenManifest.json 存在
 - 通過：Reports/environment.md 存在
 - 通過：Reports/gate-00-report.md 存在
+- 通過：Reports/Art/gate-10-report.md 存在
 
 ## Gate 01 專案骨架
 - 通過：Ashfrontier.uproject 存在
@@ -46,6 +60,26 @@
 - 通過：Scripts/create_gate01_map.sh 存在
 - 通過：BuildScripts/create_gate01_map.py 存在
 - 通過：Ashfrontier.uproject JSON 語法通過
+
+## v0.2 生成美術目錄
+- 通過：SourceArt/Generated/Concepts 目錄存在
+- 通過：SourceArt/Generated/Textures 目錄存在
+- 通過：SourceArt/Generated/UIIcons 目錄存在
+- 通過：SourceArt/Generated/FactionEmblems 目錄存在
+- 通過：SourceArt/Generated/Portraits 目錄存在
+- 通過：SourceArt/Generated/Decals 目錄存在
+- 通過：SourceArt/Generated/Banners 目錄存在
+- 通過：SourceArt/Generated/Metadata 目錄存在
+- 通過：Content/GeneratedArt/Textures 目錄存在
+- 通過：Content/GeneratedArt/Materials 目錄存在
+- 通過：Content/GeneratedArt/UI 目錄存在
+- 通過：Content/GeneratedArt/Factions 目錄存在
+- 通過：Content/GeneratedArt/Characters 目錄存在
+- 通過：Content/GeneratedArt/Decals 目錄存在
+- 通過：Content/GeneratedArt/Banners 目錄存在
+- 通過：Content/Data/Art 目錄存在
+- 通過：Docs/Art/Prompts 目錄存在
+- 通過：Reports/Art 目錄存在
 
 ## 繁體中文文件檢查
 - 通過：中文文件基本檢查通過
@@ -66,6 +100,14 @@
 - 通過：Scripts/create_gate01_map.sh 可執行
 - 通過：Scripts/create_gate01_map.sh bash 語法通過
 - 通過：Scripts/content_lint.py Python 語法通過
+- 通過：Scripts/art_prompt_lint.py Python 語法通過
+- 通過：Scripts/art_manifest_lint.py Python 語法通過
+
+## Art Prompt Lint
+- 通過：art_prompt_lint.py 通過
+
+## Art Manifest Lint
+- 通過：art_manifest_lint.py 通過
 
 ## Content Lint
 - 通過：content_lint.py 通過
@@ -82,7 +124,7 @@ Forked complete (ret=0)
 - 通過：run_tests.sh smoke 通過
 
 ## 結果
-- 警告數：0
+- 警告數：1
 - 失敗數：0
 Opening shared memory
 Shared memory doesn't exist, checking legacy lock file
@@ -101,7 +143,7 @@ Store settings (/Users/leo/UnrealEngine/UnrealTrace/Settings.ini):
  - Sponsored mode: 1
  - Directory: '/Users/leo/UnrealEngine/UnrealTrace/Store/001'
 Watcher enabled on /Users/leo/UnrealEngine/UnrealTrace/Store/001
-Signalling parent 99410
+Signalling parent 54242
 Terminating server, no sponsors or connections active.
 Listening cancelled, closing port...
 Listening cancelled, closing port...

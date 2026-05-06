@@ -60,6 +60,37 @@ pass() {
     fail "origin remote 不正確：$REMOTE_URL"
   fi
 
+  if git fetch origin main >/tmp/ashfrontier-fetch-origin-main.txt 2>&1; then
+    read -r AHEAD BEHIND < <(git rev-list --left-right --count HEAD...origin/main)
+    if [[ "$AHEAD" == "0" && "$BEHIND" == "0" ]]; then
+      pass "本機 HEAD 與 origin/main 同步"
+    else
+      fail "本機 HEAD 與 origin/main 不同步：ahead=$AHEAD behind=$BEHIND"
+    fi
+  else
+    fail "無法 fetch origin/main：$(cat /tmp/ashfrontier-fetch-origin-main.txt)"
+  fi
+
+  V01_TAG_SHA="$(git rev-parse v0.1-gate09-editor-playable^{} 2>/dev/null || true)"
+  if [[ "$V01_TAG_SHA" == "5fdb11433459742b7f6a9e10e2e33f6ed523826b" ]]; then
+    pass "v0.1-gate09-editor-playable 仍指向 5fdb114"
+  else
+    fail "v0.1-gate09-editor-playable 指向不正確：$V01_TAG_SHA"
+  fi
+
+  log ""
+  log "## Git LFS"
+  if git lfs version >/tmp/ashfrontier-git-lfs-version.txt 2>&1; then
+    pass "git-lfs 可用：$(cat /tmp/ashfrontier-git-lfs-version.txt)"
+  else
+    warn "git-lfs 不可用，後續圖片與 UE 二進位資產提交前必須處理"
+    if [[ -s "Reports/git-lfs-blocker.md" ]]; then
+      pass "Reports/git-lfs-blocker.md 已記錄 git-lfs blocker"
+    else
+      fail "缺少 Reports/git-lfs-blocker.md"
+    fi
+  fi
+
   if git diff --check >/tmp/ashfrontier-diff-check.txt 2>&1; then
     pass "git diff --check 通過"
   else
@@ -86,12 +117,20 @@ pass() {
     "Docs/ADR/ADR-004-git-validation-gates.md"
     "Docs/ADR/ADR-005-macos-first-target.md"
     "Docs/Research/Kenshi2_DeepResearch_zh-TW.md"
+    "Docs/Art/ART_DIRECTION.md"
+    "Docs/Art/GENERATED_ART_PIPELINE.md"
+    "Docs/Art/Prompts/ashfrontier_style_bible.md"
     "Scripts/env.example"
     "Scripts/validate.sh"
     "Scripts/content_lint.py"
+    "Scripts/art_prompt_lint.py"
+    "Scripts/art_manifest_lint.py"
     "Scripts/commit_gate.sh"
+    ".gitattributes"
+    "Content/Data/Art/ArtGenManifest.json"
     "Reports/environment.md"
     "Reports/gate-00-report.md"
+    "Reports/Art/gate-10-report.md"
   )
 
   for file in "${REQUIRED_FILES[@]}"; do
@@ -137,6 +176,37 @@ pass() {
       fail "Ashfrontier.uproject JSON 語法失敗"
     fi
   fi
+
+  log ""
+  log "## v0.2 生成美術目錄"
+  ART_DIRS=(
+    "SourceArt/Generated/Concepts"
+    "SourceArt/Generated/Textures"
+    "SourceArt/Generated/UIIcons"
+    "SourceArt/Generated/FactionEmblems"
+    "SourceArt/Generated/Portraits"
+    "SourceArt/Generated/Decals"
+    "SourceArt/Generated/Banners"
+    "SourceArt/Generated/Metadata"
+    "Content/GeneratedArt/Textures"
+    "Content/GeneratedArt/Materials"
+    "Content/GeneratedArt/UI"
+    "Content/GeneratedArt/Factions"
+    "Content/GeneratedArt/Characters"
+    "Content/GeneratedArt/Decals"
+    "Content/GeneratedArt/Banners"
+    "Content/Data/Art"
+    "Docs/Art/Prompts"
+    "Reports/Art"
+  )
+
+  for dir in "${ART_DIRS[@]}"; do
+    if [[ -d "$dir" ]]; then
+      pass "$dir 目錄存在"
+    else
+      fail "$dir 目錄不存在"
+    fi
+  done
 
   log ""
   log "## 繁體中文文件檢查"
@@ -197,6 +267,30 @@ PY
     pass "Scripts/content_lint.py Python 語法通過"
   else
     fail "Scripts/content_lint.py Python 語法失敗"
+  fi
+
+  for py_script in Scripts/art_prompt_lint.py Scripts/art_manifest_lint.py; do
+    if python3 -m py_compile "$py_script"; then
+      pass "$py_script Python 語法通過"
+    else
+      fail "$py_script Python 語法失敗"
+    fi
+  done
+
+  log ""
+  log "## Art Prompt Lint"
+  if python3 Scripts/art_prompt_lint.py; then
+    pass "art_prompt_lint.py 通過"
+  else
+    fail "art_prompt_lint.py 失敗"
+  fi
+
+  log ""
+  log "## Art Manifest Lint"
+  if python3 Scripts/art_manifest_lint.py; then
+    pass "art_manifest_lint.py 通過"
+  else
+    fail "art_manifest_lint.py 失敗"
   fi
 
   log ""
