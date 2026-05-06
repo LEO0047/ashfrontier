@@ -1,6 +1,7 @@
 #include "AshfrontierCharacter.h"
 
 #include "AshfrontierDamageModelComponent.h"
+#include "AshfrontierInventoryComponent.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
 #include "Components/StaticMeshComponent.h"
@@ -37,6 +38,7 @@ AAshfrontierCharacter::AAshfrontierCharacter()
     FollowCamera->bUsePawnControlRotation = false;
 
     DamageModel = CreateDefaultSubobject<UAshfrontierDamageModelComponent>(TEXT("DamageModel"));
+    Inventory = CreateDefaultSubobject<UAshfrontierInventoryComponent>(TEXT("Inventory"));
 
     static ConstructorHelpers::FObjectFinder<UStaticMesh> CubeMesh(TEXT("/Engine/BasicShapes/Cube.Cube"));
 
@@ -181,6 +183,11 @@ UAshfrontierDamageModelComponent* AAshfrontierCharacter::GetDamageModel() const
     return DamageModel;
 }
 
+UAshfrontierInventoryComponent* AAshfrontierCharacter::GetInventory() const
+{
+    return Inventory;
+}
+
 void AAshfrontierCharacter::SetCharacterTeam(EAshfrontierCharacterTeam NewTeam)
 {
     CharacterTeam = NewTeam;
@@ -219,6 +226,32 @@ AAshfrontierCharacter* AAshfrontierCharacter::GetCarrier() const
 bool AAshfrontierCharacter::IsBeingCarried() const
 {
     return Carrier.IsValid();
+}
+
+void AAshfrontierCharacter::SetRecruitable(bool bNewRecruitable, int32 NewRecruitCost)
+{
+    bRecruitable = bNewRecruitable;
+    RecruitCost = FMath::Max(0, NewRecruitCost);
+}
+
+bool AAshfrontierCharacter::IsRecruitable() const
+{
+    return bRecruitable;
+}
+
+int32 AAshfrontierCharacter::GetRecruitCost() const
+{
+    return RecruitCost;
+}
+
+void AAshfrontierCharacter::SetShopkeeper(bool bNewShopkeeper)
+{
+    bShopkeeper = bNewShopkeeper;
+}
+
+bool AAshfrontierCharacter::IsShopkeeper() const
+{
+    return bShopkeeper;
 }
 
 void AAshfrontierCharacter::UpdateSquadOrder(float DeltaSeconds)

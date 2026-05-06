@@ -121,8 +121,18 @@
 
 ## Gate 05 狀態
 
-- 狀態：本機 `./Scripts/validate.sh` 通過，等待 commit gate 執行最終 validate / commit / push。
+- 狀態：完成並已推送。
 - 目標：完成「移動 → 戰鬥 → 受傷 → 倒地 → 搬運 → 醫療」Editor playable flow。
 - 已完成：`UAshfrontierDamageModelComponent`、`UAshfrontierCombatResolverComponent`、`UAshfrontierCarrySystemComponent`、`UAshfrontierMedicalSystemComponent`、部位血量、流血、倒地 / 昏迷 / 穩定狀態、敵對角色 spawn、右鍵攻擊、`C` 搬運、`M` 包紮與 `Ashfrontier.Combat.DamageCarryMedical` automation test。
 - 已驗證：`AshfrontierEditor` C++ build 通過；`Ashfrontier.Combat.DamageCarryMedical`、`Ashfrontier.World.BlockoutRoutes`、`Ashfrontier.Squad.OrderStateFlow`、`Ashfrontier.Data.ContentJsonLoads` 與 `Ashfrontier.Smoke.ModuleLoads` automation tests 通過；`./Scripts/validate.sh` 通過。
+- Gate commit：`5fec17cbf2b96fab27a6a2d6ebd09984426da5c4`。
+- Gate 05 推送狀態記錄 commit：`be4f90f7b586d594d7514d268d2cf3a6d043287c`。
 - Playable milestone：Gate 05 結束後，Editor / PIE 內應可在現有 world blockout 中移動小隊、攻擊敵人、造成部位傷害與流血，讓角色倒地 / 昏迷，並用搬運與包紮流程穩定患者。
+
+## Gate 06 狀態
+
+- 狀態：本機 `./Scripts/validate.sh` 通過，等待 commit gate 執行最終 validate / commit / push。
+- 目標：完成至少 4 名可招募角色、招募流程、角色庫存、價格資料與買賣流程。
+- 已完成：`UAshfrontierInventoryComponent`、`UAshfrontierRecruitSystemComponent`、`UAshfrontierTradingSystemComponent`、4 名可招募 NPC、1 名商人 NPC、灰印幣付款、物品買賣、`R` 招募、`T` 買繃帶與 `Ashfrontier.Economy.RecruitInventoryTrade` automation test。
+- 已驗證：`AshfrontierEditor` C++ build 通過；`Ashfrontier.Economy.RecruitInventoryTrade`、`Ashfrontier.Combat.DamageCarryMedical`、`Ashfrontier.World.BlockoutRoutes`、`Ashfrontier.Squad.OrderStateFlow`、`Ashfrontier.Data.ContentJsonLoads` 與 `Ashfrontier.Smoke.ModuleLoads` automation tests 通過；`./Scripts/validate.sh` 通過。
+- 已知限制：交易 UI 仍是按鍵 / 測試流程，尚未有正式商店面板；醫療消耗品與包紮成本會在後續 Gate 更嚴格整合。

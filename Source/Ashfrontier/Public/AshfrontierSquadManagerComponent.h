@@ -15,6 +15,7 @@ public:
     UAshfrontierSquadManagerComponent();
 
     void EnsureStartingSquad(APlayerController* OwnerController, TSubclassOf<AAshfrontierCharacter> CharacterClass, int32 DesiredCount);
+    bool AddExistingMember(AAshfrontierCharacter* Member);
 
     void SelectMember(AAshfrontierCharacter* Member, bool bAppendSelection);
     void SelectMemberAtIndex(int32 MemberIndex, bool bAppendSelection);

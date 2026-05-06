@@ -100,3 +100,15 @@ Gate 09 必須提供 5 分鐘 golden path，從新遊戲開始驗證：
   - 搬運者可放下患者。
 - `Scripts/run_tests.sh --smoke` 必須同時通過 `Ashfrontier.Combat.DamageCarryMedical`、`Ashfrontier.World.BlockoutRoutes`、`Ashfrontier.Squad.OrderStateFlow`、`Ashfrontier.Data.ContentJsonLoads` 與 `Ashfrontier.Smoke.ModuleLoads`。
 - Gate 05 的人工 playable smoke 重點是在 UE Editor / PIE 中完成「移動 → 攻擊敵人 → 造成部位傷害 → 倒地 / 昏迷 → 搬運 → 包紮」流程。
+
+## Gate 06 Recruit / Inventory / Trade Test 策略
+
+- UE automation test `Ashfrontier.Economy.RecruitInventoryTrade` 必須驗證：
+  - 玩家角色可持有灰印幣與物品。
+  - 可招募 NPC 會在付款後加入小隊。
+  - 招募費用會從玩家庫存扣除。
+  - 商人可賣出物品並收取灰印幣。
+  - 玩家可賣出物品並取得灰印幣。
+  - 交易後物品不會重複生成。
+- `Scripts/run_tests.sh --smoke` 必須同時通過 economy、combat、world、squad、data 與 smoke tests。
+- Gate 06 的人工 playable smoke 重點是在 UE Editor / PIE 中用 `R` 招募 NPC，並用 `T` 與商人購買野外繃帶。

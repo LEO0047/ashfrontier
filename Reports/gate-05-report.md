@@ -3,7 +3,7 @@
 ## 狀態
 
 - Gate：Gate 05 — 戰鬥、部位傷害、倒地、搬運與醫療。
-- 狀態：本機 `./Scripts/validate.sh` 通過，等待 commit gate 執行最終 validate / commit / push。
+- 狀態：完成並已推送。
 - 日期：2026-05-06。
 
 ## 完成內容

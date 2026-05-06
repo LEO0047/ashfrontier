@@ -21,10 +21,14 @@ protected:
 private:
     void SpawnPrototypeWorld();
     void SpawnGate05Hostile();
+    void SpawnGate06Characters();
 
     UPROPERTY(Transient)
     TObjectPtr<AAshfrontierWorldBlockoutDirector> WorldBlockoutDirector;
 
     UPROPERTY(Transient)
     TObjectPtr<AAshfrontierCharacter> Gate05Hostile;
+
+    UPROPERTY(Transient)
+    TArray<TObjectPtr<AAshfrontierCharacter>> Gate06Characters;
 };

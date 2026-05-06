@@ -1,6 +1,7 @@
 #include "AshfrontierSquadManagerComponent.h"
 
 #include "AshfrontierCharacter.h"
+#include "AshfrontierInventoryComponent.h"
 #include "GameFramework/PlayerController.h"
 
 UAshfrontierSquadManagerComponent::UAshfrontierSquadManagerComponent()
@@ -67,6 +68,11 @@ void UAshfrontierSquadManagerComponent::EnsureStartingSquad(APlayerController* O
             Member->SetSquadIndex(Index);
             Member->SetSquadDisplayName(MakeDefaultSquadName(Index));
             Member->SetCharacterTeam(EAshfrontierCharacterTeam::PlayerSquad);
+            if (Index == 0 && Member->GetInventory() && Member->GetInventory()->GetItemCount(TEXT("item_ash_credit")) == 0)
+            {
+                Member->GetInventory()->AddItem(TEXT("item_ash_credit"), 180);
+                Member->GetInventory()->AddItem(TEXT("item_field_bandage"), 2);
+            }
         }
     }
 
@@ -78,6 +84,22 @@ void UAshfrontierSquadManagerComponent::EnsureStartingSquad(APlayerController* O
     {
         ApplySelectionVisuals();
     }
+}
+
+bool UAshfrontierSquadManagerComponent::AddExistingMember(AAshfrontierCharacter* Member)
+{
+    CompactMembers();
+    if (!IsValid(Member) || SquadMembers.Contains(Member) || SquadMembers.Num() >= 4)
+    {
+        return false;
+    }
+
+    Member->SetCharacterTeam(EAshfrontierCharacterTeam::PlayerSquad);
+    Member->SetSquadIndex(SquadMembers.Num());
+    Member->SetSquadDisplayName(MakeDefaultSquadName(SquadMembers.Num()));
+    SquadMembers.Add(Member);
+    SelectMember(Member, true);
+    return true;
 }
 
 void UAshfrontierSquadManagerComponent::SelectMember(AAshfrontierCharacter* Member, bool bAppendSelection)

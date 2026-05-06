@@ -3,6 +3,7 @@
 #include "AshfrontierCameraControllerComponent.h"
 #include "AshfrontierCharacter.h"
 #include "AshfrontierDamageModelComponent.h"
+#include "AshfrontierInventoryComponent.h"
 #include "AshfrontierPlayerController.h"
 #include "AshfrontierSquadManagerComponent.h"
 
@@ -41,7 +42,9 @@ void AAshfrontierHUD::DrawHUD()
         const FString Marker = Member->IsSelected() ? TEXT("[X]") : TEXT("[ ]");
         const UAshfrontierDamageModelComponent* DamageModel = Member->GetDamageModel();
         const FString HealthLabel = DamageModel ? DamageModel->GetStateLabelZh() : TEXT("未知");
-        DrawText(FString::Printf(TEXT("%s %d  %s  %s  %s"), *Marker, Member->GetSquadIndex() + 1, *Member->GetSquadDisplayName(), *Member->GetOrderLabelZh(), *HealthLabel), Color, 32.0f, Y);
+        const UAshfrontierInventoryComponent* Inventory = Member->GetInventory();
+        const int32 Credits = Inventory ? Inventory->GetItemCount(TEXT("item_ash_credit")) : 0;
+        DrawText(FString::Printf(TEXT("%s %d  %s  %s  %s  灰印幣:%d"), *Marker, Member->GetSquadIndex() + 1, *Member->GetSquadDisplayName(), *Member->GetOrderLabelZh(), *HealthLabel, Credits), Color, 32.0f, Y);
         Y += 24.0f;
     }
 }

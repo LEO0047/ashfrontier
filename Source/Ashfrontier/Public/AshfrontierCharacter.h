@@ -7,6 +7,7 @@
 #include "AshfrontierCharacter.generated.h"
 
 class UAshfrontierDamageModelComponent;
+class UAshfrontierInventoryComponent;
 class UCameraComponent;
 class UStaticMeshComponent;
 class USpringArmComponent;
@@ -43,6 +44,7 @@ public:
     float GetCameraArmLength() const;
 
     UAshfrontierDamageModelComponent* GetDamageModel() const;
+    UAshfrontierInventoryComponent* GetInventory() const;
 
     void SetCharacterTeam(EAshfrontierCharacterTeam NewTeam);
     EAshfrontierCharacterTeam GetCharacterTeam() const;
@@ -53,6 +55,12 @@ public:
     void SetCarrier(AAshfrontierCharacter* NewCarrier);
     AAshfrontierCharacter* GetCarrier() const;
     bool IsBeingCarried() const;
+
+    void SetRecruitable(bool bNewRecruitable, int32 NewRecruitCost);
+    bool IsRecruitable() const;
+    int32 GetRecruitCost() const;
+    void SetShopkeeper(bool bNewShopkeeper);
+    bool IsShopkeeper() const;
 
 protected:
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Camera")
@@ -69,6 +77,9 @@ protected:
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Damage")
     TObjectPtr<UAshfrontierDamageModelComponent> DamageModel;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Inventory")
+    TObjectPtr<UAshfrontierInventoryComponent> Inventory;
 
 private:
     void UpdateSquadOrder(float DeltaSeconds);
@@ -106,4 +117,13 @@ private:
 
     UPROPERTY(Transient)
     TWeakObjectPtr<AAshfrontierCharacter> Carrier;
+
+    UPROPERTY(VisibleAnywhere, Category = "Recruit")
+    bool bRecruitable = false;
+
+    UPROPERTY(VisibleAnywhere, Category = "Recruit")
+    int32 RecruitCost = 0;
+
+    UPROPERTY(VisibleAnywhere, Category = "Trading")
+    bool bShopkeeper = false;
 };

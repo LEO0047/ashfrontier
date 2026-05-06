@@ -7,7 +7,9 @@
 #include "AshfrontierDamageModelComponent.h"
 #include "AshfrontierMedicalSystemComponent.h"
 #include "AshfrontierOrderSystemComponent.h"
+#include "AshfrontierRecruitSystemComponent.h"
 #include "AshfrontierSquadManagerComponent.h"
+#include "AshfrontierTradingSystemComponent.h"
 #include "Components/InputComponent.h"
 #include "InputCoreTypes.h"
 
@@ -22,6 +24,8 @@ AAshfrontierPlayerController::AAshfrontierPlayerController()
     CombatResolver = CreateDefaultSubobject<UAshfrontierCombatResolverComponent>(TEXT("CombatResolver"));
     CarrySystem = CreateDefaultSubobject<UAshfrontierCarrySystemComponent>(TEXT("CarrySystem"));
     MedicalSystem = CreateDefaultSubobject<UAshfrontierMedicalSystemComponent>(TEXT("MedicalSystem"));
+    RecruitSystem = CreateDefaultSubobject<UAshfrontierRecruitSystemComponent>(TEXT("RecruitSystem"));
+    TradingSystem = CreateDefaultSubobject<UAshfrontierTradingSystemComponent>(TEXT("TradingSystem"));
 }
 
 void AAshfrontierPlayerController::BeginPlay()
@@ -57,6 +61,8 @@ void AAshfrontierPlayerController::SetupInputComponent()
     InputComponent->BindAction(TEXT("HoldOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleHoldPressed);
     InputComponent->BindAction(TEXT("CarryOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleCarryPressed);
     InputComponent->BindAction(TEXT("MedicalOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleMedicalPressed);
+    InputComponent->BindAction(TEXT("RecruitOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleRecruitPressed);
+    InputComponent->BindAction(TEXT("TradeOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleTradePressed);
     InputComponent->BindAction(TEXT("SelectAllSquad"), IE_Pressed, this, &AAshfrontierPlayerController::HandleSelectAllPressed);
     InputComponent->BindAction(TEXT("SelectNextSquad"), IE_Pressed, this, &AAshfrontierPlayerController::HandleSelectNextPressed);
     InputComponent->BindAction(TEXT("ToggleTacticalCamera"), IE_Pressed, this, &AAshfrontierPlayerController::HandleToggleTacticalCamera);
@@ -94,6 +100,16 @@ UAshfrontierCarrySystemComponent* AAshfrontierPlayerController::GetCarrySystem()
 UAshfrontierMedicalSystemComponent* AAshfrontierPlayerController::GetMedicalSystem() const
 {
     return MedicalSystem;
+}
+
+UAshfrontierRecruitSystemComponent* AAshfrontierPlayerController::GetRecruitSystem() const
+{
+    return RecruitSystem;
+}
+
+UAshfrontierTradingSystemComponent* AAshfrontierPlayerController::GetTradingSystem() const
+{
+    return TradingSystem;
 }
 
 void AAshfrontierPlayerController::HandleSelectPressed()
@@ -220,6 +236,45 @@ void AAshfrontierPlayerController::HandleMedicalPressed()
     if (Patient)
     {
         MedicalSystem->Bandage(Medic, Patient);
+    }
+}
+
+void AAshfrontierPlayerController::HandleRecruitPressed()
+{
+    if (!SquadManager || !RecruitSystem)
+    {
+        return;
+    }
+
+    AAshfrontierCharacter* Recruiter = SquadManager->GetLeader();
+    FHitResult Hit;
+    if (Recruiter && TraceCursor(Hit, ECC_Pawn))
+    {
+        if (AAshfrontierCharacter* Candidate = Cast<AAshfrontierCharacter>(Hit.GetActor()))
+        {
+            RecruitSystem->Recruit(Recruiter, Candidate, SquadManager);
+        }
+    }
+}
+
+void AAshfrontierPlayerController::HandleTradePressed()
+{
+    if (!SquadManager || !TradingSystem)
+    {
+        return;
+    }
+
+    AAshfrontierCharacter* Buyer = SquadManager->GetLeader();
+    FHitResult Hit;
+    if (Buyer && TraceCursor(Hit, ECC_Pawn))
+    {
+        if (AAshfrontierCharacter* Seller = Cast<AAshfrontierCharacter>(Hit.GetActor()))
+        {
+            if (Seller->IsShopkeeper())
+            {
+                TradingSystem->BuyItem(Buyer, Seller, TEXT("item_field_bandage"), 1);
+            }
+        }
     }
 }
 

@@ -159,3 +159,12 @@ SaveGame schema 必須包含 `schema_version`。Gate 09 前至少保存：
 - `UAshfrontierCarrySystemComponent` 允許角色搬運倒地、昏迷或已穩定的角色，並在搬運時更新患者位置與碰撞。
 - `UAshfrontierMedicalSystemComponent` 提供簡化包紮，能停止流血並把倒地 / 昏迷患者標記為已穩定。
 - `AAshfrontierGameMode` Gate 05 會在 world blockout 內產生 1 名敵對 placeholder 角色，供 Editor playable smoke 使用。
+
+## Gate 06 招募、庫存與交易
+
+- `UAshfrontierInventoryComponent` 以 `FAshfrontierItemStack` 儲存 item id 與數量，支援新增、移除、查詢與堆疊。
+- `UAshfrontierRecruitSystemComponent` 會檢查候選角色是否可招募、玩家是否有足夠 `item_ash_credit`，付款後把候選角色加入小隊。
+- `UAshfrontierTradingSystemComponent` 內建 Gate 02 item 價格表，支援買賣、灰印幣移轉與物品轉移。
+- `AAshfrontierCharacter` Gate 06 起包含 inventory、recruitable、recruit cost 與 shopkeeper 狀態。
+- `AAshfrontierGameMode` Gate 06 會生成 4 名可招募角色與 1 名商人 placeholder。
+- `AAshfrontierPlayerController` 提供 `R` 招募與 `T` 交易測試入口。正式 UI 仍留待後續 Gate 改善。
