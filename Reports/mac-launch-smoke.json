@@ -1,0 +1,6 @@
+{
+  "status": "pass",
+  "returncode": 0,
+  "reason": "packaged app 乾淨啟動並退出。",
+  "log": "Reports/mac-launch-smoke.log"
+}

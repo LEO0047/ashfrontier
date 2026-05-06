@@ -1,6 +1,6 @@
 # Gate 驗證摘要
 
-- 時間：2026-05-07 01:23:56 CST
+- 時間：2026-05-07 01:55:32 CST
 - 專案根目錄：/Users/leo/Library/Mobile Documents/com~apple~CloudDocs/Coding/Projects/Ashfrontier
 
 ## Git
@@ -87,6 +87,13 @@
 - 通過：Reports/Art/visual-summary.md 存在
 - 通過：Reports/Art/art-perf-impact.md 存在
 - 通過：Reports/Art/gate-17-report.md 存在
+- 通過：Reports/mac-build-summary.md 存在
+- 通過：Reports/mac-launch-smoke.md 存在
+- 通過：Reports/final-v0.2-generated-art-report.md 存在
+- 通過：Reports/Art/final-art-assets-inventory.md 存在
+- 通過：Reports/Art/final-visual-summary.md 存在
+- 通過：Reports/known-issues.md 存在
+- 通過：Reports/Art/gate-18-report.md 存在
 - 通過：Content/Python/import_generated_art.py 存在
 - 通過：Content/Python/apply_art_slots.py 存在
 - 通過：Content/Data/Art/GeneratedMaterialInstances.json 存在
@@ -213,6 +220,11 @@ Daemon signalled successful start
 Forked complete (ret=0)
 - 通過：run_tests.sh smoke 通過
 
+## macOS Build Output
+- 通過：Builds/macOS/Ashfrontier.app 存在
+- 通過：packaged executable 可執行
+- 通過：mac-launch-smoke 通過
+
 ## 結果
 - 警告數：0
 - 失敗數：0
@@ -233,9 +245,9 @@ Store settings (/Users/leo/UnrealEngine/UnrealTrace/Settings.ini):
  - Sponsored mode: 1
  - Directory: '/Users/leo/UnrealEngine/UnrealTrace/Store/001'
 Watcher enabled on /Users/leo/UnrealEngine/UnrealTrace/Store/001
-Signalling parent 48290
+Signalling parent 80537
 Terminating server, no sponsors or connections active.
+Listening cancelled, closing port...
+Listening cancelled, closing port...
 Received signal 15
 Daemon is exiting without errors.
-Listening cancelled, closing port...
-Listening cancelled, closing port...

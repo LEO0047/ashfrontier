@@ -1,27 +1,6 @@
 # 已知問題
 
-## Summary
-
-此清單記錄 Gate 09 截止時仍存在的限制。這些限制不會被包裝成已完成項目；若影響 packaged build 或 5 分鐘 golden path，會同步反映在 `Reports/final-prototype-report.md`。
-
-## Gameplay / UX
-
-- 操作介面仍是 prototype debug flow：`R` 招募、`T` 交易、`G` 採集、`B` 建造、`P` 生產、`V` / `K` / `U` / `N` 城市反應、`F5` / `F9` 存讀檔。正式選單、商店面板、建築面板與教學提示尚未完成。
-- 世界 blockout 以 runtime cube / capsule / primitive placeholder 建立；尚未有正式美術、材質、動畫或最終地形。
-- NavMesh 尚未轉成完整烘焙流程；目前以 runtime route agent、direct movement 與 automation flow 驗證可走動路線。
-- 守衛 AI 是 rule-driven component，尚未接 StateTree 或 Behavior Tree。
-- 2026-05-06 黑畫面回報後，已補開場光源、固定俯視相機與大型 HUD 啟動提示；若仍看到黑畫面，優先檢查是否啟動舊的 `.app.previous.*` 或 Finder / iCloud metadata 問題。
-
-## 驗證限制
-
-- `Scripts/soak_test.sh --smoke` 已執行完整 UE automation smoke suite，但尚未執行 30 分鐘真人或 headless gameplay soak。
-- `Scripts/perf_capture.sh --gate09` 已輸出 macOS / Apple Silicon / 解析度與測試模式，但尚未接 UE Insights trace 或 Metal frame capture。
-- packaged build 已完成命令列啟動與 prototype map load smoke；真人手動 5 分鐘 packaged golden path 尚未完成，因此最終報告不能宣稱此項已人工通過。
-- 自動截圖 smoke 因 macOS `screencapture` 權限回報 `could not create image from display`，目前以正常 Metal 啟動 log 驗證 map load 與 engine init。
-
-## macOS Package / Signing
-
-- repo 位於 iCloud Drive File Provider 工作區，`Builds/macOS/Ashfrontier.app` 根目錄會被重新附加 `com.apple.FinderInfo`、`com.apple.fileprovider.fpfs#P` 與 `com.apple.provenance` extended attributes。
-- 這些 metadata 會讓 `codesign --force --sign - --timestamp=none --deep Builds/macOS/Ashfrontier.app` 在本工作區出現 `resource fork, Finder information, or similar detritus not allowed`。
-- 命令列 executable smoke 已可啟動並載入 map；Finder / Gatekeeper 啟動仍需在非 iCloud 路徑或清乾淨 metadata 後另行驗證。
-- `Builds/macOS/Ashfrontier.app` 是大型本機打包產物，已由 `.gitignore` 排除，不會直接 commit 到 GitHub。GitHub 保存的是專案 source、資料、腳本與報告；本機 build 產物留在工作區。
+- macOS app bundle 已成功產出並可用 packaged executable smoke 啟動，但 ad-hoc strict codesign verify 在 iCloud File Provider 路徑下仍可能因 `com.apple.FinderInfo` extended attribute 顯示警告；目前命令列啟動通過，Finder / Gatekeeper 行為需另行驗證。
+- v0.2 的世界幾何仍是 prototype blockout，生成美術主要透過 ArtSlot 材質、旗幟、告示、decals 與 UI 套用，不代表最終 3D 美術。
+- Gate 17 perf guard 是 texture budget 與 automation smoke，尚未取代 UE Insights 或 Metal frame capture。
+- `Builds/macOS/Ashfrontier.app` 是本機打包輸出，依現有 `.gitignore` 不提交到 git；可由 Scripts/package_macos.sh 重新產生。

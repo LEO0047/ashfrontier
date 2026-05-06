@@ -177,6 +177,13 @@ pass() {
     "Reports/Art/visual-summary.md"
     "Reports/Art/art-perf-impact.md"
     "Reports/Art/gate-17-report.md"
+    "Reports/mac-build-summary.md"
+    "Reports/mac-launch-smoke.md"
+    "Reports/final-v0.2-generated-art-report.md"
+    "Reports/Art/final-art-assets-inventory.md"
+    "Reports/Art/final-visual-summary.md"
+    "Reports/known-issues.md"
+    "Reports/Art/gate-18-report.md"
     "Content/Python/import_generated_art.py"
     "Content/Python/apply_art_slots.py"
     "Content/Data/Art/GeneratedMaterialInstances.json"
@@ -425,6 +432,34 @@ PY
     pass "run_tests.sh smoke 通過"
   else
     fail "run_tests.sh smoke 失敗"
+  fi
+
+  log ""
+  log "## macOS Build Output"
+  if [[ -d "Builds/macOS/Ashfrontier.app" ]]; then
+    pass "Builds/macOS/Ashfrontier.app 存在"
+  else
+    fail "Builds/macOS/Ashfrontier.app 不存在"
+  fi
+  if [[ -x "Builds/macOS/Ashfrontier.app/Contents/MacOS/Ashfrontier" ]]; then
+    pass "packaged executable 可執行"
+  else
+    fail "packaged executable 不存在或不可執行"
+  fi
+  if [[ -s "Reports/mac-launch-smoke.json" ]] && python3 - "$PROJECT_ROOT" <<'PY'
+from __future__ import annotations
+
+import json
+import sys
+from pathlib import Path
+
+payload = json.loads((Path(sys.argv[1]) / "Reports" / "mac-launch-smoke.json").read_text(encoding="utf-8"))
+sys.exit(0 if payload.get("status") == "pass" else 1)
+PY
+  then
+    pass "mac-launch-smoke 通過"
+  else
+    fail "mac-launch-smoke 未通過"
   fi
 
   log ""
