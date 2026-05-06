@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "description_zh": "Ashfrontier v0.2 世界場景 actor 到 ArtSlot 的資料驅動套用表。",
+  "records": [
+    {
+      "actor_name": "AF_Blockout_World_Floor",
+      "art_slot": "ArtSlot_DesertGround",
+      "coverage_area": "world",
+      "coverage_weight": 1.0,
+      "assignment_type": "surface"
+    },
+    {
+      "actor_name": "zone_salt_spine_city",
+      "art_slot": "ArtSlot_IndustrialFloor",
+      "coverage_area": "main_city",
+      "coverage_weight": 0.15,
+      "assignment_type": "surface"
+    },
+    {
+      "actor_name": "AF_City_North_Wall",
+      "art_slot": "ArtSlot_SaltStoneWall",
+      "coverage_area": "main_city",
+      "coverage_weight": 0.14,
+      "assignment_type": "surface"
+    },
+    {
+      "actor_name": "AF_City_South_Wall",
+      "art_slot": "ArtSlot_SaltStoneWall",
+      "coverage_area": "main_city",
+      "coverage_weight": 0.14,
+      "assignment_type": "surface"
+    },
+    {
+      "actor_name": "AF_City_East_Gate_Block",
+      "art_slot": "ArtSlot_RustedMetal",
+      "coverage_area": "main_city",
+      "coverage_weight": 0.12,
+      "assignment_type": "surface"
+    },
+    {
+      "actor_name": "AF_City_Shop_District_Floor",
+      "art_slot": "ArtSlot_IndustrialFloor",
+      "coverage_area": "main_city",
+      "coverage_weight": 0.1,
+      "assignment_type": "surface"
+    },
+    {
+      "actor_name": "AF_City_Guard_Post",
+      "art_slot": "ArtSlot_RustedMetal",
+      "coverage_area": "main_city",
+      "coverage_weight": 0.1,
+      "assignment_type": "surface"
+    },
+    {
+      "actor_name": "AF_Banner_Saltwardens_CityGate",
+      "art_slot": "ArtSlot_FactionBanner_01",
+      "coverage_area": "main_city",
+      "coverage_weight": 0.05,
+      "assignment_type": "banner",
+      "faction_id": "faction_saltwardens"
+    },
+    {
+      "actor_name": "AF_Banner_Glasshouse_Market",
+      "art_slot": "ArtSlot_FactionBanner_02",
+      "coverage_area": "main_city",
+      "coverage_weight": 0.05,
+      "assignment_type": "banner",
+      "faction_id": "faction_glasshouse"
+    },
+    {
+      "actor_name": "AF_Decal_City_Gate_Mark",
+      "art_slot": "ArtSlot_CitySignage",
+      "coverage_area": "main_city",
+      "coverage_weight": 0.04,
+      "assignment_type": "decal"
+    },
+    {
+      "actor_name": "AF_Decal_City_Restricted_Warning",
+      "art_slot": "ArtSlot_Decal_RestrictedWarning",
+      "coverage_area": "main_city",
+      "coverage_weight": 0.04,
+      "assignment_type": "decal"
+    },
+    {
+      "actor_name": "AF_Decal_City_Guard_Notice",
+      "art_slot": "ArtSlot_Decal_GuardNotice",
+      "coverage_area": "main_city",
+      "coverage_weight": 0.04,
+      "assignment_type": "decal"
+    },
+    {
+      "actor_name": "AF_Decal_City_Shop_Sign",
+      "art_slot": "ArtSlot_Decal_ShopSign",
+      "coverage_area": "main_city",
+      "coverage_weight": 0.04,
+      "assignment_type": "decal"
+    },
+    {
+      "actor_name": "AF_Decal_City_Trade_Notice",
+      "art_slot": "ArtSlot_Decal_TradeNotice",
+      "coverage_area": "main_city",
+      "coverage_weight": 0.04,
+      "assignment_type": "decal"
+    },
+    {
+      "actor_name": "zone_cinder_outpost",
+      "art_slot": "ArtSlot_DesertGround",
+      "coverage_area": "outpost",
+      "coverage_weight": 0.15,
+      "assignment_type": "surface"
+    },
+    {
+      "actor_name": "AF_Outpost_Tower",
+      "art_slot": "ArtSlot_BlackenedWood",
+      "coverage_area": "outpost",
+      "coverage_weight": 0.22,
+      "assignment_type": "surface"
+    },
+    {
+      "actor_name": "AF_Outpost_Storehouse",
+      "art_slot": "ArtSlot_WeatheredWall",
+      "coverage_area": "outpost",
+      "coverage_weight": 0.2,
+      "assignment_type": "surface"
+    },
+    {
+      "actor_name": "AF_Banner_Dustrunners_Outpost",
+      "art_slot": "ArtSlot_FactionBanner_03",
+      "coverage_area": "outpost",
+      "coverage_weight": 0.15,
+      "assignment_type": "banner",
+      "faction_id": "faction_dustrunners"
+    },
+    {
+      "actor_name": "AF_Decal_Outpost_Direction",
+      "art_slot": "ArtSlot_OutpostSignage",
+      "coverage_area": "outpost",
+      "coverage_weight": 0.14,
+      "assignment_type": "decal"
+    },
+    {
+      "actor_name": "AF_Decal_Outpost_Warehouse",
+      "art_slot": "ArtSlot_Decal_WarehouseMark",
+      "coverage_area": "outpost",
+      "coverage_weight": 0.14,
+      "assignment_type": "decal"
+    },
+    {
+      "actor_name": "zone_wilderness_yard",
+      "art_slot": "ArtSlot_DesertGround",
+      "coverage_area": "wilderness",
+      "coverage_weight": 0.2,
+      "assignment_type": "surface"
+    },
+    {
+      "actor_name": "AF_Wilderness_Work_Yard",
+      "art_slot": "ArtSlot_RustedMetal",
+      "coverage_area": "wilderness",
+      "coverage_weight": 0.2,
+      "assignment_type": "surface"
+    },
+    {
+      "actor_name": "AF_Wilderness_Scrap_Mine",
+      "art_slot": "ArtSlot_BoneCeramic",
+      "coverage_area": "wilderness",
+      "coverage_weight": 0.15,
+      "assignment_type": "surface"
+    },
+    {
+      "actor_name": "AF_Decal_Wilderness_Workshop",
+      "art_slot": "ArtSlot_Decal_WorkshopMark",
+      "coverage_area": "wilderness",
+      "coverage_weight": 0.15,
+      "assignment_type": "decal"
+    },
+    {
+      "actor_name": "AF_Decal_Wilderness_Water_Warning",
+      "art_slot": "ArtSlot_Decal_WaterWarning",
+      "coverage_area": "wilderness",
+      "coverage_weight": 0.15,
+      "assignment_type": "decal"
+    },
+    {
+      "actor_name": "AF_Decal_Wilderness_Danger",
+      "art_slot": "ArtSlot_Decal_WildDanger",
+      "coverage_area": "wilderness",
+      "coverage_weight": 0.15,
+      "assignment_type": "decal"
+    }
+  ]
+}

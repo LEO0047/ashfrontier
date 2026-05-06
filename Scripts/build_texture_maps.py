@@ -173,7 +173,7 @@ def write_report(rows: list[dict[str, Any]], errors: list[str], check_only: bool
         "",
         f"- 狀態：{'通過' if status == 'pass' else '失敗'}",
         f"- 模式：{'檢查' if check_only else '處理'}",
-        f"- 時間：{datetime.now().strftime('%Y-%m-%d %H:%M:%S %Z')}",
+        f"- 時間：{datetime.now().astimezone().strftime('%Y-%m-%d %H:%M:%S %Z')}",
         f"- 輸出數：{len(rows)}",
         f"- 問題數：{len(errors)}",
         "",

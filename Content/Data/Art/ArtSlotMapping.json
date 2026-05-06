@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "description_zh": "Ashfrontier v0.2 生成美術 ArtSlot 到 UE material instance 的資料驅動對應。",
+  "records": [
+    {
+      "slot_id": "ArtSlot_DesertGround",
+      "category": "surface",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_CrackedSand",
+      "usage": "主世界地表、主城地面、野外建造區"
+    },
+    {
+      "slot_id": "ArtSlot_RustedMetal",
+      "category": "surface",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_RustedMetal",
+      "usage": "城門護板、工坊、金屬補片"
+    },
+    {
+      "slot_id": "ArtSlot_SaltStoneWall",
+      "category": "surface",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_SaltStone",
+      "usage": "主城城牆與鹽蝕砂岩牆面"
+    },
+    {
+      "slot_id": "ArtSlot_SunBleachedCloth",
+      "category": "surface",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_SunBleachedCloth",
+      "usage": "棚布、臨時遮蔽物與布質標記"
+    },
+    {
+      "slot_id": "ArtSlot_BoneCeramic",
+      "category": "surface",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_BoneCeramic",
+      "usage": "荒野陶片飾件與標記"
+    },
+    {
+      "slot_id": "ArtSlot_BlackenedWood",
+      "category": "surface",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_BlackenedWood",
+      "usage": "前哨木板、倉庫與焦黑防線"
+    },
+    {
+      "slot_id": "ArtSlot_IndustrialFloor",
+      "category": "surface",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_IndustrialFloor",
+      "usage": "商店區、工坊地面與拼裝鐵板"
+    },
+    {
+      "slot_id": "ArtSlot_WeatheredWall",
+      "category": "surface",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_WeatheredWall",
+      "usage": "風化牆體與前哨牆面"
+    },
+    {
+      "slot_id": "ArtSlot_FactionBanner_01",
+      "category": "banner",
+      "faction_id": "faction_saltwardens",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Banner_Saltwardens",
+      "usage": "鹽脊守望場景旗幟"
+    },
+    {
+      "slot_id": "ArtSlot_FactionBanner_02",
+      "category": "banner",
+      "faction_id": "faction_glasshouse",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Banner_Glasshouse",
+      "usage": "玻璃屋商盟場景旗幟"
+    },
+    {
+      "slot_id": "ArtSlot_FactionBanner_03",
+      "category": "banner",
+      "faction_id": "faction_dustrunners",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Banner_Dustrunners",
+      "usage": "塵路行者場景旗幟"
+    },
+    {
+      "slot_id": "ArtSlot_CitySignage",
+      "category": "decal",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_GateMark",
+      "usage": "主城通用 signage"
+    },
+    {
+      "slot_id": "ArtSlot_OutpostSignage",
+      "category": "decal",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_BrokenDirection",
+      "usage": "前哨與野外通用 signage"
+    },
+    {
+      "slot_id": "ArtSlot_Decal_ShopSign",
+      "category": "decal",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_ShopSign",
+      "usage": "商店招牌"
+    },
+    {
+      "slot_id": "ArtSlot_Decal_RestrictedWarning",
+      "category": "decal",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_RestrictedWarning",
+      "usage": "禁區警告"
+    },
+    {
+      "slot_id": "ArtSlot_Decal_GuardNotice",
+      "category": "decal",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_GuardNotice",
+      "usage": "守衛告示"
+    },
+    {
+      "slot_id": "ArtSlot_Decal_BrokenDirection",
+      "category": "decal",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_BrokenDirection",
+      "usage": "破損方向牌"
+    },
+    {
+      "slot_id": "ArtSlot_Decal_WorkshopMark",
+      "category": "decal",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_WorkshopMark",
+      "usage": "工坊標誌"
+    },
+    {
+      "slot_id": "ArtSlot_Decal_WarehouseMark",
+      "category": "decal",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_WarehouseMark",
+      "usage": "倉庫標誌"
+    },
+    {
+      "slot_id": "ArtSlot_Decal_WaterWarning",
+      "category": "decal",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_WaterWarning",
+      "usage": "水源警告"
+    },
+    {
+      "slot_id": "ArtSlot_Decal_TradeNotice",
+      "category": "decal",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_TradeNotice",
+      "usage": "交易告示"
+    },
+    {
+      "slot_id": "ArtSlot_Decal_WildDanger",
+      "category": "decal",
+      "material_instance_path": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_WildDanger",
+      "usage": "荒野危險標記"
+    }
+  ]
+}

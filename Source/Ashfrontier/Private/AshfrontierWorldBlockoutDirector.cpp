@@ -2,13 +2,46 @@
 
 #include "AshfrontierRouteAgent.h"
 #include "Components/DirectionalLightComponent.h"
+#include "Components/DecalComponent.h"
 #include "Components/LightComponent.h"
 #include "Components/SkyLightComponent.h"
+#include "Dom/JsonObject.h"
+#include "Engine/DecalActor.h"
 #include "Engine/DirectionalLight.h"
 #include "Engine/SkyLight.h"
 #include "Components/StaticMeshComponent.h"
 #include "Engine/StaticMeshActor.h"
+#include "Misc/FileHelper.h"
+#include "Misc/Paths.h"
 #include "Materials/MaterialInstanceDynamic.h"
+#include "Serialization/JsonReader.h"
+#include "Serialization/JsonSerializer.h"
+
+namespace
+{
+bool LoadContentJsonObject(const FString& RelativePath, TSharedPtr<FJsonObject>& OutObject)
+{
+    const FString AbsolutePath = FPaths::Combine(FPaths::ProjectContentDir(), RelativePath);
+    FString JsonText;
+    if (!FFileHelper::LoadFileToString(JsonText, *AbsolutePath))
+    {
+        return false;
+    }
+
+    const TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(JsonText);
+    return FJsonSerializer::Deserialize(Reader, OutObject) && OutObject.IsValid();
+}
+
+bool ReadStringField(const TSharedPtr<FJsonObject>& Object, const FString& FieldName, FString& OutValue)
+{
+    if (!Object.IsValid() || !Object->HasTypedField<EJson::String>(FieldName))
+    {
+        return false;
+    }
+    OutValue = Object->GetStringField(FieldName);
+    return !OutValue.IsEmpty();
+}
+}
 
 AAshfrontierWorldBlockoutDirector::AAshfrontierWorldBlockoutDirector()
 {
@@ -21,8 +54,10 @@ void AAshfrontierWorldBlockoutDirector::BuildPrototypeWorld()
 
     CubeMesh = LoadObject<UStaticMesh>(nullptr, TEXT("/Engine/BasicShapes/Cube.Cube"));
     DefineWorldRecords();
+    LoadArtSlotData();
     SpawnStartupLighting();
     SpawnWorldGeometry();
+    SpawnWorldArtMarkers();
     SpawnRouteMarkers();
     SpawnRouteAgents();
 }
@@ -146,8 +181,30 @@ void AAshfrontierWorldBlockoutDirector::SpawnWorldGeometry()
     SpawnBlock(TEXT("AF_City_North_Wall"), FVector(0.0f, 690.0f, 90.0f), FVector(1900.0f, 90.0f, 240.0f), FLinearColor(0.35f, 0.34f, 0.3f, 1.0f));
     SpawnBlock(TEXT("AF_City_South_Wall"), FVector(0.0f, -690.0f, 90.0f), FVector(1900.0f, 90.0f, 240.0f), FLinearColor(0.35f, 0.34f, 0.3f, 1.0f));
     SpawnBlock(TEXT("AF_City_East_Gate_Block"), FVector(950.0f, 0.0f, 80.0f), FVector(90.0f, 380.0f, 220.0f), FLinearColor(0.36f, 0.33f, 0.28f, 1.0f));
+    SpawnBlock(TEXT("AF_City_Shop_District_Floor"), FVector(220.0f, 360.0f, 18.0f), FVector(620.0f, 360.0f, 55.0f), FLinearColor(0.28f, 0.27f, 0.23f, 1.0f));
+    SpawnBlock(TEXT("AF_City_Guard_Post"), FVector(-420.0f, -520.0f, 80.0f), FVector(320.0f, 120.0f, 170.0f), FLinearColor(0.24f, 0.25f, 0.28f, 1.0f));
     SpawnBlock(TEXT("AF_Outpost_Tower"), FVector(3000.0f, -350.0f, 140.0f), FVector(180.0f, 180.0f, 340.0f), FLinearColor(0.28f, 0.31f, 0.34f, 1.0f));
+    SpawnBlock(TEXT("AF_Outpost_Storehouse"), FVector(2820.0f, -170.0f, 55.0f), FVector(360.0f, 180.0f, 130.0f), FLinearColor(0.24f, 0.22f, 0.19f, 1.0f));
     SpawnBlock(TEXT("AF_Wilderness_Work_Yard"), FVector(1600.0f, 1800.0f, 60.0f), FVector(360.0f, 260.0f, 150.0f), FLinearColor(0.24f, 0.29f, 0.24f, 1.0f));
+    SpawnBlock(TEXT("AF_Wilderness_Scrap_Mine"), FVector(1280.0f, 1660.0f, 45.0f), FVector(260.0f, 220.0f, 120.0f), FLinearColor(0.27f, 0.24f, 0.2f, 1.0f));
+}
+
+void AAshfrontierWorldBlockoutDirector::SpawnWorldArtMarkers()
+{
+    SpawnBlock(TEXT("AF_Banner_Saltwardens_CityGate"), FVector(900.0f, -240.0f, 245.0f), FVector(28.0f, 140.0f, 180.0f), FLinearColor(0.62f, 0.64f, 0.58f, 1.0f));
+    SpawnBlock(TEXT("AF_Banner_Glasshouse_Market"), FVector(350.0f, 250.0f, 165.0f), FVector(28.0f, 150.0f, 160.0f), FLinearColor(0.58f, 0.42f, 0.22f, 1.0f));
+    SpawnBlock(TEXT("AF_Banner_Dustrunners_Outpost"), FVector(2860.0f, -500.0f, 165.0f), FVector(28.0f, 150.0f, 160.0f), FLinearColor(0.55f, 0.28f, 0.19f, 1.0f));
+
+    SpawnDecalMarker(TEXT("AF_Decal_City_Gate_Mark"), FVector(902.0f, 0.0f, 210.0f), FRotator(0.0f, 180.0f, 0.0f), FVector(48.0f, 260.0f, 260.0f), FLinearColor(0.7f, 0.68f, 0.56f, 1.0f));
+    SpawnDecalMarker(TEXT("AF_Decal_City_Restricted_Warning"), FVector(-420.0f, -588.0f, 155.0f), FRotator(0.0f, 180.0f, 0.0f), FVector(48.0f, 210.0f, 210.0f), FLinearColor(0.72f, 0.62f, 0.45f, 1.0f));
+    SpawnDecalMarker(TEXT("AF_Decal_City_Guard_Notice"), FVector(-250.0f, -588.0f, 155.0f), FRotator(0.0f, 180.0f, 0.0f), FVector(48.0f, 210.0f, 210.0f), FLinearColor(0.68f, 0.68f, 0.58f, 1.0f));
+    SpawnDecalMarker(TEXT("AF_Decal_City_Shop_Sign"), FVector(220.0f, 178.0f, 130.0f), FRotator(0.0f, 0.0f, 0.0f), FVector(48.0f, 220.0f, 220.0f), FLinearColor(0.75f, 0.55f, 0.32f, 1.0f));
+    SpawnDecalMarker(TEXT("AF_Decal_City_Trade_Notice"), FVector(360.0f, 178.0f, 130.0f), FRotator(0.0f, 0.0f, 0.0f), FVector(48.0f, 220.0f, 220.0f), FLinearColor(0.72f, 0.5f, 0.28f, 1.0f));
+    SpawnDecalMarker(TEXT("AF_Decal_Outpost_Direction"), FVector(2660.0f, -350.0f, 125.0f), FRotator(0.0f, 90.0f, 0.0f), FVector(48.0f, 210.0f, 210.0f), FLinearColor(0.58f, 0.46f, 0.32f, 1.0f));
+    SpawnDecalMarker(TEXT("AF_Decal_Outpost_Warehouse"), FVector(2820.0f, -264.0f, 110.0f), FRotator(0.0f, 180.0f, 0.0f), FVector(48.0f, 220.0f, 220.0f), FLinearColor(0.58f, 0.42f, 0.28f, 1.0f));
+    SpawnDecalMarker(TEXT("AF_Decal_Wilderness_Workshop"), FVector(1600.0f, 1668.0f, 120.0f), FRotator(0.0f, 180.0f, 0.0f), FVector(48.0f, 220.0f, 220.0f), FLinearColor(0.64f, 0.48f, 0.28f, 1.0f));
+    SpawnDecalMarker(TEXT("AF_Decal_Wilderness_Water_Warning"), FVector(1410.0f, 1840.0f, 105.0f), FRotator(0.0f, 90.0f, 0.0f), FVector(48.0f, 210.0f, 210.0f), FLinearColor(0.62f, 0.62f, 0.52f, 1.0f));
+    SpawnDecalMarker(TEXT("AF_Decal_Wilderness_Danger"), FVector(1250.0f, 1550.0f, 115.0f), FRotator(0.0f, 35.0f, 0.0f), FVector(48.0f, 230.0f, 230.0f), FLinearColor(0.65f, 0.36f, 0.25f, 1.0f));
 }
 
 void AAshfrontierWorldBlockoutDirector::SpawnRouteMarkers()
@@ -221,13 +278,133 @@ AActor* AAshfrontierWorldBlockoutDirector::SpawnBlock(const FName& ActorName, co
         MeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
         MeshComponent->SetCollisionResponseToAllChannels(ECR_Block);
         MeshComponent->SetMobility(EComponentMobility::Static);
-        if (UMaterialInstanceDynamic* Material = MeshComponent->CreateAndSetMaterialInstanceDynamic(0))
-        {
-            Material->SetVectorParameterValue(TEXT("Color"), DebugColor);
-            Material->SetVectorParameterValue(TEXT("BaseColor"), DebugColor);
-        }
+        ApplyArtSlotMaterial(MeshComponent, ActorName, DebugColor);
     }
 
     SpawnedActors.Add(Block);
     return Block;
+}
+
+AActor* AAshfrontierWorldBlockoutDirector::SpawnDecalMarker(const FName& ActorName, const FVector& Location, const FRotator& Rotation, const FVector& DecalSize, const FLinearColor& DebugColor)
+{
+    UWorld* World = GetWorld();
+    if (!World)
+    {
+        return nullptr;
+    }
+
+    FActorSpawnParameters SpawnParams;
+    SpawnParams.Owner = this;
+    SpawnParams.Name = ActorName;
+    SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+    ADecalActor* Decal = World->SpawnActor<ADecalActor>(ADecalActor::StaticClass(), Location, Rotation, SpawnParams);
+    if (!Decal)
+    {
+        return nullptr;
+    }
+
+    if (UDecalComponent* DecalComponent = Decal->GetDecal())
+    {
+        DecalComponent->DecalSize = DecalSize;
+        if (UMaterialInterface* Material = ResolveMaterialForSlot(FindArtSlotForActor(ActorName)))
+        {
+            DecalComponent->SetDecalMaterial(Material);
+        }
+        else if (UMaterialInstanceDynamic* DynamicMaterial = DecalComponent->CreateDynamicMaterialInstance())
+        {
+            DynamicMaterial->SetVectorParameterValue(TEXT("Color"), DebugColor);
+            DynamicMaterial->SetVectorParameterValue(TEXT("BaseColor"), DebugColor);
+        }
+    }
+
+    SpawnedActors.Add(Decal);
+    return Decal;
+}
+
+void AAshfrontierWorldBlockoutDirector::LoadArtSlotData()
+{
+    ArtSlotMaterialPaths.Reset();
+    ActorArtSlots.Reset();
+
+    TSharedPtr<FJsonObject> MappingRoot;
+    if (LoadContentJsonObject(TEXT("Data/Art/ArtSlotMapping.json"), MappingRoot))
+    {
+        const TArray<TSharedPtr<FJsonValue>>* Records = nullptr;
+        if (MappingRoot->TryGetArrayField(TEXT("records"), Records))
+        {
+            for (const TSharedPtr<FJsonValue>& Value : *Records)
+            {
+                const TSharedPtr<FJsonObject> Record = Value.IsValid() ? Value->AsObject() : nullptr;
+                FString SlotId;
+                FString MaterialPath;
+                if (ReadStringField(Record, TEXT("slot_id"), SlotId) && ReadStringField(Record, TEXT("material_instance_path"), MaterialPath))
+                {
+                    ArtSlotMaterialPaths.Add(FName(*SlotId), MaterialPath);
+                }
+            }
+        }
+    }
+
+    TSharedPtr<FJsonObject> AssignmentsRoot;
+    if (LoadContentJsonObject(TEXT("Data/Art/EnvironmentArtAssignments.json"), AssignmentsRoot))
+    {
+        const TArray<TSharedPtr<FJsonValue>>* Records = nullptr;
+        if (AssignmentsRoot->TryGetArrayField(TEXT("records"), Records))
+        {
+            for (const TSharedPtr<FJsonValue>& Value : *Records)
+            {
+                const TSharedPtr<FJsonObject> Record = Value.IsValid() ? Value->AsObject() : nullptr;
+                FString ActorName;
+                FString SlotId;
+                if (ReadStringField(Record, TEXT("actor_name"), ActorName) && ReadStringField(Record, TEXT("art_slot"), SlotId))
+                {
+                    ActorArtSlots.Add(FName(*ActorName), FName(*SlotId));
+                }
+            }
+        }
+    }
+}
+
+FName AAshfrontierWorldBlockoutDirector::FindArtSlotForActor(const FName& ActorName) const
+{
+    if (const FName* Slot = ActorArtSlots.Find(ActorName))
+    {
+        return *Slot;
+    }
+    return NAME_None;
+}
+
+UMaterialInterface* AAshfrontierWorldBlockoutDirector::ResolveMaterialForSlot(const FName& ArtSlot) const
+{
+    if (ArtSlot.IsNone())
+    {
+        return nullptr;
+    }
+    const FString* MaterialPath = ArtSlotMaterialPaths.Find(ArtSlot);
+    if (!MaterialPath || MaterialPath->IsEmpty())
+    {
+        return nullptr;
+    }
+    return LoadObject<UMaterialInterface>(nullptr, **MaterialPath);
+}
+
+void AAshfrontierWorldBlockoutDirector::ApplyArtSlotMaterial(UStaticMeshComponent* MeshComponent, const FName& ActorName, const FLinearColor& DebugColor) const
+{
+    if (!MeshComponent)
+    {
+        return;
+    }
+
+    if (UMaterialInterface* Material = ResolveMaterialForSlot(FindArtSlotForActor(ActorName)))
+    {
+        MeshComponent->SetMaterial(0, Material);
+        return;
+    }
+
+    if (UMaterialInstanceDynamic* DynamicMaterial = MeshComponent->CreateAndSetMaterialInstanceDynamic(0))
+    {
+        DynamicMaterial->SetVectorParameterValue(TEXT("Color"), DebugColor);
+        DynamicMaterial->SetVectorParameterValue(TEXT("BaseColor"), DebugColor);
+    }
 }

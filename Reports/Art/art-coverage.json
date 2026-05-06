@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "coverage": {
+    "main_city": 1.0500000000000003,
+    "outpost": 1.0,
+    "wilderness": 1.0,
+    "world": 1.0
+  },
+  "decal_count": 10,
+  "banner_factions": [
+    "faction_dustrunners",
+    "faction_glasshouse",
+    "faction_saltwardens"
+  ],
+  "assignments": 26,
+  "issues": []
+}

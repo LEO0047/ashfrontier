@@ -133,23 +133,31 @@ pass() {
     "Scripts/content_lint.py"
     "Scripts/art_prompt_lint.py"
     "Scripts/art_manifest_lint.py"
+    "Scripts/art_coverage_lint.py"
     "Scripts/build_texture_maps.py"
     "Scripts/generate_art_assets.sh"
     "Scripts/slice_generated_art_sheets.py"
     "Scripts/import_generated_art.sh"
+    "Scripts/apply_art_slots.sh"
     "Scripts/commit_gate.sh"
     ".gitattributes"
     "Content/Data/Art/ArtGenManifest.json"
+    "Content/Data/Art/ArtSlotMapping.json"
+    "Content/Data/Art/EnvironmentArtAssignments.json"
     "Reports/environment.md"
     "Reports/gate-00-report.md"
     "Reports/Art/gate-10-report.md"
     "Reports/Art/gate-11-report.md"
     "Reports/Art/gate-12-report.md"
     "Reports/Art/gate-13-report.md"
+    "Reports/Art/gate-14-report.md"
     "Reports/Art/generated-assets-inventory.md"
     "Reports/Art/texture-processing.md"
     "Reports/Art/import-generated-art.md"
+    "Reports/Art/art-coverage.md"
+    "Reports/Art/artslot-application.md"
     "Content/Python/import_generated_art.py"
+    "Content/Python/apply_art_slots.py"
     "Content/Data/Art/GeneratedMaterialInstances.json"
   )
 
@@ -271,6 +279,7 @@ PY
     "Scripts/create_gate01_map.sh"
     "Scripts/generate_art_assets.sh"
     "Scripts/import_generated_art.sh"
+    "Scripts/apply_art_slots.sh"
   )
   for script in "${SCRIPT_FILES[@]}"; do
     if [[ -x "$script" ]]; then
@@ -291,7 +300,7 @@ PY
     fail "Scripts/content_lint.py Python 語法失敗"
   fi
 
-  for py_script in Scripts/art_prompt_lint.py Scripts/art_manifest_lint.py Scripts/build_texture_maps.py Scripts/slice_generated_art_sheets.py Content/Python/import_generated_art.py; do
+  for py_script in Scripts/art_prompt_lint.py Scripts/art_manifest_lint.py Scripts/art_coverage_lint.py Scripts/build_texture_maps.py Scripts/slice_generated_art_sheets.py Content/Python/import_generated_art.py Content/Python/apply_art_slots.py; do
     if python3 -m py_compile "$py_script"; then
       pass "$py_script Python 語法通過"
     else
@@ -329,6 +338,22 @@ PY
     pass "import_generated_art.sh --smoke 通過"
   else
     fail "import_generated_art.sh --smoke 失敗"
+  fi
+
+  log ""
+  log "## Art Coverage Lint"
+  if python3 Scripts/art_coverage_lint.py; then
+    pass "art_coverage_lint.py 通過"
+  else
+    fail "art_coverage_lint.py 失敗"
+  fi
+
+  log ""
+  log "## ArtSlot Apply Smoke"
+  if ./Scripts/apply_art_slots.sh --smoke; then
+    pass "apply_art_slots.sh --smoke 通過"
+  else
+    fail "apply_art_slots.sh --smoke 失敗"
   fi
 
   log ""
