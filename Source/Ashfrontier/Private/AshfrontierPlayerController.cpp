@@ -4,11 +4,18 @@
 #include "AshfrontierCarrySystemComponent.h"
 #include "AshfrontierCharacter.h"
 #include "AshfrontierCombatResolverComponent.h"
+#include "AshfrontierBuildingPlacementSystemComponent.h"
+#include "AshfrontierConstructionSystemComponent.h"
 #include "AshfrontierDamageModelComponent.h"
+#include "AshfrontierInventoryComponent.h"
 #include "AshfrontierMedicalSystemComponent.h"
 #include "AshfrontierOrderSystemComponent.h"
+#include "AshfrontierPlacedBuilding.h"
+#include "AshfrontierProductionSystemComponent.h"
 #include "AshfrontierRecruitSystemComponent.h"
+#include "AshfrontierResourceNodeSystemComponent.h"
 #include "AshfrontierSquadManagerComponent.h"
+#include "AshfrontierStorageSystemComponent.h"
 #include "AshfrontierTradingSystemComponent.h"
 #include "Components/InputComponent.h"
 #include "InputCoreTypes.h"
@@ -26,6 +33,11 @@ AAshfrontierPlayerController::AAshfrontierPlayerController()
     MedicalSystem = CreateDefaultSubobject<UAshfrontierMedicalSystemComponent>(TEXT("MedicalSystem"));
     RecruitSystem = CreateDefaultSubobject<UAshfrontierRecruitSystemComponent>(TEXT("RecruitSystem"));
     TradingSystem = CreateDefaultSubobject<UAshfrontierTradingSystemComponent>(TEXT("TradingSystem"));
+    BuildingPlacementSystem = CreateDefaultSubobject<UAshfrontierBuildingPlacementSystemComponent>(TEXT("BuildingPlacementSystem"));
+    ConstructionSystem = CreateDefaultSubobject<UAshfrontierConstructionSystemComponent>(TEXT("ConstructionSystem"));
+    ResourceNodeSystem = CreateDefaultSubobject<UAshfrontierResourceNodeSystemComponent>(TEXT("ResourceNodeSystem"));
+    ProductionSystem = CreateDefaultSubobject<UAshfrontierProductionSystemComponent>(TEXT("ProductionSystem"));
+    StorageSystem = CreateDefaultSubobject<UAshfrontierStorageSystemComponent>(TEXT("StorageSystem"));
 }
 
 void AAshfrontierPlayerController::BeginPlay()
@@ -63,6 +75,9 @@ void AAshfrontierPlayerController::SetupInputComponent()
     InputComponent->BindAction(TEXT("MedicalOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleMedicalPressed);
     InputComponent->BindAction(TEXT("RecruitOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleRecruitPressed);
     InputComponent->BindAction(TEXT("TradeOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleTradePressed);
+    InputComponent->BindAction(TEXT("BuildOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleBuildPressed);
+    InputComponent->BindAction(TEXT("GatherOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleGatherPressed);
+    InputComponent->BindAction(TEXT("ProduceOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleProducePressed);
     InputComponent->BindAction(TEXT("SelectAllSquad"), IE_Pressed, this, &AAshfrontierPlayerController::HandleSelectAllPressed);
     InputComponent->BindAction(TEXT("SelectNextSquad"), IE_Pressed, this, &AAshfrontierPlayerController::HandleSelectNextPressed);
     InputComponent->BindAction(TEXT("ToggleTacticalCamera"), IE_Pressed, this, &AAshfrontierPlayerController::HandleToggleTacticalCamera);
@@ -110,6 +125,36 @@ UAshfrontierRecruitSystemComponent* AAshfrontierPlayerController::GetRecruitSyst
 UAshfrontierTradingSystemComponent* AAshfrontierPlayerController::GetTradingSystem() const
 {
     return TradingSystem;
+}
+
+UAshfrontierBuildingPlacementSystemComponent* AAshfrontierPlayerController::GetBuildingPlacementSystem() const
+{
+    return BuildingPlacementSystem;
+}
+
+UAshfrontierConstructionSystemComponent* AAshfrontierPlayerController::GetConstructionSystem() const
+{
+    return ConstructionSystem;
+}
+
+UAshfrontierResourceNodeSystemComponent* AAshfrontierPlayerController::GetResourceNodeSystem() const
+{
+    return ResourceNodeSystem;
+}
+
+UAshfrontierProductionSystemComponent* AAshfrontierPlayerController::GetProductionSystem() const
+{
+    return ProductionSystem;
+}
+
+UAshfrontierStorageSystemComponent* AAshfrontierPlayerController::GetStorageSystem() const
+{
+    return StorageSystem;
+}
+
+AAshfrontierPlacedBuilding* AAshfrontierPlayerController::GetLastPlacedBuilding() const
+{
+    return LastPlacedBuilding.Get();
 }
 
 void AAshfrontierPlayerController::HandleSelectPressed()
@@ -275,6 +320,82 @@ void AAshfrontierPlayerController::HandleTradePressed()
                 TradingSystem->BuyItem(Buyer, Seller, TEXT("item_field_bandage"), 1);
             }
         }
+    }
+}
+
+void AAshfrontierPlayerController::HandleBuildPressed()
+{
+    if (!SquadManager || !BuildingPlacementSystem || !ConstructionSystem)
+    {
+        return;
+    }
+
+    AAshfrontierCharacter* Builder = SquadManager->GetLeader();
+    if (!Builder)
+    {
+        return;
+    }
+
+    FVector BuildLocation(1600.0f, 1800.0f, 120.0f);
+    FHitResult Hit;
+    if (TraceCursor(Hit, ECC_Visibility))
+    {
+        BuildLocation = Hit.ImpactPoint;
+    }
+
+    if (AAshfrontierPlacedBuilding* Building = BuildingPlacementSystem->PlaceBuilding(Builder, TEXT("building_camp_kitchen"), BuildLocation, ConstructionSystem))
+    {
+        LastPlacedBuilding = Building;
+    }
+}
+
+void AAshfrontierPlayerController::HandleGatherPressed()
+{
+    if (!SquadManager || !ResourceNodeSystem)
+    {
+        return;
+    }
+
+    AAshfrontierCharacter* Gatherer = SquadManager->GetLeader();
+    if (!Gatherer || !Gatherer->GetInventory())
+    {
+        return;
+    }
+
+    FName ResourceId = TEXT("resource_brackish_water");
+    if (Gatherer->GetInventory()->GetItemCount(TEXT("item_salvaged_plank")) < 2)
+    {
+        ResourceId = TEXT("resource_salvage_wood");
+    }
+    else if (Gatherer->GetInventory()->GetItemCount(TEXT("item_scrap_ore")) < 1)
+    {
+        ResourceId = TEXT("resource_scrap_ore");
+    }
+    else if (Gatherer->GetInventory()->GetItemCount(TEXT("item_raw_grain")) < 2)
+    {
+        ResourceId = TEXT("resource_dry_grain");
+    }
+
+    ResourceNodeSystem->GatherResource(Gatherer, ResourceId, 1);
+}
+
+void AAshfrontierPlayerController::HandleProducePressed()
+{
+    if (!SquadManager || !ProductionSystem)
+    {
+        return;
+    }
+
+    AAshfrontierCharacter* Worker = SquadManager->GetLeader();
+    AAshfrontierPlacedBuilding* Building = LastPlacedBuilding.Get();
+    if (!Worker || !Building)
+    {
+        return;
+    }
+
+    if (ProductionSystem->EnqueueRecipe(Building, Worker, TEXT("recipe_grain_to_ration")))
+    {
+        ProductionSystem->CompleteNextProductionImmediately(Building, Worker);
     }
 }
 

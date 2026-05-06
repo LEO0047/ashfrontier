@@ -5,13 +5,19 @@
 #include "AshfrontierPlayerController.generated.h"
 
 class AAshfrontierCharacter;
+class AAshfrontierPlacedBuilding;
+class UAshfrontierBuildingPlacementSystemComponent;
 class UAshfrontierCameraControllerComponent;
 class UAshfrontierCarrySystemComponent;
 class UAshfrontierCombatResolverComponent;
+class UAshfrontierConstructionSystemComponent;
 class UAshfrontierMedicalSystemComponent;
 class UAshfrontierOrderSystemComponent;
+class UAshfrontierProductionSystemComponent;
 class UAshfrontierRecruitSystemComponent;
+class UAshfrontierResourceNodeSystemComponent;
 class UAshfrontierSquadManagerComponent;
+class UAshfrontierStorageSystemComponent;
 class UAshfrontierTradingSystemComponent;
 
 UCLASS()
@@ -30,6 +36,12 @@ public:
     UAshfrontierMedicalSystemComponent* GetMedicalSystem() const;
     UAshfrontierRecruitSystemComponent* GetRecruitSystem() const;
     UAshfrontierTradingSystemComponent* GetTradingSystem() const;
+    UAshfrontierBuildingPlacementSystemComponent* GetBuildingPlacementSystem() const;
+    UAshfrontierConstructionSystemComponent* GetConstructionSystem() const;
+    UAshfrontierResourceNodeSystemComponent* GetResourceNodeSystem() const;
+    UAshfrontierProductionSystemComponent* GetProductionSystem() const;
+    UAshfrontierStorageSystemComponent* GetStorageSystem() const;
+    AAshfrontierPlacedBuilding* GetLastPlacedBuilding() const;
 
 protected:
     virtual void BeginPlay() override;
@@ -44,6 +56,9 @@ private:
     void HandleMedicalPressed();
     void HandleRecruitPressed();
     void HandleTradePressed();
+    void HandleBuildPressed();
+    void HandleGatherPressed();
+    void HandleProducePressed();
     void HandleSelectAllPressed();
     void HandleSelectNextPressed();
     void HandleToggleTacticalCamera();
@@ -78,4 +93,22 @@ private:
 
     UPROPERTY(VisibleAnywhere, Category = "Trading")
     TObjectPtr<UAshfrontierTradingSystemComponent> TradingSystem;
+
+    UPROPERTY(VisibleAnywhere, Category = "Building")
+    TObjectPtr<UAshfrontierBuildingPlacementSystemComponent> BuildingPlacementSystem;
+
+    UPROPERTY(VisibleAnywhere, Category = "Building")
+    TObjectPtr<UAshfrontierConstructionSystemComponent> ConstructionSystem;
+
+    UPROPERTY(VisibleAnywhere, Category = "Building")
+    TObjectPtr<UAshfrontierResourceNodeSystemComponent> ResourceNodeSystem;
+
+    UPROPERTY(VisibleAnywhere, Category = "Building")
+    TObjectPtr<UAshfrontierProductionSystemComponent> ProductionSystem;
+
+    UPROPERTY(VisibleAnywhere, Category = "Building")
+    TObjectPtr<UAshfrontierStorageSystemComponent> StorageSystem;
+
+    UPROPERTY(Transient)
+    TWeakObjectPtr<AAshfrontierPlacedBuilding> LastPlacedBuilding;
 };

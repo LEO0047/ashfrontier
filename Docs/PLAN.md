@@ -131,8 +131,19 @@
 
 ## Gate 06 狀態
 
-- 狀態：本機 `./Scripts/validate.sh` 通過，等待 commit gate 執行最終 validate / commit / push。
+- 狀態：完成並已推送。
 - 目標：完成至少 4 名可招募角色、招募流程、角色庫存、價格資料與買賣流程。
 - 已完成：`UAshfrontierInventoryComponent`、`UAshfrontierRecruitSystemComponent`、`UAshfrontierTradingSystemComponent`、4 名可招募 NPC、1 名商人 NPC、灰印幣付款、物品買賣、`R` 招募、`T` 買繃帶與 `Ashfrontier.Economy.RecruitInventoryTrade` automation test。
 - 已驗證：`AshfrontierEditor` C++ build 通過；`Ashfrontier.Economy.RecruitInventoryTrade`、`Ashfrontier.Combat.DamageCarryMedical`、`Ashfrontier.World.BlockoutRoutes`、`Ashfrontier.Squad.OrderStateFlow`、`Ashfrontier.Data.ContentJsonLoads` 與 `Ashfrontier.Smoke.ModuleLoads` automation tests 通過；`./Scripts/validate.sh` 通過。
+- Gate commit：`38affe04c59eb5e407b73d65fa26eb4c24a132b2`。
+- Gate 06 推送狀態記錄 commit：`e4355aaaf92b5b1f64b0a1a1f6c5b8d9dccbd9b5`。
 - 已知限制：交易 UI 仍是按鍵 / 測試流程，尚未有正式商店面板；醫療消耗品與包紮成本會在後續 Gate 更嚴格整合。
+
+## Gate 07 狀態
+
+- 狀態：本機 `AshfrontierEditor` build 與 `./Scripts/run_tests.sh --smoke` 通過，等待完整 `./Scripts/validate.sh` 與 commit gate。
+- 目標：完成野外建造區建築放置、成本扣除、儲物、採集、食物鏈、金屬 / 建材鏈與生產隊列。
+- 已完成：`AAshfrontierPlacedBuilding`、`UAshfrontierBuildingPlacementSystemComponent`、`UAshfrontierConstructionSystemComponent`、`UAshfrontierResourceNodeSystemComponent`、`UAshfrontierStorageSystemComponent`、`UAshfrontierProductionSystemComponent`、`B` 建造、`G` 採集、`P` 生產與 `Ashfrontier.Building.ProductionFlow` automation test。
+- 已驗證：`AshfrontierEditor` C++ build 通過；smoke automation 7 項測試通過，包含 building / production、economy、combat、world、squad、data 與 smoke。
+- Playable milestone：Gate 07 結束後，Editor / PIE 內可完成「招募 → 交易 → 採集 → 建造 → 生產」流程。此 Gate 不宣稱 macOS packaged playable build 已完成。
+- 已知限制：建築與 recipe runtime 定義目前由 C++ 對齊 Gate 02 JSON ID；正式資料載入器與 SaveGame 版本化會在 Gate 09 前補強。

@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Ashfrontier.Gate" tests="6" failures="0" skipped="0">
+<testsuite name="Ashfrontier.Gate" tests="7" failures="0" skipped="0">
+  <testcase classname="UEAutomation" name="Ashfrontier.Building.ProductionFlow">
+  </testcase>
   <testcase classname="UEAutomation" name="Ashfrontier.Combat.DamageCarryMedical">
   </testcase>
   <testcase classname="UEAutomation" name="Ashfrontier.Data.ContentJsonLoads">

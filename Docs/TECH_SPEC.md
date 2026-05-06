@@ -168,3 +168,15 @@ SaveGame schema 必須包含 `schema_version`。Gate 09 前至少保存：
 - `AAshfrontierCharacter` Gate 06 起包含 inventory、recruitable、recruit cost 與 shopkeeper 狀態。
 - `AAshfrontierGameMode` Gate 06 會生成 4 名可招募角色與 1 名商人 placeholder。
 - `AAshfrontierPlayerController` 提供 `R` 招募與 `T` 交易測試入口。正式 UI 仍留待後續 Gate 改善。
+
+## Gate 07 基地建設與生產鏈
+
+- `FAshfrontierBuildingDefinition`、`FAshfrontierResourceDefinition` 與 `FAshfrontierRecipeDefinition` 是 Gate 07 runtime 使用的資料結構，ID 與 Gate 02 `Content/Data/*.json` 對齊。
+- `AAshfrontierPlacedBuilding` 是 runtime 建築 actor，保存 building id、名稱、類別、resource id、儲物 inventory 與 production queue。這些欄位會成為 Gate 09 SaveGame schema 的建築狀態基礎。
+- `UAshfrontierConstructionSystemComponent` 驗證並扣除建築成本。
+- `UAshfrontierBuildingPlacementSystemComponent` 限制建築只能放在 `wilderness_build_zone`，目前使用 Gate 04 裂土建造區座標作為 placement volume。
+- `UAshfrontierResourceNodeSystemComponent` 將 resource id 轉成可加入角色 inventory 的 item，並支援從採集型建築取得資源。
+- `UAshfrontierStorageSystemComponent` 支援角色 inventory 與建築儲物 inventory 的存取。
+- `UAshfrontierProductionSystemComponent` 支援 recipe station 檢查、輸入消耗、queue entry、工作時間推進與產物寫回 inventory。
+- `AAshfrontierPlayerController` Gate 07 提供 `G` 採集、`B` 建造營火灶、`P` 生產烤行糧的 debug / prototype 操作入口。
+- `Ashfrontier.Building.ProductionFlow` 驗證招募、交易、非法建造位置阻擋、建築成本扣除、採集、儲物、食物鏈與金屬 / 建材鏈。

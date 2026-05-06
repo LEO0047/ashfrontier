@@ -112,3 +112,18 @@ Gate 09 必須提供 5 分鐘 golden path，從新遊戲開始驗證：
   - 交易後物品不會重複生成。
 - `Scripts/run_tests.sh --smoke` 必須同時通過 economy、combat、world、squad、data 與 smoke tests。
 - Gate 06 的人工 playable smoke 重點是在 UE Editor / PIE 中用 `R` 招募 NPC，並用 `T` 與商人購買野外繃帶。
+
+## Gate 07 Building / Production Test 策略
+
+- UE automation test `Ashfrontier.Building.ProductionFlow` 必須驗證：
+  - 招募與交易可在基地流程前成立。
+  - 野外建造區外不可放置建築，且失敗不會扣除材料。
+  - 野外建造區內可放置營火灶、儲物箱、採集點與工坊。
+  - 建築成本會從角色 inventory 扣除。
+  - 資源採集會把對應 item 放入 inventory。
+  - 食物鏈 recipe 會消耗乾穀袋與鹹水壺，產出烤行糧。
+  - 金屬 / 建材鏈 recipe 會消耗碎鐵礦袋、粗鐵錠與回收木板，產出粗鐵錠與拼裝建材板。
+  - 生產隊列會新增、完成並清空。
+  - 儲物箱可存入與取出物品。
+- `Scripts/run_tests.sh --smoke` 必須同時通過 building / production、economy、combat、world、squad、data 與 smoke tests。
+- Gate 07 的人工 playable smoke 重點是在 UE Editor / PIE 中完成「招募 → 交易 → 採集 → 建造 → 生產」。目前操作入口為 `R`、`T`、`G`、`B`、`P`，正式 UI 仍留待後續 Gate。

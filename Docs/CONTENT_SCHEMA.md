@@ -119,6 +119,7 @@ UE automation test `Ashfrontier.Data.ContentJsonLoads` 會在 Editor automation 
 - `inputs` 與 `outputs` 必須引用存在的 item 或 resource。
 - `station_id` 必須引用存在的 building。
 - 不得形成 recipe 循環。
+- Gate 07 runtime 會把 recipe 轉成 production queue entry；queue 需保存 `recipe_id` 與剩餘工作秒數，Gate 09 SaveGame 必須保存並讀回。
 
 ## buildings
 
@@ -144,6 +145,7 @@ UE automation test `Ashfrontier.Data.ContentJsonLoads` 會在 Editor automation 
 - 建築成本 count 必須大於 0。
 - 建築成本必須引用存在的 item 或 resource。
 - 若填寫 `resource_id`，必須引用存在的 resource。
+- Gate 07 runtime 建築狀態至少包含 building id、位置、類別、儲物 inventory 與 production queue。Gate 09 SaveGame schema 必須保存這些欄位，避免讀檔後建築與生產隊列消失。
 
 ## npc_schedules
 
