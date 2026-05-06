@@ -1,9 +1,9 @@
 # 生成美術匯入報告
 
 - 狀態：通過
-- 時間：2026-05-06 23:15:25
+- 時間：2026-05-07 01:14:33
 - 匯入貼圖數：59
-- Material Instance 數：40
+- Material Instance 數：50
 - 問題數：0
 
 ## Master Materials
@@ -48,12 +48,22 @@
 | `af_v02_portrait_recruit_scout` | `portrait` | `/Game/GeneratedArt/Materials/MI_AfV02_Portrait_RecruitScout` | `/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitScout` |
 | `af_v02_portrait_recruit_mender` | `portrait` | `/Game/GeneratedArt/Materials/MI_AfV02_Portrait_RecruitMender` | `/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitMender` |
 | `af_v02_decal_shop_sign` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Decal_ShopSign` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_ShopSign` |
+| `af_v02_decal_shop_sign` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Signage_ShopSign` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_ShopSign` |
 | `af_v02_decal_restricted_warning` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Decal_RestrictedWarning` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_RestrictedWarning` |
+| `af_v02_decal_restricted_warning` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Signage_RestrictedWarning` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_RestrictedWarning` |
 | `af_v02_decal_guard_notice` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Decal_GuardNotice` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_GuardNotice` |
+| `af_v02_decal_guard_notice` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Signage_GuardNotice` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_GuardNotice` |
 | `af_v02_decal_broken_direction` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Decal_BrokenDirection` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_BrokenDirection` |
+| `af_v02_decal_broken_direction` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Signage_BrokenDirection` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_BrokenDirection` |
 | `af_v02_decal_workshop_mark` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Decal_WorkshopMark` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_WorkshopMark` |
+| `af_v02_decal_workshop_mark` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Signage_WorkshopMark` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_WorkshopMark` |
 | `af_v02_decal_warehouse_mark` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Decal_WarehouseMark` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_WarehouseMark` |
+| `af_v02_decal_warehouse_mark` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Signage_WarehouseMark` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_WarehouseMark` |
 | `af_v02_decal_water_warning` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Decal_WaterWarning` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_WaterWarning` |
+| `af_v02_decal_water_warning` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Signage_WaterWarning` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_WaterWarning` |
 | `af_v02_decal_trade_notice` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Decal_TradeNotice` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_TradeNotice` |
+| `af_v02_decal_trade_notice` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Signage_TradeNotice` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_TradeNotice` |
 | `af_v02_decal_gate_mark` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Decal_GateMark` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_GateMark` |
+| `af_v02_decal_gate_mark` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Signage_GateMark` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_GateMark` |
 | `af_v02_decal_wild_danger` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Decal_WildDanger` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_WildDanger` |
+| `af_v02_decal_wild_danger` | `decal_signage` | `/Game/GeneratedArt/Materials/MI_AfV02_Signage_WildDanger` | `/Game/GeneratedArt/Decals/T_AfV02_Decal_WildDanger` |

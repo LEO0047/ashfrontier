@@ -1,7 +1,7 @@
 {
   "status": "pass",
   "imported_textures": 59,
-  "material_instances": 40,
+  "material_instances": 50,
   "errors": [],
   "textures": [
     "/Game/GeneratedArt/Banners/T_AfV02_Banner_Dustrunners",
@@ -252,9 +252,21 @@
       "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_ShopSign"
     },
     {
+      "asset_id": "af_v02_decal_shop_sign",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Signage_ShopSign",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_ShopSign"
+    },
+    {
       "asset_id": "af_v02_decal_restricted_warning",
       "category": "decal_signage",
       "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_RestrictedWarning",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_RestrictedWarning"
+    },
+    {
+      "asset_id": "af_v02_decal_restricted_warning",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Signage_RestrictedWarning",
       "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_RestrictedWarning"
     },
     {
@@ -264,9 +276,21 @@
       "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_GuardNotice"
     },
     {
+      "asset_id": "af_v02_decal_guard_notice",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Signage_GuardNotice",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_GuardNotice"
+    },
+    {
       "asset_id": "af_v02_decal_broken_direction",
       "category": "decal_signage",
       "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_BrokenDirection",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_BrokenDirection"
+    },
+    {
+      "asset_id": "af_v02_decal_broken_direction",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Signage_BrokenDirection",
       "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_BrokenDirection"
     },
     {
@@ -276,9 +300,21 @@
       "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WorkshopMark"
     },
     {
+      "asset_id": "af_v02_decal_workshop_mark",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Signage_WorkshopMark",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WorkshopMark"
+    },
+    {
       "asset_id": "af_v02_decal_warehouse_mark",
       "category": "decal_signage",
       "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_WarehouseMark",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WarehouseMark"
+    },
+    {
+      "asset_id": "af_v02_decal_warehouse_mark",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Signage_WarehouseMark",
       "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WarehouseMark"
     },
     {
@@ -288,9 +324,21 @@
       "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WaterWarning"
     },
     {
+      "asset_id": "af_v02_decal_water_warning",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Signage_WaterWarning",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WaterWarning"
+    },
+    {
       "asset_id": "af_v02_decal_trade_notice",
       "category": "decal_signage",
       "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_TradeNotice",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_TradeNotice"
+    },
+    {
+      "asset_id": "af_v02_decal_trade_notice",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Signage_TradeNotice",
       "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_TradeNotice"
     },
     {
@@ -300,9 +348,21 @@
       "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_GateMark"
     },
     {
+      "asset_id": "af_v02_decal_gate_mark",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Signage_GateMark",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_GateMark"
+    },
+    {
       "asset_id": "af_v02_decal_wild_danger",
       "category": "decal_signage",
       "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_WildDanger",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WildDanger"
+    },
+    {
+      "asset_id": "af_v02_decal_wild_danger",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Signage_WildDanger",
       "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WildDanger"
     }
   ]

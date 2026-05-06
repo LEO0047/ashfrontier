@@ -141,6 +141,8 @@ pass() {
     "Scripts/slice_generated_art_sheets.py"
     "Scripts/import_generated_art.sh"
     "Scripts/apply_art_slots.sh"
+    "Scripts/capture_art_screenshots.sh"
+    "Scripts/screenshot_smoke_lint.py"
     "Scripts/commit_gate.sh"
     ".gitattributes"
     "Content/Data/Art/ArtGenManifest.json"
@@ -170,6 +172,11 @@ pass() {
     "Reports/Art/ui-art-application.md"
     "Reports/Art/visual-variant-lint.md"
     "Reports/Art/character-building-art-pass.md"
+    "Reports/Art/capture-art-screenshots.md"
+    "Reports/Art/screenshot-smoke.md"
+    "Reports/Art/visual-summary.md"
+    "Reports/Art/art-perf-impact.md"
+    "Reports/Art/gate-17-report.md"
     "Content/Python/import_generated_art.py"
     "Content/Python/apply_art_slots.py"
     "Content/Data/Art/GeneratedMaterialInstances.json"
@@ -240,6 +247,7 @@ pass() {
     "Content/Data/Art"
     "Docs/Art/Prompts"
     "Reports/Art"
+    "Reports/Art/Screenshots"
   )
 
   for dir in "${ART_DIRS[@]}"; do
@@ -294,6 +302,7 @@ PY
     "Scripts/generate_art_assets.sh"
     "Scripts/import_generated_art.sh"
     "Scripts/apply_art_slots.sh"
+    "Scripts/capture_art_screenshots.sh"
   )
   for script in "${SCRIPT_FILES[@]}"; do
     if [[ -x "$script" ]]; then
@@ -314,7 +323,7 @@ PY
     fail "Scripts/content_lint.py Python 語法失敗"
   fi
 
-  for py_script in Scripts/art_prompt_lint.py Scripts/art_manifest_lint.py Scripts/art_coverage_lint.py Scripts/ui_art_lint.py Scripts/visual_variant_lint.py Scripts/build_texture_maps.py Scripts/slice_generated_art_sheets.py Content/Python/import_generated_art.py Content/Python/apply_art_slots.py; do
+  for py_script in Scripts/art_prompt_lint.py Scripts/art_manifest_lint.py Scripts/art_coverage_lint.py Scripts/ui_art_lint.py Scripts/visual_variant_lint.py Scripts/build_texture_maps.py Scripts/slice_generated_art_sheets.py Scripts/screenshot_smoke_lint.py Content/Python/import_generated_art.py Content/Python/apply_art_slots.py; do
     if python3 -m py_compile "$py_script"; then
       pass "$py_script Python 語法通過"
     else
@@ -384,6 +393,22 @@ PY
     pass "apply_art_slots.sh --smoke 通過"
   else
     fail "apply_art_slots.sh --smoke 失敗"
+  fi
+
+  log ""
+  log "## Screenshot Smoke"
+  if ./Scripts/capture_art_screenshots.sh --smoke; then
+    pass "capture_art_screenshots.sh --smoke 通過"
+  else
+    fail "capture_art_screenshots.sh --smoke 失敗"
+  fi
+
+  log ""
+  log "## Art Perf Guard"
+  if ./Scripts/perf_capture.sh --gate17; then
+    pass "perf_capture.sh --gate17 通過"
+  else
+    fail "perf_capture.sh --gate17 失敗"
   fi
 
   log ""

@@ -4,10 +4,12 @@
 #include "Components/DirectionalLightComponent.h"
 #include "Components/DecalComponent.h"
 #include "Components/LightComponent.h"
+#include "Components/SkyAtmosphereComponent.h"
 #include "Components/SkyLightComponent.h"
 #include "Dom/JsonObject.h"
 #include "Engine/DecalActor.h"
 #include "Engine/DirectionalLight.h"
+#include "Engine/ExponentialHeightFog.h"
 #include "Engine/SkyLight.h"
 #include "Components/StaticMeshComponent.h"
 #include "Engine/StaticMeshActor.h"
@@ -53,6 +55,7 @@ void AAshfrontierWorldBlockoutDirector::BuildPrototypeWorld()
     DestroySpawnedBlockout();
 
     CubeMesh = LoadObject<UStaticMesh>(nullptr, TEXT("/Engine/BasicShapes/Cube.Cube"));
+    PlaneMesh = LoadObject<UStaticMesh>(nullptr, TEXT("/Engine/BasicShapes/Plane.Plane"));
     DefineWorldRecords();
     LoadArtSlotData();
     SpawnStartupLighting();
@@ -141,6 +144,18 @@ void AAshfrontierWorldBlockoutDirector::SpawnStartupLighting()
     SpawnParams.Owner = this;
     SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 
+    SpawnParams.Name = TEXT("AF_Startup_SkyAtmosphere");
+    if (ASkyAtmosphere* Atmosphere = World->SpawnActor<ASkyAtmosphere>(ASkyAtmosphere::StaticClass(), FVector::ZeroVector, FRotator::ZeroRotator, SpawnParams))
+    {
+        SpawnedActors.Add(Atmosphere);
+    }
+
+    SpawnParams.Name = TEXT("AF_Startup_DustHaze");
+    if (AExponentialHeightFog* Fog = World->SpawnActor<AExponentialHeightFog>(AExponentialHeightFog::StaticClass(), FVector::ZeroVector, FRotator::ZeroRotator, SpawnParams))
+    {
+        SpawnedActors.Add(Fog);
+    }
+
     SpawnParams.Name = TEXT("AF_Startup_Sun");
     ADirectionalLight* Sun = World->SpawnActor<ADirectionalLight>(ADirectionalLight::StaticClass(), FVector(-1600.0f, -1400.0f, 2200.0f), FRotator(-52.0f, -35.0f, 0.0f), SpawnParams);
     if (Sun)
@@ -160,8 +175,8 @@ void AAshfrontierWorldBlockoutDirector::SpawnStartupLighting()
     {
         if (USkyLightComponent* LightComponent = SkyLight->GetLightComponent())
         {
-            LightComponent->SetIntensity(1.25f);
-            LightComponent->SetLightColor(FLinearColor(0.74f, 0.82f, 1.0f, 1.0f));
+            LightComponent->SetIntensity(2.2f);
+            LightComponent->SetLightColor(FLinearColor(0.86f, 0.88f, 0.78f, 1.0f));
             LightComponent->SetCastShadows(false);
             LightComponent->RecaptureSky();
         }
@@ -194,6 +209,15 @@ void AAshfrontierWorldBlockoutDirector::SpawnWorldArtMarkers()
     SpawnBlock(TEXT("AF_Banner_Saltwardens_CityGate"), FVector(900.0f, -240.0f, 245.0f), FVector(28.0f, 140.0f, 180.0f), FLinearColor(0.62f, 0.64f, 0.58f, 1.0f));
     SpawnBlock(TEXT("AF_Banner_Glasshouse_Market"), FVector(350.0f, 250.0f, 165.0f), FVector(28.0f, 150.0f, 160.0f), FLinearColor(0.58f, 0.42f, 0.22f, 1.0f));
     SpawnBlock(TEXT("AF_Banner_Dustrunners_Outpost"), FVector(2860.0f, -500.0f, 165.0f), FVector(28.0f, 150.0f, 160.0f), FLinearColor(0.55f, 0.28f, 0.19f, 1.0f));
+
+    SpawnArtPlane(TEXT("AF_ArtPlane_Banner_Saltwardens_CityGate"), FVector(880.0f, -250.0f, 285.0f), FVector(-900.0f, -1260.0f, 470.0f), FVector2D(145.0f, 220.0f), TEXT("ArtSlot_FactionBanner_01"), FLinearColor(0.62f, 0.64f, 0.58f, 1.0f));
+    SpawnArtPlane(TEXT("AF_ArtPlane_Banner_Glasshouse_Market"), FVector(350.0f, 250.0f, 215.0f), FVector(-250.0f, 920.0f, 430.0f), FVector2D(150.0f, 210.0f), TEXT("ArtSlot_FactionBanner_02"), FLinearColor(0.58f, 0.42f, 0.22f, 1.0f));
+    SpawnArtPlane(TEXT("AF_ArtPlane_Banner_Dustrunners_Outpost"), FVector(2860.0f, -500.0f, 220.0f), FVector(2300.0f, -1080.0f, 440.0f), FVector2D(150.0f, 210.0f), TEXT("ArtSlot_FactionBanner_03"), FLinearColor(0.55f, 0.28f, 0.19f, 1.0f));
+    SpawnArtPlane(TEXT("AF_ArtPlane_City_Gate_Mark"), FVector(905.0f, -20.0f, 245.0f), FVector(-900.0f, -1260.0f, 470.0f), FVector2D(190.0f, 190.0f), TEXT("ArtSlot_CitySignage"), FLinearColor(0.7f, 0.68f, 0.56f, 1.0f));
+    SpawnArtPlane(TEXT("AF_ArtPlane_City_Shop_Sign"), FVector(220.0f, 178.0f, 155.0f), FVector(-250.0f, 920.0f, 430.0f), FVector2D(180.0f, 180.0f), TEXT("ArtSlot_Decal_ShopSign"), FLinearColor(0.75f, 0.55f, 0.32f, 1.0f));
+    SpawnArtPlane(TEXT("AF_ArtPlane_Outpost_Warehouse"), FVector(2820.0f, -264.0f, 150.0f), FVector(2300.0f, -1080.0f, 440.0f), FVector2D(190.0f, 190.0f), TEXT("ArtSlot_Decal_WarehouseMark"), FLinearColor(0.58f, 0.42f, 0.28f, 1.0f));
+    SpawnArtPlane(TEXT("AF_ArtPlane_Wilderness_Workshop"), FVector(1600.0f, 1668.0f, 165.0f), FVector(820.0f, 1020.0f, 520.0f), FVector2D(190.0f, 190.0f), TEXT("ArtSlot_Decal_WorkshopMark"), FLinearColor(0.64f, 0.48f, 0.28f, 1.0f));
+    SpawnArtPlane(TEXT("AF_ArtPlane_Wilderness_Danger"), FVector(1250.0f, 1550.0f, 160.0f), FVector(820.0f, 1020.0f, 520.0f), FVector2D(190.0f, 190.0f), TEXT("ArtSlot_Decal_WildDanger"), FLinearColor(0.65f, 0.36f, 0.25f, 1.0f));
 
     SpawnDecalMarker(TEXT("AF_Decal_City_Gate_Mark"), FVector(902.0f, 0.0f, 210.0f), FRotator(0.0f, 180.0f, 0.0f), FVector(48.0f, 260.0f, 260.0f), FLinearColor(0.7f, 0.68f, 0.56f, 1.0f));
     SpawnDecalMarker(TEXT("AF_Decal_City_Restricted_Warning"), FVector(-420.0f, -588.0f, 155.0f), FRotator(0.0f, 180.0f, 0.0f), FVector(48.0f, 210.0f, 210.0f), FLinearColor(0.72f, 0.62f, 0.45f, 1.0f));
@@ -322,6 +346,50 @@ AActor* AAshfrontierWorldBlockoutDirector::SpawnDecalMarker(const FName& ActorNa
     return Decal;
 }
 
+AActor* AAshfrontierWorldBlockoutDirector::SpawnArtPlane(const FName& ActorName, const FVector& Location, const FVector& Target, const FVector2D& Size, const FName& ArtSlot, const FLinearColor& DebugColor)
+{
+    UWorld* World = GetWorld();
+    if (!World || !PlaneMesh)
+    {
+        return nullptr;
+    }
+
+    FActorSpawnParameters SpawnParams;
+    SpawnParams.Owner = this;
+    SpawnParams.Name = ActorName;
+    SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+    const FVector Facing = (Target - Location).GetSafeNormal();
+    const FRotator Rotation = FRotationMatrix::MakeFromZ(Facing.IsNearlyZero() ? FVector::UpVector : Facing).Rotator();
+    AStaticMeshActor* Plane = World->SpawnActor<AStaticMeshActor>(AStaticMeshActor::StaticClass(), Location, Rotation, SpawnParams);
+    if (!Plane)
+    {
+        return nullptr;
+    }
+
+    Plane->SetActorScale3D(FVector(Size.X / 100.0f, Size.Y / 100.0f, 1.0f));
+    UStaticMeshComponent* MeshComponent = Plane->GetStaticMeshComponent();
+    if (MeshComponent)
+    {
+        MeshComponent->SetStaticMesh(PlaneMesh);
+        MeshComponent->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+        MeshComponent->SetCastShadow(false);
+        MeshComponent->SetMobility(EComponentMobility::Static);
+        if (UMaterialInterface* Material = ResolvePlaneMaterialForSlot(ArtSlot))
+        {
+            MeshComponent->SetMaterial(0, Material);
+        }
+        else if (UMaterialInstanceDynamic* DynamicMaterial = MeshComponent->CreateAndSetMaterialInstanceDynamic(0))
+        {
+            DynamicMaterial->SetVectorParameterValue(TEXT("Color"), DebugColor);
+            DynamicMaterial->SetVectorParameterValue(TEXT("BaseColor"), DebugColor);
+        }
+    }
+
+    SpawnedActors.Add(Plane);
+    return Plane;
+}
+
 void AAshfrontierWorldBlockoutDirector::LoadArtSlotData()
 {
     ArtSlotMaterialPaths.Reset();
@@ -387,6 +455,21 @@ UMaterialInterface* AAshfrontierWorldBlockoutDirector::ResolveMaterialForSlot(co
         return nullptr;
     }
     return LoadObject<UMaterialInterface>(nullptr, **MaterialPath);
+}
+
+UMaterialInterface* AAshfrontierWorldBlockoutDirector::ResolvePlaneMaterialForSlot(const FName& ArtSlot) const
+{
+    const FString* MaterialPath = ArtSlotMaterialPaths.Find(ArtSlot);
+    if (MaterialPath && MaterialPath->Contains(TEXT("MI_AfV02_Decal_")))
+    {
+        FString PlaneMaterialPath = *MaterialPath;
+        PlaneMaterialPath.ReplaceInline(TEXT("MI_AfV02_Decal_"), TEXT("MI_AfV02_Signage_"));
+        if (UMaterialInterface* PlaneMaterial = LoadObject<UMaterialInterface>(nullptr, *PlaneMaterialPath))
+        {
+            return PlaneMaterial;
+        }
+    }
+    return ResolveMaterialForSlot(ArtSlot);
 }
 
 void AAshfrontierWorldBlockoutDirector::ApplyArtSlotMaterial(UStaticMeshComponent* MeshComponent, const FName& ActorName, const FLinearColor& DebugColor) const

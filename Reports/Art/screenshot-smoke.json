@@ -1,0 +1,94 @@
+{
+  "status": "pass",
+  "images": [
+    {
+      "path": "Reports/Art/Screenshots/01_main_city_entrance.png",
+      "readable": true,
+      "width": 1280,
+      "height": 720,
+      "brightness": 90.01,
+      "dynamic_range": 213,
+      "dark_ratio": 0.1367,
+      "gray_ratio": 0.0056,
+      "low_saturation_ratio": 0.5554
+    },
+    {
+      "path": "Reports/Art/Screenshots/02_main_city_market.png",
+      "readable": true,
+      "width": 1280,
+      "height": 720,
+      "brightness": 87.52,
+      "dynamic_range": 213,
+      "dark_ratio": 0.0872,
+      "gray_ratio": 0.0279,
+      "low_saturation_ratio": 0.3998
+    },
+    {
+      "path": "Reports/Art/Screenshots/03_guard_patrol.png",
+      "readable": true,
+      "width": 1280,
+      "height": 720,
+      "brightness": 70.54,
+      "dynamic_range": 208,
+      "dark_ratio": 0.0194,
+      "gray_ratio": 0.0019,
+      "low_saturation_ratio": 0.4487
+    },
+    {
+      "path": "Reports/Art/Screenshots/04_outpost_exterior.png",
+      "readable": true,
+      "width": 1280,
+      "height": 720,
+      "brightness": 87.01,
+      "dynamic_range": 212,
+      "dark_ratio": 0.0409,
+      "gray_ratio": 0.0,
+      "low_saturation_ratio": 0.4608
+    },
+    {
+      "path": "Reports/Art/Screenshots/05_wilderness_build_zone.png",
+      "readable": true,
+      "width": 1280,
+      "height": 720,
+      "brightness": 82.23,
+      "dynamic_range": 210,
+      "dark_ratio": 0.0222,
+      "gray_ratio": 0.0006,
+      "low_saturation_ratio": 0.4614
+    },
+    {
+      "path": "Reports/Art/Screenshots/06_recruit_ui.png",
+      "readable": true,
+      "width": 1280,
+      "height": 720,
+      "brightness": 56.64,
+      "dynamic_range": 255,
+      "dark_ratio": 0.108,
+      "gray_ratio": 0.0235,
+      "low_saturation_ratio": 0.579
+    },
+    {
+      "path": "Reports/Art/Screenshots/07_trade_ui.png",
+      "readable": true,
+      "width": 1280,
+      "height": 720,
+      "brightness": 48.89,
+      "dynamic_range": 255,
+      "dark_ratio": 0.1328,
+      "gray_ratio": 0.0159,
+      "low_saturation_ratio": 0.6182
+    },
+    {
+      "path": "Reports/Art/Screenshots/08_inventory_ui.png",
+      "readable": true,
+      "width": 1280,
+      "height": 720,
+      "brightness": 50.65,
+      "dynamic_range": 255,
+      "dark_ratio": 0.0746,
+      "gray_ratio": 0.0192,
+      "low_saturation_ratio": 0.6577
+    }
+  ],
+  "issues": []
+}

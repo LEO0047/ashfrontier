@@ -100,6 +100,8 @@ def create_master_materials() -> dict[str, unreal.Material]:
         if key == "decal":
             set_if_possible(material, "material_domain", unreal.MaterialDomain.MD_DEFERRED_DECAL)
             set_if_possible(material, "blend_mode", unreal.BlendMode.BLEND_TRANSLUCENT)
+        elif key == "banner":
+            set_if_possible(material, "two_sided", True)
         elif key == "ui":
             set_if_possible(material, "material_domain", unreal.MaterialDomain.MD_UI)
             set_if_possible(material, "blend_mode", unreal.BlendMode.BLEND_TRANSLUCENT)
@@ -115,12 +117,19 @@ def create_master_materials() -> dict[str, unreal.Material]:
 def add_texture_parameter_graph(material: unreal.Material, key: str) -> None:
     expressions = unreal.MaterialEditingLibrary.get_material_expressions(material)
     if expressions:
+        if key == "banner":
+            for expression in expressions:
+                if getattr(expression, "parameter_name", None) == "BaseColorTexture":
+                    unreal.MaterialEditingLibrary.connect_material_property(expression, "RGB", unreal.MaterialProperty.MP_EMISSIVE_COLOR)
+            unreal.MaterialEditingLibrary.recompile_material(material)
         return
     base = unreal.MaterialEditingLibrary.create_material_expression(
         material, unreal.MaterialExpressionTextureSampleParameter2D, -420, -80
     )
     base.set_editor_property("parameter_name", "BaseColorTexture")
     unreal.MaterialEditingLibrary.connect_material_property(base, "RGB", unreal.MaterialProperty.MP_BASE_COLOR)
+    if key == "banner":
+        unreal.MaterialEditingLibrary.connect_material_property(base, "RGB", unreal.MaterialProperty.MP_EMISSIVE_COLOR)
     if key == "surface":
         rough = unreal.MaterialEditingLibrary.create_material_expression(
             material, unreal.MaterialExpressionTextureSampleParameter2D, -420, 120
@@ -175,7 +184,17 @@ def create_instances(records: list[dict[str, Any]], masters: dict[str, unreal.Ma
             tex_name = record["ue_import_path"].rsplit("/", 1)[-1]
             name = "MI_" + tex_name.removeprefix("T_")
             paths = {"BaseColorTexture": record["ue_import_path"]}
-            parent = masters["decal"]
+            decal_instance = create_material_instance(name, masters["decal"], paths)
+            rows.append(
+                {
+                    "asset_id": record["asset_id"],
+                    "category": category,
+                    "material_instance": decal_instance.get_path_name().split(".", 1)[0],
+                    "primary_texture": next(iter(paths.values())),
+                }
+            )
+            name = name.replace("MI_AfV02_Decal_", "MI_AfV02_Signage_", 1)
+            parent = masters["banner"]
         elif category == "banner":
             tex_name = record["ue_import_path"].rsplit("/", 1)[-1]
             name = "MI_" + tex_name.removeprefix("T_")

@@ -1,6 +1,6 @@
 # Gate 驗證摘要
 
-- 時間：2026-05-07 00:07:56 CST
+- 時間：2026-05-07 01:23:56 CST
 - 專案根目錄：/Users/leo/Library/Mobile Documents/com~apple~CloudDocs/Coding/Projects/Ashfrontier
 
 ## Git
@@ -51,6 +51,8 @@
 - 通過：Scripts/slice_generated_art_sheets.py 存在
 - 通過：Scripts/import_generated_art.sh 存在
 - 通過：Scripts/apply_art_slots.sh 存在
+- 通過：Scripts/capture_art_screenshots.sh 存在
+- 通過：Scripts/screenshot_smoke_lint.py 存在
 - 通過：Scripts/commit_gate.sh 存在
 - 通過：.gitattributes 存在
 - 通過：Content/Data/Art/ArtGenManifest.json 存在
@@ -80,6 +82,11 @@
 - 通過：Reports/Art/ui-art-application.md 存在
 - 通過：Reports/Art/visual-variant-lint.md 存在
 - 通過：Reports/Art/character-building-art-pass.md 存在
+- 通過：Reports/Art/capture-art-screenshots.md 存在
+- 通過：Reports/Art/screenshot-smoke.md 存在
+- 通過：Reports/Art/visual-summary.md 存在
+- 通過：Reports/Art/art-perf-impact.md 存在
+- 通過：Reports/Art/gate-17-report.md 存在
 - 通過：Content/Python/import_generated_art.py 存在
 - 通過：Content/Python/apply_art_slots.py 存在
 - 通過：Content/Data/Art/GeneratedMaterialInstances.json 存在
@@ -121,6 +128,7 @@
 - 通過：Content/Data/Art 目錄存在
 - 通過：Docs/Art/Prompts 目錄存在
 - 通過：Reports/Art 目錄存在
+- 通過：Reports/Art/Screenshots 目錄存在
 
 ## 繁體中文文件檢查
 - 通過：中文文件基本檢查通過
@@ -146,6 +154,8 @@
 - 通過：Scripts/import_generated_art.sh bash 語法通過
 - 通過：Scripts/apply_art_slots.sh 可執行
 - 通過：Scripts/apply_art_slots.sh bash 語法通過
+- 通過：Scripts/capture_art_screenshots.sh 可執行
+- 通過：Scripts/capture_art_screenshots.sh bash 語法通過
 - 通過：Scripts/content_lint.py Python 語法通過
 - 通過：Scripts/art_prompt_lint.py Python 語法通過
 - 通過：Scripts/art_manifest_lint.py Python 語法通過
@@ -154,6 +164,7 @@
 - 通過：Scripts/visual_variant_lint.py Python 語法通過
 - 通過：Scripts/build_texture_maps.py Python 語法通過
 - 通過：Scripts/slice_generated_art_sheets.py Python 語法通過
+- 通過：Scripts/screenshot_smoke_lint.py Python 語法通過
 - 通過：Content/Python/import_generated_art.py Python 語法通過
 - 通過：Content/Python/apply_art_slots.py Python 語法通過
 
@@ -181,6 +192,12 @@ UE 生成美術匯入 smoke check 通過
 
 ## ArtSlot Apply Smoke
 - 通過：apply_art_slots.sh --smoke 通過
+
+## Screenshot Smoke
+- 通過：capture_art_screenshots.sh --smoke 通過
+
+## Art Perf Guard
+- 通過：perf_capture.sh --gate17 通過
 
 ## Content Lint
 - 通過：content_lint.py 通過
@@ -216,9 +233,9 @@ Store settings (/Users/leo/UnrealEngine/UnrealTrace/Settings.ini):
  - Sponsored mode: 1
  - Directory: '/Users/leo/UnrealEngine/UnrealTrace/Store/001'
 Watcher enabled on /Users/leo/UnrealEngine/UnrealTrace/Store/001
-Signalling parent 50266
+Signalling parent 48290
 Terminating server, no sponsors or connections active.
-Listening cancelled, closing port...
-Listening cancelled, closing port...
 Received signal 15
 Daemon is exiting without errors.
+Listening cancelled, closing port...
+Listening cancelled, closing port...
