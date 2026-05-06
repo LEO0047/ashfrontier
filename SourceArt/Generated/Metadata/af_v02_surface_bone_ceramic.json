@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_surface_bone_ceramic",
+  "category": "surface_texture",
+  "prompt": "可近似無縫重複的骨質陶片 PBR base texture，灰白陶片，粗糙孔洞，繩結刮痕，手工拼接感，適合荒野飾件與標記。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代瓷磚、華麗花瓶、真人骨骼造型。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:21.210040+00:00",
+  "selected_reason": "骨質陶片保留手工拼接感，可做荒野裝飾材質。",
+  "output_path": "SourceArt/Generated/Textures/af_v02_surface_bone_ceramic.png",
+  "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_BoneCeramic_BaseColor",
+  "usage_target": [
+    "ArtSlot_BoneCeramic"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

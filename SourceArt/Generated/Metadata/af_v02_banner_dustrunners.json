@@ -1,0 +1,17 @@
+{
+  "asset_id": "af_v02_banner_dustrunners",
+  "category": "banner",
+  "prompt": "1024x1024 派系旗幟貼圖，塵路行者，日曬紅布與風沙褐色塊，斜線裂片、繩結與陶片符號，破損邊緣，適合荒野前哨旗幟材質。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實國旗、現代戶外品牌旗。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:27.430562+00:00",
+  "selected_reason": "塵路行者旗幟有日曬紅布與荒野裂片輪廓。",
+  "output_path": "SourceArt/Generated/Banners/af_v02_banner_dustrunners.png",
+  "ue_import_path": "/Game/GeneratedArt/Banners/T_AfV02_Banner_Dustrunners",
+  "usage_target": [
+    "ArtSlot_FactionBanner_03",
+    "faction_dustrunners"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Banners/af_v02_sheet_banners.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

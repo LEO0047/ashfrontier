@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_icon_scrap_ore",
+  "category": "ui_icon",
+  "prompt": "512x512 遊戲 UI icon，碎鐵礦袋，粗布袋中露出暗鐵礦塊，氧化邊緣，清楚剪影，小尺寸可讀。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、閃亮寶石、現代採礦標誌。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:23.345885+00:00",
+  "selected_reason": "碎鐵礦袋可辨識為礦石材料。",
+  "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_scrap_ore.png",
+  "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_ScrapOre",
+  "usage_target": [
+    "item_scrap_ore"
+  ],
+  "source_sheet_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

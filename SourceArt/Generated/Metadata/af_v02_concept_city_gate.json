@@ -1,0 +1,17 @@
+{
+  "asset_id": "af_v02_concept_city_gate",
+  "category": "concept",
+  "prompt": "Ashfrontier 主城入口概念圖，荒漠邊境城門，鹽蝕砂岩牆，暗鐵護板，日曬布旗，低科技高磨損，清楚呈現可套用材質與場景告示的位置。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、過度乾淨表面、霓虹科幻、真人照片。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:17.088909+00:00",
+  "selected_reason": "主城入口概念圖有清楚城門、旗幟、砂岩與告示套用位置。",
+  "output_path": "SourceArt/Generated/Concepts/af_v02_concept_city_gate.png",
+  "ue_import_path": "/Game/GeneratedArt/Concepts/T_AfV02_Concept_CityGate",
+  "usage_target": [
+    "主城入口固定相機",
+    "ArtSlot_CitySignage"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Concepts/af_v02_sheet_concepts.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

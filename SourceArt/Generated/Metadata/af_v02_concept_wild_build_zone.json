@@ -1,0 +1,17 @@
+{
+  "asset_id": "af_v02_concept_wild_build_zone",
+  "category": "concept",
+  "prompt": "Ashfrontier 野外建造區概念圖，乾裂泥地，拼裝建材，焦黑木材，簡易工坊，水源警告與荒野危險標記，視覺清楚但不追求最終量產精度。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、過度乾淨表面、霓虹科幻、真人照片。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:18.293827+00:00",
+  "selected_reason": "野外建造區概念圖有地表、工坊與危險標記方向。",
+  "output_path": "SourceArt/Generated/Concepts/af_v02_concept_wild_build_zone.png",
+  "ue_import_path": "/Game/GeneratedArt/Concepts/T_AfV02_Concept_WildBuildZone",
+  "usage_target": [
+    "野外建造區固定相機",
+    "ArtSlot_DesertGround"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Concepts/af_v02_sheet_concepts.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_icon_crude_ingot",
+  "category": "ui_icon",
+  "prompt": "512x512 遊戲 UI icon，粗鐵錠，手工澆鑄金屬錠，粗糙邊緣與鐵鏽，清楚輪廓，小尺寸可讀。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、金條、乾淨鏡面金屬。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:23.560670+00:00",
+  "selected_reason": "粗鐵錠形狀單純，適合 inventory。",
+  "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_crude_ingot.png",
+  "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_CrudeIngot",
+  "usage_target": [
+    "item_crude_ingot"
+  ],
+  "source_sheet_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

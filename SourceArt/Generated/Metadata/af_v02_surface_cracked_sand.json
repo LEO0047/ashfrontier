@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_surface_cracked_sand",
+  "category": "surface_texture",
+  "prompt": "可近似無縫重複的乾裂沙地 PBR base texture，低飽和砂土色，細小鹽晶，風蝕裂縫，沒有文字與物件，適合 UE 地表材質。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、腳印、車輪、明顯方向光影、過度濕潤表面。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:18.774890+00:00",
+  "selected_reason": "乾裂沙地細節均勻，適合作為 pseudo-tileable 地表來源。",
+  "output_path": "SourceArt/Generated/Textures/af_v02_surface_cracked_sand.png",
+  "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_CrackedSand_BaseColor",
+  "usage_target": [
+    "ArtSlot_DesertGround"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

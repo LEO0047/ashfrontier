@@ -7,6 +7,8 @@ import sys
 from pathlib import Path
 from typing import Any
 
+from PIL import Image
+
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "Content" / "Data" / "Art" / "ArtGenManifest.json"
@@ -37,6 +39,15 @@ REQUIRED_FIELDS = {
     "validation_status",
 }
 GENERATED_STATUSES = {"generated", "processed", "imported", "assigned"}
+IMAGE_REQUIREMENTS = {
+    "concept": 1024,
+    "surface_texture": 1024,
+    "ui_icon": 512,
+    "faction_emblem": 1024,
+    "portrait": 1024,
+    "decal_signage": 1024,
+    "banner": 1024,
+}
 METADATA_REQUIRED_FIELDS = {
     "asset_id",
     "category",
@@ -63,6 +74,34 @@ def project_path_exists(value: Any) -> bool:
     if not isinstance(value, str) or not value.strip():
         return False
     return (ROOT / value).exists()
+
+
+def is_power_of_two(value: int) -> bool:
+    return value > 0 and (value & (value - 1)) == 0
+
+
+def check_image_file(asset_id: str, category: str, path_value: Any, issues: list[dict[str, str]]) -> None:
+    if not isinstance(path_value, str) or not path_value.strip():
+        add_issue(issues, "error", MANIFEST, f"{asset_id} generated_image_path 不可為空")
+        return
+    image_path = ROOT / path_value
+    if not image_path.exists():
+        add_issue(issues, "error", MANIFEST, f"{asset_id} generated_image_path 指向不存在檔案：{path_value}")
+        return
+    try:
+        with Image.open(image_path) as image:
+            width, height = image.size
+            mode = image.mode
+    except Exception as exc:
+        add_issue(issues, "error", MANIFEST, f"{asset_id} 圖片無法讀取：{path_value}：{exc}")
+        return
+    expected_size = IMAGE_REQUIREMENTS.get(category)
+    if expected_size and (width != expected_size or height != expected_size):
+        add_issue(issues, "error", MANIFEST, f"{asset_id} 圖片尺寸應為 {expected_size}x{expected_size}，目前 {width}x{height}")
+    if not is_power_of_two(width) or not is_power_of_two(height):
+        add_issue(issues, "error", MANIFEST, f"{asset_id} 圖片尺寸不是 power-of-two：{width}x{height}")
+    if mode not in {"RGB", "RGBA"}:
+        add_issue(issues, "error", MANIFEST, f"{asset_id} 圖片色彩模式不支援：{mode}")
 
 
 def check_record(record: Any, index: int, issues: list[dict[str, str]]) -> str | None:
@@ -107,9 +146,7 @@ def check_record(record: Any, index: int, issues: list[dict[str, str]]) -> str |
     if status not in ALLOWED_STATUS:
         add_issue(issues, "error", MANIFEST, f"{asset_id} validation_status 不在允許清單：{status}")
     elif status in GENERATED_STATUSES:
-        for key in ("generated_image_path",):
-            if not project_path_exists(record.get(key)):
-                add_issue(issues, "error", MANIFEST, f"{asset_id} {key} 指向不存在檔案：{record.get(key)}")
+        check_image_file(asset_id, str(category), record.get("generated_image_path"), issues)
 
     return asset_id
 

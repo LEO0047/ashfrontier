@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_icon_raw_grain",
+  "category": "ui_icon",
+  "prompt": "512x512 遊戲 UI icon，乾穀袋，粗布小袋與灑出的耐旱穀物，日曬褪色布，清楚剪影，小尺寸可讀。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代塑膠袋、商標文字。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:22.993506+00:00",
+  "selected_reason": "乾穀袋有粗布與顆粒辨識。",
+  "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_raw_grain.png",
+  "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_RawGrain",
+  "usage_target": [
+    "item_raw_grain"
+  ],
+  "source_sheet_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

@@ -1,0 +1,17 @@
+{
+  "asset_id": "af_v02_decal_warehouse_mark",
+  "category": "decal_signage",
+  "prompt": "1024x1024 場景 signage，倉庫標誌，繁體中文字「倉庫」，粗布貨牌，箱形輪廓，砂塵磨損，遠距離可讀。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代物流 logo、英文標牌。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:36.699700+00:00",
+  "selected_reason": "倉庫標誌有粗布與貨牌感，已覆蓋可讀繁體中文。",
+  "output_path": "SourceArt/Generated/Decals/af_v02_decal_warehouse_mark.png",
+  "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WarehouseMark",
+  "usage_target": [
+    "building_storage_crate",
+    "ArtSlot_OutpostSignage"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_portrait_recruit_scout",
+  "category": "portrait",
+  "prompt": "1024x1024 可招募角色頭像，塵路行者背景出身的荒野斥候，日曬頭巾，繩結飾件，砂塵臉部，警覺眼神，原創人物。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真人名人、現代軍裝、照片感過強。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:30.817443+00:00",
+  "selected_reason": "荒野斥候 portrait 有頭巾、砂塵與警覺感。",
+  "output_path": "SourceArt/Generated/Portraits/af_v02_portrait_recruit_scout.png",
+  "ue_import_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitScout",
+  "usage_target": [
+    "recruit_scout_ui"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Portraits/af_v02_sheet_portraits.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

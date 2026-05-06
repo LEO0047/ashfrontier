@@ -1,0 +1,17 @@
+{
+  "asset_id": "af_v02_concept_outpost",
+  "category": "concept",
+  "prompt": "Ashfrontier 前哨外觀概念圖，粗木棚架，氧化金屬補強，臨時修補痕跡，風沙遮棚，低飽和砂土色，呈現可放置旗幟、倉庫標誌與防線 decal 的區域。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、過度乾淨表面、霓虹科幻、真人照片。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:17.657765+00:00",
+  "selected_reason": "前哨概念圖有粗木、金屬修補與旗幟告示可用位置。",
+  "output_path": "SourceArt/Generated/Concepts/af_v02_concept_outpost.png",
+  "ue_import_path": "/Game/GeneratedArt/Concepts/T_AfV02_Concept_Outpost",
+  "usage_target": [
+    "前哨外觀固定相機",
+    "ArtSlot_OutpostSignage"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Concepts/af_v02_sheet_concepts.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

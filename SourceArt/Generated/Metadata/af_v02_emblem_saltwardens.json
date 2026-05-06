@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_emblem_saltwardens",
+  "category": "faction_emblem",
+  "prompt": "1024x1024 原創派系徽章，鹽脊守望，直線城門與矛尖輪廓，灰白鹽痕與暗鐵，簡潔可讀，適合地圖、角色面板與警告通知。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實軍徽、真實國徽。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:25.047561+00:00",
+  "selected_reason": "鹽脊守望徽章有直線與矛尖形狀，遠距離可讀。",
+  "output_path": "SourceArt/Generated/FactionEmblems/af_v02_emblem_saltwardens.png",
+  "ue_import_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Saltwardens",
+  "usage_target": [
+    "faction_saltwardens"
+  ],
+  "source_sheet_path": "SourceArt/Generated/FactionEmblems/af_v02_sheet_faction_emblems.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

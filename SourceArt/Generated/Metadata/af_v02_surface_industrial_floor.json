@@ -1,0 +1,17 @@
+{
+  "asset_id": "af_v02_surface_industrial_floor",
+  "category": "surface_texture",
+  "prompt": "可近似無縫重複的粗糙工業地板 PBR base texture，拼裝鐵板，砂土卡縫，舊螺栓，磨損通道，適合商店區與工坊地面。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、乾淨實驗室地板、霓虹科幻紋路。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:21.977217+00:00",
+  "selected_reason": "粗糙工業地板有拼裝鐵板與砂土卡縫，適合商店區。",
+  "output_path": "SourceArt/Generated/Textures/af_v02_surface_industrial_floor.png",
+  "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_IndustrialFloor_BaseColor",
+  "usage_target": [
+    "ArtSlot_RustedMetal",
+    "商店區地面"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

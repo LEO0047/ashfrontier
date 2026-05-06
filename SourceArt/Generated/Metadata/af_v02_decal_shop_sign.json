@@ -1,0 +1,17 @@
+{
+  "asset_id": "af_v02_decal_shop_sign",
+  "category": "decal_signage",
+  "prompt": "1024x1024 場景 signage，商店招牌，繁體中文字「補給」，粗木牌，氧化銅邊框，砂塵磨損，遠距離可讀，遊戲 decal。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代品牌字體、英文店名。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:32.739783+00:00",
+  "selected_reason": "商店招牌底圖乾燥磨損，已覆蓋可讀繁體中文。",
+  "output_path": "SourceArt/Generated/Decals/af_v02_decal_shop_sign.png",
+  "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_ShopSign",
+  "usage_target": [
+    "ArtSlot_CitySignage",
+    "商店區"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

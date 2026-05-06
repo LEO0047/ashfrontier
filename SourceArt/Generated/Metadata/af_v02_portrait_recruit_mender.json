@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_portrait_recruit_mender",
+  "category": "portrait",
+  "prompt": "1024x1024 可招募角色頭像，野外醫療修補者，粗布醫療包帶，草藥染色布，曬傷與灰塵，沉著表情，原創人物。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真人名人、現代醫師制服、照片感過強。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:31.767652+00:00",
+  "selected_reason": "醫療修補者 portrait 有醫療布帶與草藥染色布。",
+  "output_path": "SourceArt/Generated/Portraits/af_v02_portrait_recruit_mender.png",
+  "ue_import_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitMender",
+  "usage_target": [
+    "recruit_mender_ui"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Portraits/af_v02_sheet_portraits.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

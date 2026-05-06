@@ -1,0 +1,17 @@
+{
+  "asset_id": "af_v02_decal_water_warning",
+  "category": "decal_signage",
+  "prompt": "1024x1024 場景 warning decal，水源警告，繁體中文字「鹹水」，水壺剪影與鹽痕，日曬布底，遠距離可讀。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代飲用水標誌、英文標牌。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:37.427693+00:00",
+  "selected_reason": "水源警告有鹽痕與水壺語意，已覆蓋可讀繁體中文。",
+  "output_path": "SourceArt/Generated/Decals/af_v02_decal_water_warning.png",
+  "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WaterWarning",
+  "usage_target": [
+    "ArtSlot_OutpostSignage",
+    "野外建造區"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

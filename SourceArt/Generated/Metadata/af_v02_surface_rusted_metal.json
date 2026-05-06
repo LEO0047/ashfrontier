@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_surface_rusted_metal",
+  "category": "surface_texture",
+  "prompt": "可近似無縫重複的生鏽金屬 PBR base texture，暗鐵板，鉚釘痕，氧化橘褐，刮痕與修補痕跡，適合低科技工業外殼。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、亮面新車金屬、霓虹燈、現代企業標誌。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:19.759462+00:00",
+  "selected_reason": "生鏽金屬有暗鐵與氧化刮痕，符合低科技工業語言。",
+  "output_path": "SourceArt/Generated/Textures/af_v02_surface_rusted_metal.png",
+  "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_RustedMetal_BaseColor",
+  "usage_target": [
+    "ArtSlot_RustedMetal"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

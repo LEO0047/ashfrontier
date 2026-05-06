@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_icon_cooked_ration",
+  "category": "ui_icon",
+  "prompt": "512x512 遊戲 UI icon，烤行糧，粗布包著的乾糧塊，砂土色與焦邊，清楚輪廓，小尺寸可讀。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代包裝、乾淨餐盤。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:22.837796+00:00",
+  "selected_reason": "烤行糧剪影清楚，能辨識為食物。",
+  "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_cooked_ration.png",
+  "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_CookedRation",
+  "usage_target": [
+    "item_cooked_ration"
+  ],
+  "source_sheet_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

@@ -1,0 +1,17 @@
+{
+  "asset_id": "af_v02_decal_workshop_mark",
+  "category": "decal_signage",
+  "prompt": "1024x1024 場景 signage，工坊標誌，繁體中文字「工坊」，鉚釘貨牌與工具剪影，氧化金屬，遠距離可讀。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代工廠 logo、英文標牌。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:36.021472+00:00",
+  "selected_reason": "工坊標誌有氧化金屬底，已覆蓋可讀繁體中文。",
+  "output_path": "SourceArt/Generated/Decals/af_v02_decal_workshop_mark.png",
+  "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WorkshopMark",
+  "usage_target": [
+    "building_field_workshop",
+    "ArtSlot_OutpostSignage"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

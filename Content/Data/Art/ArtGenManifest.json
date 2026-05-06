@@ -15,535 +15,854 @@
       "category": "concept",
       "prompt": "Ashfrontier 主城入口概念圖，荒漠邊境城門，鹽蝕砂岩牆，暗鐵護板，日曬布旗，低科技高磨損，清楚呈現可套用材質與場景告示的位置。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、過度乾淨表面、霓虹科幻、真人照片。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Concepts/af_v02_sheet_concepts.png",
       "generated_image_path": "SourceArt/Generated/Concepts/af_v02_concept_city_gate.png",
       "ue_import_path": "/Game/GeneratedArt/Concepts/T_AfV02_Concept_CityGate",
-      "assigned_targets": ["主城入口固定相機", "ArtSlot_CitySignage"],
-      "style_tags": ["荒漠邊境", "鹽蝕砂岩", "暗鐵", "日曬布旗"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "主城入口固定相機",
+        "ArtSlot_CitySignage"
+      ],
+      "style_tags": [
+        "荒漠邊境",
+        "鹽蝕砂岩",
+        "暗鐵",
+        "日曬布旗"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_concept_outpost",
       "category": "concept",
       "prompt": "Ashfrontier 前哨外觀概念圖，粗木棚架，氧化金屬補強，臨時修補痕跡，風沙遮棚，低飽和砂土色，呈現可放置旗幟、倉庫標誌與防線 decal 的區域。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、過度乾淨表面、霓虹科幻、真人照片。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Concepts/af_v02_sheet_concepts.png",
       "generated_image_path": "SourceArt/Generated/Concepts/af_v02_concept_outpost.png",
       "ue_import_path": "/Game/GeneratedArt/Concepts/T_AfV02_Concept_Outpost",
-      "assigned_targets": ["前哨外觀固定相機", "ArtSlot_OutpostSignage"],
-      "style_tags": ["粗木", "氧化金屬", "風沙遮棚", "臨時修補"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "前哨外觀固定相機",
+        "ArtSlot_OutpostSignage"
+      ],
+      "style_tags": [
+        "粗木",
+        "氧化金屬",
+        "風沙遮棚",
+        "臨時修補"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_concept_wild_build_zone",
       "category": "concept",
       "prompt": "Ashfrontier 野外建造區概念圖，乾裂泥地，拼裝建材，焦黑木材，簡易工坊，水源警告與荒野危險標記，視覺清楚但不追求最終量產精度。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、過度乾淨表面、霓虹科幻、真人照片。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Concepts/af_v02_sheet_concepts.png",
       "generated_image_path": "SourceArt/Generated/Concepts/af_v02_concept_wild_build_zone.png",
       "ue_import_path": "/Game/GeneratedArt/Concepts/T_AfV02_Concept_WildBuildZone",
-      "assigned_targets": ["野外建造區固定相機", "ArtSlot_DesertGround"],
-      "style_tags": ["乾裂泥地", "拼裝建材", "焦黑木材", "荒野標記"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "野外建造區固定相機",
+        "ArtSlot_DesertGround"
+      ],
+      "style_tags": [
+        "乾裂泥地",
+        "拼裝建材",
+        "焦黑木材",
+        "荒野標記"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_surface_cracked_sand",
       "category": "surface_texture",
       "prompt": "可近似無縫重複的乾裂沙地 PBR base texture，低飽和砂土色，細小鹽晶，風蝕裂縫，沒有文字與物件，適合 UE 地表材質。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、腳印、車輪、明顯方向光影、過度濕潤表面。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
       "generated_image_path": "SourceArt/Generated/Textures/af_v02_surface_cracked_sand.png",
       "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_CrackedSand_BaseColor",
-      "assigned_targets": ["ArtSlot_DesertGround"],
-      "style_tags": ["乾裂", "砂土", "鹽晶", "地表"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "ArtSlot_DesertGround"
+      ],
+      "style_tags": [
+        "乾裂",
+        "砂土",
+        "鹽晶",
+        "地表"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_surface_salt_stone",
       "category": "surface_texture",
       "prompt": "可近似無縫重複的鹽蝕砂岩 PBR base texture，灰白鹽痕，砂岩孔洞，粗糙石面，低飽和，適合城牆與岩壁。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代磁磚、濕亮大理石、可讀文字。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
       "generated_image_path": "SourceArt/Generated/Textures/af_v02_surface_salt_stone.png",
       "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_SaltStone_BaseColor",
-      "assigned_targets": ["ArtSlot_SaltStoneWall"],
-      "style_tags": ["鹽蝕", "砂岩", "城牆", "灰白"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "ArtSlot_SaltStoneWall"
+      ],
+      "style_tags": [
+        "鹽蝕",
+        "砂岩",
+        "城牆",
+        "灰白"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_surface_rusted_metal",
       "category": "surface_texture",
       "prompt": "可近似無縫重複的生鏽金屬 PBR base texture，暗鐵板，鉚釘痕，氧化橘褐，刮痕與修補痕跡，適合低科技工業外殼。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、亮面新車金屬、霓虹燈、現代企業標誌。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
       "generated_image_path": "SourceArt/Generated/Textures/af_v02_surface_rusted_metal.png",
       "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_RustedMetal_BaseColor",
-      "assigned_targets": ["ArtSlot_RustedMetal"],
-      "style_tags": ["生鏽", "暗鐵", "鉚釘", "修補"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "ArtSlot_RustedMetal"
+      ],
+      "style_tags": [
+        "生鏽",
+        "暗鐵",
+        "鉚釘",
+        "修補"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_surface_sun_bleached_cloth",
       "category": "surface_texture",
       "prompt": "可近似無縫重複的日曬舊布 PBR base texture，粗織纖維，褪色布料，砂塵污痕，邊緣磨損感，適合旗幟、棚布與 UI 背板。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、乾淨絲綢、華麗花紋、現代印花。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
       "generated_image_path": "SourceArt/Generated/Textures/af_v02_surface_sun_bleached_cloth.png",
       "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_SunBleachedCloth_BaseColor",
-      "assigned_targets": ["ArtSlot_SunBleachedCloth"],
-      "style_tags": ["日曬", "粗布", "褪色", "砂塵"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "ArtSlot_SunBleachedCloth"
+      ],
+      "style_tags": [
+        "日曬",
+        "粗布",
+        "褪色",
+        "砂塵"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_surface_blackened_wood",
       "category": "surface_texture",
       "prompt": "可近似無縫重複的焦黑木材 PBR base texture，炭化邊緣，裂紋木板，灰塵與刮痕，適合棚架、防線與回收木板建築。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、家具展覽感、亮面油漆、乾淨木紋。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
       "generated_image_path": "SourceArt/Generated/Textures/af_v02_surface_blackened_wood.png",
       "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_BlackenedWood_BaseColor",
-      "assigned_targets": ["ArtSlot_BlackenedWood"],
-      "style_tags": ["焦黑", "木板", "裂紋", "回收"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "ArtSlot_BlackenedWood"
+      ],
+      "style_tags": [
+        "焦黑",
+        "木板",
+        "裂紋",
+        "回收"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_surface_bone_ceramic",
       "category": "surface_texture",
       "prompt": "可近似無縫重複的骨質陶片 PBR base texture，灰白陶片，粗糙孔洞，繩結刮痕，手工拼接感，適合荒野飾件與標記。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代瓷磚、華麗花瓶、真人骨骼造型。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
       "generated_image_path": "SourceArt/Generated/Textures/af_v02_surface_bone_ceramic.png",
       "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_BoneCeramic_BaseColor",
-      "assigned_targets": ["ArtSlot_BoneCeramic"],
-      "style_tags": ["陶片", "骨質感", "手工", "荒野"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "ArtSlot_BoneCeramic"
+      ],
+      "style_tags": [
+        "陶片",
+        "骨質感",
+        "手工",
+        "荒野"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_surface_industrial_floor",
       "category": "surface_texture",
       "prompt": "可近似無縫重複的粗糙工業地板 PBR base texture，拼裝鐵板，砂土卡縫，舊螺栓，磨損通道，適合商店區與工坊地面。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、乾淨實驗室地板、霓虹科幻紋路。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
       "generated_image_path": "SourceArt/Generated/Textures/af_v02_surface_industrial_floor.png",
       "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_IndustrialFloor_BaseColor",
-      "assigned_targets": ["ArtSlot_RustedMetal", "商店區地面"],
-      "style_tags": ["工業", "拼裝鐵板", "磨損", "砂土"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "ArtSlot_RustedMetal",
+        "商店區地面"
+      ],
+      "style_tags": [
+        "工業",
+        "拼裝鐵板",
+        "磨損",
+        "砂土"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_surface_weathered_wall",
       "category": "surface_texture",
       "prompt": "可近似無縫重複的風化城牆 PBR base texture，砂岩灰泥，氧化金屬補片，鹽霜垂痕，裂縫修補，適合主城與前哨牆體。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代水泥牆、乾淨白牆、可讀文字。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
       "generated_image_path": "SourceArt/Generated/Textures/af_v02_surface_weathered_wall.png",
       "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_WeatheredWall_BaseColor",
-      "assigned_targets": ["ArtSlot_SaltStoneWall", "主城牆體"],
-      "style_tags": ["風化", "灰泥", "補片", "鹽霜"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "ArtSlot_SaltStoneWall",
+        "主城牆體"
+      ],
+      "style_tags": [
+        "風化",
+        "灰泥",
+        "補片",
+        "鹽霜"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_icon_ash_credit",
       "category": "ui_icon",
       "prompt": "512x512 遊戲 UI icon，灰印幣，壓印金屬圓幣，低飽和暗銅，清楚輪廓，透明感背景或單純深色底，小尺寸可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代貨幣符號、真實國旗。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
       "generated_image_path": "SourceArt/Generated/UIIcons/af_v02_icon_ash_credit.png",
       "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_AshCredit",
-      "assigned_targets": ["item_ash_credit"],
-      "style_tags": ["UI", "貨幣", "暗銅", "可讀"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "item_ash_credit"
+      ],
+      "style_tags": [
+        "UI",
+        "貨幣",
+        "暗銅",
+        "可讀"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_icon_cooked_ration",
       "category": "ui_icon",
       "prompt": "512x512 遊戲 UI icon，烤行糧，粗布包著的乾糧塊，砂土色與焦邊，清楚輪廓，小尺寸可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代包裝、乾淨餐盤。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
       "generated_image_path": "SourceArt/Generated/UIIcons/af_v02_icon_cooked_ration.png",
       "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_CookedRation",
-      "assigned_targets": ["item_cooked_ration"],
-      "style_tags": ["UI", "食物", "粗布", "可讀"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "item_cooked_ration"
+      ],
+      "style_tags": [
+        "UI",
+        "食物",
+        "粗布",
+        "可讀"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_icon_raw_grain",
       "category": "ui_icon",
       "prompt": "512x512 遊戲 UI icon，乾穀袋，粗布小袋與灑出的耐旱穀物，日曬褪色布，清楚剪影，小尺寸可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代塑膠袋、商標文字。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
       "generated_image_path": "SourceArt/Generated/UIIcons/af_v02_icon_raw_grain.png",
       "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_RawGrain",
-      "assigned_targets": ["item_raw_grain"],
-      "style_tags": ["UI", "材料", "穀物", "粗布"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "item_raw_grain"
+      ],
+      "style_tags": [
+        "UI",
+        "材料",
+        "穀物",
+        "粗布"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_icon_water_flask",
       "category": "ui_icon",
       "prompt": "512x512 遊戲 UI icon，鹹水壺，舊金屬水壺與布繩，白色鹽痕，低飽和藍灰高光，清楚輪廓，小尺寸可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代寶特瓶、品牌標籤。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
       "generated_image_path": "SourceArt/Generated/UIIcons/af_v02_icon_water_flask.png",
       "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_WaterFlask",
-      "assigned_targets": ["item_water_flask"],
-      "style_tags": ["UI", "水", "鹽痕", "金屬"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "item_water_flask"
+      ],
+      "style_tags": [
+        "UI",
+        "水",
+        "鹽痕",
+        "金屬"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_icon_scrap_ore",
       "category": "ui_icon",
       "prompt": "512x512 遊戲 UI icon，碎鐵礦袋，粗布袋中露出暗鐵礦塊，氧化邊緣，清楚剪影，小尺寸可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、閃亮寶石、現代採礦標誌。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
       "generated_image_path": "SourceArt/Generated/UIIcons/af_v02_icon_scrap_ore.png",
       "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_ScrapOre",
-      "assigned_targets": ["item_scrap_ore"],
-      "style_tags": ["UI", "礦石", "暗鐵", "材料"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "item_scrap_ore"
+      ],
+      "style_tags": [
+        "UI",
+        "礦石",
+        "暗鐵",
+        "材料"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_icon_crude_ingot",
       "category": "ui_icon",
       "prompt": "512x512 遊戲 UI icon，粗鐵錠，手工澆鑄金屬錠，粗糙邊緣與鐵鏽，清楚輪廓，小尺寸可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、金條、乾淨鏡面金屬。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
       "generated_image_path": "SourceArt/Generated/UIIcons/af_v02_icon_crude_ingot.png",
       "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_CrudeIngot",
-      "assigned_targets": ["item_crude_ingot"],
-      "style_tags": ["UI", "金屬錠", "鐵鏽", "材料"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "item_crude_ingot"
+      ],
+      "style_tags": [
+        "UI",
+        "金屬錠",
+        "鐵鏽",
+        "材料"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_icon_salvaged_plank",
       "category": "ui_icon",
       "prompt": "512x512 遊戲 UI icon，回收木板，焦黑裂紋木板與簡易金屬釘，砂塵，清楚輪廓，小尺寸可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、乾淨家具板、現代建材貼紙。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
       "generated_image_path": "SourceArt/Generated/UIIcons/af_v02_icon_salvaged_plank.png",
       "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_SalvagedPlank",
-      "assigned_targets": ["item_salvaged_plank"],
-      "style_tags": ["UI", "木材", "焦黑", "建材"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "item_salvaged_plank"
+      ],
+      "style_tags": [
+        "UI",
+        "木材",
+        "焦黑",
+        "建材"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_icon_building_plate",
       "category": "ui_icon",
       "prompt": "512x512 遊戲 UI icon，拼裝建材板，粗鐵片與木料固定，鉚釘與繩結，清楚剪影，小尺寸可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、乾淨工業新品、現代警告標籤。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
       "generated_image_path": "SourceArt/Generated/UIIcons/af_v02_icon_building_plate.png",
       "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_BuildingPlate",
-      "assigned_targets": ["item_building_plate"],
-      "style_tags": ["UI", "建材", "拼裝", "鉚釘"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "item_building_plate"
+      ],
+      "style_tags": [
+        "UI",
+        "建材",
+        "拼裝",
+        "鉚釘"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_icon_field_bandage",
       "category": "ui_icon",
       "prompt": "512x512 遊戲 UI icon，野外繃帶，粗布捲與藥粉污痕，低飽和米灰，清楚輪廓，小尺寸可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代醫療紅十字、乾淨塑膠包裝。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
       "generated_image_path": "SourceArt/Generated/UIIcons/af_v02_icon_field_bandage.png",
       "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_FieldBandage",
-      "assigned_targets": ["item_field_bandage"],
-      "style_tags": ["UI", "醫療", "粗布", "可讀"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "item_field_bandage"
+      ],
+      "style_tags": [
+        "UI",
+        "醫療",
+        "粗布",
+        "可讀"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_icon_medic_wrap",
       "category": "ui_icon",
       "prompt": "512x512 遊戲 UI icon，草藥壓布，浸色布包與草藥束，乾燥綠褐點綴，清楚剪影，小尺寸可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代藥盒、醫院標誌。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
       "generated_image_path": "SourceArt/Generated/UIIcons/af_v02_icon_medic_wrap.png",
       "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_MedicWrap",
-      "assigned_targets": ["item_medic_wrap"],
-      "style_tags": ["UI", "醫療", "草藥", "布包"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "item_medic_wrap"
+      ],
+      "style_tags": [
+        "UI",
+        "醫療",
+        "草藥",
+        "布包"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_icon_rustblade",
       "category": "ui_icon",
       "prompt": "512x512 遊戲 UI icon，鏽刃短刀，回收鋼片刀身，粗布握把，鏽斑與刮痕，清楚斜向剪影，小尺寸可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、華麗魔法武器、現代軍刀商標。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
       "generated_image_path": "SourceArt/Generated/UIIcons/af_v02_icon_rustblade.png",
       "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_Rustblade",
-      "assigned_targets": ["item_rustblade"],
-      "style_tags": ["UI", "武器", "生鏽", "短刀"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "item_rustblade"
+      ],
+      "style_tags": [
+        "UI",
+        "武器",
+        "生鏽",
+        "短刀"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_icon_quilted_vest",
       "category": "ui_icon",
       "prompt": "512x512 遊戲 UI icon，絎縫護背，布片與皮革縫成的輕護具，褪色補丁，清楚正面輪廓，小尺寸可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、華麗盔甲、現代防彈背心標誌。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
       "generated_image_path": "SourceArt/Generated/UIIcons/af_v02_icon_quilted_vest.png",
       "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_QuiltedVest",
-      "assigned_targets": ["item_quilted_vest"],
-      "style_tags": ["UI", "護具", "布片", "補丁"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "item_quilted_vest"
+      ],
+      "style_tags": [
+        "UI",
+        "護具",
+        "布片",
+        "補丁"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_emblem_saltwardens",
       "category": "faction_emblem",
       "prompt": "1024x1024 原創派系徽章，鹽脊守望，直線城門與矛尖輪廓，灰白鹽痕與暗鐵，簡潔可讀，適合地圖、角色面板與警告通知。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實軍徽、真實國徽。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/FactionEmblems/af_v02_sheet_faction_emblems.png",
       "generated_image_path": "SourceArt/Generated/FactionEmblems/af_v02_emblem_saltwardens.png",
       "ue_import_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Saltwardens",
-      "assigned_targets": ["faction_saltwardens"],
-      "style_tags": ["徽章", "秩序", "城門", "暗鐵"],
+      "assigned_targets": [
+        "faction_saltwardens"
+      ],
+      "style_tags": [
+        "徽章",
+        "秩序",
+        "城門",
+        "暗鐵"
+      ],
       "faction_id": "faction_saltwardens",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_emblem_glasshouse",
       "category": "faction_emblem",
       "prompt": "1024x1024 原創派系徽章，玻璃屋商盟，圓弧秤盤與鉚釘貨牌輪廓，氧化銅與褪色赭黃，簡潔可讀，適合交易 UI 與商店告示。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實公司 logo、現代貨幣符號。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/FactionEmblems/af_v02_sheet_faction_emblems.png",
       "generated_image_path": "SourceArt/Generated/FactionEmblems/af_v02_emblem_glasshouse.png",
       "ue_import_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Glasshouse",
-      "assigned_targets": ["faction_glasshouse"],
-      "style_tags": ["徽章", "商貿", "秤盤", "氧化銅"],
+      "assigned_targets": [
+        "faction_glasshouse"
+      ],
+      "style_tags": [
+        "徽章",
+        "商貿",
+        "秤盤",
+        "氧化銅"
+      ],
       "faction_id": "faction_glasshouse",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_emblem_dustrunners",
       "category": "faction_emblem",
       "prompt": "1024x1024 原創派系徽章，塵路行者，斜線裂片、繩結與陶片輪廓，風沙褐與日曬紅布，簡潔可讀，適合荒野標記與角色面板。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實部落標誌、現代戶外品牌。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/FactionEmblems/af_v02_sheet_faction_emblems.png",
       "generated_image_path": "SourceArt/Generated/FactionEmblems/af_v02_emblem_dustrunners.png",
       "ue_import_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Dustrunners",
-      "assigned_targets": ["faction_dustrunners"],
-      "style_tags": ["徽章", "荒野", "裂片", "繩結"],
+      "assigned_targets": [
+        "faction_dustrunners"
+      ],
+      "style_tags": [
+        "徽章",
+        "荒野",
+        "裂片",
+        "繩結"
+      ],
       "faction_id": "faction_dustrunners",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_banner_saltwardens",
       "category": "banner",
       "prompt": "1024x1024 派系旗幟貼圖，鹽脊守望，日曬布料，直線城門與矛尖符號，灰白鹽痕與暗鐵色塊，破損邊緣，適合場景旗幟材質。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實國旗、乾淨絲綢旗。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Banners/af_v02_sheet_banners.png",
       "generated_image_path": "SourceArt/Generated/Banners/af_v02_banner_saltwardens.png",
       "ue_import_path": "/Game/GeneratedArt/Banners/T_AfV02_Banner_Saltwardens",
-      "assigned_targets": ["ArtSlot_FactionBanner_01", "faction_saltwardens"],
-      "style_tags": ["旗幟", "日曬布", "鹽痕", "秩序"],
+      "assigned_targets": [
+        "ArtSlot_FactionBanner_01",
+        "faction_saltwardens"
+      ],
+      "style_tags": [
+        "旗幟",
+        "日曬布",
+        "鹽痕",
+        "秩序"
+      ],
       "faction_id": "faction_saltwardens",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_banner_glasshouse",
       "category": "banner",
       "prompt": "1024x1024 派系旗幟貼圖，玻璃屋商盟，粗布貨旗，圓弧秤盤與鉚釘符號，氧化銅與赭黃色塊，破損邊緣，適合商店區旗幟材質。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實公司旗、乾淨絲綢旗。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Banners/af_v02_sheet_banners.png",
       "generated_image_path": "SourceArt/Generated/Banners/af_v02_banner_glasshouse.png",
       "ue_import_path": "/Game/GeneratedArt/Banners/T_AfV02_Banner_Glasshouse",
-      "assigned_targets": ["ArtSlot_FactionBanner_02", "faction_glasshouse"],
-      "style_tags": ["旗幟", "商貿", "粗布", "氧化銅"],
+      "assigned_targets": [
+        "ArtSlot_FactionBanner_02",
+        "faction_glasshouse"
+      ],
+      "style_tags": [
+        "旗幟",
+        "商貿",
+        "粗布",
+        "氧化銅"
+      ],
       "faction_id": "faction_glasshouse",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_banner_dustrunners",
       "category": "banner",
       "prompt": "1024x1024 派系旗幟貼圖，塵路行者，日曬紅布與風沙褐色塊，斜線裂片、繩結與陶片符號，破損邊緣，適合荒野前哨旗幟材質。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實國旗、現代戶外品牌旗。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Banners/af_v02_sheet_banners.png",
       "generated_image_path": "SourceArt/Generated/Banners/af_v02_banner_dustrunners.png",
       "ue_import_path": "/Game/GeneratedArt/Banners/T_AfV02_Banner_Dustrunners",
-      "assigned_targets": ["ArtSlot_FactionBanner_03", "faction_dustrunners"],
-      "style_tags": ["旗幟", "荒野", "日曬紅布", "裂片"],
+      "assigned_targets": [
+        "ArtSlot_FactionBanner_03",
+        "faction_dustrunners"
+      ],
+      "style_tags": [
+        "旗幟",
+        "荒野",
+        "日曬紅布",
+        "裂片"
+      ],
       "faction_id": "faction_dustrunners",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_portrait_recruit_guard",
       "category": "portrait",
       "prompt": "1024x1024 可招募角色頭像，鹽脊守望背景出身的年輕守衛，曬傷皮膚，布甲與暗鐵肩片，冷靜表情，原創人物，遊戲角色 portrait。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真人名人、照片感過強、華麗盔甲。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Portraits/af_v02_sheet_portraits.png",
       "generated_image_path": "SourceArt/Generated/Portraits/af_v02_portrait_recruit_guard.png",
       "ue_import_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitGuard",
-      "assigned_targets": ["recruit_guard_ui"],
-      "style_tags": ["頭像", "守衛", "布甲", "暗鐵"],
+      "assigned_targets": [
+        "recruit_guard_ui"
+      ],
+      "style_tags": [
+        "頭像",
+        "守衛",
+        "布甲",
+        "暗鐵"
+      ],
       "faction_id": "faction_saltwardens",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_portrait_recruit_trader",
       "category": "portrait",
       "prompt": "1024x1024 可招募角色頭像，玻璃屋商盟背景出身的修補商，護目鏡掛在額頭，舊布圍巾，氧化銅小飾件，精明但疲憊，原創人物。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真人名人、現代西裝、照片感過強。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Portraits/af_v02_sheet_portraits.png",
       "generated_image_path": "SourceArt/Generated/Portraits/af_v02_portrait_recruit_trader.png",
       "ue_import_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitTrader",
-      "assigned_targets": ["recruit_trader_ui"],
-      "style_tags": ["頭像", "商貿", "護目鏡", "氧化銅"],
+      "assigned_targets": [
+        "recruit_trader_ui"
+      ],
+      "style_tags": [
+        "頭像",
+        "商貿",
+        "護目鏡",
+        "氧化銅"
+      ],
       "faction_id": "faction_glasshouse",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_portrait_recruit_scout",
       "category": "portrait",
       "prompt": "1024x1024 可招募角色頭像，塵路行者背景出身的荒野斥候，日曬頭巾，繩結飾件，砂塵臉部，警覺眼神，原創人物。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真人名人、現代軍裝、照片感過強。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Portraits/af_v02_sheet_portraits.png",
       "generated_image_path": "SourceArt/Generated/Portraits/af_v02_portrait_recruit_scout.png",
       "ue_import_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitScout",
-      "assigned_targets": ["recruit_scout_ui"],
-      "style_tags": ["頭像", "荒野", "頭巾", "繩結"],
+      "assigned_targets": [
+        "recruit_scout_ui"
+      ],
+      "style_tags": [
+        "頭像",
+        "荒野",
+        "頭巾",
+        "繩結"
+      ],
       "faction_id": "faction_dustrunners",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_portrait_recruit_mender",
       "category": "portrait",
       "prompt": "1024x1024 可招募角色頭像，野外醫療修補者，粗布醫療包帶，草藥染色布，曬傷與灰塵，沉著表情，原創人物。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真人名人、現代醫師制服、照片感過強。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Portraits/af_v02_sheet_portraits.png",
       "generated_image_path": "SourceArt/Generated/Portraits/af_v02_portrait_recruit_mender.png",
       "ue_import_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitMender",
-      "assigned_targets": ["recruit_mender_ui"],
-      "style_tags": ["頭像", "醫療", "草藥", "粗布"],
-      "validation_status": "planned"
+      "assigned_targets": [
+        "recruit_mender_ui"
+      ],
+      "style_tags": [
+        "頭像",
+        "醫療",
+        "草藥",
+        "粗布"
+      ],
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_decal_shop_sign",
       "category": "decal_signage",
       "prompt": "1024x1024 場景 signage，商店招牌，繁體中文字「補給」，粗木牌，氧化銅邊框，砂塵磨損，遠距離可讀，遊戲 decal。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代品牌字體、英文店名。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
       "generated_image_path": "SourceArt/Generated/Decals/af_v02_decal_shop_sign.png",
       "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_ShopSign",
-      "assigned_targets": ["ArtSlot_CitySignage", "商店區"],
-      "style_tags": ["告示", "商店", "粗木", "繁體中文"],
+      "assigned_targets": [
+        "ArtSlot_CitySignage",
+        "商店區"
+      ],
+      "style_tags": [
+        "告示",
+        "商店",
+        "粗木",
+        "繁體中文"
+      ],
       "faction_id": "faction_glasshouse",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_decal_restricted_warning",
       "category": "decal_signage",
       "prompt": "1024x1024 場景 warning decal，禁區警告，繁體中文字「禁區」，直線護板圖形，灰白鹽痕與暗鐵，遠距離可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實政府標誌、現代安全標語。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
       "generated_image_path": "SourceArt/Generated/Decals/af_v02_decal_restricted_warning.png",
       "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_RestrictedWarning",
-      "assigned_targets": ["ArtSlot_CitySignage", "守衛巡邏區"],
-      "style_tags": ["告示", "禁區", "暗鐵", "繁體中文"],
+      "assigned_targets": [
+        "ArtSlot_CitySignage",
+        "守衛巡邏區"
+      ],
+      "style_tags": [
+        "告示",
+        "禁區",
+        "暗鐵",
+        "繁體中文"
+      ],
       "faction_id": "faction_saltwardens",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_decal_guard_notice",
       "category": "decal_signage",
       "prompt": "1024x1024 場景 notice decal，守衛告示，繁體中文字「停步」，矛尖與城門符號，日曬布底，低飽和藍灰，遠距離可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實警徽、現代交通標誌。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
       "generated_image_path": "SourceArt/Generated/Decals/af_v02_decal_guard_notice.png",
       "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_GuardNotice",
-      "assigned_targets": ["ArtSlot_CitySignage", "守衛巡邏區"],
-      "style_tags": ["告示", "守衛", "布底", "繁體中文"],
+      "assigned_targets": [
+        "ArtSlot_CitySignage",
+        "守衛巡邏區"
+      ],
+      "style_tags": [
+        "告示",
+        "守衛",
+        "布底",
+        "繁體中文"
+      ],
       "faction_id": "faction_saltwardens",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_decal_broken_direction",
       "category": "decal_signage",
       "prompt": "1024x1024 場景 direction sign，破損方向牌，繁體中文字「北門」，裂片木牌，繩結，砂塵與焦黑邊緣，遠距離可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代道路標誌、真實地名。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
       "generated_image_path": "SourceArt/Generated/Decals/af_v02_decal_broken_direction.png",
       "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_BrokenDirection",
-      "assigned_targets": ["ArtSlot_OutpostSignage", "前哨外觀"],
-      "style_tags": ["告示", "方向牌", "裂片木", "繁體中文"],
+      "assigned_targets": [
+        "ArtSlot_OutpostSignage",
+        "前哨外觀"
+      ],
+      "style_tags": [
+        "告示",
+        "方向牌",
+        "裂片木",
+        "繁體中文"
+      ],
       "faction_id": "faction_dustrunners",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_decal_workshop_mark",
       "category": "decal_signage",
       "prompt": "1024x1024 場景 signage，工坊標誌，繁體中文字「工坊」，鉚釘貨牌與工具剪影，氧化金屬，遠距離可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代工廠 logo、英文標牌。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
       "generated_image_path": "SourceArt/Generated/Decals/af_v02_decal_workshop_mark.png",
       "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WorkshopMark",
-      "assigned_targets": ["building_field_workshop", "ArtSlot_OutpostSignage"],
-      "style_tags": ["告示", "工坊", "氧化金屬", "繁體中文"],
+      "assigned_targets": [
+        "building_field_workshop",
+        "ArtSlot_OutpostSignage"
+      ],
+      "style_tags": [
+        "告示",
+        "工坊",
+        "氧化金屬",
+        "繁體中文"
+      ],
       "faction_id": "faction_glasshouse",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_decal_warehouse_mark",
       "category": "decal_signage",
       "prompt": "1024x1024 場景 signage，倉庫標誌，繁體中文字「倉庫」，粗布貨牌，箱形輪廓，砂塵磨損，遠距離可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代物流 logo、英文標牌。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
       "generated_image_path": "SourceArt/Generated/Decals/af_v02_decal_warehouse_mark.png",
       "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WarehouseMark",
-      "assigned_targets": ["building_storage_crate", "ArtSlot_OutpostSignage"],
-      "style_tags": ["告示", "倉庫", "粗布", "繁體中文"],
+      "assigned_targets": [
+        "building_storage_crate",
+        "ArtSlot_OutpostSignage"
+      ],
+      "style_tags": [
+        "告示",
+        "倉庫",
+        "粗布",
+        "繁體中文"
+      ],
       "faction_id": "faction_glasshouse",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_decal_water_warning",
       "category": "decal_signage",
       "prompt": "1024x1024 場景 warning decal，水源警告，繁體中文字「鹹水」，水壺剪影與鹽痕，日曬布底，遠距離可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代飲用水標誌、英文標牌。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
       "generated_image_path": "SourceArt/Generated/Decals/af_v02_decal_water_warning.png",
       "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WaterWarning",
-      "assigned_targets": ["ArtSlot_OutpostSignage", "野外建造區"],
-      "style_tags": ["告示", "水源", "鹽痕", "繁體中文"],
+      "assigned_targets": [
+        "ArtSlot_OutpostSignage",
+        "野外建造區"
+      ],
+      "style_tags": [
+        "告示",
+        "水源",
+        "鹽痕",
+        "繁體中文"
+      ],
       "faction_id": "faction_dustrunners",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_decal_trade_notice",
       "category": "decal_signage",
       "prompt": "1024x1024 場景 notice decal，交易告示，繁體中文字「交易」，秤盤符號，氧化銅邊框，粗布底，遠距離可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代金融標誌、英文標牌。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
       "generated_image_path": "SourceArt/Generated/Decals/af_v02_decal_trade_notice.png",
       "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_TradeNotice",
-      "assigned_targets": ["交易 UI", "商店區"],
-      "style_tags": ["告示", "交易", "秤盤", "繁體中文"],
+      "assigned_targets": [
+        "交易 UI",
+        "商店區"
+      ],
+      "style_tags": [
+        "告示",
+        "交易",
+        "秤盤",
+        "繁體中文"
+      ],
       "faction_id": "faction_glasshouse",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_decal_gate_mark",
       "category": "decal_signage",
       "prompt": "1024x1024 場景 mark decal，城門標記，繁體中文字「城門」，階梯式護板與矛尖，鹽蝕砂岩底，遠距離可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實城徽、現代交通標誌。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
       "generated_image_path": "SourceArt/Generated/Decals/af_v02_decal_gate_mark.png",
       "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_GateMark",
-      "assigned_targets": ["ArtSlot_CitySignage", "主城入口"],
-      "style_tags": ["告示", "城門", "砂岩", "繁體中文"],
+      "assigned_targets": [
+        "ArtSlot_CitySignage",
+        "主城入口"
+      ],
+      "style_tags": [
+        "告示",
+        "城門",
+        "砂岩",
+        "繁體中文"
+      ],
       "faction_id": "faction_saltwardens",
-      "validation_status": "planned"
+      "validation_status": "generated"
     },
     {
       "asset_id": "af_v02_decal_wild_danger",
       "category": "decal_signage",
       "prompt": "1024x1024 場景 warning decal，荒野危險標記，繁體中文字「危險」，斜線裂片與陶片符號，風沙褐與焦黑邊緣，遠距離可讀。",
       "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代警告標誌、英文標牌。",
-      "source_image_path": "",
+      "source_image_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
       "generated_image_path": "SourceArt/Generated/Decals/af_v02_decal_wild_danger.png",
       "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WildDanger",
-      "assigned_targets": ["ArtSlot_OutpostSignage", "野外建造區"],
-      "style_tags": ["告示", "荒野", "危險", "繁體中文"],
+      "assigned_targets": [
+        "ArtSlot_OutpostSignage",
+        "野外建造區"
+      ],
+      "style_tags": [
+        "告示",
+        "荒野",
+        "危險",
+        "繁體中文"
+      ],
       "faction_id": "faction_dustrunners",
-      "validation_status": "planned"
+      "validation_status": "generated"
     }
   ]
 }

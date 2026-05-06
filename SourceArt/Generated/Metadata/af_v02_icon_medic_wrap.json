@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_icon_medic_wrap",
+  "category": "ui_icon",
+  "prompt": "512x512 遊戲 UI icon，草藥壓布，浸色布包與草藥束，乾燥綠褐點綴，清楚剪影，小尺寸可讀。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代藥盒、醫院標誌。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:24.251950+00:00",
+  "selected_reason": "草藥壓布有布包與草藥色點綴。",
+  "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_medic_wrap.png",
+  "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_MedicWrap",
+  "usage_target": [
+    "item_medic_wrap"
+  ],
+  "source_sheet_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

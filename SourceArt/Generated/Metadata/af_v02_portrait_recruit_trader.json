@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_portrait_recruit_trader",
+  "category": "portrait",
+  "prompt": "1024x1024 可招募角色頭像，玻璃屋商盟背景出身的修補商，護目鏡掛在額頭，舊布圍巾，氧化銅小飾件，精明但疲憊，原創人物。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真人名人、現代西裝、照片感過強。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:29.574205+00:00",
+  "selected_reason": "修補商 portrait 有護目鏡與氧化銅飾件。",
+  "output_path": "SourceArt/Generated/Portraits/af_v02_portrait_recruit_trader.png",
+  "ue_import_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitTrader",
+  "usage_target": [
+    "recruit_trader_ui"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Portraits/af_v02_sheet_portraits.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

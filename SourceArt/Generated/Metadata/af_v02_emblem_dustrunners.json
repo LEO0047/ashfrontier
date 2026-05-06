@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_emblem_dustrunners",
+  "category": "faction_emblem",
+  "prompt": "1024x1024 原創派系徽章，塵路行者，斜線裂片、繩結與陶片輪廓，風沙褐與日曬紅布，簡潔可讀，適合荒野標記與角色面板。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實部落標誌、現代戶外品牌。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:26.082287+00:00",
+  "selected_reason": "塵路行者徽章有斜線裂片與繩結感，荒野辨識清楚。",
+  "output_path": "SourceArt/Generated/FactionEmblems/af_v02_emblem_dustrunners.png",
+  "ue_import_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Dustrunners",
+  "usage_target": [
+    "faction_dustrunners"
+  ],
+  "source_sheet_path": "SourceArt/Generated/FactionEmblems/af_v02_sheet_faction_emblems.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

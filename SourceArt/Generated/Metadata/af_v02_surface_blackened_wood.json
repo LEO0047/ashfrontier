@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_surface_blackened_wood",
+  "category": "surface_texture",
+  "prompt": "可近似無縫重複的焦黑木材 PBR base texture，炭化邊緣，裂紋木板，灰塵與刮痕，適合棚架、防線與回收木板建築。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、家具展覽感、亮面油漆、乾淨木紋。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:20.710034+00:00",
+  "selected_reason": "焦黑木材有裂紋與炭化邊，適合前哨與建築變體。",
+  "output_path": "SourceArt/Generated/Textures/af_v02_surface_blackened_wood.png",
+  "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_BlackenedWood_BaseColor",
+  "usage_target": [
+    "ArtSlot_BlackenedWood"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

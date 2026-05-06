@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_icon_water_flask",
+  "category": "ui_icon",
+  "prompt": "512x512 遊戲 UI icon，鹹水壺，舊金屬水壺與布繩，白色鹽痕，低飽和藍灰高光，清楚輪廓，小尺寸可讀。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代寶特瓶、品牌標籤。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:23.184036+00:00",
+  "selected_reason": "鹹水壺有金屬與鹽痕，可讀性佳。",
+  "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_water_flask.png",
+  "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_WaterFlask",
+  "usage_target": [
+    "item_water_flask"
+  ],
+  "source_sheet_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

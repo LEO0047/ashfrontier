@@ -1,0 +1,17 @@
+{
+  "asset_id": "af_v02_decal_gate_mark",
+  "category": "decal_signage",
+  "prompt": "1024x1024 場景 mark decal，城門標記，繁體中文字「城門」，階梯式護板與矛尖，鹽蝕砂岩底，遠距離可讀。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實城徽、現代交通標誌。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:38.950339+00:00",
+  "selected_reason": "城門標記有砂岩與護板語言，已覆蓋可讀繁體中文。",
+  "output_path": "SourceArt/Generated/Decals/af_v02_decal_gate_mark.png",
+  "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_GateMark",
+  "usage_target": [
+    "ArtSlot_CitySignage",
+    "主城入口"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Decals/af_v02_sheet_decals.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

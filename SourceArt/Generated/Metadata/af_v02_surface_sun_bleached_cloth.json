@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_surface_sun_bleached_cloth",
+  "category": "surface_texture",
+  "prompt": "可近似無縫重複的日曬舊布 PBR base texture，粗織纖維，褪色布料，砂塵污痕，邊緣磨損感，適合旗幟、棚布與 UI 背板。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、乾淨絲綢、華麗花紋、現代印花。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:20.072983+00:00",
+  "selected_reason": "日曬舊布有粗織與砂塵，可用於旗幟與棚布。",
+  "output_path": "SourceArt/Generated/Textures/af_v02_surface_sun_bleached_cloth.png",
+  "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_SunBleachedCloth_BaseColor",
+  "usage_target": [
+    "ArtSlot_SunBleachedCloth"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

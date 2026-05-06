@@ -1,0 +1,17 @@
+{
+  "asset_id": "af_v02_banner_glasshouse",
+  "category": "banner",
+  "prompt": "1024x1024 派系旗幟貼圖，玻璃屋商盟，粗布貨旗，圓弧秤盤與鉚釘符號，氧化銅與赭黃色塊，破損邊緣，適合商店區旗幟材質。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實公司旗、乾淨絲綢旗。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:27.000324+00:00",
+  "selected_reason": "玻璃屋商盟旗幟有商貿色塊與粗布質感。",
+  "output_path": "SourceArt/Generated/Banners/af_v02_banner_glasshouse.png",
+  "ue_import_path": "/Game/GeneratedArt/Banners/T_AfV02_Banner_Glasshouse",
+  "usage_target": [
+    "ArtSlot_FactionBanner_02",
+    "faction_glasshouse"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Banners/af_v02_sheet_banners.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

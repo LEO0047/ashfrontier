@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_emblem_glasshouse",
+  "category": "faction_emblem",
+  "prompt": "1024x1024 原創派系徽章，玻璃屋商盟，圓弧秤盤與鉚釘貨牌輪廓，氧化銅與褪色赭黃，簡潔可讀，適合交易 UI 與商店告示。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真實公司 logo、現代貨幣符號。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:25.476332+00:00",
+  "selected_reason": "玻璃屋商盟徽章有圓弧與貨牌語言，與守望區分。",
+  "output_path": "SourceArt/Generated/FactionEmblems/af_v02_emblem_glasshouse.png",
+  "ue_import_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Glasshouse",
+  "usage_target": [
+    "faction_glasshouse"
+  ],
+  "source_sheet_path": "SourceArt/Generated/FactionEmblems/af_v02_sheet_faction_emblems.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

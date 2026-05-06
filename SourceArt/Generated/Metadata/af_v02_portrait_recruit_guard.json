@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_portrait_recruit_guard",
+  "category": "portrait",
+  "prompt": "1024x1024 可招募角色頭像，鹽脊守望背景出身的年輕守衛，曬傷皮膚，布甲與暗鐵肩片，冷靜表情，原創人物，遊戲角色 portrait。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、真人名人、照片感過強、華麗盔甲。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:28.190022+00:00",
+  "selected_reason": "守衛 portrait 有暗鐵肩片與冷靜表情。",
+  "output_path": "SourceArt/Generated/Portraits/af_v02_portrait_recruit_guard.png",
+  "ue_import_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitGuard",
+  "usage_target": [
+    "recruit_guard_ui"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Portraits/af_v02_sheet_portraits.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

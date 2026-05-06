@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_icon_salvaged_plank",
+  "category": "ui_icon",
+  "prompt": "512x512 遊戲 UI icon，回收木板，焦黑裂紋木板與簡易金屬釘，砂塵，清楚輪廓，小尺寸可讀。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、乾淨家具板、現代建材貼紙。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:23.766762+00:00",
+  "selected_reason": "回收木板有焦黑裂紋，與金屬材料區分。",
+  "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_salvaged_plank.png",
+  "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_SalvagedPlank",
+  "usage_target": [
+    "item_salvaged_plank"
+  ],
+  "source_sheet_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_surface_salt_stone",
+  "category": "surface_texture",
+  "prompt": "可近似無縫重複的鹽蝕砂岩 PBR base texture，灰白鹽痕，砂岩孔洞，粗糙石面，低飽和，適合城牆與岩壁。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代磁磚、濕亮大理石、可讀文字。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:19.263569+00:00",
+  "selected_reason": "鹽蝕砂岩有灰白鹽痕與粗糙孔洞，可支援牆體材質。",
+  "output_path": "SourceArt/Generated/Textures/af_v02_surface_salt_stone.png",
+  "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_SaltStone_BaseColor",
+  "usage_target": [
+    "ArtSlot_SaltStoneWall"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

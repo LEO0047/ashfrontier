@@ -1,0 +1,434 @@
+{
+  "assets": [
+    {
+      "asset_id": "af_v02_concept_city_gate",
+      "category": "concept",
+      "output_path": "SourceArt/Generated/Concepts/af_v02_concept_city_gate.png",
+      "ue_import_path": "/Game/GeneratedArt/Concepts/T_AfV02_Concept_CityGate",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_concept_city_gate.json"
+    },
+    {
+      "asset_id": "af_v02_concept_outpost",
+      "category": "concept",
+      "output_path": "SourceArt/Generated/Concepts/af_v02_concept_outpost.png",
+      "ue_import_path": "/Game/GeneratedArt/Concepts/T_AfV02_Concept_Outpost",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_concept_outpost.json"
+    },
+    {
+      "asset_id": "af_v02_concept_wild_build_zone",
+      "category": "concept",
+      "output_path": "SourceArt/Generated/Concepts/af_v02_concept_wild_build_zone.png",
+      "ue_import_path": "/Game/GeneratedArt/Concepts/T_AfV02_Concept_WildBuildZone",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_concept_wild_build_zone.json"
+    },
+    {
+      "asset_id": "af_v02_surface_cracked_sand",
+      "category": "surface_texture",
+      "output_path": "SourceArt/Generated/Textures/af_v02_surface_cracked_sand.png",
+      "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_CrackedSand_BaseColor",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_surface_cracked_sand.json"
+    },
+    {
+      "asset_id": "af_v02_surface_salt_stone",
+      "category": "surface_texture",
+      "output_path": "SourceArt/Generated/Textures/af_v02_surface_salt_stone.png",
+      "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_SaltStone_BaseColor",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_surface_salt_stone.json"
+    },
+    {
+      "asset_id": "af_v02_surface_rusted_metal",
+      "category": "surface_texture",
+      "output_path": "SourceArt/Generated/Textures/af_v02_surface_rusted_metal.png",
+      "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_RustedMetal_BaseColor",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_surface_rusted_metal.json"
+    },
+    {
+      "asset_id": "af_v02_surface_sun_bleached_cloth",
+      "category": "surface_texture",
+      "output_path": "SourceArt/Generated/Textures/af_v02_surface_sun_bleached_cloth.png",
+      "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_SunBleachedCloth_BaseColor",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_surface_sun_bleached_cloth.json"
+    },
+    {
+      "asset_id": "af_v02_surface_blackened_wood",
+      "category": "surface_texture",
+      "output_path": "SourceArt/Generated/Textures/af_v02_surface_blackened_wood.png",
+      "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_BlackenedWood_BaseColor",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_surface_blackened_wood.json"
+    },
+    {
+      "asset_id": "af_v02_surface_bone_ceramic",
+      "category": "surface_texture",
+      "output_path": "SourceArt/Generated/Textures/af_v02_surface_bone_ceramic.png",
+      "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_BoneCeramic_BaseColor",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_surface_bone_ceramic.json"
+    },
+    {
+      "asset_id": "af_v02_surface_industrial_floor",
+      "category": "surface_texture",
+      "output_path": "SourceArt/Generated/Textures/af_v02_surface_industrial_floor.png",
+      "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_IndustrialFloor_BaseColor",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_surface_industrial_floor.json"
+    },
+    {
+      "asset_id": "af_v02_surface_weathered_wall",
+      "category": "surface_texture",
+      "output_path": "SourceArt/Generated/Textures/af_v02_surface_weathered_wall.png",
+      "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_WeatheredWall_BaseColor",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_surface_weathered_wall.json"
+    },
+    {
+      "asset_id": "af_v02_icon_ash_credit",
+      "category": "ui_icon",
+      "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_ash_credit.png",
+      "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_AshCredit",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_icon_ash_credit.json"
+    },
+    {
+      "asset_id": "af_v02_icon_cooked_ration",
+      "category": "ui_icon",
+      "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_cooked_ration.png",
+      "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_CookedRation",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_icon_cooked_ration.json"
+    },
+    {
+      "asset_id": "af_v02_icon_raw_grain",
+      "category": "ui_icon",
+      "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_raw_grain.png",
+      "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_RawGrain",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_icon_raw_grain.json"
+    },
+    {
+      "asset_id": "af_v02_icon_water_flask",
+      "category": "ui_icon",
+      "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_water_flask.png",
+      "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_WaterFlask",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_icon_water_flask.json"
+    },
+    {
+      "asset_id": "af_v02_icon_scrap_ore",
+      "category": "ui_icon",
+      "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_scrap_ore.png",
+      "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_ScrapOre",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_icon_scrap_ore.json"
+    },
+    {
+      "asset_id": "af_v02_icon_crude_ingot",
+      "category": "ui_icon",
+      "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_crude_ingot.png",
+      "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_CrudeIngot",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_icon_crude_ingot.json"
+    },
+    {
+      "asset_id": "af_v02_icon_salvaged_plank",
+      "category": "ui_icon",
+      "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_salvaged_plank.png",
+      "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_SalvagedPlank",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_icon_salvaged_plank.json"
+    },
+    {
+      "asset_id": "af_v02_icon_building_plate",
+      "category": "ui_icon",
+      "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_building_plate.png",
+      "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_BuildingPlate",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_icon_building_plate.json"
+    },
+    {
+      "asset_id": "af_v02_icon_field_bandage",
+      "category": "ui_icon",
+      "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_field_bandage.png",
+      "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_FieldBandage",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_icon_field_bandage.json"
+    },
+    {
+      "asset_id": "af_v02_icon_medic_wrap",
+      "category": "ui_icon",
+      "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_medic_wrap.png",
+      "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_MedicWrap",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_icon_medic_wrap.json"
+    },
+    {
+      "asset_id": "af_v02_icon_rustblade",
+      "category": "ui_icon",
+      "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_rustblade.png",
+      "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_Rustblade",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_icon_rustblade.json"
+    },
+    {
+      "asset_id": "af_v02_icon_quilted_vest",
+      "category": "ui_icon",
+      "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_quilted_vest.png",
+      "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_QuiltedVest",
+      "width": 512,
+      "height": 512,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_icon_quilted_vest.json"
+    },
+    {
+      "asset_id": "af_v02_emblem_saltwardens",
+      "category": "faction_emblem",
+      "output_path": "SourceArt/Generated/FactionEmblems/af_v02_emblem_saltwardens.png",
+      "ue_import_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Saltwardens",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_emblem_saltwardens.json"
+    },
+    {
+      "asset_id": "af_v02_emblem_glasshouse",
+      "category": "faction_emblem",
+      "output_path": "SourceArt/Generated/FactionEmblems/af_v02_emblem_glasshouse.png",
+      "ue_import_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Glasshouse",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_emblem_glasshouse.json"
+    },
+    {
+      "asset_id": "af_v02_emblem_dustrunners",
+      "category": "faction_emblem",
+      "output_path": "SourceArt/Generated/FactionEmblems/af_v02_emblem_dustrunners.png",
+      "ue_import_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Dustrunners",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_emblem_dustrunners.json"
+    },
+    {
+      "asset_id": "af_v02_banner_saltwardens",
+      "category": "banner",
+      "output_path": "SourceArt/Generated/Banners/af_v02_banner_saltwardens.png",
+      "ue_import_path": "/Game/GeneratedArt/Banners/T_AfV02_Banner_Saltwardens",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_banner_saltwardens.json"
+    },
+    {
+      "asset_id": "af_v02_banner_glasshouse",
+      "category": "banner",
+      "output_path": "SourceArt/Generated/Banners/af_v02_banner_glasshouse.png",
+      "ue_import_path": "/Game/GeneratedArt/Banners/T_AfV02_Banner_Glasshouse",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_banner_glasshouse.json"
+    },
+    {
+      "asset_id": "af_v02_banner_dustrunners",
+      "category": "banner",
+      "output_path": "SourceArt/Generated/Banners/af_v02_banner_dustrunners.png",
+      "ue_import_path": "/Game/GeneratedArt/Banners/T_AfV02_Banner_Dustrunners",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_banner_dustrunners.json"
+    },
+    {
+      "asset_id": "af_v02_portrait_recruit_guard",
+      "category": "portrait",
+      "output_path": "SourceArt/Generated/Portraits/af_v02_portrait_recruit_guard.png",
+      "ue_import_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitGuard",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_portrait_recruit_guard.json"
+    },
+    {
+      "asset_id": "af_v02_portrait_recruit_trader",
+      "category": "portrait",
+      "output_path": "SourceArt/Generated/Portraits/af_v02_portrait_recruit_trader.png",
+      "ue_import_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitTrader",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_portrait_recruit_trader.json"
+    },
+    {
+      "asset_id": "af_v02_portrait_recruit_scout",
+      "category": "portrait",
+      "output_path": "SourceArt/Generated/Portraits/af_v02_portrait_recruit_scout.png",
+      "ue_import_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitScout",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_portrait_recruit_scout.json"
+    },
+    {
+      "asset_id": "af_v02_portrait_recruit_mender",
+      "category": "portrait",
+      "output_path": "SourceArt/Generated/Portraits/af_v02_portrait_recruit_mender.png",
+      "ue_import_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitMender",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_portrait_recruit_mender.json"
+    },
+    {
+      "asset_id": "af_v02_decal_shop_sign",
+      "category": "decal_signage",
+      "output_path": "SourceArt/Generated/Decals/af_v02_decal_shop_sign.png",
+      "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_ShopSign",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_decal_shop_sign.json"
+    },
+    {
+      "asset_id": "af_v02_decal_restricted_warning",
+      "category": "decal_signage",
+      "output_path": "SourceArt/Generated/Decals/af_v02_decal_restricted_warning.png",
+      "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_RestrictedWarning",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_decal_restricted_warning.json"
+    },
+    {
+      "asset_id": "af_v02_decal_guard_notice",
+      "category": "decal_signage",
+      "output_path": "SourceArt/Generated/Decals/af_v02_decal_guard_notice.png",
+      "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_GuardNotice",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_decal_guard_notice.json"
+    },
+    {
+      "asset_id": "af_v02_decal_broken_direction",
+      "category": "decal_signage",
+      "output_path": "SourceArt/Generated/Decals/af_v02_decal_broken_direction.png",
+      "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_BrokenDirection",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_decal_broken_direction.json"
+    },
+    {
+      "asset_id": "af_v02_decal_workshop_mark",
+      "category": "decal_signage",
+      "output_path": "SourceArt/Generated/Decals/af_v02_decal_workshop_mark.png",
+      "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WorkshopMark",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_decal_workshop_mark.json"
+    },
+    {
+      "asset_id": "af_v02_decal_warehouse_mark",
+      "category": "decal_signage",
+      "output_path": "SourceArt/Generated/Decals/af_v02_decal_warehouse_mark.png",
+      "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WarehouseMark",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_decal_warehouse_mark.json"
+    },
+    {
+      "asset_id": "af_v02_decal_water_warning",
+      "category": "decal_signage",
+      "output_path": "SourceArt/Generated/Decals/af_v02_decal_water_warning.png",
+      "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WaterWarning",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_decal_water_warning.json"
+    },
+    {
+      "asset_id": "af_v02_decal_trade_notice",
+      "category": "decal_signage",
+      "output_path": "SourceArt/Generated/Decals/af_v02_decal_trade_notice.png",
+      "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_TradeNotice",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_decal_trade_notice.json"
+    },
+    {
+      "asset_id": "af_v02_decal_gate_mark",
+      "category": "decal_signage",
+      "output_path": "SourceArt/Generated/Decals/af_v02_decal_gate_mark.png",
+      "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_GateMark",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_decal_gate_mark.json"
+    },
+    {
+      "asset_id": "af_v02_decal_wild_danger",
+      "category": "decal_signage",
+      "output_path": "SourceArt/Generated/Decals/af_v02_decal_wild_danger.png",
+      "ue_import_path": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WildDanger",
+      "width": 1024,
+      "height": 1024,
+      "mode": "RGBA",
+      "metadata_path": "SourceArt/Generated/Metadata/af_v02_decal_wild_danger.json"
+    }
+  ]
+}

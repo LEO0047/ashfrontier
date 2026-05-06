@@ -133,6 +133,8 @@ pass() {
     "Scripts/content_lint.py"
     "Scripts/art_prompt_lint.py"
     "Scripts/art_manifest_lint.py"
+    "Scripts/generate_art_assets.sh"
+    "Scripts/slice_generated_art_sheets.py"
     "Scripts/commit_gate.sh"
     ".gitattributes"
     "Content/Data/Art/ArtGenManifest.json"
@@ -140,6 +142,8 @@ pass() {
     "Reports/gate-00-report.md"
     "Reports/Art/gate-10-report.md"
     "Reports/Art/gate-11-report.md"
+    "Reports/Art/gate-12-report.md"
+    "Reports/Art/generated-assets-inventory.md"
   )
 
   for file in "${REQUIRED_FILES[@]}"; do
@@ -258,6 +262,7 @@ PY
     "Scripts/package_macos.sh"
     "Scripts/commit_gate.sh"
     "Scripts/create_gate01_map.sh"
+    "Scripts/generate_art_assets.sh"
   )
   for script in "${SCRIPT_FILES[@]}"; do
     if [[ -x "$script" ]]; then
@@ -278,7 +283,7 @@ PY
     fail "Scripts/content_lint.py Python 語法失敗"
   fi
 
-  for py_script in Scripts/art_prompt_lint.py Scripts/art_manifest_lint.py; do
+  for py_script in Scripts/art_prompt_lint.py Scripts/art_manifest_lint.py Scripts/slice_generated_art_sheets.py; do
     if python3 -m py_compile "$py_script"; then
       pass "$py_script Python 語法通過"
     else

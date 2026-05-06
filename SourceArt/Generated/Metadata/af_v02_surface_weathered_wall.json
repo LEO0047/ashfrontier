@@ -1,0 +1,17 @@
+{
+  "asset_id": "af_v02_surface_weathered_wall",
+  "category": "surface_texture",
+  "prompt": "可近似無縫重複的風化城牆 PBR base texture，砂岩灰泥，氧化金屬補片，鹽霜垂痕，裂縫修補，適合主城與前哨牆體。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代水泥牆、乾淨白牆、可讀文字。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:22.437758+00:00",
+  "selected_reason": "風化城牆有灰泥、補片與鹽霜垂痕，可替換灰盒牆面。",
+  "output_path": "SourceArt/Generated/Textures/af_v02_surface_weathered_wall.png",
+  "ue_import_path": "/Game/GeneratedArt/Textures/T_AfV02_Surface_WeatheredWall_BaseColor",
+  "usage_target": [
+    "ArtSlot_SaltStoneWall",
+    "主城牆體"
+  ],
+  "source_sheet_path": "SourceArt/Generated/Textures/af_v02_sheet_surfaces.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

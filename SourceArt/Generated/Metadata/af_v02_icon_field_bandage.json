@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_icon_field_bandage",
+  "category": "ui_icon",
+  "prompt": "512x512 遊戲 UI icon，野外繃帶，粗布捲與藥粉污痕，低飽和米灰，清楚輪廓，小尺寸可讀。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、現代醫療紅十字、乾淨塑膠包裝。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:24.094698+00:00",
+  "selected_reason": "野外繃帶剪影明確，能區分醫療用品。",
+  "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_field_bandage.png",
+  "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_FieldBandage",
+  "usage_target": [
+    "item_field_bandage"
+  ],
+  "source_sheet_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}

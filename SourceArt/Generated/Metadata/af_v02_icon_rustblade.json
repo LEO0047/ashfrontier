@@ -1,0 +1,16 @@
+{
+  "asset_id": "af_v02_icon_rustblade",
+  "category": "ui_icon",
+  "prompt": "512x512 遊戲 UI icon，鏽刃短刀，回收鋼片刀身，粗布握把，鏽斑與刮痕，清楚斜向剪影，小尺寸可讀。",
+  "negative_prompt": "不要外部遊戲專有名稱、商標、既有角色、既有派系、既有地點、可辨識品牌、浮水印、華麗魔法武器、現代軍刀商標。",
+  "generation_tool": "built-in image_gen",
+  "timestamp": "2026-05-06T15:02:24.457190+00:00",
+  "selected_reason": "鏽刃短刀斜向剪影清楚。",
+  "output_path": "SourceArt/Generated/UIIcons/af_v02_icon_rustblade.png",
+  "ue_import_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_Rustblade",
+  "usage_target": [
+    "item_rustblade"
+  ],
+  "source_sheet_path": "SourceArt/Generated/UIIcons/af_v02_sheet_ui_icons.png",
+  "postprocess": "grid crop, resize, and optional Traditional Chinese signage overlay"
+}
