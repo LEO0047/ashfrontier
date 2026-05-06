@@ -118,8 +118,16 @@ pass() {
     "Docs/ADR/ADR-005-macos-first-target.md"
     "Docs/Research/Kenshi2_DeepResearch_zh-TW.md"
     "Docs/Art/ART_DIRECTION.md"
+    "Docs/Art/STYLE_BIBLE.md"
     "Docs/Art/GENERATED_ART_PIPELINE.md"
+    "Docs/Art/PROVENANCE_RULES.md"
+    "Docs/Art/BANNED_TERMS.md"
     "Docs/Art/Prompts/ashfrontier_style_bible.md"
+    "Docs/Art/Prompts/texture_prompts.md"
+    "Docs/Art/Prompts/ui_icon_prompts.md"
+    "Docs/Art/Prompts/faction_emblem_prompts.md"
+    "Docs/Art/Prompts/portrait_prompts.md"
+    "Docs/Art/Prompts/decal_and_signage_prompts.md"
     "Scripts/env.example"
     "Scripts/validate.sh"
     "Scripts/content_lint.py"
@@ -131,6 +139,7 @@ pass() {
     "Reports/environment.md"
     "Reports/gate-00-report.md"
     "Reports/Art/gate-10-report.md"
+    "Reports/Art/gate-11-report.md"
   )
 
   for file in "${REQUIRED_FILES[@]}"; do

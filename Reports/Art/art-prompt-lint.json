@@ -2,6 +2,11 @@
   "status": "pass",
   "checked_files": [
     "Docs/Art/Prompts/ashfrontier_style_bible.md",
+    "Docs/Art/Prompts/decal_and_signage_prompts.md",
+    "Docs/Art/Prompts/faction_emblem_prompts.md",
+    "Docs/Art/Prompts/portrait_prompts.md",
+    "Docs/Art/Prompts/texture_prompts.md",
+    "Docs/Art/Prompts/ui_icon_prompts.md",
     "Content/Data/Art/ArtGenManifest.json"
   ],
   "issues": []

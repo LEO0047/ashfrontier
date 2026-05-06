@@ -1,6 +1,6 @@
 # Gate 驗證摘要
 
-- 時間：2026-05-06 22:38:54 CST
+- 時間：2026-05-06 22:44:33 CST
 - 專案根目錄：/Users/leo/Library/Mobile Documents/com~apple~CloudDocs/Coding/Projects/Ashfrontier
 
 ## Git
@@ -29,8 +29,16 @@
 - 通過：Docs/ADR/ADR-005-macos-first-target.md 存在
 - 通過：Docs/Research/Kenshi2_DeepResearch_zh-TW.md 存在
 - 通過：Docs/Art/ART_DIRECTION.md 存在
+- 通過：Docs/Art/STYLE_BIBLE.md 存在
 - 通過：Docs/Art/GENERATED_ART_PIPELINE.md 存在
+- 通過：Docs/Art/PROVENANCE_RULES.md 存在
+- 通過：Docs/Art/BANNED_TERMS.md 存在
 - 通過：Docs/Art/Prompts/ashfrontier_style_bible.md 存在
+- 通過：Docs/Art/Prompts/texture_prompts.md 存在
+- 通過：Docs/Art/Prompts/ui_icon_prompts.md 存在
+- 通過：Docs/Art/Prompts/faction_emblem_prompts.md 存在
+- 通過：Docs/Art/Prompts/portrait_prompts.md 存在
+- 通過：Docs/Art/Prompts/decal_and_signage_prompts.md 存在
 - 通過：Scripts/env.example 存在
 - 通過：Scripts/validate.sh 存在
 - 通過：Scripts/content_lint.py 存在
@@ -42,6 +50,7 @@
 - 通過：Reports/environment.md 存在
 - 通過：Reports/gate-00-report.md 存在
 - 通過：Reports/Art/gate-10-report.md 存在
+- 通過：Reports/Art/gate-11-report.md 存在
 
 ## Gate 01 專案骨架
 - 通過：Ashfrontier.uproject 存在
@@ -143,7 +152,7 @@ Store settings (/Users/leo/UnrealEngine/UnrealTrace/Settings.ini):
  - Sponsored mode: 1
  - Directory: '/Users/leo/UnrealEngine/UnrealTrace/Store/001'
 Watcher enabled on /Users/leo/UnrealEngine/UnrealTrace/Store/001
-Signalling parent 54242
+Signalling parent 58241
 Terminating server, no sponsors or connections active.
 Listening cancelled, closing port...
 Listening cancelled, closing port...

@@ -34,3 +34,11 @@ Ashfrontier v0.2 的生成美術要呈現荒漠邊境、鹽風侵蝕、破敗工
 - UI icon 必須在 64x64 預覽仍可辨識。
 - 表面材質優先選擇可裁切、可重複使用、細節均勻的圖。
 - Signage 可以包含繁體中文短字，但必須避免過小與難辨識。
+
+## Manifest 覆蓋
+
+本文件負責覆蓋概念圖類資產：
+
+- `af_v02_concept_city_gate`
+- `af_v02_concept_outpost`
+- `af_v02_concept_wild_build_zone`

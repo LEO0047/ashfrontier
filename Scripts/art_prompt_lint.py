@@ -15,6 +15,14 @@ METADATA_DIR = ROOT / "SourceArt" / "Generated" / "Metadata"
 REPORT_DIR = ROOT / "Reports" / "Art"
 REPORT_MD = REPORT_DIR / "art-prompt-lint.md"
 REPORT_JSON = REPORT_DIR / "art-prompt-lint.json"
+REQUIRED_PROMPT_FILES = [
+    "ashfrontier_style_bible.md",
+    "texture_prompts.md",
+    "ui_icon_prompts.md",
+    "faction_emblem_prompts.md",
+    "portrait_prompts.md",
+    "decal_and_signage_prompts.md",
+]
 
 BANNED_TERMS = [
     "Kenshi",
@@ -84,6 +92,15 @@ def collect_manifest_prompt_text(payload: Any) -> list[tuple[str, str]]:
     return results
 
 
+def collect_manifest_asset_ids(payload: Any) -> list[str]:
+    records = payload.get("records", []) if isinstance(payload, dict) else []
+    asset_ids: list[str] = []
+    for record in records:
+        if isinstance(record, dict) and isinstance(record.get("asset_id"), str):
+            asset_ids.append(record["asset_id"])
+    return asset_ids
+
+
 def write_report(issues: list[dict[str, str]], checked_files: list[str]) -> None:
     REPORT_DIR.mkdir(parents=True, exist_ok=True)
     status = "pass" if not any(issue["severity"] == "error" for issue in issues) else "fail"
@@ -113,13 +130,21 @@ def write_report(issues: list[dict[str, str]], checked_files: list[str]) -> None
 def main() -> int:
     issues: list[dict[str, str]] = []
     checked_files: list[str] = []
+    prompt_docs_text: list[str] = []
+
+    for filename in REQUIRED_PROMPT_FILES:
+        path = PROMPT_DIR / filename
+        if not path.exists():
+            issues.append({"severity": "error", "file": str(path.relative_to(ROOT)), "message": "缺少必備 prompt 文件"})
 
     if PROMPT_DIR.exists():
         for path in sorted(PROMPT_DIR.rglob("*.md")):
             text = read_text(path)
+            prompt_docs_text.append(text)
             checked_files.append(str(path.relative_to(ROOT)))
             check_text(path, "prompt 文件", text, issues)
 
+    manifest_asset_ids: list[str] = []
     if MANIFEST.exists():
         checked_files.append(str(MANIFEST.relative_to(ROOT)))
         try:
@@ -127,10 +152,24 @@ def main() -> int:
         except Exception as exc:
             issues.append({"severity": "error", "file": str(MANIFEST.relative_to(ROOT)), "message": f"JSON 解析失敗：{exc}"})
         else:
+            manifest_asset_ids = collect_manifest_asset_ids(payload)
             for label, text in collect_manifest_prompt_text(payload):
                 check_text(MANIFEST, label, text, issues)
     else:
         issues.append({"severity": "error", "file": str(MANIFEST.relative_to(ROOT)), "message": "缺少 ArtGenManifest.json"})
+
+    prompt_docs_combined = "\n".join(prompt_docs_text)
+    missing_asset_ids = [asset_id for asset_id in manifest_asset_ids if asset_id not in prompt_docs_combined]
+    if missing_asset_ids:
+        issues.append(
+            {
+                "severity": "error",
+                "file": str(PROMPT_DIR.relative_to(ROOT)),
+                "message": "prompt pack 未覆蓋 manifest asset_id："
+                + ", ".join(missing_asset_ids[:20])
+                + ("..." if len(missing_asset_ids) > 20 else ""),
+            }
+        )
 
     if METADATA_DIR.exists():
         for path in sorted(METADATA_DIR.glob("*.json")):
