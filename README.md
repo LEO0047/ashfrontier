@@ -61,6 +61,8 @@ Builds/macOS/Ashfrontier.app/Contents/MacOS/Ashfrontier -nullrhi -unattended -no
 
 這個指令不依賴 Unreal Editor；它應能掛載 pak、啟動 UE runtime 並載入 `/Game/Maps/L_Ashfrontier_Prototype`。實際 5 分鐘 golden path 驗證結果以 `Reports/final-prototype-report.md` 為準。
 
+若從 Finder 開啟看到黑畫面，請先確認不是啟動 `Builds/macOS/Ashfrontier.app.previous.*`。2026-05-06 的黑畫面修補已加入開場光源、固定俯視相機與大型 HUD 啟動提示；新版 build 正常 Metal 啟動 smoke 已通過。
+
 ## 文件與報告
 
 - `Docs/PLAN.md`：單一主線 Gate 計畫。

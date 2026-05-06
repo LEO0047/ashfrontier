@@ -30,6 +30,7 @@
 - Soak smoke：通過；未執行完整 30 分鐘 soak。
 - Perf capture：已輸出 Gate 09 macOS summary。
 - Packaged smoke：命令列啟動通過，可掛載 pak 並載入 prototype map。
+- 黑畫面修補 smoke：2026-05-06 21:43 CST 正常 Metal 啟動通過，已載入 prototype map 並初始化 UE runtime；本次 build 加入開場光源、固定俯視相機與大型 HUD 啟動提示。
 
 ## 5 分鐘 Golden Path 驗證
 
@@ -58,6 +59,7 @@
 - 打包工具：`Scripts/package_macos.sh`。
 - 打包環境：UE 5.7.4、Xcode 26.4.1、Metal Toolchain 17E188。
 - 啟動驗證：2026-05-06 21:11 CST 命令列 smoke 通過，已掛載 `Ashfrontier-Mac.pak` 並載入 `/Game/Maps/L_Ashfrontier_Prototype`。
+- 黑畫面修補驗證：2026-05-06 21:43 CST 正常 Metal 啟動 smoke 通過，log 顯示 `LoadMap Load map complete /Game/Maps/L_Ashfrontier_Prototype` 與 `Engine is initialized`。
 - 簽章狀態：iCloud File Provider metadata 會導致 strict ad-hoc codesign 警告；Finder / Gatekeeper 尚待非 iCloud 路徑驗證。
 
 ## Known Issues

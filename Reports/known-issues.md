@@ -10,12 +10,14 @@
 - 世界 blockout 以 runtime cube / capsule / primitive placeholder 建立；尚未有正式美術、材質、動畫或最終地形。
 - NavMesh 尚未轉成完整烘焙流程；目前以 runtime route agent、direct movement 與 automation flow 驗證可走動路線。
 - 守衛 AI 是 rule-driven component，尚未接 StateTree 或 Behavior Tree。
+- 2026-05-06 黑畫面回報後，已補開場光源、固定俯視相機與大型 HUD 啟動提示；若仍看到黑畫面，優先檢查是否啟動舊的 `.app.previous.*` 或 Finder / iCloud metadata 問題。
 
 ## 驗證限制
 
 - `Scripts/soak_test.sh --smoke` 已執行完整 UE automation smoke suite，但尚未執行 30 分鐘真人或 headless gameplay soak。
 - `Scripts/perf_capture.sh --gate09` 已輸出 macOS / Apple Silicon / 解析度與測試模式，但尚未接 UE Insights trace 或 Metal frame capture。
 - packaged build 已完成命令列啟動與 prototype map load smoke；真人手動 5 分鐘 packaged golden path 尚未完成，因此最終報告不能宣稱此項已人工通過。
+- 自動截圖 smoke 因 macOS `screencapture` 權限回報 `could not create image from display`，目前以正常 Metal 啟動 log 驗證 map load 與 engine init。
 
 ## macOS Package / Signing
 

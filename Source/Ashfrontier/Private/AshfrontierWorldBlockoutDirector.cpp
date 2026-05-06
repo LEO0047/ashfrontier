@@ -1,8 +1,14 @@
 #include "AshfrontierWorldBlockoutDirector.h"
 
 #include "AshfrontierRouteAgent.h"
+#include "Components/DirectionalLightComponent.h"
+#include "Components/LightComponent.h"
+#include "Components/SkyLightComponent.h"
+#include "Engine/DirectionalLight.h"
+#include "Engine/SkyLight.h"
 #include "Components/StaticMeshComponent.h"
 #include "Engine/StaticMeshActor.h"
+#include "Materials/MaterialInstanceDynamic.h"
 
 AAshfrontierWorldBlockoutDirector::AAshfrontierWorldBlockoutDirector()
 {
@@ -15,6 +21,7 @@ void AAshfrontierWorldBlockoutDirector::BuildPrototypeWorld()
 
     CubeMesh = LoadObject<UStaticMesh>(nullptr, TEXT("/Engine/BasicShapes/Cube.Cube"));
     DefineWorldRecords();
+    SpawnStartupLighting();
     SpawnWorldGeometry();
     SpawnRouteMarkers();
     SpawnRouteAgents();
@@ -46,6 +53,11 @@ const TArray<FAshfrontierRouteRecord>& AAshfrontierWorldBlockoutDirector::GetRou
 int32 AAshfrontierWorldBlockoutDirector::GetRouteAgentCount() const
 {
     return RouteAgents.Num();
+}
+
+int32 AAshfrontierWorldBlockoutDirector::GetSpawnedActorCount() const
+{
+    return SpawnedActors.Num();
 }
 
 void AAshfrontierWorldBlockoutDirector::DefineWorldRecords()
@@ -80,6 +92,46 @@ void AAshfrontierWorldBlockoutDirector::DefineWorldRecords()
             true
         }
     };
+}
+
+void AAshfrontierWorldBlockoutDirector::SpawnStartupLighting()
+{
+    UWorld* World = GetWorld();
+    if (!World)
+    {
+        return;
+    }
+
+    FActorSpawnParameters SpawnParams;
+    SpawnParams.Owner = this;
+    SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+    SpawnParams.Name = TEXT("AF_Startup_Sun");
+    ADirectionalLight* Sun = World->SpawnActor<ADirectionalLight>(ADirectionalLight::StaticClass(), FVector(-1600.0f, -1400.0f, 2200.0f), FRotator(-52.0f, -35.0f, 0.0f), SpawnParams);
+    if (Sun)
+    {
+        if (ULightComponent* LightComponent = Sun->GetLightComponent())
+        {
+            LightComponent->SetIntensity(8.0f);
+            LightComponent->SetLightColor(FLinearColor(1.0f, 0.92f, 0.78f, 1.0f));
+            LightComponent->SetCastShadows(false);
+        }
+        SpawnedActors.Add(Sun);
+    }
+
+    SpawnParams.Name = TEXT("AF_Startup_SkyLight");
+    ASkyLight* SkyLight = World->SpawnActor<ASkyLight>(ASkyLight::StaticClass(), FVector(0.0f, 0.0f, 900.0f), FRotator::ZeroRotator, SpawnParams);
+    if (SkyLight)
+    {
+        if (USkyLightComponent* LightComponent = SkyLight->GetLightComponent())
+        {
+            LightComponent->SetIntensity(1.25f);
+            LightComponent->SetLightColor(FLinearColor(0.74f, 0.82f, 1.0f, 1.0f));
+            LightComponent->SetCastShadows(false);
+            LightComponent->RecaptureSky();
+        }
+        SpawnedActors.Add(SkyLight);
+    }
 }
 
 void AAshfrontierWorldBlockoutDirector::SpawnWorldGeometry()
@@ -169,7 +221,11 @@ AActor* AAshfrontierWorldBlockoutDirector::SpawnBlock(const FName& ActorName, co
         MeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
         MeshComponent->SetCollisionResponseToAllChannels(ECR_Block);
         MeshComponent->SetMobility(EComponentMobility::Static);
-        MeshComponent->SetCustomPrimitiveDataFloat(0, DebugColor.R);
+        if (UMaterialInstanceDynamic* Material = MeshComponent->CreateAndSetMaterialInstanceDynamic(0))
+        {
+            Material->SetVectorParameterValue(TEXT("Color"), DebugColor);
+            Material->SetVectorParameterValue(TEXT("BaseColor"), DebugColor);
+        }
     }
 
     SpawnedActors.Add(Block);

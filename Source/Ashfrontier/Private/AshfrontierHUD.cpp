@@ -9,12 +9,17 @@
 #include "AshfrontierPlacedBuilding.h"
 #include "AshfrontierPlayerController.h"
 #include "AshfrontierSquadManagerComponent.h"
+#include "Engine/Canvas.h"
 
 void AAshfrontierHUD::DrawHUD()
 {
     Super::DrawHUD();
 
-    DrawText(TEXT("Ashfrontier Gate 07 原型 HUD"), FLinearColor::White, 32.0f, 32.0f);
+    const float PanelWidth = Canvas ? FMath::Min(Canvas->SizeX - 36.0f, 1040.0f) : 1040.0f;
+    DrawRect(FLinearColor(0.02f, 0.025f, 0.03f, 0.82f), 18.0f, 18.0f, PanelWidth, 188.0f);
+    DrawText(TEXT("Ashfrontier Gate 09 可玩原型已啟動"), FLinearColor(0.98f, 0.86f, 0.28f, 1.0f), 32.0f, 30.0f, nullptr, 1.45f);
+    DrawText(TEXT("滑鼠左鍵選取｜右鍵移動 / 攻擊｜Tab 切換鏡頭｜R 招募｜T 交易｜G 採集｜B 建造｜P 生產｜F5 存檔｜F9 讀檔"), FLinearColor::White, 32.0f, 72.0f, nullptr, 0.95f);
+    DrawText(TEXT("若看到這行，packaged build 已經進入 prototype map。黑畫面修補：啟用開場光源、固定俯視相機與大型 HUD。"), FLinearColor(0.6f, 0.95f, 0.95f, 1.0f), 32.0f, 104.0f, nullptr, 0.9f);
 
     const AAshfrontierPlayerController* AshController = Cast<AAshfrontierPlayerController>(PlayerOwner);
     if (!AshController)
@@ -30,10 +35,10 @@ void AAshfrontierHUD::DrawHUD()
     }
 
     const FString CameraLabel = CameraController && CameraController->IsTacticalCamera() ? TEXT("戰術視角") : TEXT("第三人稱視角");
-    DrawText(FString::Printf(TEXT("小隊：%d / 選取：%d / 鏡頭：%s"), SquadManager->GetSquadCount(), SquadManager->GetSelectedCount(), *CameraLabel), FLinearColor::White, 32.0f, 58.0f);
+    DrawText(FString::Printf(TEXT("小隊：%d / 選取：%d / 鏡頭：%s"), SquadManager->GetSquadCount(), SquadManager->GetSelectedCount(), *CameraLabel), FLinearColor::White, 32.0f, 142.0f, nullptr, 1.05f);
 
     const TArray<AAshfrontierCharacter*> Members = SquadManager->GetSquadMembers();
-    float Y = 88.0f;
+    float Y = 218.0f;
     for (const AAshfrontierCharacter* Member : Members)
     {
         if (!Member)

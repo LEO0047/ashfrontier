@@ -55,6 +55,8 @@ void AAshfrontierPlayerController::BeginPlay()
 {
     Super::BeginPlay();
 
+    SetControlRotation(FRotator(-48.0f, -35.0f, 0.0f));
+
     FInputModeGameAndUI InputMode;
     InputMode.SetHideCursorDuringCapture(false);
     SetInputMode(InputMode);

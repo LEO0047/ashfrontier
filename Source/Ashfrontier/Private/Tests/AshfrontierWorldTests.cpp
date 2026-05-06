@@ -84,6 +84,7 @@ bool FAshfrontierWorldBlockoutRoutesTest::RunTest(const FString& Parameters)
     bPassed &= TestTrue(TEXT("Routes should include merchant movement"), bHasMerchantRoute);
     bPassed &= TestTrue(TEXT("Routes should include at least seven total waypoints"), TotalWaypoints >= 7);
     bPassed &= TestEqual(TEXT("Route agents should spawn for both routes"), Director->GetRouteAgentCount(), 2);
+    bPassed &= TestTrue(TEXT("Startup world should spawn visible lighting and blockout actors"), Director->GetSpawnedActorCount() >= 12);
 
     Director->DestroySpawnedBlockout();
     Director->Destroy();

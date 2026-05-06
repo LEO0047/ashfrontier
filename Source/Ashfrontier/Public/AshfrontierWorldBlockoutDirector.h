@@ -67,9 +67,11 @@ public:
     const TArray<FAshfrontierWorldZoneRecord>& GetZoneRecords() const;
     const TArray<FAshfrontierRouteRecord>& GetRouteRecords() const;
     int32 GetRouteAgentCount() const;
+    int32 GetSpawnedActorCount() const;
 
 private:
     void DefineWorldRecords();
+    void SpawnStartupLighting();
     void SpawnWorldGeometry();
     void SpawnRouteMarkers();
     void SpawnRouteAgents();

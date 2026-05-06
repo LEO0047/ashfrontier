@@ -30,8 +30,10 @@ AAshfrontierCharacter::AAshfrontierCharacter()
 
     CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
     CameraBoom->SetupAttachment(RootComponent);
-    CameraBoom->TargetArmLength = 420.0f;
-    CameraBoom->bUsePawnControlRotation = true;
+    CameraBoom->TargetArmLength = 620.0f;
+    CameraBoom->bUsePawnControlRotation = false;
+    CameraBoom->bDoCollisionTest = false;
+    CameraBoom->SetRelativeRotation(FRotator(-48.0f, -35.0f, 0.0f));
 
     FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
     FollowCamera->SetupAttachment(CameraBoom, USpringArmComponent::SocketName);
