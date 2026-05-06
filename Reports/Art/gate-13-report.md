@@ -36,3 +36,10 @@ Gate 13 將 Gate 12 的生成圖片處理為 UE 可用來源貼圖，並透過 U
 
 - Master material graph 目前是 v0.2 prototype 用的輕量材質網路，後續 Gate 14 套用到場景後需要用固定相機確認實際視覺效果。
 - Decal 與 banner 材質已建立，但場景套用會在 Gate 14 透過 ArtSlot mapping 完成。
+
+## 推送紀錄
+
+- Gate commit：d3ad30ed18894a7ba5c491d6e2d1742524af0d8a
+- Push 狀態：已推送到 origin/main
+- Remote SHA：d3ad30ed18894a7ba5c491d6e2d1742524af0d8a
+- 記錄時間：2026-05-06 23:20:03 CST
