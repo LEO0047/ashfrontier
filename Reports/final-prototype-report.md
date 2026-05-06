@@ -7,7 +7,9 @@
 - 目標平台：macOS，Apple Silicon 優先。
 - Build 路徑：`Builds/macOS/Ashfrontier.app`。
 - Build 時間：2026-05-06 21:06:22 CST 到 21:10:22 CST。
-- 最新 commit hash：等待 Gate 09 commit gate。
+- Gate 09 commit hash：7f55ed6125bb57b56b011908f86946918a80ef6a。
+- Gate 09 推送狀態 commit hash：65b29241b2f22a6b097a632f043ef9f8c36f3681。
+- 最新 remote hash：此報告同步後請以 `git rev-parse origin/main` 為準；最後回報會列出實際 `HEAD` / `origin/main`。
 
 ## 完成項目
 

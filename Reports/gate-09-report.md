@@ -3,7 +3,7 @@
 ## 狀態
 
 - Gate：Gate 09 — 存讀檔、macOS 打包、回歸、soak test 與最終報告。
-- 狀態：本機實作、package smoke、soak smoke 與 perf smoke 完成，等待最終 `./Scripts/validate.sh` 與 commit gate。
+- 狀態：完成並已推送。
 - 日期：2026-05-06。
 
 ## 完成內容
@@ -85,12 +85,8 @@
 
 ## 推送紀錄
 
-- Gate commit：等待 commit gate。
-- Push 狀態：等待 commit gate。
-
-## 推送紀錄
-
 - Gate commit：7f55ed6125bb57b56b011908f86946918a80ef6a
+- Gate 09 推送狀態記錄 commit：65b29241b2f22a6b097a632f043ef9f8c36f3681
 - Push 狀態：已推送到 origin/main
-- Remote SHA：7f55ed6125bb57b56b011908f86946918a80ef6a
+- Remote SHA：65b29241b2f22a6b097a632f043ef9f8c36f3681
 - 記錄時間：2026-05-06 21:14:40 CST
