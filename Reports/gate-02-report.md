@@ -55,3 +55,10 @@
 
 - Gate 03 必須開始交付 Editor playable：至少 2 名小隊成員、選取、移動、跟隨、待命、鏡頭與狀態 UI placeholder。
 - Gate 03 的驗證不能只靠資料或文件，必須證明 UE Editor 內可以控制小隊移動。
+
+## 推送紀錄
+
+- Gate commit：0260776b81f3a9aac40952d708e1ca4e604a2e54
+- Push 狀態：已推送到 origin/main
+- Remote SHA：0260776b81f3a9aac40952d708e1ca4e604a2e54
+- 記錄時間：2026-05-06 19:15:04 CST
