@@ -1,0 +1,244 @@
+{
+  "records": [
+    {
+      "asset_id": "af_v02_surface_cracked_sand",
+      "category": "surface_texture",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_CrackedSand",
+      "primary_texture": "/Game/GeneratedArt/Textures/T_AfV02_Surface_CrackedSand_BaseColor"
+    },
+    {
+      "asset_id": "af_v02_surface_salt_stone",
+      "category": "surface_texture",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_SaltStone",
+      "primary_texture": "/Game/GeneratedArt/Textures/T_AfV02_Surface_SaltStone_BaseColor"
+    },
+    {
+      "asset_id": "af_v02_surface_rusted_metal",
+      "category": "surface_texture",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_RustedMetal",
+      "primary_texture": "/Game/GeneratedArt/Textures/T_AfV02_Surface_RustedMetal_BaseColor"
+    },
+    {
+      "asset_id": "af_v02_surface_sun_bleached_cloth",
+      "category": "surface_texture",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_SunBleachedCloth",
+      "primary_texture": "/Game/GeneratedArt/Textures/T_AfV02_Surface_SunBleachedCloth_BaseColor"
+    },
+    {
+      "asset_id": "af_v02_surface_blackened_wood",
+      "category": "surface_texture",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_BlackenedWood",
+      "primary_texture": "/Game/GeneratedArt/Textures/T_AfV02_Surface_BlackenedWood_BaseColor"
+    },
+    {
+      "asset_id": "af_v02_surface_bone_ceramic",
+      "category": "surface_texture",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_BoneCeramic",
+      "primary_texture": "/Game/GeneratedArt/Textures/T_AfV02_Surface_BoneCeramic_BaseColor"
+    },
+    {
+      "asset_id": "af_v02_surface_industrial_floor",
+      "category": "surface_texture",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_IndustrialFloor",
+      "primary_texture": "/Game/GeneratedArt/Textures/T_AfV02_Surface_IndustrialFloor_BaseColor"
+    },
+    {
+      "asset_id": "af_v02_surface_weathered_wall",
+      "category": "surface_texture",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_WeatheredWall",
+      "primary_texture": "/Game/GeneratedArt/Textures/T_AfV02_Surface_WeatheredWall_BaseColor"
+    },
+    {
+      "asset_id": "af_v02_icon_ash_credit",
+      "category": "ui_icon",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_AshCredit",
+      "primary_texture": "/Game/GeneratedArt/UI/T_AfV02_Icon_AshCredit"
+    },
+    {
+      "asset_id": "af_v02_icon_cooked_ration",
+      "category": "ui_icon",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_CookedRation",
+      "primary_texture": "/Game/GeneratedArt/UI/T_AfV02_Icon_CookedRation"
+    },
+    {
+      "asset_id": "af_v02_icon_raw_grain",
+      "category": "ui_icon",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_RawGrain",
+      "primary_texture": "/Game/GeneratedArt/UI/T_AfV02_Icon_RawGrain"
+    },
+    {
+      "asset_id": "af_v02_icon_water_flask",
+      "category": "ui_icon",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_WaterFlask",
+      "primary_texture": "/Game/GeneratedArt/UI/T_AfV02_Icon_WaterFlask"
+    },
+    {
+      "asset_id": "af_v02_icon_scrap_ore",
+      "category": "ui_icon",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_ScrapOre",
+      "primary_texture": "/Game/GeneratedArt/UI/T_AfV02_Icon_ScrapOre"
+    },
+    {
+      "asset_id": "af_v02_icon_crude_ingot",
+      "category": "ui_icon",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_CrudeIngot",
+      "primary_texture": "/Game/GeneratedArt/UI/T_AfV02_Icon_CrudeIngot"
+    },
+    {
+      "asset_id": "af_v02_icon_salvaged_plank",
+      "category": "ui_icon",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_SalvagedPlank",
+      "primary_texture": "/Game/GeneratedArt/UI/T_AfV02_Icon_SalvagedPlank"
+    },
+    {
+      "asset_id": "af_v02_icon_building_plate",
+      "category": "ui_icon",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_BuildingPlate",
+      "primary_texture": "/Game/GeneratedArt/UI/T_AfV02_Icon_BuildingPlate"
+    },
+    {
+      "asset_id": "af_v02_icon_field_bandage",
+      "category": "ui_icon",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_FieldBandage",
+      "primary_texture": "/Game/GeneratedArt/UI/T_AfV02_Icon_FieldBandage"
+    },
+    {
+      "asset_id": "af_v02_icon_medic_wrap",
+      "category": "ui_icon",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_MedicWrap",
+      "primary_texture": "/Game/GeneratedArt/UI/T_AfV02_Icon_MedicWrap"
+    },
+    {
+      "asset_id": "af_v02_icon_rustblade",
+      "category": "ui_icon",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_Rustblade",
+      "primary_texture": "/Game/GeneratedArt/UI/T_AfV02_Icon_Rustblade"
+    },
+    {
+      "asset_id": "af_v02_icon_quilted_vest",
+      "category": "ui_icon",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_QuiltedVest",
+      "primary_texture": "/Game/GeneratedArt/UI/T_AfV02_Icon_QuiltedVest"
+    },
+    {
+      "asset_id": "af_v02_emblem_saltwardens",
+      "category": "faction_emblem",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Emblem_Saltwardens",
+      "primary_texture": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Saltwardens"
+    },
+    {
+      "asset_id": "af_v02_emblem_glasshouse",
+      "category": "faction_emblem",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Emblem_Glasshouse",
+      "primary_texture": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Glasshouse"
+    },
+    {
+      "asset_id": "af_v02_emblem_dustrunners",
+      "category": "faction_emblem",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Emblem_Dustrunners",
+      "primary_texture": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Dustrunners"
+    },
+    {
+      "asset_id": "af_v02_banner_saltwardens",
+      "category": "banner",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Banner_Saltwardens",
+      "primary_texture": "/Game/GeneratedArt/Banners/T_AfV02_Banner_Saltwardens"
+    },
+    {
+      "asset_id": "af_v02_banner_glasshouse",
+      "category": "banner",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Banner_Glasshouse",
+      "primary_texture": "/Game/GeneratedArt/Banners/T_AfV02_Banner_Glasshouse"
+    },
+    {
+      "asset_id": "af_v02_banner_dustrunners",
+      "category": "banner",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Banner_Dustrunners",
+      "primary_texture": "/Game/GeneratedArt/Banners/T_AfV02_Banner_Dustrunners"
+    },
+    {
+      "asset_id": "af_v02_portrait_recruit_guard",
+      "category": "portrait",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Portrait_RecruitGuard",
+      "primary_texture": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitGuard"
+    },
+    {
+      "asset_id": "af_v02_portrait_recruit_trader",
+      "category": "portrait",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Portrait_RecruitTrader",
+      "primary_texture": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitTrader"
+    },
+    {
+      "asset_id": "af_v02_portrait_recruit_scout",
+      "category": "portrait",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Portrait_RecruitScout",
+      "primary_texture": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitScout"
+    },
+    {
+      "asset_id": "af_v02_portrait_recruit_mender",
+      "category": "portrait",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Portrait_RecruitMender",
+      "primary_texture": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitMender"
+    },
+    {
+      "asset_id": "af_v02_decal_shop_sign",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_ShopSign",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_ShopSign"
+    },
+    {
+      "asset_id": "af_v02_decal_restricted_warning",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_RestrictedWarning",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_RestrictedWarning"
+    },
+    {
+      "asset_id": "af_v02_decal_guard_notice",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_GuardNotice",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_GuardNotice"
+    },
+    {
+      "asset_id": "af_v02_decal_broken_direction",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_BrokenDirection",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_BrokenDirection"
+    },
+    {
+      "asset_id": "af_v02_decal_workshop_mark",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_WorkshopMark",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WorkshopMark"
+    },
+    {
+      "asset_id": "af_v02_decal_warehouse_mark",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_WarehouseMark",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WarehouseMark"
+    },
+    {
+      "asset_id": "af_v02_decal_water_warning",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_WaterWarning",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WaterWarning"
+    },
+    {
+      "asset_id": "af_v02_decal_trade_notice",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_TradeNotice",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_TradeNotice"
+    },
+    {
+      "asset_id": "af_v02_decal_gate_mark",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_GateMark",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_GateMark"
+    },
+    {
+      "asset_id": "af_v02_decal_wild_danger",
+      "category": "decal_signage",
+      "material_instance": "/Game/GeneratedArt/Materials/MI_AfV02_Decal_WildDanger",
+      "primary_texture": "/Game/GeneratedArt/Decals/T_AfV02_Decal_WildDanger"
+    }
+  ]
+}

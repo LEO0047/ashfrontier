@@ -133,8 +133,10 @@ pass() {
     "Scripts/content_lint.py"
     "Scripts/art_prompt_lint.py"
     "Scripts/art_manifest_lint.py"
+    "Scripts/build_texture_maps.py"
     "Scripts/generate_art_assets.sh"
     "Scripts/slice_generated_art_sheets.py"
+    "Scripts/import_generated_art.sh"
     "Scripts/commit_gate.sh"
     ".gitattributes"
     "Content/Data/Art/ArtGenManifest.json"
@@ -143,7 +145,12 @@ pass() {
     "Reports/Art/gate-10-report.md"
     "Reports/Art/gate-11-report.md"
     "Reports/Art/gate-12-report.md"
+    "Reports/Art/gate-13-report.md"
     "Reports/Art/generated-assets-inventory.md"
+    "Reports/Art/texture-processing.md"
+    "Reports/Art/import-generated-art.md"
+    "Content/Python/import_generated_art.py"
+    "Content/Data/Art/GeneratedMaterialInstances.json"
   )
 
   for file in "${REQUIRED_FILES[@]}"; do
@@ -263,6 +270,7 @@ PY
     "Scripts/commit_gate.sh"
     "Scripts/create_gate01_map.sh"
     "Scripts/generate_art_assets.sh"
+    "Scripts/import_generated_art.sh"
   )
   for script in "${SCRIPT_FILES[@]}"; do
     if [[ -x "$script" ]]; then
@@ -283,7 +291,7 @@ PY
     fail "Scripts/content_lint.py Python 語法失敗"
   fi
 
-  for py_script in Scripts/art_prompt_lint.py Scripts/art_manifest_lint.py Scripts/slice_generated_art_sheets.py; do
+  for py_script in Scripts/art_prompt_lint.py Scripts/art_manifest_lint.py Scripts/build_texture_maps.py Scripts/slice_generated_art_sheets.py Content/Python/import_generated_art.py; do
     if python3 -m py_compile "$py_script"; then
       pass "$py_script Python 語法通過"
     else
@@ -305,6 +313,22 @@ PY
     pass "art_manifest_lint.py 通過"
   else
     fail "art_manifest_lint.py 失敗"
+  fi
+
+  log ""
+  log "## Texture Processing Smoke"
+  if python3 Scripts/build_texture_maps.py --check; then
+    pass "build_texture_maps.py --check 通過"
+  else
+    fail "build_texture_maps.py --check 失敗"
+  fi
+
+  log ""
+  log "## UE Import Smoke"
+  if ./Scripts/import_generated_art.sh --smoke; then
+    pass "import_generated_art.sh --smoke 通過"
+  else
+    fail "import_generated_art.sh --smoke 失敗"
   fi
 
   log ""

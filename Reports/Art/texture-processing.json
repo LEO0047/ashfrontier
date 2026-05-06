@@ -1,0 +1,361 @@
+{
+  "status": "pass",
+  "check_only": true,
+  "outputs": [
+    {
+      "asset_id": "af_v02_concept_city_gate",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Concepts/T_AfV02_Concept_CityGate.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_concept_outpost",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Concepts/T_AfV02_Concept_Outpost.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_concept_wild_build_zone",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Concepts/T_AfV02_Concept_WildBuildZone.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_cracked_sand",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_CrackedSand_BaseColor.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_cracked_sand",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_CrackedSand_Roughness.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_cracked_sand",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_CrackedSand_Normal.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_salt_stone",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_SaltStone_BaseColor.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_salt_stone",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_SaltStone_Roughness.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_salt_stone",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_SaltStone_Normal.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_rusted_metal",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_RustedMetal_BaseColor.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_rusted_metal",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_RustedMetal_Roughness.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_rusted_metal",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_RustedMetal_Normal.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_sun_bleached_cloth",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_SunBleachedCloth_BaseColor.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_sun_bleached_cloth",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_SunBleachedCloth_Roughness.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_sun_bleached_cloth",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_SunBleachedCloth_Normal.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_blackened_wood",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_BlackenedWood_BaseColor.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_blackened_wood",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_BlackenedWood_Roughness.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_blackened_wood",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_BlackenedWood_Normal.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_bone_ceramic",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_BoneCeramic_BaseColor.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_bone_ceramic",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_BoneCeramic_Roughness.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_bone_ceramic",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_BoneCeramic_Normal.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_industrial_floor",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_IndustrialFloor_BaseColor.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_industrial_floor",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_IndustrialFloor_Roughness.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_industrial_floor",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_IndustrialFloor_Normal.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_weathered_wall",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_WeatheredWall_BaseColor.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_weathered_wall",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_WeatheredWall_Roughness.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_surface_weathered_wall",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Textures/T_AfV02_Surface_WeatheredWall_Normal.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_icon_ash_credit",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/UI/T_AfV02_Icon_AshCredit.png",
+      "size": "512x512"
+    },
+    {
+      "asset_id": "af_v02_icon_cooked_ration",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/UI/T_AfV02_Icon_CookedRation.png",
+      "size": "512x512"
+    },
+    {
+      "asset_id": "af_v02_icon_raw_grain",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/UI/T_AfV02_Icon_RawGrain.png",
+      "size": "512x512"
+    },
+    {
+      "asset_id": "af_v02_icon_water_flask",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/UI/T_AfV02_Icon_WaterFlask.png",
+      "size": "512x512"
+    },
+    {
+      "asset_id": "af_v02_icon_scrap_ore",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/UI/T_AfV02_Icon_ScrapOre.png",
+      "size": "512x512"
+    },
+    {
+      "asset_id": "af_v02_icon_crude_ingot",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/UI/T_AfV02_Icon_CrudeIngot.png",
+      "size": "512x512"
+    },
+    {
+      "asset_id": "af_v02_icon_salvaged_plank",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/UI/T_AfV02_Icon_SalvagedPlank.png",
+      "size": "512x512"
+    },
+    {
+      "asset_id": "af_v02_icon_building_plate",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/UI/T_AfV02_Icon_BuildingPlate.png",
+      "size": "512x512"
+    },
+    {
+      "asset_id": "af_v02_icon_field_bandage",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/UI/T_AfV02_Icon_FieldBandage.png",
+      "size": "512x512"
+    },
+    {
+      "asset_id": "af_v02_icon_medic_wrap",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/UI/T_AfV02_Icon_MedicWrap.png",
+      "size": "512x512"
+    },
+    {
+      "asset_id": "af_v02_icon_rustblade",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/UI/T_AfV02_Icon_Rustblade.png",
+      "size": "512x512"
+    },
+    {
+      "asset_id": "af_v02_icon_quilted_vest",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/UI/T_AfV02_Icon_QuiltedVest.png",
+      "size": "512x512"
+    },
+    {
+      "asset_id": "af_v02_emblem_saltwardens",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Factions/T_AfV02_Emblem_Saltwardens.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_emblem_glasshouse",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Factions/T_AfV02_Emblem_Glasshouse.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_emblem_dustrunners",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Factions/T_AfV02_Emblem_Dustrunners.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_banner_saltwardens",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Banners/T_AfV02_Banner_Saltwardens.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_banner_glasshouse",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Banners/T_AfV02_Banner_Glasshouse.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_banner_dustrunners",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Banners/T_AfV02_Banner_Dustrunners.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_portrait_recruit_guard",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Characters/T_AfV02_Portrait_RecruitGuard.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_portrait_recruit_trader",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Characters/T_AfV02_Portrait_RecruitTrader.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_portrait_recruit_scout",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Characters/T_AfV02_Portrait_RecruitScout.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_portrait_recruit_mender",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Characters/T_AfV02_Portrait_RecruitMender.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_decal_shop_sign",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Decals/T_AfV02_Decal_ShopSign.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_decal_restricted_warning",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Decals/T_AfV02_Decal_RestrictedWarning.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_decal_guard_notice",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Decals/T_AfV02_Decal_GuardNotice.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_decal_broken_direction",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Decals/T_AfV02_Decal_BrokenDirection.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_decal_workshop_mark",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Decals/T_AfV02_Decal_WorkshopMark.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_decal_warehouse_mark",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Decals/T_AfV02_Decal_WarehouseMark.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_decal_water_warning",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Decals/T_AfV02_Decal_WaterWarning.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_decal_trade_notice",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Decals/T_AfV02_Decal_TradeNotice.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_decal_gate_mark",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Decals/T_AfV02_Decal_GateMark.png",
+      "size": "1024x1024"
+    },
+    {
+      "asset_id": "af_v02_decal_wild_danger",
+      "kind": "existing",
+      "path": "Content/GeneratedArt/Decals/T_AfV02_Decal_WildDanger.png",
+      "size": "1024x1024"
+    }
+  ],
+  "errors": []
+}

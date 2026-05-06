@@ -1,6 +1,6 @@
 # Gate 驗證摘要
 
-- 時間：2026-05-06 23:07:30 CST
+- 時間：2026-05-06 23:18:45 CST
 - 專案根目錄：/Users/leo/Library/Mobile Documents/com~apple~CloudDocs/Coding/Projects/Ashfrontier
 
 ## Git
@@ -43,8 +43,10 @@
 - 通過：Scripts/content_lint.py 存在
 - 通過：Scripts/art_prompt_lint.py 存在
 - 通過：Scripts/art_manifest_lint.py 存在
+- 通過：Scripts/build_texture_maps.py 存在
 - 通過：Scripts/generate_art_assets.sh 存在
 - 通過：Scripts/slice_generated_art_sheets.py 存在
+- 通過：Scripts/import_generated_art.sh 存在
 - 通過：Scripts/commit_gate.sh 存在
 - 通過：.gitattributes 存在
 - 通過：Content/Data/Art/ArtGenManifest.json 存在
@@ -53,7 +55,12 @@
 - 通過：Reports/Art/gate-10-report.md 存在
 - 通過：Reports/Art/gate-11-report.md 存在
 - 通過：Reports/Art/gate-12-report.md 存在
+- 通過：Reports/Art/gate-13-report.md 存在
 - 通過：Reports/Art/generated-assets-inventory.md 存在
+- 通過：Reports/Art/texture-processing.md 存在
+- 通過：Reports/Art/import-generated-art.md 存在
+- 通過：Content/Python/import_generated_art.py 存在
+- 通過：Content/Data/Art/GeneratedMaterialInstances.json 存在
 
 ## Gate 01 專案骨架
 - 通過：Ashfrontier.uproject 存在
@@ -113,16 +120,27 @@
 - 通過：Scripts/create_gate01_map.sh bash 語法通過
 - 通過：Scripts/generate_art_assets.sh 可執行
 - 通過：Scripts/generate_art_assets.sh bash 語法通過
+- 通過：Scripts/import_generated_art.sh 可執行
+- 通過：Scripts/import_generated_art.sh bash 語法通過
 - 通過：Scripts/content_lint.py Python 語法通過
 - 通過：Scripts/art_prompt_lint.py Python 語法通過
 - 通過：Scripts/art_manifest_lint.py Python 語法通過
+- 通過：Scripts/build_texture_maps.py Python 語法通過
 - 通過：Scripts/slice_generated_art_sheets.py Python 語法通過
+- 通過：Content/Python/import_generated_art.py Python 語法通過
 
 ## Art Prompt Lint
 - 通過：art_prompt_lint.py 通過
 
 ## Art Manifest Lint
 - 通過：art_manifest_lint.py 通過
+
+## Texture Processing Smoke
+- 通過：build_texture_maps.py --check 通過
+
+## UE Import Smoke
+UE 生成美術匯入 smoke check 通過
+- 通過：import_generated_art.sh --smoke 通過
 
 ## Content Lint
 - 通過：content_lint.py 通過
@@ -158,7 +176,7 @@ Store settings (/Users/leo/UnrealEngine/UnrealTrace/Settings.ini):
  - Sponsored mode: 1
  - Directory: '/Users/leo/UnrealEngine/UnrealTrace/Store/001'
 Watcher enabled on /Users/leo/UnrealEngine/UnrealTrace/Store/001
-Signalling parent 74201
+Signalling parent 87056
 Terminating server, no sponsors or connections active.
 Listening cancelled, closing port...
 Listening cancelled, closing port...
