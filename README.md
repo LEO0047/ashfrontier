@@ -2,7 +2,7 @@
 
 Ashfrontier 是一個原創世界觀的 UE5 3D 單機小隊沙盒 RPG playable prototype。專案以「Kenshi 2 公開資訊與設計方向」作為系統設計標竿，但所有派系、角色、地點、文本與資產都必須使用 Ashfrontier 原創內容或 placeholder / 自有資產，不得複製 Kenshi / Kenshi 2 的名稱、角色、派系、美術、地圖、文本或商標。
 
-目前階段是 Gate 02：Gate 01 已完成並推送，`Unreal Engine 5.7.4` 位於 `/Users/Shared/Epic Games/UE_5.7`，Xcode 已完成 Apple SDK agreement。Gate 02 正在建立 `Content/Data/` 原創資料、強化 content lint，並用 UE automation 確認資料可由 Editor 載入。此階段仍不代表 prototype 已可玩；Gate 03 必須開始交付 Editor 內可控制小隊移動。
+目前階段是 Gate 03：Gate 02 已完成並推送，`Unreal Engine 5.7.4` 位於 `/Users/Shared/Epic Games/UE_5.7`，Xcode 已完成 Apple SDK agreement。Gate 03 目標是在 UE Editor 內可控制至少 2 名小隊成員，支援選取、移動、跟隨、待命、第三人稱 / 戰術鏡頭與角色狀態 HUD placeholder。此階段仍不是完整 playable prototype；戰鬥、交易、建造、生產與存讀檔會在後續 Gate 逐步完成。
 
 ## macOS 開啟方式
 

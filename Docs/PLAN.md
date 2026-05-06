@@ -92,7 +92,17 @@
 
 ## Gate 02 狀態
 
-- 狀態：本機驗證通過，等待 commit gate 執行最終 validate / commit / push。
+- 狀態：完成並已推送。
 - 目標：建立 `Content/Data/` 初始原創資料，強化 `Scripts/content_lint.py`，並用 UE automation test 確認資料可由 Editor 載入。
 - 已驗證：`python3 Scripts/content_lint.py` 通過；`AshfrontierEditor` C++ build 通過；`Ashfrontier.Data.ContentJsonLoads` 與 `Ashfrontier.Smoke.ModuleLoads` automation tests 通過；`./Scripts/validate.sh` 通過。
+- Gate commit：`0260776b81f3a9aac40952d708e1ca4e604a2e54`。
+- Gate 02 推送狀態記錄 commit：`0b149fdc3d71242370073bee54197a67e4d87931`。
 - 已納入 playable contract：Gate 02 不宣稱可玩；它只建立後續小隊、戰鬥、招募、交易、建造、生產、法規與存讀檔可共用的資料基底。Gate 03 必須交付 UE Editor 內可控制小隊移動。
+
+## Gate 03 狀態
+
+- 狀態：本機 `./Scripts/validate.sh` 通過，等待 commit gate 執行最終 validate / commit / push。
+- 目標：在 UE Editor 內交付第一個可操作小隊 loop，至少 2 名隊員可被選取、移動、跟隨、待命，並可切換第三人稱與戰術鏡頭。
+- 已完成：`SquadManager`、`OrderSystem`、`CameraController`、可見 placeholder character、runtime prototype floor、PlayerController input flow、HUD 狀態 placeholder 與 `Ashfrontier.Squad.OrderStateFlow` automation test。
+- 已驗證：`AshfrontierEditor` C++ build 通過；`Ashfrontier.Squad.OrderStateFlow`、`Ashfrontier.Data.ContentJsonLoads` 與 `Ashfrontier.Smoke.ModuleLoads` automation tests 通過；`./Scripts/validate.sh` 通過。
+- Playable milestone：Gate 03 結束後可在 UE Editor / PIE 內進入 `L_Ashfrontier_Prototype`，看見 2 名小隊員與 prototype floor，透過滑鼠選取、右鍵下達移動命令，並使用跟隨、待命與鏡頭切換流程。

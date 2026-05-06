@@ -113,17 +113,55 @@ EOF
   exit 1
 }
 
-cat > "$SUMMARY" <<EOF
-# 測試摘要
+python3 - "$REPORT_DIR/UEAutomation/index.json" "$SUMMARY" "$XML" "${MODE:-default}" <<'PY'
+from __future__ import annotations
 
-- 狀態：通過
-- 模式：${MODE:-default}
-- 報告目錄：Reports/UEAutomation
-EOF
+import html
+import json
+import sys
+from pathlib import Path
 
-cat > "$XML" <<EOF
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Ashfrontier.Gate" tests="1" failures="0" skipped="0">
-  <testcase classname="UEAutomation" name="Ashfrontier"/>
-</testsuite>
-EOF
+index_path = Path(sys.argv[1])
+summary_path = Path(sys.argv[2])
+xml_path = Path(sys.argv[3])
+mode = sys.argv[4]
+
+tests = []
+if index_path.exists():
+    payload = json.loads(index_path.read_text(encoding="utf-8-sig"))
+    tests = payload.get("tests", [])
+
+failures = [test for test in tests if test.get("state") != "Success"]
+summary_lines = [
+    "# 測試摘要",
+    "",
+    f"- 狀態：{'通過' if not failures else '失敗'}",
+    f"- 模式：{mode}",
+    "- 報告目錄：Reports/UEAutomation",
+    f"- UE automation tests：{len(tests)}",
+    f"- 失敗數：{len(failures)}",
+    "",
+]
+if tests:
+    summary_lines.append("## 測試項目")
+    for test in tests:
+        summary_lines.append(f"- {test.get('fullTestPath', '<unknown>')}：{test.get('state', '<unknown>')}")
+    summary_lines.append("")
+summary_path.write_text("\n".join(summary_lines), encoding="utf-8")
+
+xml_lines = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    f'<testsuite name="Ashfrontier.Gate" tests="{len(tests)}" failures="{len(failures)}" skipped="0">',
+]
+for test in tests:
+    name = html.escape(str(test.get("fullTestPath", "Ashfrontier.Unknown")))
+    state = str(test.get("state", "Unknown"))
+    xml_lines.append(f'  <testcase classname="UEAutomation" name="{name}">')
+    if state != "Success":
+        xml_lines.append(f'    <failure message="{html.escape(state)}"/>')
+    xml_lines.append("  </testcase>")
+xml_lines.append("</testsuite>")
+xml_path.write_text("\n".join(xml_lines) + "\n", encoding="utf-8")
+
+sys.exit(1 if failures else 0)
+PY

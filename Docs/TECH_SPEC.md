@@ -127,3 +127,12 @@ SaveGame schema 必須包含 `schema_version`。Gate 09 前至少保存：
 - C++ module 新增 `Json` private dependency，讓 automation test 可用 UE 原生 JSON parser 載入 `Content/Data/*.json`。
 - Gate 02 不把 Python lint 當成唯一證據；`Scripts/run_tests.sh` 會執行 `Automation RunTests Ashfrontier`，包含 `Ashfrontier.Data.ContentJsonLoads`。
 - 這一階段仍不代表 playable prototype；它只建立後續小隊、世界、戰鬥、交易、建造與法規系統可共用的資料基底。
+
+## Gate 03 小隊控制
+
+- `AAshfrontierCharacter` 現在包含 placeholder body、selection marker、squad index、display name、order state、move destination、follow target 與第三人稱 camera boom。
+- `UAshfrontierSquadManagerComponent` 負責建立 1 到 4 名隊員、維護選取集合、更新 selection marker，並在 Gate 03 預設建立 2 名隊員。
+- `UAshfrontierOrderSystemComponent` 負責把移動、跟隨與待命命令套用到目前選取隊員；多角色移動會套用簡易橫向隊形 offset。
+- `UAshfrontierCameraControllerComponent` 負責把視角聚焦到主要選取隊員，並在第三人稱與戰術 arm length 之間切換。
+- `AAshfrontierGameMode` 會在 BeginPlay 產生 runtime prototype floor，讓右鍵 trace 與角色移動在空白 map 中也能成立。Gate 04 會改以正式 blockout / NavMesh 取代這個臨時地面。
+- `AAshfrontierHUD` 目前提供小隊數、選取數、鏡頭狀態、隊員名稱與命令狀態 placeholder。此 HUD 是 debug / prototype UI，不是最終 UX。

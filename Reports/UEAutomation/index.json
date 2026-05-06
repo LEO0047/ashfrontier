@@ -2,8 +2,8 @@
 	"devices": [
 		{
 			"deviceName": "LEOs-MacBook-Pro.local",
-			"instance": "7B595521D24B8CB8FE31578068B24009",
-			"instanceName": "LEOs-MacBook-Pro.local-91529",
+			"instance": "66D174DB4A4064BA9702AF8E24D4B8BF",
+			"instanceName": "LEOs-MacBook-Pro.local-21932",
 			"platform": "MacEditor",
 			"oSVersion": "macOS 26.4.1 25E253",
 			"model": "Default",
@@ -15,13 +15,13 @@
 			"appInstanceLog": ""
 		}
 	],
-	"reportCreatedOn": "2026.05.06-11.14.55",
-	"succeeded": 2,
+	"reportCreatedOn": "2026.05.06-11.30.04",
+	"succeeded": 3,
 	"succeededWithWarnings": 0,
 	"failed": 0,
 	"notRun": 0,
 	"inProcess": 0,
-	"totalDuration": 0.016319330781698227,
+	"totalDuration": 0.026166249066591263,
 	"comparisonExported": false,
 	"comparisonExportDirectory": "",
 	"tests": [
@@ -31,10 +31,10 @@
 			"tags": [],
 			"state": "Success",
 			"deviceInstance": [
-				"7B595521D24B8CB8FE31578068B24009"
+				"66D174DB4A4064BA9702AF8E24D4B8BF"
 			],
-			"duration": 0.0080111250281333923,
-			"dateTime": "2026.05.06-11.14.55",
+			"duration": 0.0081536248326301575,
+			"dateTime": "2026.05.06-11.30.04",
 			"entries": [],
 			"warnings": 0,
 			"errors": 0,
@@ -46,10 +46,25 @@
 			"tags": [],
 			"state": "Success",
 			"deviceInstance": [
-				"7B595521D24B8CB8FE31578068B24009"
+				"66D174DB4A4064BA9702AF8E24D4B8BF"
 			],
-			"duration": 0.0083082057535648346,
-			"dateTime": "2026.05.06-11.14.55",
+			"duration": 0.0082080401480197906,
+			"dateTime": "2026.05.06-11.30.04",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "OrderStateFlow",
+			"fullTestPath": "Ashfrontier.Squad.OrderStateFlow",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"66D174DB4A4064BA9702AF8E24D4B8BF"
+			],
+			"duration": 0.0098045840859413147,
+			"dateTime": "2026.05.06-11.30.04",
 			"entries": [],
 			"warnings": 0,
 			"errors": 0,

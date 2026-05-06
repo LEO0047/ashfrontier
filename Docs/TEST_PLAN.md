@@ -75,3 +75,9 @@ Gate 09 必須提供 5 分鐘 golden path，從新遊戲開始驗證：
 - Content lint 必須阻擋缺欄、ID 格式錯誤、重複 ID、無效 faction / item / resource / building reference、價格或成本非法、recipe 循環、非法 legal event / reaction 與 dialogue condition。
 - UE automation test `Ashfrontier.Data.ContentJsonLoads` 必須確認每個 `Content/Data/*.json` 檔案存在、可解析、`type` 正確、`records` 非空且基本筆數符合 Gate 02。
 - Gate 02 的通過只代表資料基礎可用，不代表 gameplay loop 已完成；Gate 03 起必須開始交付 Editor playable 行為。
+
+## Gate 03 Squad Control Test 策略
+
+- UE automation test `Ashfrontier.Squad.OrderStateFlow` 必須建立 2 名小隊成員，驗證預設選取、全選、移動命令、跟隨命令、待命命令與戰術鏡頭切換。
+- `Scripts/run_tests.sh --smoke` 必須同時通過 `Ashfrontier.Smoke.ModuleLoads`、`Ashfrontier.Data.ContentJsonLoads` 與 `Ashfrontier.Squad.OrderStateFlow`。
+- Gate 03 的人工 playable smoke 重點是在 UE Editor / PIE 內進入 `L_Ashfrontier_Prototype`，確認玩家看得到 runtime prototype floor 與 2 名小隊員，且能用滑鼠選取與右鍵移動。此項若無法以 headless automation 完整證明，必須在 Gate report 中標明已完成自動化替代驗證與仍需人工確認的範圍。

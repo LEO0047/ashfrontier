@@ -11,4 +11,10 @@ class ASHFRONTIER_API AAshfrontierGameMode : public AGameModeBase
 
 public:
     AAshfrontierGameMode();
+
+protected:
+    virtual void BeginPlay() override;
+
+private:
+    void SpawnPrototypeFloor() const;
 };
