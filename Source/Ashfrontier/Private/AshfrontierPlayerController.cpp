@@ -6,8 +6,12 @@
 #include "AshfrontierCombatResolverComponent.h"
 #include "AshfrontierBuildingPlacementSystemComponent.h"
 #include "AshfrontierConstructionSystemComponent.h"
+#include "AshfrontierCrimeEventMemoryComponent.h"
 #include "AshfrontierDamageModelComponent.h"
+#include "AshfrontierFactionSystemComponent.h"
+#include "AshfrontierGuardAIComponent.h"
 #include "AshfrontierInventoryComponent.h"
+#include "AshfrontierLegalRuleSystemComponent.h"
 #include "AshfrontierMedicalSystemComponent.h"
 #include "AshfrontierOrderSystemComponent.h"
 #include "AshfrontierPlacedBuilding.h"
@@ -38,6 +42,10 @@ AAshfrontierPlayerController::AAshfrontierPlayerController()
     ResourceNodeSystem = CreateDefaultSubobject<UAshfrontierResourceNodeSystemComponent>(TEXT("ResourceNodeSystem"));
     ProductionSystem = CreateDefaultSubobject<UAshfrontierProductionSystemComponent>(TEXT("ProductionSystem"));
     StorageSystem = CreateDefaultSubobject<UAshfrontierStorageSystemComponent>(TEXT("StorageSystem"));
+    FactionSystem = CreateDefaultSubobject<UAshfrontierFactionSystemComponent>(TEXT("FactionSystem"));
+    LegalRuleSystem = CreateDefaultSubobject<UAshfrontierLegalRuleSystemComponent>(TEXT("LegalRuleSystem"));
+    CrimeEventMemory = CreateDefaultSubobject<UAshfrontierCrimeEventMemoryComponent>(TEXT("CrimeEventMemory"));
+    GuardAI = CreateDefaultSubobject<UAshfrontierGuardAIComponent>(TEXT("GuardAI"));
 }
 
 void AAshfrontierPlayerController::BeginPlay()
@@ -78,6 +86,10 @@ void AAshfrontierPlayerController::SetupInputComponent()
     InputComponent->BindAction(TEXT("BuildOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleBuildPressed);
     InputComponent->BindAction(TEXT("GatherOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleGatherPressed);
     InputComponent->BindAction(TEXT("ProduceOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleProducePressed);
+    InputComponent->BindAction(TEXT("TheftOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleTheftPressed);
+    InputComponent->BindAction(TEXT("AttackCrimeOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleAttackCrimePressed);
+    InputComponent->BindAction(TEXT("SelfDefenseOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleSelfDefensePressed);
+    InputComponent->BindAction(TEXT("RestrictedAreaOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleRestrictedAreaPressed);
     InputComponent->BindAction(TEXT("SelectAllSquad"), IE_Pressed, this, &AAshfrontierPlayerController::HandleSelectAllPressed);
     InputComponent->BindAction(TEXT("SelectNextSquad"), IE_Pressed, this, &AAshfrontierPlayerController::HandleSelectNextPressed);
     InputComponent->BindAction(TEXT("ToggleTacticalCamera"), IE_Pressed, this, &AAshfrontierPlayerController::HandleToggleTacticalCamera);
@@ -150,6 +162,26 @@ UAshfrontierProductionSystemComponent* AAshfrontierPlayerController::GetProducti
 UAshfrontierStorageSystemComponent* AAshfrontierPlayerController::GetStorageSystem() const
 {
     return StorageSystem;
+}
+
+UAshfrontierFactionSystemComponent* AAshfrontierPlayerController::GetFactionSystem() const
+{
+    return FactionSystem;
+}
+
+UAshfrontierLegalRuleSystemComponent* AAshfrontierPlayerController::GetLegalRuleSystem() const
+{
+    return LegalRuleSystem;
+}
+
+UAshfrontierCrimeEventMemoryComponent* AAshfrontierPlayerController::GetCrimeEventMemory() const
+{
+    return CrimeEventMemory;
+}
+
+UAshfrontierGuardAIComponent* AAshfrontierPlayerController::GetGuardAI() const
+{
+    return GuardAI;
 }
 
 AAshfrontierPlacedBuilding* AAshfrontierPlayerController::GetLastPlacedBuilding() const
@@ -396,6 +428,52 @@ void AAshfrontierPlayerController::HandleProducePressed()
     if (ProductionSystem->EnqueueRecipe(Building, Worker, TEXT("recipe_grain_to_ration")))
     {
         ProductionSystem->CompleteNextProductionImmediately(Building, Worker);
+    }
+}
+
+void AAshfrontierPlayerController::HandleTheftPressed()
+{
+    HandleLegalEvent(EAshfrontierLegalEventType::Theft);
+}
+
+void AAshfrontierPlayerController::HandleAttackCrimePressed()
+{
+    HandleLegalEvent(EAshfrontierLegalEventType::Attack);
+}
+
+void AAshfrontierPlayerController::HandleSelfDefensePressed()
+{
+    HandleLegalEvent(EAshfrontierLegalEventType::SelfDefense);
+}
+
+void AAshfrontierPlayerController::HandleRestrictedAreaPressed()
+{
+    HandleLegalEvent(EAshfrontierLegalEventType::RestrictedArea);
+}
+
+void AAshfrontierPlayerController::HandleLegalEvent(EAshfrontierLegalEventType EventType)
+{
+    if (!SquadManager || !GuardAI || !LegalRuleSystem || !FactionSystem || !CrimeEventMemory)
+    {
+        return;
+    }
+
+    AAshfrontierCharacter* Offender = SquadManager->GetLeader();
+    if (!Offender)
+    {
+        return;
+    }
+
+    FHitResult Hit;
+    if (TraceCursor(Hit, ECC_Pawn))
+    {
+        if (AAshfrontierCharacter* Guard = Cast<AAshfrontierCharacter>(Hit.GetActor()))
+        {
+            if (Guard != Offender)
+            {
+                GuardAI->HandleObservedEvent(Guard, Offender, nullptr, EventType, TEXT("legal_saltwardens_city"), LegalRuleSystem, FactionSystem, CrimeEventMemory);
+            }
+        }
     }
 }
 

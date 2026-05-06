@@ -49,6 +49,8 @@ public:
     void SetCharacterTeam(EAshfrontierCharacterTeam NewTeam);
     EAshfrontierCharacterTeam GetCharacterTeam() const;
     bool IsHostileToPlayer() const;
+    void SetFactionId(const FName& NewFactionId);
+    FName GetFactionId() const;
 
     void SetCarriedTarget(AAshfrontierCharacter* Target);
     AAshfrontierCharacter* GetCarriedTarget() const;
@@ -111,6 +113,9 @@ private:
 
     UPROPERTY(VisibleAnywhere, Category = "Combat")
     EAshfrontierCharacterTeam CharacterTeam = EAshfrontierCharacterTeam::Neutral;
+
+    UPROPERTY(VisibleAnywhere, Category = "Faction")
+    FName FactionId;
 
     UPROPERTY(Transient)
     TWeakObjectPtr<AAshfrontierCharacter> CarriedTarget;

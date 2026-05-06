@@ -127,3 +127,15 @@ Gate 09 必須提供 5 分鐘 golden path，從新遊戲開始驗證：
   - 儲物箱可存入與取出物品。
 - `Scripts/run_tests.sh --smoke` 必須同時通過 building / production、economy、combat、world、squad、data 與 smoke tests。
 - Gate 07 的人工 playable smoke 重點是在 UE Editor / PIE 中完成「招募 → 交易 → 採集 → 建造 → 生產」。目前操作入口為 `R`、`T`、`G`、`B`、`P`，正式 UI 仍留待後續 Gate。
+
+## Gate 08 Legal / Guard Reaction Test 策略
+
+- UE automation test `Ashfrontier.Legal.GuardReactionMemory` 必須驗證：
+  - 玩家偷竊會觸發鹽脊守衛警告。
+  - 玩家攻擊會觸發追捕，並讓守衛進入 hostile 狀態。
+  - 玩家自衛會被放行，且不降低派系關係。
+  - 玩家禁區闖入會觸發警告與關係變化。
+  - 不同 legal profile 會影響不同 authority faction 的關係。
+  - 事件記憶可查詢，並會在時間推進後過期。
+- `Scripts/run_tests.sh --smoke` 必須同時通過 legal、building / production、economy、combat、world、squad、data 與 smoke tests。
+- Gate 08 的人工 playable smoke 重點是在 UE Editor / PIE 中用游標指向鹽脊守衛 placeholder，再透過 `V`、`K`、`U`、`N` 觸發偷竊、攻擊、自衛與禁區闖入反應。

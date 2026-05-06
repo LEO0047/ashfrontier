@@ -22,6 +22,7 @@ private:
     void SpawnPrototypeWorld();
     void SpawnGate05Hostile();
     void SpawnGate06Characters();
+    void SpawnGate08Guards();
 
     UPROPERTY(Transient)
     TObjectPtr<AAshfrontierWorldBlockoutDirector> WorldBlockoutDirector;
@@ -31,4 +32,7 @@ private:
 
     UPROPERTY(Transient)
     TArray<TObjectPtr<AAshfrontierCharacter>> Gate06Characters;
+
+    UPROPERTY(Transient)
+    TArray<TObjectPtr<AAshfrontierCharacter>> Gate08Guards;
 };

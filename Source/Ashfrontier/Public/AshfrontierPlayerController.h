@@ -1,6 +1,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "AshfrontierLegalTypes.h"
 #include "GameFramework/PlayerController.h"
 #include "AshfrontierPlayerController.generated.h"
 
@@ -11,6 +12,10 @@ class UAshfrontierCameraControllerComponent;
 class UAshfrontierCarrySystemComponent;
 class UAshfrontierCombatResolverComponent;
 class UAshfrontierConstructionSystemComponent;
+class UAshfrontierCrimeEventMemoryComponent;
+class UAshfrontierFactionSystemComponent;
+class UAshfrontierGuardAIComponent;
+class UAshfrontierLegalRuleSystemComponent;
 class UAshfrontierMedicalSystemComponent;
 class UAshfrontierOrderSystemComponent;
 class UAshfrontierProductionSystemComponent;
@@ -41,6 +46,10 @@ public:
     UAshfrontierResourceNodeSystemComponent* GetResourceNodeSystem() const;
     UAshfrontierProductionSystemComponent* GetProductionSystem() const;
     UAshfrontierStorageSystemComponent* GetStorageSystem() const;
+    UAshfrontierFactionSystemComponent* GetFactionSystem() const;
+    UAshfrontierLegalRuleSystemComponent* GetLegalRuleSystem() const;
+    UAshfrontierCrimeEventMemoryComponent* GetCrimeEventMemory() const;
+    UAshfrontierGuardAIComponent* GetGuardAI() const;
     AAshfrontierPlacedBuilding* GetLastPlacedBuilding() const;
 
 protected:
@@ -59,6 +68,11 @@ private:
     void HandleBuildPressed();
     void HandleGatherPressed();
     void HandleProducePressed();
+    void HandleTheftPressed();
+    void HandleAttackCrimePressed();
+    void HandleSelfDefensePressed();
+    void HandleRestrictedAreaPressed();
+    void HandleLegalEvent(EAshfrontierLegalEventType EventType);
     void HandleSelectAllPressed();
     void HandleSelectNextPressed();
     void HandleToggleTacticalCamera();
@@ -111,4 +125,16 @@ private:
 
     UPROPERTY(Transient)
     TWeakObjectPtr<AAshfrontierPlacedBuilding> LastPlacedBuilding;
+
+    UPROPERTY(VisibleAnywhere, Category = "Legal")
+    TObjectPtr<UAshfrontierFactionSystemComponent> FactionSystem;
+
+    UPROPERTY(VisibleAnywhere, Category = "Legal")
+    TObjectPtr<UAshfrontierLegalRuleSystemComponent> LegalRuleSystem;
+
+    UPROPERTY(VisibleAnywhere, Category = "Legal")
+    TObjectPtr<UAshfrontierCrimeEventMemoryComponent> CrimeEventMemory;
+
+    UPROPERTY(VisibleAnywhere, Category = "Legal")
+    TObjectPtr<UAshfrontierGuardAIComponent> GuardAI;
 };

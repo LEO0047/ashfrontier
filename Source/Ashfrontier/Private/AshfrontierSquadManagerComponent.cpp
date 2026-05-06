@@ -68,6 +68,7 @@ void UAshfrontierSquadManagerComponent::EnsureStartingSquad(APlayerController* O
             Member->SetSquadIndex(Index);
             Member->SetSquadDisplayName(MakeDefaultSquadName(Index));
             Member->SetCharacterTeam(EAshfrontierCharacterTeam::PlayerSquad);
+            Member->SetFactionId(TEXT("faction_player_squad"));
             if (Index == 0 && Member->GetInventory() && Member->GetInventory()->GetItemCount(TEXT("item_ash_credit")) == 0)
             {
                 Member->GetInventory()->AddItem(TEXT("item_ash_credit"), 180);
@@ -95,6 +96,7 @@ bool UAshfrontierSquadManagerComponent::AddExistingMember(AAshfrontierCharacter*
     }
 
     Member->SetCharacterTeam(EAshfrontierCharacterTeam::PlayerSquad);
+    Member->SetFactionId(TEXT("faction_player_squad"));
     Member->SetSquadIndex(SquadMembers.Num());
     Member->SetSquadDisplayName(MakeDefaultSquadName(SquadMembers.Num()));
     SquadMembers.Add(Member);

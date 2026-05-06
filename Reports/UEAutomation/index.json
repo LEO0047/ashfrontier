@@ -2,8 +2,8 @@
 	"devices": [
 		{
 			"deviceName": "LEOs-MacBook-Pro.local",
-			"instance": "FAA8B02E1E4DD5352FA852BF015E666C",
-			"instanceName": "LEOs-MacBook-Pro.local-76432",
+			"instance": "27044151C34F330BA5AA04B24FB2B908",
+			"instanceName": "LEOs-MacBook-Pro.local-88507",
 			"platform": "MacEditor",
 			"oSVersion": "macOS 26.4.1 25E253",
 			"model": "Default",
@@ -15,13 +15,13 @@
 			"appInstanceLog": ""
 		}
 	],
-	"reportCreatedOn": "2026.05.06-12.07.52",
-	"succeeded": 7,
+	"reportCreatedOn": "2026.05.06-12.16.46",
+	"succeeded": 8,
 	"succeededWithWarnings": 0,
 	"failed": 0,
 	"notRun": 0,
 	"inProcess": 0,
-	"totalDuration": 0.05873379111289978,
+	"totalDuration": 0.066779971122741699,
 	"comparisonExported": false,
 	"comparisonExportDirectory": "",
 	"tests": [
@@ -31,10 +31,10 @@
 			"tags": [],
 			"state": "Success",
 			"deviceInstance": [
-				"FAA8B02E1E4DD5352FA852BF015E666C"
+				"27044151C34F330BA5AA04B24FB2B908"
 			],
-			"duration": 0.0084956251084804535,
-			"dateTime": "2026.05.06-12.07.52",
+			"duration": 0.008564334362745285,
+			"dateTime": "2026.05.06-12.16.46",
 			"entries": [],
 			"warnings": 0,
 			"errors": 0,
@@ -46,10 +46,10 @@
 			"tags": [],
 			"state": "Success",
 			"deviceInstance": [
-				"FAA8B02E1E4DD5352FA852BF015E666C"
+				"27044151C34F330BA5AA04B24FB2B908"
 			],
-			"duration": 0.0082016251981258392,
-			"dateTime": "2026.05.06-12.07.52",
+			"duration": 0.0082792527973651886,
+			"dateTime": "2026.05.06-12.16.46",
 			"entries": [],
 			"warnings": 0,
 			"errors": 0,
@@ -61,10 +61,10 @@
 			"tags": [],
 			"state": "Success",
 			"deviceInstance": [
-				"FAA8B02E1E4DD5352FA852BF015E666C"
+				"27044151C34F330BA5AA04B24FB2B908"
 			],
-			"duration": 0.0083067081868648529,
-			"dateTime": "2026.05.06-12.07.52",
+			"duration": 0.0083316676318645477,
+			"dateTime": "2026.05.06-12.16.46",
 			"entries": [],
 			"warnings": 0,
 			"errors": 0,
@@ -76,10 +76,25 @@
 			"tags": [],
 			"state": "Success",
 			"deviceInstance": [
-				"FAA8B02E1E4DD5352FA852BF015E666C"
+				"27044151C34F330BA5AA04B24FB2B908"
 			],
-			"duration": 0.0080820843577384949,
-			"dateTime": "2026.05.06-12.07.52",
+			"duration": 0.0085180848836898804,
+			"dateTime": "2026.05.06-12.16.46",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		},
+		{
+			"testDisplayName": "GuardReactionMemory",
+			"fullTestPath": "Ashfrontier.Legal.GuardReactionMemory",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"27044151C34F330BA5AA04B24FB2B908"
+			],
+			"duration": 0.0080632492899894714,
+			"dateTime": "2026.05.06-12.16.46",
 			"entries": [],
 			"warnings": 0,
 			"errors": 0,
@@ -91,10 +106,10 @@
 			"tags": [],
 			"state": "Success",
 			"deviceInstance": [
-				"FAA8B02E1E4DD5352FA852BF015E666C"
+				"27044151C34F330BA5AA04B24FB2B908"
 			],
-			"duration": 0.0082763321697711945,
-			"dateTime": "2026.05.06-12.07.52",
+			"duration": 0.0084922090172767639,
+			"dateTime": "2026.05.06-12.16.46",
 			"entries": [],
 			"warnings": 0,
 			"errors": 0,
@@ -106,10 +121,10 @@
 			"tags": [],
 			"state": "Success",
 			"deviceInstance": [
-				"FAA8B02E1E4DD5352FA852BF015E666C"
+				"27044151C34F330BA5AA04B24FB2B908"
 			],
-			"duration": 0.0090937502682209015,
-			"dateTime": "2026.05.06-12.07.52",
+			"duration": 0.0085432082414627075,
+			"dateTime": "2026.05.06-12.16.46",
 			"entries": [],
 			"warnings": 0,
 			"errors": 0,
@@ -121,10 +136,10 @@
 			"tags": [],
 			"state": "Success",
 			"deviceInstance": [
-				"FAA8B02E1E4DD5352FA852BF015E666C"
+				"27044151C34F330BA5AA04B24FB2B908"
 			],
-			"duration": 0.0082776658236980438,
-			"dateTime": "2026.05.06-12.07.52",
+			"duration": 0.0079879611730575562,
+			"dateTime": "2026.05.06-12.16.46",
 			"entries": [],
 			"warnings": 0,
 			"errors": 0,

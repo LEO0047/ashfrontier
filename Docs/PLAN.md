@@ -141,9 +141,19 @@
 
 ## Gate 07 狀態
 
-- 狀態：本機 `AshfrontierEditor` build 與 `./Scripts/run_tests.sh --smoke` 通過，等待完整 `./Scripts/validate.sh` 與 commit gate。
+- 狀態：完成並已推送。
 - 目標：完成野外建造區建築放置、成本扣除、儲物、採集、食物鏈、金屬 / 建材鏈與生產隊列。
 - 已完成：`AAshfrontierPlacedBuilding`、`UAshfrontierBuildingPlacementSystemComponent`、`UAshfrontierConstructionSystemComponent`、`UAshfrontierResourceNodeSystemComponent`、`UAshfrontierStorageSystemComponent`、`UAshfrontierProductionSystemComponent`、`B` 建造、`G` 採集、`P` 生產與 `Ashfrontier.Building.ProductionFlow` automation test。
 - 已驗證：`AshfrontierEditor` C++ build 通過；smoke automation 7 項測試通過，包含 building / production、economy、combat、world、squad、data 與 smoke。
+- Gate commit：`3491bbf1901678314c20539edf82098756d6d855`。
+- Gate 07 推送狀態記錄 commit：`16fe61e539f1767c733100564606de927e0da562`。
 - Playable milestone：Gate 07 結束後，Editor / PIE 內可完成「招募 → 交易 → 採集 → 建造 → 生產」流程。此 Gate 不宣稱 macOS packaged playable build 已完成。
 - 已知限制：建築與 recipe runtime 定義目前由 C++ 對齊 Gate 02 JSON ID；正式資料載入器與 SaveGame 版本化會在 Gate 09 前補強。
+
+## Gate 08 狀態
+
+- 狀態：本機 `AshfrontierEditor` build 與 `./Scripts/run_tests.sh --smoke` 通過，等待完整 `./Scripts/validate.sh` 與 commit gate。
+- 目標：完成 3 個派系的基本關係、城市守衛狀態、偷竊 / 攻擊 / 自衛 / 禁區判定、警告 / 敵對 / 追捕 / 放行與事件記憶。
+- 已完成：`UAshfrontierFactionSystemComponent`、`UAshfrontierLegalRuleSystemComponent`、`UAshfrontierCrimeEventMemoryComponent`、`UAshfrontierGuardAIComponent`、角色 faction id、鹽脊守衛 placeholder、城市反應 debug input 與 `Ashfrontier.Legal.GuardReactionMemory` automation test。
+- 已驗證：`AshfrontierEditor` C++ build 通過；smoke automation 8 項測試通過，包含 legal、building / production、economy、combat、world、squad、data 與 smoke。
+- 已知限制：法規 runtime 規則目前由 C++ 對齊 `Content/Data/legal_rules.json`；正式 JSON-to-runtime loader、AI 行為樹與 UI 提示仍待後續強化。

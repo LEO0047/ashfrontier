@@ -3,7 +3,7 @@
 ## 狀態
 
 - Gate：Gate 07 — 基地建設與生產鏈。
-- 狀態：本機 C++ build 與 smoke automation 通過，等待完整 `./Scripts/validate.sh` 與 commit gate。
+- 狀態：完成並已推送。
 - 日期：2026-05-06。
 
 ## 完成內容

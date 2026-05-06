@@ -4,6 +4,8 @@
 #include "AshfrontierCharacter.h"
 #include "AshfrontierDamageModelComponent.h"
 #include "AshfrontierInventoryComponent.h"
+#include "AshfrontierCrimeEventMemoryComponent.h"
+#include "AshfrontierGuardAIComponent.h"
 #include "AshfrontierPlacedBuilding.h"
 #include "AshfrontierPlayerController.h"
 #include "AshfrontierSquadManagerComponent.h"
@@ -61,5 +63,13 @@ void AAshfrontierHUD::DrawHUD()
             ? FString::Printf(TEXT("生產中 %.1f 秒"), LastBuilding->GetCurrentProductionRemainingSeconds())
             : TEXT("無生產隊列");
         DrawText(FString::Printf(TEXT("最近建築：%s / %s"), *LastBuilding->GetBuildingNameZh(), *QueueLabel), FLinearColor(0.8f, 0.95f, 0.6f, 1.0f), 32.0f, Y + 8.0f);
+        Y += 32.0f;
+    }
+
+    const UAshfrontierGuardAIComponent* GuardAI = AshController->GetGuardAI();
+    const UAshfrontierCrimeEventMemoryComponent* CrimeMemory = AshController->GetCrimeEventMemory();
+    if (GuardAI && CrimeMemory)
+    {
+        DrawText(FString::Printf(TEXT("城市反應：%s / 事件記憶:%d"), *GuardAI->GetStateLabelZh(), CrimeMemory->GetMemoryCount()), FLinearColor(0.95f, 0.75f, 0.45f, 1.0f), 32.0f, Y + 8.0f);
     }
 }

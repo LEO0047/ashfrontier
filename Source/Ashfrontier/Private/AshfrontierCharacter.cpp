@@ -203,6 +203,16 @@ bool AAshfrontierCharacter::IsHostileToPlayer() const
     return CharacterTeam == EAshfrontierCharacterTeam::Hostile;
 }
 
+void AAshfrontierCharacter::SetFactionId(const FName& NewFactionId)
+{
+    FactionId = NewFactionId;
+}
+
+FName AAshfrontierCharacter::GetFactionId() const
+{
+    return FactionId;
+}
+
 void AAshfrontierCharacter::SetCarriedTarget(AAshfrontierCharacter* Target)
 {
     CarriedTarget = Target;

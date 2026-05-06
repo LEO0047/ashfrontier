@@ -40,6 +40,7 @@ void AAshfrontierGameMode::SpawnPrototypeWorld()
 
     SpawnGate05Hostile();
     SpawnGate06Characters();
+    SpawnGate08Guards();
 }
 
 void AAshfrontierGameMode::SpawnGate05Hostile()
@@ -59,6 +60,7 @@ void AAshfrontierGameMode::SpawnGate05Hostile()
     {
         Gate05Hostile->SetSquadDisplayName(TEXT("塵路劫手"));
         Gate05Hostile->SetCharacterTeam(EAshfrontierCharacterTeam::Hostile);
+        Gate05Hostile->SetFactionId(TEXT("faction_dustrunners"));
         Gate05Hostile->SpawnDefaultController();
     }
 }
@@ -99,6 +101,7 @@ void AAshfrontierGameMode::SpawnGate06Characters()
 
         Recruit->SetSquadDisplayName(Seed.Name);
         Recruit->SetCharacterTeam(EAshfrontierCharacterTeam::Neutral);
+        Recruit->SetFactionId(TEXT("faction_dustrunners"));
         Recruit->SetRecruitable(true, Seed.Cost);
         Recruit->SpawnDefaultController();
         Gate06Characters.Add(Recruit);
@@ -109,6 +112,7 @@ void AAshfrontierGameMode::SpawnGate06Characters()
     {
         Merchant->SetSquadDisplayName(TEXT("玻璃屋販商 澄瓶"));
         Merchant->SetCharacterTeam(EAshfrontierCharacterTeam::Neutral);
+        Merchant->SetFactionId(TEXT("faction_glasshouse"));
         Merchant->SetShopkeeper(true);
         if (Merchant->GetInventory())
         {
@@ -119,5 +123,28 @@ void AAshfrontierGameMode::SpawnGate06Characters()
         }
         Merchant->SpawnDefaultController();
         Gate06Characters.Add(Merchant);
+    }
+}
+
+void AAshfrontierGameMode::SpawnGate08Guards()
+{
+    UWorld* World = GetWorld();
+    if (!World || Gate08Guards.Num() > 0)
+    {
+        return;
+    }
+
+    FActorSpawnParameters SpawnParams;
+    SpawnParams.Owner = this;
+    SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+
+    AAshfrontierCharacter* CityGuard = World->SpawnActor<AAshfrontierCharacter>(AAshfrontierCharacter::StaticClass(), FVector(-120.0f, -500.0f, 120.0f), FRotator::ZeroRotator, SpawnParams);
+    if (CityGuard)
+    {
+        CityGuard->SetSquadDisplayName(TEXT("鹽脊守衛 磐哨"));
+        CityGuard->SetCharacterTeam(EAshfrontierCharacterTeam::Neutral);
+        CityGuard->SetFactionId(TEXT("faction_saltwardens"));
+        CityGuard->SpawnDefaultController();
+        Gate08Guards.Add(CityGuard);
     }
 }

@@ -215,3 +215,4 @@ UE automation test `Ashfrontier.Data.ContentJsonLoads` 會在 Editor automation 
 - `reaction` 建議使用 `allow`、`warning`、`hostile`、`pursuit`。
 - `memory_seconds` 不可小於 0。
 - `relation_delta` 若存在必須是數字。
+- Gate 08 runtime legal rule 至少需保存 legal profile id、authority faction id、事件類型、reaction、記憶秒數與派系關係變化。事件記憶必須可查詢，並支援時間過期。

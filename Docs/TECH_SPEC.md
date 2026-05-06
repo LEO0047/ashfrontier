@@ -180,3 +180,14 @@ SaveGame schema 必須包含 `schema_version`。Gate 09 前至少保存：
 - `UAshfrontierProductionSystemComponent` 支援 recipe station 檢查、輸入消耗、queue entry、工作時間推進與產物寫回 inventory。
 - `AAshfrontierPlayerController` Gate 07 提供 `G` 採集、`B` 建造營火灶、`P` 生產烤行糧的 debug / prototype 操作入口。
 - `Ashfrontier.Building.ProductionFlow` 驗證招募、交易、非法建造位置阻擋、建築成本扣除、採集、儲物、食物鏈與金屬 / 建材鏈。
+
+## Gate 08 派系、法規與城市反應
+
+- `UAshfrontierFactionSystemComponent` 維護派系關係值，初始值對齊 `Content/Data/factions.json`：鹽脊守望、玻璃屋商盟、塵路行者，並加入玩家小隊與三派的 runtime 關係。
+- `UAshfrontierLegalRuleSystemComponent` 以 rule priority 評估 `theft`、`attack`、`self_defense` 與 `restricted_area`，reaction 對齊 `Content/Data/legal_rules.json`：`allow`、`warning`、`hostile`、`pursuit`。
+- `UAshfrontierCrimeEventMemoryComponent` 保存事件記憶，包含事件類型、反應、違規派系、執法派系、關係變化與剩餘記憶秒數。
+- `UAshfrontierGuardAIComponent` 將法規結果轉成守衛狀態：巡守、放行、警告、敵對與追捕，並在追捕或敵對時讓守衛對玩家成為 hostile。
+- `AAshfrontierCharacter` Gate 08 起保存 `FactionId`。玩家小隊使用 `faction_player_squad`，鹽脊守衛使用 `faction_saltwardens`，商人使用 `faction_glasshouse`，敵人 / 部分招募者使用 `faction_dustrunners`。
+- `AAshfrontierGameMode` 會生成 1 名鹽脊守衛 placeholder，供 Editor / PIE 的城市反應 smoke 使用。
+- `AAshfrontierPlayerController` Gate 08 提供 `V` 偷竊、`K` 攻擊、`U` 自衛、`N` 禁區闖入的 debug / prototype 操作入口。
+- `Ashfrontier.Legal.GuardReactionMemory` 驗證偷竊警告、攻擊追捕、自衛放行、禁區警告、玻璃屋市場偷竊追捕、派系關係變化與事件記憶過期。
