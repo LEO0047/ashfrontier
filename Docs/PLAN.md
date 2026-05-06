@@ -101,8 +101,18 @@
 
 ## Gate 03 狀態
 
-- 狀態：本機 `./Scripts/validate.sh` 通過，等待 commit gate 執行最終 validate / commit / push。
+- 狀態：完成並已推送。
 - 目標：在 UE Editor 內交付第一個可操作小隊 loop，至少 2 名隊員可被選取、移動、跟隨、待命，並可切換第三人稱與戰術鏡頭。
 - 已完成：`SquadManager`、`OrderSystem`、`CameraController`、可見 placeholder character、runtime prototype floor、PlayerController input flow、HUD 狀態 placeholder 與 `Ashfrontier.Squad.OrderStateFlow` automation test。
 - 已驗證：`AshfrontierEditor` C++ build 通過；`Ashfrontier.Squad.OrderStateFlow`、`Ashfrontier.Data.ContentJsonLoads` 與 `Ashfrontier.Smoke.ModuleLoads` automation tests 通過；`./Scripts/validate.sh` 通過。
+- Gate commit：`7a941ef054a2b5880e7836a54b3a6d1733f03846`。
+- Gate 03 推送狀態記錄 commit：`700c1dafff6835402ced528867f64f08de2f5e5d`。
 - Playable milestone：Gate 03 結束後可在 UE Editor / PIE 內進入 `L_Ashfrontier_Prototype`，看見 2 名小隊員與 prototype floor，透過滑鼠選取、右鍵下達移動命令，並使用跟隨、待命與鏡頭切換流程。
+
+## Gate 04 狀態
+
+- 狀態：本機 `./Scripts/validate.sh` 通過，等待 commit gate 執行最終 validate / commit / push。
+- 目標：建立主城 blockout、小型前哨、野外建造區、城市巡邏路線、商隊路線與 macOS perf capture 初版。
+- 已完成：`AAshfrontierWorldBlockoutDirector` runtime world builder、`AAshfrontierRouteAgent` route follower、主城 / 前哨 / 野外建造區 zone records、城市守衛巡邏與玻璃屋商隊 route records、route markers、route agents 與 `Ashfrontier.World.BlockoutRoutes` automation test。
+- 已驗證：`AshfrontierEditor` C++ build 通過；`Ashfrontier.World.BlockoutRoutes`、`Ashfrontier.Squad.OrderStateFlow`、`Ashfrontier.Data.ContentJsonLoads` 與 `Ashfrontier.Smoke.ModuleLoads` automation tests 通過；`Reports/perf-summary.md` 已輸出 Gate 04 初版效能摘要；`./Scripts/validate.sh` 通過。
+- 已知限制：Gate 04 world blockout 目前以 runtime actors 產生，NavMesh 尚未烘焙成正式 map asset；Gate 05 前可繼續使用直接 movement，Gate 04 後續若要嚴格驗證 NavMesh，需建立正式 level geometry 或 editor-time navmesh build。

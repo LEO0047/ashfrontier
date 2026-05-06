@@ -3,8 +3,7 @@
 #include "AshfrontierCharacter.h"
 #include "AshfrontierHUD.h"
 #include "AshfrontierPlayerController.h"
-#include "Components/StaticMeshComponent.h"
-#include "Engine/StaticMeshActor.h"
+#include "AshfrontierWorldBlockoutDirector.h"
 
 AAshfrontierGameMode::AAshfrontierGameMode()
 {
@@ -17,10 +16,10 @@ void AAshfrontierGameMode::BeginPlay()
 {
     Super::BeginPlay();
 
-    SpawnPrototypeFloor();
+    SpawnPrototypeWorld();
 }
 
-void AAshfrontierGameMode::SpawnPrototypeFloor() const
+void AAshfrontierGameMode::SpawnPrototypeWorld()
 {
     UWorld* World = GetWorld();
     if (!World)
@@ -28,29 +27,13 @@ void AAshfrontierGameMode::SpawnPrototypeFloor() const
         return;
     }
 
-    UStaticMesh* CubeMesh = LoadObject<UStaticMesh>(nullptr, TEXT("/Engine/BasicShapes/Cube.Cube"));
-    if (!CubeMesh)
-    {
-        return;
-    }
-
     FActorSpawnParameters SpawnParams;
-    SpawnParams.Name = TEXT("AF_Prototype_Command_Floor");
+    SpawnParams.Name = TEXT("AF_WorldBlockoutDirector");
     SpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
 
-    AStaticMeshActor* FloorActor = World->SpawnActor<AStaticMeshActor>(AStaticMeshActor::StaticClass(), FVector(0.0f, 0.0f, -60.0f), FRotator::ZeroRotator, SpawnParams);
-    if (!FloorActor)
+    WorldBlockoutDirector = World->SpawnActor<AAshfrontierWorldBlockoutDirector>(AAshfrontierWorldBlockoutDirector::StaticClass(), FVector::ZeroVector, FRotator::ZeroRotator, SpawnParams);
+    if (WorldBlockoutDirector)
     {
-        return;
-    }
-
-    FloorActor->SetActorScale3D(FVector(32.0f, 32.0f, 0.08f));
-    UStaticMeshComponent* MeshComponent = FloorActor->GetStaticMeshComponent();
-    if (MeshComponent)
-    {
-        MeshComponent->SetStaticMesh(CubeMesh);
-        MeshComponent->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-        MeshComponent->SetCollisionResponseToAllChannels(ECR_Block);
-        MeshComponent->SetMobility(EComponentMobility::Static);
+        WorldBlockoutDirector->BuildPrototypeWorld();
     }
 }

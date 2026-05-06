@@ -81,3 +81,10 @@ Gate 09 必須提供 5 分鐘 golden path，從新遊戲開始驗證：
 - UE automation test `Ashfrontier.Squad.OrderStateFlow` 必須建立 2 名小隊成員，驗證預設選取、全選、移動命令、跟隨命令、待命命令與戰術鏡頭切換。
 - `Scripts/run_tests.sh --smoke` 必須同時通過 `Ashfrontier.Smoke.ModuleLoads`、`Ashfrontier.Data.ContentJsonLoads` 與 `Ashfrontier.Squad.OrderStateFlow`。
 - Gate 03 的人工 playable smoke 重點是在 UE Editor / PIE 內進入 `L_Ashfrontier_Prototype`，確認玩家看得到 runtime prototype floor 與 2 名小隊員，且能用滑鼠選取與右鍵移動。此項若無法以 headless automation 完整證明，必須在 Gate report 中標明已完成自動化替代驗證與仍需人工確認的範圍。
+
+## Gate 04 World Blockout Test 策略
+
+- UE automation test `Ashfrontier.World.BlockoutRoutes` 必須建立 world blockout director，驗證 3 個 zone、2 條 route、至少 7 個 route waypoint 與 2 個 route agent。
+- `Scripts/run_tests.sh --smoke` 必須同時通過 `Ashfrontier.Smoke.ModuleLoads`、`Ashfrontier.Data.ContentJsonLoads`、`Ashfrontier.Squad.OrderStateFlow` 與 `Ashfrontier.World.BlockoutRoutes`。
+- `Scripts/perf_capture.sh --gate04` 必須輸出 `Reports/perf-summary.md`，記錄 macOS 版本、CPU 架構、Apple Silicon / 顯示晶片、解析度與主城壓力區設定。
+- Gate 04 的 NavMesh 驗證目前以路線資料與可移動 route agent 作替代；正式 NavMesh build 與 15 分鐘巡邏 soak 需要在 geometry 轉成穩定 map asset 後強化。

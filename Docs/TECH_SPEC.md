@@ -136,3 +136,16 @@ SaveGame schema 必須包含 `schema_version`。Gate 09 前至少保存：
 - `UAshfrontierCameraControllerComponent` 負責把視角聚焦到主要選取隊員，並在第三人稱與戰術 arm length 之間切換。
 - `AAshfrontierGameMode` 會在 BeginPlay 產生 runtime prototype floor，讓右鍵 trace 與角色移動在空白 map 中也能成立。Gate 04 會改以正式 blockout / NavMesh 取代這個臨時地面。
 - `AAshfrontierHUD` 目前提供小隊數、選取數、鏡頭狀態、隊員名稱與命令狀態 placeholder。此 HUD 是 debug / prototype UI，不是最終 UX。
+
+## Gate 04 世界 Blockout 與路線
+
+- `AAshfrontierWorldBlockoutDirector` 是 Gate 04 的 runtime world builder，會建立：
+  - `zone_salt_spine_city`：鹽脊主城。
+  - `zone_cinder_outpost`：燼沙前哨。
+  - `zone_wilderness_yard`：裂土建造區。
+- Director 會生成主城地面、城牆、城門、前哨塔、野外工坊區與 route markers，全部使用 UE basic cube mesh 作為 placeholder。
+- `AAshfrontierRouteAgent` 繼承 `AAshfrontierCharacter`，使用 route waypoints 進行循環移動。Gate 04 先建立兩條路線：
+  - `route_city_guard_patrol`：城市守衛巡邏，4 個 waypoint。
+  - `route_glasshouse_caravan`：商隊 / NPC 移動路線，4 個 waypoint。
+- Gate 04 仍使用直接 movement input 執行 route movement；正式 NavMesh 與路徑尋路會在世界 geometry 穩定後接上。
+- `Scripts/perf_capture.sh` Gate 04 會輸出 macOS、Apple Silicon、顯示環境與主城壓力區設定。此階段尚不是 UE Insights 或 Metal frame capture 的最終效能報告。

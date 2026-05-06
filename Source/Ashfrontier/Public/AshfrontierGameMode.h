@@ -4,6 +4,8 @@
 #include "GameFramework/GameModeBase.h"
 #include "AshfrontierGameMode.generated.h"
 
+class AAshfrontierWorldBlockoutDirector;
+
 UCLASS()
 class ASHFRONTIER_API AAshfrontierGameMode : public AGameModeBase
 {
@@ -16,5 +18,8 @@ protected:
     virtual void BeginPlay() override;
 
 private:
-    void SpawnPrototypeFloor() const;
+    void SpawnPrototypeWorld();
+
+    UPROPERTY(Transient)
+    TObjectPtr<AAshfrontierWorldBlockoutDirector> WorldBlockoutDirector;
 };
