@@ -34,3 +34,10 @@
 - Gate commit：待 Scripts/commit_gate.sh 補寫。
 - Remote SHA：待 Scripts/commit_gate.sh 補寫。
 - v0.2 tag：待 tag 建立後由最終回報確認。
+
+## 推送紀錄
+
+- Gate commit：15dbc6d4f0b31fa9a32c5275c7e94bd7823572e2
+- Push 狀態：已推送到 origin/main
+- Remote SHA：15dbc6d4f0b31fa9a32c5275c7e94bd7823572e2
+- 記錄時間：2026-05-07 01:56:24 CST
