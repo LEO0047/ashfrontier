@@ -1,6 +1,6 @@
 # Gate 驗證摘要
 
-- 時間：2026-05-07 01:55:32 CST
+- 時間：2026-05-07 02:00:31 CST
 - 專案根目錄：/Users/leo/Library/Mobile Documents/com~apple~CloudDocs/Coding/Projects/Ashfrontier
 
 ## Git
@@ -245,7 +245,7 @@ Store settings (/Users/leo/UnrealEngine/UnrealTrace/Settings.ini):
  - Sponsored mode: 1
  - Directory: '/Users/leo/UnrealEngine/UnrealTrace/Store/001'
 Watcher enabled on /Users/leo/UnrealEngine/UnrealTrace/Store/001
-Signalling parent 80537
+Signalling parent 89966
 Terminating server, no sponsors or connections active.
 Listening cancelled, closing port...
 Listening cancelled, closing port...

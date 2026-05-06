@@ -1,7 +1,7 @@
 # Gate 18 報告：macOS 打包、最終報告與 v0.2 tag
 
 - Gate：18
-- 狀態：待 commit gate 與 annotated tag
+- 狀態：macOS 打包與 Gate commit gate 已完成；annotated tag 於本報告提交後建立
 - 工作日期：2026-05-07
 
 ## 已完成內容
@@ -14,6 +14,8 @@
 - 產生 Reports/Art/final-visual-summary.md。
 - 產生 Reports/known-issues.md。
 - 更新 Scripts/validate.sh，加入 Gate 18 final reports 與 macOS build output 檢查。
+- 執行 Gate 18 validate.sh，結果為通過。
+- 執行 Gate 18 commit gate，已推送到 origin/main。
 
 ## 打包結果
 
@@ -22,18 +24,11 @@
 - mac-launch-smoke：通過
 - 簽章狀態：警告，原因為 iCloud File Provider 路徑下 strict verify 可能偵測 Finder metadata extended attribute；命令列 packaged executable smoke 已通過。
 
-## 待完成
+## Git 與 tag 狀態
 
-- Gate 18 validate.sh 最終驗證。
-- Gate 18 commit/push。
-- 建立 annotated tag：v0.2-generated-art-playable。
-- push tag 到 GitHub。
-
-## 推送紀錄
-
-- Gate commit：待 Scripts/commit_gate.sh 補寫。
-- Remote SHA：待 Scripts/commit_gate.sh 補寫。
-- v0.2 tag：待 tag 建立後由最終回報確認。
+- v0.1-gate09-editor-playable：已確認仍指向 5fdb11433459742b7f6a9e10e2e33f6ed523826b。
+- origin/main：Gate 18 commit gate 後已同步。
+- v0.2-generated-art-playable：本報告提交後建立 annotated tag，最終指向 commit 以 `git rev-parse 'v0.2-generated-art-playable^{}'` 驗證。
 
 ## 推送紀錄
 

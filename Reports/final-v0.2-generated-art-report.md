@@ -1,6 +1,6 @@
 # Ashfrontier v0.2 生成美術套皮可玩版最終報告
 
-- 狀態：待 Gate 18 commit gate 與 tag 補齊最終 git hash
+- 狀態：Gate 18 打包、驗證與 commit gate 已完成；v0.2 annotated tag 於本報告提交後建立
 - Build：Builds/macOS/Ashfrontier.app
 - Launch smoke：Reports/mac-launch-smoke.md
 - Build summary：Reports/mac-build-summary.md
@@ -10,7 +10,7 @@
 
 ## 完成範圍
 
-- Gate 10 到 Gate 17 已完成並推送到 origin/main。
+- Gate 10 到 Gate 18 已完成並推送到 origin/main。
 - Gate 18 已成功執行 macOS package，產出 Builds/macOS/Ashfrontier.app。
 - Packaged executable 以 -NullRHI -unattended smoke 乾淨啟動並退出。
 - v0.2 生成美術資產、metadata、ArtGenManifest、ArtSlot mapping、UI assignments、faction assignments、character portrait assignments 與 visual variant assignments 維持完整。
@@ -18,7 +18,7 @@
 
 ## 驗證摘要
 
-- validate.sh：Gate 18 commit 前需再次通過。
+- validate.sh：Gate 18 通過。
 - package_macos.sh：通過。
 - mac-launch-smoke：通過。
 - screenshot smoke：通過。
@@ -31,9 +31,9 @@
 
 ## 最終 Git 狀態
 
-- Gate 18 commit：待 Scripts/commit_gate.sh 補齊。
-- v0.2 tag：待 Gate 18 commit/push 後建立 annotated tag。
-- v0.1-gate09-editor-playable：必須維持 5fdb11433459742b7f6a9e10e2e33f6ed523826b。
+- Gate 18 commit gate：已完成並推送到 origin/main。
+- v0.2 tag：本報告提交後建立 annotated tag，最終 commit 以 Git tag dereference 驗證。
+- v0.1-gate09-editor-playable：已確認維持 5fdb11433459742b7f6a9e10e2e33f6ed523826b。
 
 ## 注意
 
