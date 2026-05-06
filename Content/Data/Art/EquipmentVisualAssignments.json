@@ -1,0 +1,45 @@
+{
+  "type": "equipment_visual_assignments",
+  "records": [
+    {
+      "item_id": "item_rustblade",
+      "name_zh": "鏽刃短刀",
+      "equipment_slot": "weapon",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_Rustblade",
+      "visual_marker_zh": "斜向鏽刃剪影，提示近戰武器。",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_quilted_vest",
+      "name_zh": "絎縫護背",
+      "equipment_slot": "armor",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_QuiltedVest",
+      "visual_marker_zh": "正面護背輪廓，提示輕護具。",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_field_bandage",
+      "name_zh": "野外繃帶",
+      "equipment_slot": "medical",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_FieldBandage",
+      "visual_marker_zh": "白布捲輪廓，提示基礎包紮用品。",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_medic_wrap",
+      "name_zh": "草藥壓布",
+      "equipment_slot": "medical",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_MedicWrap",
+      "visual_marker_zh": "草藥壓布輪廓，提示進階醫療用品。",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_building_plate",
+      "name_zh": "拼裝建材板",
+      "equipment_slot": "tool_material",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_BuildingPlate",
+      "visual_marker_zh": "鉚釘建材板輪廓，提示建造流程材料。",
+      "validation_status": "assigned"
+    }
+  ]
+}

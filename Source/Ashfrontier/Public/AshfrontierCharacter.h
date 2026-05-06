@@ -55,6 +55,8 @@ public:
     const FString& GetArtCharacterId() const;
     void SetPortraitTexturePath(const FString& NewPortraitTexturePath);
     const FString& GetPortraitTexturePath() const;
+    void SetPrototypeBodyMaterialPath(const FString& NewMaterialPath);
+    const FString& GetPrototypeBodyMaterialPath() const;
 
     void SetCarriedTarget(AAshfrontierCharacter* Target);
     AAshfrontierCharacter* GetCarriedTarget() const;
@@ -126,6 +128,9 @@ private:
 
     UPROPERTY(VisibleAnywhere, Category = "Art")
     FString PortraitTexturePath;
+
+    UPROPERTY(VisibleAnywhere, Category = "Art")
+    FString PrototypeBodyMaterialPath;
 
     UPROPERTY(Transient)
     TWeakObjectPtr<AAshfrontierCharacter> CarriedTarget;

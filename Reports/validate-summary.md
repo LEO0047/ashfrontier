@@ -1,6 +1,6 @@
 # Gate 驗證摘要
 
-- 時間：2026-05-06 23:47:28 CST
+- 時間：2026-05-07 00:07:56 CST
 - 專案根目錄：/Users/leo/Library/Mobile Documents/com~apple~CloudDocs/Coding/Projects/Ashfrontier
 
 ## Git
@@ -45,6 +45,7 @@
 - 通過：Scripts/art_manifest_lint.py 存在
 - 通過：Scripts/art_coverage_lint.py 存在
 - 通過：Scripts/ui_art_lint.py 存在
+- 通過：Scripts/visual_variant_lint.py 存在
 - 通過：Scripts/build_texture_maps.py 存在
 - 通過：Scripts/generate_art_assets.sh 存在
 - 通過：Scripts/slice_generated_art_sheets.py 存在
@@ -58,6 +59,9 @@
 - 通過：Content/Data/Art/UIArtAssignments.json 存在
 - 通過：Content/Data/Art/FactionArtAssignments.json 存在
 - 通過：Content/Data/Art/CharacterPortraitAssignments.json 存在
+- 通過：Content/Data/Art/CharacterVisualVariants.json 存在
+- 通過：Content/Data/Art/BuildingVisualVariants.json 存在
+- 通過：Content/Data/Art/EquipmentVisualAssignments.json 存在
 - 通過：Reports/environment.md 存在
 - 通過：Reports/gate-00-report.md 存在
 - 通過：Reports/Art/gate-10-report.md 存在
@@ -66,6 +70,7 @@
 - 通過：Reports/Art/gate-13-report.md 存在
 - 通過：Reports/Art/gate-14-report.md 存在
 - 通過：Reports/Art/gate-15-report.md 存在
+- 通過：Reports/Art/gate-16-report.md 存在
 - 通過：Reports/Art/generated-assets-inventory.md 存在
 - 通過：Reports/Art/texture-processing.md 存在
 - 通過：Reports/Art/import-generated-art.md 存在
@@ -73,6 +78,8 @@
 - 通過：Reports/Art/artslot-application.md 存在
 - 通過：Reports/Art/ui-art-lint.md 存在
 - 通過：Reports/Art/ui-art-application.md 存在
+- 通過：Reports/Art/visual-variant-lint.md 存在
+- 通過：Reports/Art/character-building-art-pass.md 存在
 - 通過：Content/Python/import_generated_art.py 存在
 - 通過：Content/Python/apply_art_slots.py 存在
 - 通過：Content/Data/Art/GeneratedMaterialInstances.json 存在
@@ -144,6 +151,7 @@
 - 通過：Scripts/art_manifest_lint.py Python 語法通過
 - 通過：Scripts/art_coverage_lint.py Python 語法通過
 - 通過：Scripts/ui_art_lint.py Python 語法通過
+- 通過：Scripts/visual_variant_lint.py Python 語法通過
 - 通過：Scripts/build_texture_maps.py Python 語法通過
 - 通過：Scripts/slice_generated_art_sheets.py Python 語法通過
 - 通過：Content/Python/import_generated_art.py Python 語法通過
@@ -167,6 +175,9 @@ UE 生成美術匯入 smoke check 通過
 
 ## UI Art Lint
 - 通過：ui_art_lint.py 通過
+
+## Visual Variant Lint
+- 通過：visual_variant_lint.py 通過
 
 ## ArtSlot Apply Smoke
 - 通過：apply_art_slots.sh --smoke 通過
@@ -205,7 +216,7 @@ Store settings (/Users/leo/UnrealEngine/UnrealTrace/Settings.ini):
  - Sponsored mode: 1
  - Directory: '/Users/leo/UnrealEngine/UnrealTrace/Store/001'
 Watcher enabled on /Users/leo/UnrealEngine/UnrealTrace/Store/001
-Signalling parent 25718
+Signalling parent 50266
 Terminating server, no sponsors or connections active.
 Listening cancelled, closing port...
 Listening cancelled, closing port...

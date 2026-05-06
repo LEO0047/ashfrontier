@@ -87,7 +87,7 @@
         "鹽晶",
         "地表"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_surface_salt_stone",
@@ -106,7 +106,7 @@
         "城牆",
         "灰白"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_surface_rusted_metal",
@@ -125,7 +125,7 @@
         "鉚釘",
         "修補"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_surface_sun_bleached_cloth",
@@ -144,7 +144,7 @@
         "褪色",
         "砂塵"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_surface_blackened_wood",
@@ -163,7 +163,7 @@
         "裂紋",
         "回收"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_surface_bone_ceramic",
@@ -182,7 +182,7 @@
         "手工",
         "荒野"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_surface_industrial_floor",
@@ -202,7 +202,7 @@
         "磨損",
         "砂土"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_surface_weathered_wall",
@@ -222,7 +222,7 @@
         "補片",
         "鹽霜"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_icon_ash_credit",
@@ -531,7 +531,7 @@
         "秩序"
       ],
       "faction_id": "faction_saltwardens",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_banner_glasshouse",
@@ -552,7 +552,7 @@
         "氧化銅"
       ],
       "faction_id": "faction_glasshouse",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_banner_dustrunners",
@@ -573,7 +573,7 @@
         "裂片"
       ],
       "faction_id": "faction_dustrunners",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_portrait_recruit_guard",
@@ -673,7 +673,7 @@
         "繁體中文"
       ],
       "faction_id": "faction_glasshouse",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_decal_restricted_warning",
@@ -694,7 +694,7 @@
         "繁體中文"
       ],
       "faction_id": "faction_saltwardens",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_decal_guard_notice",
@@ -715,7 +715,7 @@
         "繁體中文"
       ],
       "faction_id": "faction_saltwardens",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_decal_broken_direction",
@@ -736,7 +736,7 @@
         "繁體中文"
       ],
       "faction_id": "faction_dustrunners",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_decal_workshop_mark",
@@ -757,7 +757,7 @@
         "繁體中文"
       ],
       "faction_id": "faction_glasshouse",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_decal_warehouse_mark",
@@ -778,7 +778,7 @@
         "繁體中文"
       ],
       "faction_id": "faction_glasshouse",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_decal_water_warning",
@@ -799,7 +799,7 @@
         "繁體中文"
       ],
       "faction_id": "faction_dustrunners",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_decal_trade_notice",
@@ -820,7 +820,7 @@
         "繁體中文"
       ],
       "faction_id": "faction_glasshouse",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_decal_gate_mark",
@@ -841,7 +841,7 @@
         "繁體中文"
       ],
       "faction_id": "faction_saltwardens",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_decal_wild_danger",
@@ -862,7 +862,7 @@
         "繁體中文"
       ],
       "faction_id": "faction_dustrunners",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     }
   ]
 }

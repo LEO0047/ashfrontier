@@ -2,7 +2,75 @@
 
 #include "AshfrontierInventoryComponent.h"
 #include "Components/StaticMeshComponent.h"
+#include "Dom/JsonObject.h"
+#include "Materials/MaterialInterface.h"
+#include "Misc/FileHelper.h"
+#include "Misc/Paths.h"
+#include "Serialization/JsonReader.h"
+#include "Serialization/JsonSerializer.h"
 #include "UObject/ConstructorHelpers.h"
+
+namespace AshfrontierBuildingVisuals
+{
+FString MakeObjectPath(const FString& AssetPath)
+{
+    if (AssetPath.Contains(TEXT(".")))
+    {
+        return AssetPath;
+    }
+
+    FString PackagePath;
+    FString AssetName;
+    if (AssetPath.Split(TEXT("/"), &PackagePath, &AssetName, ESearchCase::CaseSensitive, ESearchDir::FromEnd))
+    {
+        return FString::Printf(TEXT("%s.%s"), *AssetPath, *AssetName);
+    }
+    return AssetPath;
+}
+
+FString FindMaterialForBuilding(const FName& BuildingId)
+{
+    const FString DataPath = FPaths::Combine(FPaths::ProjectContentDir(), TEXT("Data/Art/BuildingVisualVariants.json"));
+    FString RawJson;
+    if (!FFileHelper::LoadFileToString(RawJson, *DataPath))
+    {
+        return FString();
+    }
+
+    TSharedPtr<FJsonObject> RootObject;
+    const TSharedRef<TJsonReader<>> Reader = TJsonReaderFactory<>::Create(RawJson);
+    if (!FJsonSerializer::Deserialize(Reader, RootObject) || !RootObject.IsValid())
+    {
+        return FString();
+    }
+
+    const TArray<TSharedPtr<FJsonValue>>* Records = nullptr;
+    if (!RootObject->TryGetArrayField(TEXT("records"), Records) || Records == nullptr)
+    {
+        return FString();
+    }
+
+    for (const TSharedPtr<FJsonValue>& Value : *Records)
+    {
+        const TSharedPtr<FJsonObject> Record = Value.IsValid() ? Value->AsObject() : nullptr;
+        if (!Record.IsValid())
+        {
+            continue;
+        }
+
+        FString RecordBuildingId;
+        FString MaterialPath;
+        if (Record->TryGetStringField(TEXT("building_id"), RecordBuildingId)
+            && RecordBuildingId == BuildingId.ToString()
+            && Record->TryGetStringField(TEXT("body_material_path"), MaterialPath))
+        {
+            return MaterialPath;
+        }
+    }
+
+    return FString();
+}
+}
 
 AAshfrontierPlacedBuilding::AAshfrontierPlacedBuilding()
 {
@@ -47,6 +115,8 @@ void AAshfrontierPlacedBuilding::InitializeBuilding(const FAshfrontierBuildingDe
     {
         SetActorScale3D(FVector(1.6f, 1.4f, 0.9f));
     }
+
+    SetPrototypeMaterialPath(AshfrontierBuildingVisuals::FindMaterialForBuilding(BuildingId));
 }
 
 FName AAshfrontierPlacedBuilding::GetBuildingId() const
@@ -67,6 +137,25 @@ FName AAshfrontierPlacedBuilding::GetCategory() const
 FName AAshfrontierPlacedBuilding::GetResourceId() const
 {
     return ResourceId;
+}
+
+void AAshfrontierPlacedBuilding::SetPrototypeMaterialPath(const FString& NewMaterialPath)
+{
+    PrototypeMaterialPath = NewMaterialPath;
+    if (!PlaceholderMesh || PrototypeMaterialPath.IsEmpty())
+    {
+        return;
+    }
+
+    if (UMaterialInterface* Material = LoadObject<UMaterialInterface>(nullptr, *AshfrontierBuildingVisuals::MakeObjectPath(PrototypeMaterialPath)))
+    {
+        PlaceholderMesh->SetMaterial(0, Material);
+    }
+}
+
+const FString& AAshfrontierPlacedBuilding::GetPrototypeMaterialPath() const
+{
+    return PrototypeMaterialPath;
 }
 
 UAshfrontierInventoryComponent* AAshfrontierPlacedBuilding::GetStorageInventory() const

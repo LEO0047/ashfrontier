@@ -135,6 +135,7 @@ pass() {
     "Scripts/art_manifest_lint.py"
     "Scripts/art_coverage_lint.py"
     "Scripts/ui_art_lint.py"
+    "Scripts/visual_variant_lint.py"
     "Scripts/build_texture_maps.py"
     "Scripts/generate_art_assets.sh"
     "Scripts/slice_generated_art_sheets.py"
@@ -148,6 +149,9 @@ pass() {
     "Content/Data/Art/UIArtAssignments.json"
     "Content/Data/Art/FactionArtAssignments.json"
     "Content/Data/Art/CharacterPortraitAssignments.json"
+    "Content/Data/Art/CharacterVisualVariants.json"
+    "Content/Data/Art/BuildingVisualVariants.json"
+    "Content/Data/Art/EquipmentVisualAssignments.json"
     "Reports/environment.md"
     "Reports/gate-00-report.md"
     "Reports/Art/gate-10-report.md"
@@ -156,6 +160,7 @@ pass() {
     "Reports/Art/gate-13-report.md"
     "Reports/Art/gate-14-report.md"
     "Reports/Art/gate-15-report.md"
+    "Reports/Art/gate-16-report.md"
     "Reports/Art/generated-assets-inventory.md"
     "Reports/Art/texture-processing.md"
     "Reports/Art/import-generated-art.md"
@@ -163,6 +168,8 @@ pass() {
     "Reports/Art/artslot-application.md"
     "Reports/Art/ui-art-lint.md"
     "Reports/Art/ui-art-application.md"
+    "Reports/Art/visual-variant-lint.md"
+    "Reports/Art/character-building-art-pass.md"
     "Content/Python/import_generated_art.py"
     "Content/Python/apply_art_slots.py"
     "Content/Data/Art/GeneratedMaterialInstances.json"
@@ -307,7 +314,7 @@ PY
     fail "Scripts/content_lint.py Python 語法失敗"
   fi
 
-  for py_script in Scripts/art_prompt_lint.py Scripts/art_manifest_lint.py Scripts/art_coverage_lint.py Scripts/ui_art_lint.py Scripts/build_texture_maps.py Scripts/slice_generated_art_sheets.py Content/Python/import_generated_art.py Content/Python/apply_art_slots.py; do
+  for py_script in Scripts/art_prompt_lint.py Scripts/art_manifest_lint.py Scripts/art_coverage_lint.py Scripts/ui_art_lint.py Scripts/visual_variant_lint.py Scripts/build_texture_maps.py Scripts/slice_generated_art_sheets.py Content/Python/import_generated_art.py Content/Python/apply_art_slots.py; do
     if python3 -m py_compile "$py_script"; then
       pass "$py_script Python 語法通過"
     else
@@ -361,6 +368,14 @@ PY
     pass "ui_art_lint.py 通過"
   else
     fail "ui_art_lint.py 失敗"
+  fi
+
+  log ""
+  log "## Visual Variant Lint"
+  if python3 Scripts/visual_variant_lint.py; then
+    pass "visual_variant_lint.py 通過"
+  else
+    fail "visual_variant_lint.py 失敗"
   fi
 
   log ""

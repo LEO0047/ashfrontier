@@ -1,0 +1,93 @@
+{
+  "type": "character_visual_variants",
+  "records": [
+    {
+      "variant_id": "visual_player_squad_saltcloth",
+      "target_type": "squad_role",
+      "target_id": "player_squad",
+      "faction_id": "faction_player_squad",
+      "display_name_zh": "灰燼前鋒小隊",
+      "body_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_SaltStone",
+      "marker_texture_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Saltwardens",
+      "differentiation_zh": "玩家小隊使用鹽石灰白材質，與荒野敵人和商旅角色拉開距離。",
+      "validation_status": "assigned"
+    },
+    {
+      "variant_id": "visual_faction_saltwardens_guard",
+      "target_type": "faction_role",
+      "target_id": "saltwardens_guard",
+      "faction_id": "faction_saltwardens",
+      "display_name_zh": "鹽脊守望守衛",
+      "body_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_RustedMetal",
+      "marker_texture_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Saltwardens",
+      "differentiation_zh": "守衛使用暗鐵鏽面與垂直徽章，遠距離讀成軍事秩序角色。",
+      "validation_status": "assigned"
+    },
+    {
+      "variant_id": "visual_faction_glasshouse_trader",
+      "target_type": "faction_role",
+      "target_id": "glasshouse_trader",
+      "faction_id": "faction_glasshouse",
+      "display_name_zh": "玻璃屋商旅",
+      "body_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_IndustrialFloor",
+      "marker_texture_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Glasshouse",
+      "differentiation_zh": "商旅使用拼裝鐵板與氧化銅系徽章，和守衛的直線軍事語言區分。",
+      "validation_status": "assigned"
+    },
+    {
+      "variant_id": "visual_faction_dustrunners_nomad",
+      "target_type": "faction_role",
+      "target_id": "dustrunners_nomad",
+      "faction_id": "faction_dustrunners",
+      "display_name_zh": "塵路行者游牧者",
+      "body_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_SunBleachedCloth",
+      "marker_texture_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Dustrunners",
+      "differentiation_zh": "荒野角色使用日曬布料與斜切徽章，讀成移動、游牧與拾荒。",
+      "validation_status": "assigned"
+    },
+    {
+      "variant_id": "visual_recruit_mender_luhe",
+      "target_type": "recruit",
+      "target_id": "recruit_mender_luhe",
+      "faction_id": "faction_dustrunners",
+      "display_name_zh": "苦根醫士 露禾",
+      "body_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_BoneCeramic",
+      "marker_texture_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitMender",
+      "differentiation_zh": "醫療修補者使用骨質陶片材質，和斥候的布料外觀區分。",
+      "validation_status": "assigned"
+    },
+    {
+      "variant_id": "visual_recruit_scout_jianan",
+      "target_type": "recruit",
+      "target_id": "recruit_scout_jianan",
+      "faction_id": "faction_dustrunners",
+      "display_name_zh": "塵路斥候 迦南",
+      "body_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_SunBleachedCloth",
+      "marker_texture_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitScout",
+      "differentiation_zh": "斥候使用日曬布料材質，和醫士、工匠、守手維持可讀差異。",
+      "validation_status": "assigned"
+    },
+    {
+      "variant_id": "visual_recruit_trader_moze",
+      "target_type": "recruit",
+      "target_id": "recruit_trader_moze",
+      "faction_id": "faction_glasshouse",
+      "display_name_zh": "鹽棚工匠 莫澤",
+      "body_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_IndustrialFloor",
+      "marker_texture_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitTrader",
+      "differentiation_zh": "工匠使用工業地板材質，延續商貿修補語言。",
+      "validation_status": "assigned"
+    },
+    {
+      "variant_id": "visual_recruit_guard_luochui",
+      "target_type": "recruit",
+      "target_id": "recruit_guard_luochui",
+      "faction_id": "faction_saltwardens",
+      "display_name_zh": "舊牆守手 洛槌",
+      "body_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_RustedMetal",
+      "marker_texture_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitGuard",
+      "differentiation_zh": "前守衛使用鏽金屬材質，與鹽脊守衛共享秩序感但保留磨損。",
+      "validation_status": "assigned"
+    }
+  ]
+}

@@ -39,6 +39,7 @@ UAshfrontierSaveGame* UAshfrontierSaveGameSystemComponent::CaptureState(
         SavedCharacter.DisplayNameZh = Character->GetSquadDisplayName();
         SavedCharacter.ArtCharacterId = Character->GetArtCharacterId();
         SavedCharacter.PortraitTexturePath = Character->GetPortraitTexturePath();
+        SavedCharacter.PrototypeBodyMaterialPath = Character->GetPrototypeBodyMaterialPath();
         SavedCharacter.FactionId = Character->GetFactionId();
         SavedCharacter.Team = Character->GetCharacterTeam();
         SavedCharacter.Location = Character->GetActorLocation();
@@ -126,6 +127,7 @@ bool UAshfrontierSaveGameSystemComponent::ApplyState(
         Character->SetSquadDisplayName(SavedCharacter.DisplayNameZh);
         Character->SetArtCharacterId(SavedCharacter.ArtCharacterId);
         Character->SetPortraitTexturePath(SavedCharacter.PortraitTexturePath);
+        Character->SetPrototypeBodyMaterialPath(SavedCharacter.PrototypeBodyMaterialPath);
         Character->SetFactionId(SavedCharacter.FactionId);
         Character->SetCharacterTeam(SavedCharacter.Team);
         Character->SetRecruitable(SavedCharacter.bRecruitable, SavedCharacter.RecruitCost);

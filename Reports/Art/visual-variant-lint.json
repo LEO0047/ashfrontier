@@ -1,0 +1,13 @@
+{
+  "status": "pass",
+  "stats": {
+    "character_variant_count": 8,
+    "covered_faction_count": 3,
+    "covered_recruit_count": 4,
+    "building_variant_count": 5,
+    "equipment_mapping_count": 5,
+    "missing_building_count": 0,
+    "missing_recruit_count": 0
+  },
+  "issues": []
+}

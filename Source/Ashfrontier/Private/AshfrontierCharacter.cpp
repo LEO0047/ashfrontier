@@ -7,6 +7,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "Materials/MaterialInterface.h"
 #include "UObject/ConstructorHelpers.h"
 
 AAshfrontierCharacter::AAshfrontierCharacter()
@@ -233,6 +234,36 @@ void AAshfrontierCharacter::SetPortraitTexturePath(const FString& NewPortraitTex
 const FString& AAshfrontierCharacter::GetPortraitTexturePath() const
 {
     return PortraitTexturePath;
+}
+
+void AAshfrontierCharacter::SetPrototypeBodyMaterialPath(const FString& NewMaterialPath)
+{
+    PrototypeBodyMaterialPath = NewMaterialPath;
+    if (!PlaceholderBody || PrototypeBodyMaterialPath.IsEmpty())
+    {
+        return;
+    }
+
+    FString ObjectPath = PrototypeBodyMaterialPath;
+    if (!ObjectPath.Contains(TEXT(".")))
+    {
+        FString PackagePath;
+        FString AssetName;
+        if (ObjectPath.Split(TEXT("/"), &PackagePath, &AssetName, ESearchCase::CaseSensitive, ESearchDir::FromEnd))
+        {
+            ObjectPath = FString::Printf(TEXT("%s.%s"), *PrototypeBodyMaterialPath, *AssetName);
+        }
+    }
+
+    if (UMaterialInterface* Material = LoadObject<UMaterialInterface>(nullptr, *ObjectPath))
+    {
+        PlaceholderBody->SetMaterial(0, Material);
+    }
+}
+
+const FString& AAshfrontierCharacter::GetPrototypeBodyMaterialPath() const
+{
+    return PrototypeBodyMaterialPath;
 }
 
 void AAshfrontierCharacter::SetCarriedTarget(AAshfrontierCharacter* Target)

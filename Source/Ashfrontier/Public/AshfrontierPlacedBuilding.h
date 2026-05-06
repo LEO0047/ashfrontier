@@ -22,6 +22,8 @@ public:
     const FString& GetBuildingNameZh() const;
     FName GetCategory() const;
     FName GetResourceId() const;
+    void SetPrototypeMaterialPath(const FString& NewMaterialPath);
+    const FString& GetPrototypeMaterialPath() const;
     UAshfrontierInventoryComponent* GetStorageInventory() const;
 
     void AddProductionJob(const FName& RecipeId, float WorkSeconds);
@@ -49,6 +51,9 @@ private:
 
     UPROPERTY(VisibleAnywhere, Category = "Building")
     FName ResourceId;
+
+    UPROPERTY(VisibleAnywhere, Category = "Art")
+    FString PrototypeMaterialPath;
 
     UPROPERTY(VisibleAnywhere, Category = "Production")
     TArray<FAshfrontierProductionQueueEntry> ProductionQueue;

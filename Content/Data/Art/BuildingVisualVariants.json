@@ -1,0 +1,55 @@
+{
+  "type": "building_visual_variants",
+  "records": [
+    {
+      "building_id": "building_camp_kitchen",
+      "name_zh": "營火灶",
+      "category": "production",
+      "art_slot": "ArtSlot_BlackenedWood",
+      "body_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_BlackenedWood",
+      "signage_art_slot": "ArtSlot_Decal_WaterWarning",
+      "differentiation_zh": "炭化木材與低矮形體讓營火灶讀成烹飪與補給點。",
+      "validation_status": "assigned"
+    },
+    {
+      "building_id": "building_storage_crate",
+      "name_zh": "粗木儲物箱",
+      "category": "storage",
+      "art_slot": "ArtSlot_SunBleachedCloth",
+      "body_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_SunBleachedCloth",
+      "signage_art_slot": "ArtSlot_Decal_WarehouseMark",
+      "differentiation_zh": "舊布包覆與倉庫標誌讓儲物箱在野外基地中可快速辨認。",
+      "validation_status": "assigned"
+    },
+    {
+      "building_id": "building_scrap_mine",
+      "name_zh": "碎鐵採集點",
+      "category": "gathering",
+      "art_slot": "ArtSlot_RustedMetal",
+      "body_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_RustedMetal",
+      "signage_art_slot": "ArtSlot_Decal_WildDanger",
+      "differentiation_zh": "鏽金屬材質和危險標記把採集點讀成礦物與廢料來源。",
+      "validation_status": "assigned"
+    },
+    {
+      "building_id": "building_field_workshop",
+      "name_zh": "野地工坊",
+      "category": "production",
+      "art_slot": "ArtSlot_IndustrialFloor",
+      "body_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_IndustrialFloor",
+      "signage_art_slot": "ArtSlot_Decal_WorkshopMark",
+      "differentiation_zh": "拼裝鐵板和工坊標誌讓它與營火灶的焦黑木材區分。",
+      "validation_status": "assigned"
+    },
+    {
+      "building_id": "building_palisade_wall",
+      "name_zh": "釘板防線",
+      "category": "defense",
+      "art_slot": "ArtSlot_BoneCeramic",
+      "body_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Surface_BoneCeramic",
+      "signage_art_slot": "ArtSlot_Decal_RestrictedWarning",
+      "differentiation_zh": "骨質陶片與禁區警示讓防線讀成防衛、阻擋與領域邊界。",
+      "validation_status": "assigned"
+    }
+  ]
+}
