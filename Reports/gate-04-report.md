@@ -63,3 +63,10 @@
 
 - Gate 05 必須完成「移動 → 戰鬥 → 受傷 → 倒地 → 搬運 → 醫療」Editor playable flow。
 - Gate 05 需要在現有 route / blockout 環境中放入至少 1 名敵人與部位傷害測試流程。
+
+## 推送紀錄
+
+- Gate commit：532981c723b37d7e90b31ad6c161aa9cf6ea1a7b
+- Push 狀態：已推送到 origin/main
+- Remote SHA：532981c723b37d7e90b31ad6c161aa9cf6ea1a7b
+- 記錄時間：2026-05-06 19:38:04 CST
