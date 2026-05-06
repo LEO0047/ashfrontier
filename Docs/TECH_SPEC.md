@@ -23,6 +23,19 @@ Ashfrontier 使用 UE5 建立 3D 單機小隊沙盒 RPG prototype。核心系統
 - 打包目標是 `Builds/macOS/Ashfrontier.app`。
 - 原型階段不強制 Apple notarization；若需要簽章，優先採 ad-hoc signing 或 development signing。
 
+## Build Truth Rule
+
+若最終聲稱 macOS playable build 完成，必須同時滿足：
+
+1. `Builds/macOS/Ashfrontier.app` 存在。
+2. 該 `.app` 可從 Finder 或命令列啟動。
+3. 啟動後不需要 Unreal Editor。
+4. 啟動後可以進入 playable map。
+5. 可以完成 5 分鐘 golden path。
+6. `Reports/final-prototype-report.md` 必須包含 build 路徑、build 時間、commit hash、測試摘要、已知問題與 5 分鐘 golden path 驗證結果。
+
+Blocker report 只能代表目前環境阻塞，不能代表 goal 完成。若 packaged build 失敗，仍必須保留 Editor playable prototype；若 Editor playable prototype 也無法完成，最終狀態必須明確標示 prototype 未完成。
+
 ## 資料驅動設計
 
 以下內容必須資料化，並由 `Scripts/content_lint.py` 驗證：
@@ -90,6 +103,10 @@ SaveGame schema 必須包含 `schema_version`。Gate 09 前至少保存：
 - `Scripts/package_macos.sh`：macOS `.app` 打包與 blocker report。
 - `Scripts/commit_gate.sh`：驗證通過後 commit / push / 報告狀態。
 
-## Gate 00 環境限制
+## Gate 01 專案骨架
 
-目前本機常見路徑與 Spotlight 尚未找到 UE5 Editor；active developer directory 是 `/Library/Developer/CommandLineTools`，`xcodebuild -version` 回報需要完整 Xcode。Gate 01 若要編譯 C++ UE 專案，需要先提供可用的 UE5 Editor 與完整 Xcode 或記錄 blocker。
+- `Ashfrontier.uproject` 宣告 `Ashfrontier` runtime module，啟用 `EnhancedInput`。
+- `Source/Ashfrontier/` 目前包含 Game / Editor target、module rules、GameMode、PlayerController、Character、HUD 與 C++ automation smoke test。
+- `Config/DefaultEngine.ini` 指向 `/Game/Maps/L_Ashfrontier_Prototype` 作為 startup / default map；此 `.umap` 必須由 UE Editor 建立，不得用文字檔或空檔偽造。
+- 完整 Xcode 已安裝並完成 agreement；active developer directory 是 `/Applications/Xcode.app/Contents/Developer`。
+- UE5 仍在 Epic Games Launcher 安裝中。`UnrealEditor.app` 出現並可執行前，C++ build、map 建立與 UE automation tests 仍是 Gate 01 blocker。

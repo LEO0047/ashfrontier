@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Ashfrontier.Gate" tests="1" failures="0" skipped="1">
-  <testcase classname="Gate00" name="UEProjectAvailability">
-    <skipped message="尚未建立 Ashfrontier.uproject"/>
-  </testcase>
+<testsuite name="Ashfrontier.Gate" tests="1" failures="0" skipped="0">
+  <testcase classname="UEAutomation" name="Ashfrontier"/>
 </testsuite>

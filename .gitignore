@@ -8,6 +8,16 @@ lerna-debug.log*
 .DS_Store
 Kenshi 2 深度研究與 Codex 單一目標開發藍圖 2.md
 
+# Unreal Engine local/generated files
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Build/
+*.sln
+*.xcodeproj
+*.xcworkspace
+
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 

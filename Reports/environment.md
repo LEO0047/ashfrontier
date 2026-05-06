@@ -46,9 +46,25 @@
 - 使用者已在 Xcode GUI 按下 `Agree`，Apple SDK agreement 已完成。
 - `xcodebuild -version` 已可正常回報 `Xcode 26.4.1` / `Build version 17E202`。
 - `xcode-select -p` 目前為 `/Applications/Xcode.app/Contents/Developer`，代表 active developer directory 已切到完整 Xcode。
+- `xcodebuild -runFirstLaunch` 已執行完成，未再跳出互動式阻塞。
+- macOS SDK：`/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.4.sdk`。
+- `clang`：`/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang`。
 - Epic Games Launcher 正在安裝 `Unreal Engine 5.7`。下載管理器顯示約 `1004.97 MB of 11.78 GB`，速度約 `1.67 Mbps`。
 - `/Users/Shared/Epic Games/UE_5.7` 已存在，大小約 `9.0G`，但尚未找到 `UnrealEditor.app`。
 - 可用空間約 `38GiB`。UE5 安裝完成前仍需監控磁碟空間；若 Epic Launcher 因空間不足中止，會更新 blocker report。
+
+## 2026-05-06 08:46 CST UE 安裝觀察
+
+- `/Users/Shared/Epic Games/UE_5.7` 約 `13G`，仍只有 `.egstore` 下載 / 暫存目錄，尚未展開出 `Engine/`。
+- 尚未找到 `UnrealEditor.app`，Gate 01 無法進入 UE build / map 建立驗證。
+- Epic Games Launcher process 仍在執行且有 CPU 活動，但 log 主要是版本 metadata / telemetry 訊息，未出現明確完成或磁碟不足錯誤。
+- 可用空間約 `32GiB`，UE 解壓階段可能偏緊；目前不自行刪除任何使用者檔案或 cache。
+
+## 2026-05-06 UE5 安裝完成觀察
+
+- 已找到 `/Users/Shared/Epic Games/UE_5.7/Engine/Binaries/Mac/UnrealEditor.app`。
+- `/Users/Shared/Epic Games/UE_5.7` 約 `37G`。
+- 磁碟可用空間約 `16GiB`，後續 C++ build、DerivedDataCache、package 可能仍受空間限制影響。
 
 ## Git
 

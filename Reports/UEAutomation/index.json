@@ -1,0 +1,44 @@
+﻿{
+	"devices": [
+		{
+			"deviceName": "LEOs-MacBook-Pro.local",
+			"instance": "DE1C4FC65B4B91F1EACD13979232D299",
+			"instanceName": "LEOs-MacBook-Pro.local-73943",
+			"platform": "MacEditor",
+			"oSVersion": "macOS 26.4.1 25E253",
+			"model": "Default",
+			"gPU": "Apple M1 Pro",
+			"cPUModel": "Apple M1 Pro",
+			"rAMInGB": 16,
+			"renderMode": "SM6",
+			"rHI": "",
+			"appInstanceLog": ""
+		}
+	],
+	"reportCreatedOn": "2026.05.06-11.00.30",
+	"succeeded": 1,
+	"succeededWithWarnings": 0,
+	"failed": 0,
+	"notRun": 0,
+	"inProcess": 0,
+	"totalDuration": 0.0085392072796821594,
+	"comparisonExported": false,
+	"comparisonExportDirectory": "",
+	"tests": [
+		{
+			"testDisplayName": "ModuleLoads",
+			"fullTestPath": "Ashfrontier.Smoke.ModuleLoads",
+			"tags": [],
+			"state": "Success",
+			"deviceInstance": [
+				"DE1C4FC65B4B91F1EACD13979232D299"
+			],
+			"duration": 0.0085392072796821594,
+			"dateTime": "2026.05.06-11.00.30",
+			"entries": [],
+			"warnings": 0,
+			"errors": 0,
+			"artifacts": []
+		}
+	]
+}

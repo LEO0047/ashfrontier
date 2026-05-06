@@ -2,7 +2,7 @@
 
 Ashfrontier 是一個原創世界觀的 UE5 3D 單機小隊沙盒 RPG playable prototype。專案以「Kenshi 2 公開資訊與設計方向」作為系統設計標竿，但所有派系、角色、地點、文本與資產都必須使用 Ashfrontier 原創內容或 placeholder / 自有資產，不得複製 Kenshi / Kenshi 2 的名稱、角色、派系、美術、地圖、文本或商標。
 
-目前階段是 Gate 00：macOS 工作區、中文文件、研究文件副本與驗證骨架。尚未建立 UE5 `.uproject`，因此 UE Editor、automation tests 與 macOS package 會先以環境檢查與 blocker 報告方式處理。
+目前階段是 Gate 01：已建立 UE5 `.uproject`、C++ 核心模組骨架、初始 Config 與 automation smoke test。完整 Xcode 已安裝並完成 Apple SDK agreement；`Unreal Engine 5.7` 仍在 Epic Games Launcher 安裝中，`UnrealEditor.app` 出現前不能宣稱 Gate 01 通過。
 
 ## macOS 開啟方式
 
@@ -12,7 +12,7 @@ Ashfrontier 是一個原創世界觀的 UE5 3D 單機小隊沙盒 RPG playable p
 cd "/Users/leo/Library/Mobile Documents/com~apple~CloudDocs/Coding/Projects/Ashfrontier"
 ```
 
-2. Gate 01 建立 `Ashfrontier.uproject` 後，可用 UE5 Editor 開啟。UE5 路徑不要硬寫死，請先複製並調整環境範例：
+2. UE5 安裝完成後，可用 UE5 Editor 開啟 `Ashfrontier.uproject`。UE5 路徑不要硬寫死，請先複製並調整環境範例：
 
 ```bash
 cp Scripts/env.example .env.local
@@ -28,12 +28,13 @@ cp Scripts/env.example .env.local
 ./Scripts/validate.sh
 ```
 
-Gate 00 的驗證會檢查 Git remote、必要文件、繁體中文文件、macOS 環境紀錄、腳本語法與初始 content lint。若尚未建立 UE5 專案，`Scripts/run_tests.sh` 會輸出中文測試摘要並標示 UE 測試尚未啟用。
+Gate 01 起，`Ashfrontier.uproject` 已存在，因此 `Scripts/run_tests.sh` 會要求 `UE5_EDITOR` 可執行，並要求 `Content/Maps/L_Ashfrontier_Prototype.umap` 是由 UE Editor 建立的真實 map asset。若 UE5 尚未完成安裝，驗證會失敗並要求更新 blocker report，不得假裝通過。
 
 可單獨執行：
 
 ```bash
 python3 Scripts/content_lint.py
+./Scripts/create_gate01_map.sh
 ./Scripts/run_tests.sh --smoke
 ./Scripts/soak_test.sh --smoke
 ./Scripts/perf_capture.sh

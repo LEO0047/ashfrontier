@@ -1,6 +1,6 @@
 # Gate 驗證摘要
 
-- 時間：2026-05-06 07:51:49 CST
+- 時間：2026-05-06 19:00:07 CST
 - 專案根目錄：/Users/leo/Library/Mobile Documents/com~apple~CloudDocs/Coding/Projects/Ashfrontier
 
 ## Git
@@ -29,6 +29,24 @@
 - 通過：Reports/environment.md 存在
 - 通過：Reports/gate-00-report.md 存在
 
+## Gate 01 專案骨架
+- 通過：Ashfrontier.uproject 存在
+- 通過：Source/Ashfrontier/Ashfrontier.Build.cs 存在
+- 通過：Source/Ashfrontier.Target.cs 存在
+- 通過：Source/AshfrontierEditor.Target.cs 存在
+- 通過：Source/Ashfrontier/Private/Ashfrontier.cpp 存在
+- 通過：Source/Ashfrontier/Private/AshfrontierGameMode.cpp 存在
+- 通過：Source/Ashfrontier/Private/AshfrontierPlayerController.cpp 存在
+- 通過：Source/Ashfrontier/Private/AshfrontierCharacter.cpp 存在
+- 通過：Source/Ashfrontier/Private/AshfrontierHUD.cpp 存在
+- 通過：Source/Ashfrontier/Private/Tests/AshfrontierSmokeTests.cpp 存在
+- 通過：Config/DefaultEngine.ini 存在
+- 通過：Config/DefaultGame.ini 存在
+- 通過：Config/DefaultInput.ini 存在
+- 通過：Scripts/create_gate01_map.sh 存在
+- 通過：BuildScripts/create_gate01_map.py 存在
+- 通過：Ashfrontier.uproject JSON 語法通過
+
 ## 繁體中文文件檢查
 - 通過：中文文件基本檢查通過
 
@@ -45,14 +63,47 @@
 - 通過：Scripts/package_macos.sh bash 語法通過
 - 通過：Scripts/commit_gate.sh 可執行
 - 通過：Scripts/commit_gate.sh bash 語法通過
+- 通過：Scripts/create_gate01_map.sh 可執行
+- 通過：Scripts/create_gate01_map.sh bash 語法通過
 - 通過：Scripts/content_lint.py Python 語法通過
 
 ## Content Lint
 - 通過：content_lint.py 通過
 
 ## UE 測試入口
+Opening shared memory
+Shared memory doesn't exist, checking legacy lock file
+Checking for a '/tmp/UnrealTraceServer.pid' lock file
+Forking process
+Wait until we know the daemon has started.
+Parent received signal 30
+Daemon signalled successful start
+Forked complete (ret=0)
 - 通過：run_tests.sh smoke 通過
 
 ## 結果
 - 警告數：0
 - 失敗數：0
+Opening shared memory
+Shared memory doesn't exist, checking legacy lock file
+Checking for a '/tmp/UnrealTraceServer.pid' lock file
+Forking process
+Opening shared memory
+Starting the store
+Reading settings from '/Users/leo/UnrealEngine/UnrealTrace/Settings.ini'
+
+Unable to open settings file /Users/leo/UnrealEngine/UnrealTrace/Settings.ini.
+
+Store settings (/Users/leo/UnrealEngine/UnrealTrace/Settings.ini):
+ - Store port: 1989
+ - Recorder port: 1981
+ - Thread count: 0
+ - Sponsored mode: 1
+ - Directory: '/Users/leo/UnrealEngine/UnrealTrace/Store/001'
+Watcher enabled on /Users/leo/UnrealEngine/UnrealTrace/Store/001
+Signalling parent 74038
+Terminating server, no sponsors or connections active.
+Listening cancelled, closing port...
+Listening cancelled, closing port...
+Received signal 15
+Daemon is exiting without errors.

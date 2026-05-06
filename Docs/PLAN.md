@@ -30,6 +30,38 @@
 | Gate 08 | 派系 AI、城市守衛反應與事件記憶 | 偷竊、攻擊、自衛、禁區、警告、追捕、放行與關係變化可測 |
 | Gate 09 | 存讀檔、macOS 打包、回歸、soak test 與最終報告 | 完整存讀檔、回歸、soak、perf、macOS `.app` 或 blocker report |
 
+## Playable Contract
+
+本 goal 的最終目的不是產出文件，而是在 macOS 上交付可啟動、可操作、可驗證的 playable prototype。文件、報告、ADR、測試腳本或 blocker report 都不能替代 playable prototype。
+
+最低可玩定義如下：
+
+1. 玩家可以啟動遊戲，不依賴 Unreal Editor。
+2. 玩家可以進入主選單或直接進入 prototype map。
+3. 玩家可以控制至少 2 名小隊成員。
+4. 玩家可以移動、選取隊員、下達跟隨或移動命令。
+5. 玩家可以與至少 1 名敵人發生近戰。
+6. 角色會受到部位傷害。
+7. 角色可以倒地或昏迷。
+8. 玩家可以搬運倒地隊友。
+9. 玩家可以與至少 1 名 NPC 交易。
+10. 玩家可以招募至少 1 名 NPC。
+11. 玩家可以在野外建造區放置至少 1 種建築。
+12. 玩家可以產出或取得至少 1 種資源。
+13. 玩家可以存檔。
+14. 玩家可以讀檔。
+15. 讀檔後，角色位置、血量、庫存、派系關係與建築狀態不得全部重置。
+16. 遊戲必須提供一條 5 分鐘 golden path，可以從新遊戲開始一路驗證上述行為。
+
+不可協商 playable milestone：
+
+- Gate 03 結束時，必須已經可以在 UE Editor 內控制小隊移動。
+- Gate 05 結束時，必須已經可以在 UE Editor 內完成「移動 → 戰鬥 → 受傷 → 倒地 → 搬運 → 醫療」流程。
+- Gate 07 結束時，必須已經可以在 UE Editor 內完成「招募 → 交易 → 建造 → 生產」流程。
+- Gate 09 結束時，必須嘗試產出 macOS packaged build；若 packaged build 成功，必須可完成 5 分鐘 golden path。
+
+若 macOS packaged build 失敗，但 Editor playable prototype 已完成，最終狀態只能標示為 `Editor playable prototype completed; macOS packaged build blocked.`。若連 Editor playable prototype 都無法完成，最終狀態必須標示為 `Playable prototype not completed.`。
+
 ## Gate 執行規則
 
 每個 Gate 必須依序完成：
@@ -51,7 +83,8 @@
 
 ## Gate 01 狀態
 
-- 狀態：環境 blocker。
-- 原因：目前常見路徑與 Spotlight 尚未找到 UE5 Editor；`/Applications` 也未找到 `Xcode.app`，active developer directory 是 Command Line Tools，不是完整 Xcode。
-- 影響：無法誠實建立 UE5 `.umap`、編譯 C++ module、驗證 UE project 可開啟，或產出 macOS `.app`。
-- 下一步：安裝或提供 UE5 Editor 路徑，並安裝 / 指定完整 Xcode 後重跑 Gate 01。
+- 狀態：本機驗證中。
+- 已完成：完整 Xcode 已安裝並完成 Apple SDK agreement；UE5.7 Editor 已安裝於 `/Users/Shared/Epic Games/UE_5.7`；本機已建立 `Ashfrontier.uproject`、`Source/Ashfrontier/` C++ module、初始 Config、HUD / Controller / Character placeholder、C++ automation smoke test 與真正的 `Content/Maps/L_Ashfrontier_Prototype.umap`。
+- 已驗證：`AshfrontierEditor` C++ build 成功；Gate 01 map 由 UE Editor 建立並 MapCheck 0 errors / 0 warnings；`Ashfrontier.Smoke.ModuleLoads` automation test 通過。
+- 仍需完成：執行完整 `./Scripts/validate.sh`，通過後用 `Scripts/commit_gate.sh` commit / push Gate 01。
+- 風險：磁碟可用空間約 `12-16GiB`，後續 Gate 的 DerivedDataCache、cook 或 package 可能需要釋放空間。

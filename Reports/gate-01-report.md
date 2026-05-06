@@ -2,36 +2,70 @@
 
 ## Summary
 
-Gate 01 目標是建立 Ashfrontier UE5 專案骨架與核心模組。目前完整 Xcode 已安裝並完成 Apple SDK agreement，但 UE5 Editor 仍在 Epic Games Launcher 下載安裝中。Gate 01 仍被 UE5 環境 blocker 擋住，未建立假 `.umap` 或假 build 產物。
+Gate 01 目標是建立 Ashfrontier UE5 專案骨架與核心模組。目前完整 Xcode 與 UE5.7 Editor 已可用，已建立 `.uproject`、C++ module、初始 Config、可載入的 Gate 01 map 與 automation smoke test。
 
 ## 狀態
 
-- Gate 狀態：blocked。
-- Blocker 類型：本機 UE5 環境尚未完成。
-- Blocker 報告：`Reports/ue5-environment-blocker.md`。
+- Gate 狀態：本機驗證中。
+- Blocker 類型：UE5 環境 blocker 已解除；目前剩餘風險是磁碟空間偏低。
+- Blocker 報告：`Reports/ue5-environment-blocker.md` 保留作為歷史紀錄。
 
-## 未完成原因
+## 歷史 blocker 與解除狀態
 
-- 找不到 UE5 Editor，無法由 UE 產生或驗證 `Ashfrontier.uproject`、C++ module 與 `.umap`。
+- 初始 blocker：曾找不到 UE5 Editor，無法由 UE 產生或驗證 `Ashfrontier.uproject`、C++ module 與 `.umap`。
 - 完整 Xcode 已可用，`xcodebuild -version` 回報 `Xcode 26.4.1` / `Build version 17E202`，`xcode-select -p` 為 `/Applications/Xcode.app/Contents/Developer`。
-- 在此狀態下建立 `Content/Maps/L_Ashfrontier_Prototype.umap` 會是偽造 UE asset，不符合 goal 規則。
+- UE5 Editor blocker 已解除：`/Users/Shared/Epic Games/UE_5.7/Engine/Binaries/Mac/UnrealEditor.app` 已存在且可執行。
+- `Content/Maps/L_Ashfrontier_Prototype.umap` 已由 UE Editor / Python 建立，不是文字檔或空檔 placeholder。
 
-## 已完成替代驗證
+## 環境驗證
 
 - Gate 00 的 `./Scripts/validate.sh` 通過。
 - Git remote 已確認為 `https://github.com/LEO0047/ashfrontier.git`。
 - 環境變數範例已建立於 `Scripts/env.example`。
-- UE 測試入口會在缺 `.uproject` 時輸出略過摘要，不宣稱 UE tests 已通過。
-- 已安裝 `/Applications/Epic Games Launcher.app`，並已在 Epic 帳號登入後開始下載 `Unreal Engine 5.7`。
 - 已安裝完整 `/Applications/Xcode.app`，使用者已在 GUI 按下 `Agree`。
-- `/Users/Shared/Epic Games/UE_5.7` 已存在但尚未包含 `UnrealEditor.app`。
-- `mas get 497799835` 因互動式 sudo 密碼需求無法在非互動 terminal 完成。
+- 已安裝 `Unreal Engine 5.7.4`，`UnrealEditor.app` 已可執行。
+- `mas get 497799835` 曾因互動式 sudo 密碼需求無法在非互動 terminal 完成，後續已透過 GUI 完成 Xcode。
+
+## 本機進行中內容
+
+- 已建立 `Ashfrontier.uproject`，宣告 `Ashfrontier` runtime module 與 `EnhancedInput` plugin。
+- 已建立 `Source/Ashfrontier/` C++ module skeleton，包含 Game / Editor target、GameMode、PlayerController、Character、HUD 與 automation smoke test。
+- 已建立 `Config/DefaultEngine.ini`、`Config/DefaultGame.ini`、`Config/DefaultInput.ini` 與 `Config/DefaultEditor.ini`。
+- 已建立 `Content/Maps/L_Ashfrontier_Prototype.umap`，MapCheck 0 errors / 0 warnings。
+- 已建立 `Content/UI/` 目錄 placeholder。
+- `AshfrontierEditor` C++ build 已通過。
+- `Ashfrontier.Smoke.ModuleLoads` automation test 已通過。
+
+## 2026-05-06 08:46 CST 安裝狀態
+
+- 完整 Xcode、macOS SDK 與 Xcode `clang` 已可用。
+- Epic Games Launcher 仍在處理 `Unreal Engine 5.7.4` 安裝，`/Users/Shared/Epic Games/UE_5.7` 約 `13G`。
+- `UE_5.7` 尚未出現 `Engine/` 與 `UnrealEditor.app`。
+- 目前磁碟剩餘約 `32GiB`，UE 解壓可能因空間不足變成 blocker；尚未看到明確錯誤。
+
+後續觀察：已找到 `/Users/Shared/Epic Games/UE_5.7/Engine/Binaries/Mac/UnrealEditor.app`，UE5 Editor 安裝完成。安裝後磁碟可用空間降至約 `12-16GiB`。
+
+## Gate 01 驗證結果
+
+- `Build.sh AshfrontierEditor Mac Development`：通過。
+- `Scripts/create_gate01_map.sh`：通過；首次使用 `spawn_actor_from_class` 在 `-NullRHI` 下觸發 UE5.7 viewport hit proxy crash，已修正為只建立 / 儲存真 `.umap`，blockout actor 延後到 Gate 04。
+- `./Scripts/run_tests.sh --smoke`：通過。
+- UE automation：找到並執行 `Ashfrontier.Smoke.ModuleLoads`，結果 `Success`。
+- UE map check：`Content/Maps/L_Ashfrontier_Prototype.umap` 為 0 errors / 0 warnings。
+
+## Playable Contract 接收狀態
+
+- Gate 03 必須完成 Editor 內小隊移動 playable milestone。
+- Gate 05 必須完成 Editor 內「移動 → 戰鬥 → 受傷 → 倒地 → 搬運 → 醫療」playable milestone。
+- Gate 07 必須完成 Editor 內「招募 → 交易 → 建造 → 生產」playable milestone。
+- Gate 09 必須嘗試 macOS packaged build；若 build 成功，必須完成 5 分鐘 golden path。
+- 文件、報告、測試腳本、UE project 可開啟或 map 可載入，都不得替代 playable prototype。
 
 ## 下一步
 
-- 等 Epic Games Launcher 完成 UE5 Engine 安裝，或提供現有 UE5 Editor 路徑。
-- 若磁碟空間不足，先釋放空間或指定 UE5 外接磁碟安裝位置。
-- 重新執行 Gate 01：建立 `.uproject`、C++ module、空白 playable map 與 smoke tests。
+- 執行完整 `./Scripts/validate.sh`。
+- 驗證通過後執行 `./Scripts/commit_gate.sh gate-01 "gate-01: 建立 UE5 專案骨架與核心模組"`。
+- Gate 02 開始建立資料驅動初始內容。
 
 ## 推送紀錄
 

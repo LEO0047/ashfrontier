@@ -102,6 +102,42 @@ pass() {
     fi
   done
 
+  if [[ -f "Ashfrontier.uproject" ]]; then
+    log ""
+    log "## Gate 01 專案骨架"
+    GATE01_FILES=(
+      "Ashfrontier.uproject"
+      "Source/Ashfrontier/Ashfrontier.Build.cs"
+      "Source/Ashfrontier.Target.cs"
+      "Source/AshfrontierEditor.Target.cs"
+      "Source/Ashfrontier/Private/Ashfrontier.cpp"
+      "Source/Ashfrontier/Private/AshfrontierGameMode.cpp"
+      "Source/Ashfrontier/Private/AshfrontierPlayerController.cpp"
+      "Source/Ashfrontier/Private/AshfrontierCharacter.cpp"
+      "Source/Ashfrontier/Private/AshfrontierHUD.cpp"
+      "Source/Ashfrontier/Private/Tests/AshfrontierSmokeTests.cpp"
+      "Config/DefaultEngine.ini"
+      "Config/DefaultGame.ini"
+      "Config/DefaultInput.ini"
+      "Scripts/create_gate01_map.sh"
+      "BuildScripts/create_gate01_map.py"
+    )
+
+    for file in "${GATE01_FILES[@]}"; do
+      if [[ -s "$file" ]]; then
+        pass "$file 存在"
+      else
+        fail "$file 不存在或是空檔"
+      fi
+    done
+
+    if python3 -m json.tool Ashfrontier.uproject >/dev/null; then
+      pass "Ashfrontier.uproject JSON 語法通過"
+    else
+      fail "Ashfrontier.uproject JSON 語法失敗"
+    fi
+  fi
+
   log ""
   log "## 繁體中文文件檢查"
   if python3 - "$PROJECT_ROOT" <<'PY'
@@ -142,6 +178,7 @@ PY
     "Scripts/perf_capture.sh"
     "Scripts/package_macos.sh"
     "Scripts/commit_gate.sh"
+    "Scripts/create_gate01_map.sh"
   )
   for script in "${SCRIPT_FILES[@]}"; do
     if [[ -x "$script" ]]; then

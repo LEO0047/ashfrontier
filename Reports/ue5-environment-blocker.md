@@ -28,9 +28,28 @@ Gate 01 需要建立 UE5 專案骨架、C++ module、可啟動 playable map 與 
 ## 2026-05-06 07:50 CST 更新
 
 - 使用者已在 Xcode agreement 視窗按下 `Agree`，完整 Xcode 驗證通過。
+- `xcodebuild -runFirstLaunch` 已執行完成，macOS SDK 與 Xcode `clang` 可用。
 - Epic Games Launcher 下載管理器顯示 `Unreal Engine 5.7` 正在安裝，約 `1004.97 MB of 11.78 GB`，速度約 `1.67 Mbps`。
 - `UnrealEditor.app` 尚未出現在 `/Users/Shared/Epic Games/UE_5.7`，因此 UE5 仍不可用。
 - 目前可用空間約 `38GiB`，需要持續監控安裝是否因磁碟空間不足而失敗。
+
+## 2026-05-06 08:46 CST 更新
+
+- `/Users/Shared/Epic Games/UE_5.7` 約 `13G`，仍停留在 `.egstore` 暫存目錄階段。
+- 尚未出現 `Engine/`、`Engine/Binaries/Mac/UnrealEditor.app` 或等效可執行檔。
+- 可用空間降至約 `32GiB`。若 Epic Launcher 接下來報磁碟不足，Gate 01 需保持 blocked，並先釋放空間或改用外接磁碟安裝 UE5。
+
+## 2026-05-06 UE5 安裝完成觀察
+
+- 已找到 `/Users/Shared/Epic Games/UE_5.7/Engine/Binaries/Mac/UnrealEditor.app`。
+- UE5 Editor 環境 blocker 解除，Gate 01 可進入 map 建立、C++ build 與 UE automation 驗證。
+- 仍需注意磁碟可用空間約 `16GiB`，後續若 build 或 package 因空間不足失敗，需另建 `Reports/mac-build-blocker.md` 或更新 Gate report。
+
+## Blocker 結論
+
+- UE5 Editor 缺失 blocker：已解除。
+- 完整 Xcode / SDK blocker：已解除。
+- 剩餘風險：磁碟可用空間偏低，後續 cook / package 可能需要釋放空間。
 
 ## 影響
 

@@ -30,14 +30,41 @@
 
 - Gate 01：UE5 專案可開啟、編譯、啟動空白 playable map，smoke tests 通過。
 - Gate 02：資料驅動初始內容通過 content lint，UE 可載入資料。
-- Gate 03：小隊選取、移動、跟隨、待命、鏡頭切換與 UI placeholder 通過 functional tests。
+- Gate 03：小隊選取、移動、跟隨、待命、鏡頭切換與 UI placeholder 通過 functional tests；必須能在 UE Editor 內控制至少 2 名小隊成員移動。
 - Gate 04：主城、前哨、野外建造區與巡邏路線可導航，perf capture 有輸出。
-- Gate 05：近戰、部位傷害、流血、倒地、搬運與醫療通過 combat tests。
+- Gate 05：近戰、部位傷害、流血、倒地、搬運與醫療通過 combat tests；必須能在 UE Editor 內完成「移動 → 戰鬥 → 受傷 → 倒地 → 搬運 → 醫療」流程。
 - Gate 06：招募、庫存、交易與價格資料通過流程測試。
-- Gate 07：建築放置、成本扣除、採集、recipe、生產隊列與庫存流向通過測試。
+- Gate 07：建築放置、成本扣除、採集、recipe、生產隊列與庫存流向通過測試；必須能在 UE Editor 內完成「招募 → 交易 → 建造 → 生產」流程。
 - Gate 08：偷竊、攻擊、自衛、禁區、警告、追捕、放行、派系關係與事件記憶通過測試。
-- Gate 09：存讀檔、回歸、soak、perf、macOS package 或 blocker report 完成。
+- Gate 09：存讀檔、回歸、soak、perf、macOS package 或 blocker report 完成；若 packaged build 成功，必須不依賴 Unreal Editor 完成 5 分鐘 golden path。
+
+## Golden Path 驗證
+
+Gate 09 必須提供 5 分鐘 golden path，從新遊戲開始驗證：
+
+1. 啟動 packaged build 或 Editor playable map。
+2. 進入 prototype map。
+3. 控制至少 2 名小隊成員。
+4. 選取隊員並下達移動或跟隨命令。
+5. 與至少 1 名敵人近戰。
+6. 觀察部位傷害、倒地或昏迷。
+7. 搬運倒地隊友並執行醫療。
+8. 與至少 1 名 NPC 交易。
+9. 招募至少 1 名 NPC。
+10. 在野外建造區放置至少 1 種建築。
+11. 取得或產出至少 1 種資源。
+12. 存檔並讀檔。
+13. 確認讀檔後角色位置、血量、庫存、派系關係與建築狀態沒有全部重置。
 
 ## 失敗處理
 
 若驗證失敗，不得 commit 或 push。必須先修復功能或測試；若是本機環境限制，建立繁體中文 blocker report，記錄精確原因、已完成替代驗證與下一步。
+
+不得把「測試腳本存在」當成「測試通過」，也不得把「UE project 能開」或「map 能載入」當成 prototype 完成。placeholder asset 不得阻止 gameplay loop；缺資產時使用 cube、capsule、primitive mesh 或 debug UI 也必須把流程做出來。
+
+## Gate 01 Smoke Test 策略
+
+- `Source/Ashfrontier/Private/Tests/AshfrontierSmokeTests.cpp` 提供 `Ashfrontier.Smoke.ModuleLoads` automation test，確認 runtime module 已載入。
+- `Scripts/create_gate01_map.sh` 會呼叫 UE Editor 與 `BuildScripts/create_gate01_map.py`，建立真正的 `/Game/Maps/L_Ashfrontier_Prototype` map asset。
+- `Scripts/run_tests.sh --smoke` 在 `Ashfrontier.uproject` 存在後必須使用 `UE5_EDITOR` 執行 UE automation；若 `UE5_EDITOR` 未設定或不可執行，驗證必須失敗，不得宣稱 Gate 01 通過。
+- `Content/Maps/L_Ashfrontier_Prototype.umap` 必須由 UE Editor / commandlet 建立並可啟動；不得以 placeholder 文字檔替代。
