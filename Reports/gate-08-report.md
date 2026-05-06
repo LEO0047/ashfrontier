@@ -3,7 +3,7 @@
 ## 狀態
 
 - Gate：Gate 08 — 派系 AI、城市守衛反應與事件記憶。
-- 狀態：本機 C++ build 與 smoke automation 通過，等待完整 `./Scripts/validate.sh` 與 commit gate。
+- 狀態：完成並已推送。
 - 日期：2026-05-06。
 
 ## 完成內容
@@ -54,6 +54,7 @@
 
 - `Build.sh AshfrontierEditor Mac Development -Project=Ashfrontier.uproject`：通過。
 - `./Scripts/run_tests.sh --smoke`：通過。
+- `./Scripts/validate.sh`：通過。
 - UE automation：
   - `Ashfrontier.Building.ProductionFlow`：Success。
   - `Ashfrontier.Combat.DamageCarryMedical`：Success。
@@ -88,12 +89,8 @@
 
 ## 推送紀錄
 
-- Gate commit：等待 commit gate。
-- Push 狀態：等待 commit gate。
-
-## 推送紀錄
-
 - Gate commit：fb129892cc2d78eb8457123e583dbe426cbad67a
+- Gate 08 推送狀態記錄 commit：7df15b6e9e5fb90540bbebf1b1512f9e589b02ba
 - Push 狀態：已推送到 origin/main
-- Remote SHA：fb129892cc2d78eb8457123e583dbe426cbad67a
-- 記錄時間：2026-05-06 20:16:51 CST
+- Remote SHA：7df15b6e9e5fb90540bbebf1b1512f9e589b02ba
+- 記錄時間：2026-05-06 20:19:55 CST

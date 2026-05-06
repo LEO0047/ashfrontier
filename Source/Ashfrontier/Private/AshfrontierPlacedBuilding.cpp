@@ -120,3 +120,15 @@ const TArray<FAshfrontierProductionQueueEntry>& AAshfrontierPlacedBuilding::GetP
 {
     return ProductionQueue;
 }
+
+void AAshfrontierPlacedBuilding::SetProductionQueueForSave(const TArray<FAshfrontierProductionQueueEntry>& NewQueue)
+{
+    ProductionQueue.Reset();
+    for (const FAshfrontierProductionQueueEntry& Entry : NewQueue)
+    {
+        if (!Entry.RecipeId.IsNone() && Entry.RemainingSeconds > 0.0f)
+        {
+            ProductionQueue.Add(Entry);
+        }
+    }
+}

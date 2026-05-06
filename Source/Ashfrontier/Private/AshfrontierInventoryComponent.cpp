@@ -62,6 +62,23 @@ const TArray<FAshfrontierItemStack>& UAshfrontierInventoryComponent::GetStacks()
     return Stacks;
 }
 
+void UAshfrontierInventoryComponent::SetStacksForSave(const TArray<FAshfrontierItemStack>& NewStacks)
+{
+    Stacks.Reset();
+    for (const FAshfrontierItemStack& Stack : NewStacks)
+    {
+        if (!Stack.ItemId.IsNone() && Stack.Count > 0)
+        {
+            Stacks.Add(Stack);
+        }
+    }
+}
+
+void UAshfrontierInventoryComponent::ClearInventory()
+{
+    Stacks.Reset();
+}
+
 FAshfrontierItemStack* UAshfrontierInventoryComponent::FindStack(const FName& ItemId)
 {
     return Stacks.FindByPredicate([ItemId](const FAshfrontierItemStack& Entry)

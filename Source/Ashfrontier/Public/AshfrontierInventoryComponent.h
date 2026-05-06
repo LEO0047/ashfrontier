@@ -29,6 +29,8 @@ public:
     bool HasItem(const FName& ItemId, int32 Count) const;
     int32 GetItemCount(const FName& ItemId) const;
     const TArray<FAshfrontierItemStack>& GetStacks() const;
+    void SetStacksForSave(const TArray<FAshfrontierItemStack>& NewStacks);
+    void ClearInventory();
 
 private:
     FAshfrontierItemStack* FindStack(const FName& ItemId);

@@ -152,8 +152,19 @@
 
 ## Gate 08 狀態
 
-- 狀態：本機 `AshfrontierEditor` build 與 `./Scripts/run_tests.sh --smoke` 通過，等待完整 `./Scripts/validate.sh` 與 commit gate。
+- 狀態：完成並已推送。
 - 目標：完成 3 個派系的基本關係、城市守衛狀態、偷竊 / 攻擊 / 自衛 / 禁區判定、警告 / 敵對 / 追捕 / 放行與事件記憶。
 - 已完成：`UAshfrontierFactionSystemComponent`、`UAshfrontierLegalRuleSystemComponent`、`UAshfrontierCrimeEventMemoryComponent`、`UAshfrontierGuardAIComponent`、角色 faction id、鹽脊守衛 placeholder、城市反應 debug input 與 `Ashfrontier.Legal.GuardReactionMemory` automation test。
-- 已驗證：`AshfrontierEditor` C++ build 通過；smoke automation 8 項測試通過，包含 legal、building / production、economy、combat、world、squad、data 與 smoke。
+- 已驗證：`AshfrontierEditor` C++ build 通過；`./Scripts/validate.sh` 通過；smoke automation 8 項測試通過，包含 legal、building / production、economy、combat、world、squad、data 與 smoke。
+- Gate commit：`fb129892cc2d78eb8457123e583dbe426cbad67a`。
+- Gate 08 推送狀態記錄 commit：`7df15b6e9e5fb90540bbebf1b1512f9e589b02ba`。
 - 已知限制：法規 runtime 規則目前由 C++ 對齊 `Content/Data/legal_rules.json`；正式 JSON-to-runtime loader、AI 行為樹與 UI 提示仍待後續強化。
+
+## Gate 09 狀態
+
+- 狀態：本機實作與驗證中，等待最終 `./Scripts/validate.sh` 與 commit gate。
+- 目標：完成 SaveGame round trip、全功能回歸、soak smoke、perf summary、macOS packaged build smoke 與最終中文報告。
+- 已完成：`UAshfrontierSaveGameSystemComponent`、`UAshfrontierSaveGame` schema、角色位置 / 健康 / 庫存 / 派系關係 / 建築 / 生產隊列 / 事件記憶 snapshot 與 restore、`F5` 存檔、`F9` 讀檔、`Ashfrontier.SaveGame.RoundTripCoreState` automation test。
+- 已驗證：`AshfrontierEditor` C++ build 通過；smoke automation 9 項測試通過，包含 SaveGame、legal、building / production、economy、combat、world、squad、data 與 smoke。
+- macOS packaged build：已嘗試產出 `Builds/macOS/Ashfrontier.app`，命令列 smoke 啟動可掛載 pak、初始化 UE runtime 並載入 `/Game/Maps/L_Ashfrontier_Prototype`。Finder / Gatekeeper 簽章仍受 iCloud File Provider metadata 影響，需在 final report 與 known issues 中保留限制。
+- Golden path：Editor playable flow 已由 automation 與 Gate 03 / 05 / 07 / 08 flow 覆蓋；packaged build 已完成啟動與 map load smoke，尚未宣稱完成真人手動 5 分鐘 packaged golden path。

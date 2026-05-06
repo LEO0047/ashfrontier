@@ -50,3 +50,8 @@ const TArray<FAshfrontierCrimeEventRecord>& UAshfrontierCrimeEventMemoryComponen
 {
     return Events;
 }
+
+void UAshfrontierCrimeEventMemoryComponent::SetEventsForSave(const TArray<FAshfrontierCrimeEventRecord>& NewEvents)
+{
+    Events = NewEvents;
+}

@@ -18,6 +18,8 @@
 #include "AshfrontierProductionSystemComponent.h"
 #include "AshfrontierRecruitSystemComponent.h"
 #include "AshfrontierResourceNodeSystemComponent.h"
+#include "AshfrontierSaveGame.h"
+#include "AshfrontierSaveGameSystemComponent.h"
 #include "AshfrontierSquadManagerComponent.h"
 #include "AshfrontierStorageSystemComponent.h"
 #include "AshfrontierTradingSystemComponent.h"
@@ -46,6 +48,7 @@ AAshfrontierPlayerController::AAshfrontierPlayerController()
     LegalRuleSystem = CreateDefaultSubobject<UAshfrontierLegalRuleSystemComponent>(TEXT("LegalRuleSystem"));
     CrimeEventMemory = CreateDefaultSubobject<UAshfrontierCrimeEventMemoryComponent>(TEXT("CrimeEventMemory"));
     GuardAI = CreateDefaultSubobject<UAshfrontierGuardAIComponent>(TEXT("GuardAI"));
+    SaveGameSystem = CreateDefaultSubobject<UAshfrontierSaveGameSystemComponent>(TEXT("SaveGameSystem"));
 }
 
 void AAshfrontierPlayerController::BeginPlay()
@@ -90,6 +93,8 @@ void AAshfrontierPlayerController::SetupInputComponent()
     InputComponent->BindAction(TEXT("AttackCrimeOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleAttackCrimePressed);
     InputComponent->BindAction(TEXT("SelfDefenseOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleSelfDefensePressed);
     InputComponent->BindAction(TEXT("RestrictedAreaOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleRestrictedAreaPressed);
+    InputComponent->BindAction(TEXT("SaveOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleSavePressed);
+    InputComponent->BindAction(TEXT("LoadOrder"), IE_Pressed, this, &AAshfrontierPlayerController::HandleLoadPressed);
     InputComponent->BindAction(TEXT("SelectAllSquad"), IE_Pressed, this, &AAshfrontierPlayerController::HandleSelectAllPressed);
     InputComponent->BindAction(TEXT("SelectNextSquad"), IE_Pressed, this, &AAshfrontierPlayerController::HandleSelectNextPressed);
     InputComponent->BindAction(TEXT("ToggleTacticalCamera"), IE_Pressed, this, &AAshfrontierPlayerController::HandleToggleTacticalCamera);
@@ -184,9 +189,27 @@ UAshfrontierGuardAIComponent* AAshfrontierPlayerController::GetGuardAI() const
     return GuardAI;
 }
 
+UAshfrontierSaveGameSystemComponent* AAshfrontierPlayerController::GetSaveGameSystem() const
+{
+    return SaveGameSystem;
+}
+
 AAshfrontierPlacedBuilding* AAshfrontierPlayerController::GetLastPlacedBuilding() const
 {
     return LastPlacedBuilding.Get();
+}
+
+TArray<AAshfrontierPlacedBuilding*> AAshfrontierPlayerController::GetPlacedBuildings() const
+{
+    TArray<AAshfrontierPlacedBuilding*> Result;
+    for (AAshfrontierPlacedBuilding* Building : PlacedBuildings)
+    {
+        if (IsValid(Building))
+        {
+            Result.Add(Building);
+        }
+    }
+    return Result;
 }
 
 void AAshfrontierPlayerController::HandleSelectPressed()
@@ -378,6 +401,7 @@ void AAshfrontierPlayerController::HandleBuildPressed()
     if (AAshfrontierPlacedBuilding* Building = BuildingPlacementSystem->PlaceBuilding(Builder, TEXT("building_camp_kitchen"), BuildLocation, ConstructionSystem))
     {
         LastPlacedBuilding = Building;
+        PlacedBuildings.Add(Building);
     }
 }
 
@@ -475,6 +499,50 @@ void AAshfrontierPlayerController::HandleLegalEvent(EAshfrontierLegalEventType E
             }
         }
     }
+}
+
+void AAshfrontierPlayerController::HandleSavePressed()
+{
+    if (!SquadManager || !SaveGameSystem)
+    {
+        return;
+    }
+
+    SaveGameSystem->SaveToSlot(TEXT("AshfrontierPrototype"), 0, SquadManager->GetSquadMembers(), GetPlacedBuildings(), FactionSystem, CrimeEventMemory);
+}
+
+void AAshfrontierPlayerController::HandleLoadPressed()
+{
+    if (!SquadManager || !SaveGameSystem)
+    {
+        return;
+    }
+
+    UAshfrontierSaveGame* SaveGame = SaveGameSystem->LoadFromSlot(TEXT("AshfrontierPrototype"), 0);
+    TArray<AAshfrontierCharacter*> Characters = SquadManager->GetSquadMembers();
+    TArray<AAshfrontierPlacedBuilding*> Buildings = GetPlacedBuildings();
+    if (!SaveGameSystem->ApplyState(SaveGame, Characters, Buildings, FactionSystem, CrimeEventMemory))
+    {
+        return;
+    }
+
+    for (AAshfrontierCharacter* Character : Characters)
+    {
+        if (Character && Character->GetCharacterTeam() == EAshfrontierCharacterTeam::PlayerSquad)
+        {
+            SquadManager->AddExistingMember(Character);
+        }
+    }
+
+    PlacedBuildings.Reset();
+    for (AAshfrontierPlacedBuilding* Building : Buildings)
+    {
+        if (IsValid(Building))
+        {
+            PlacedBuildings.Add(Building);
+        }
+    }
+    LastPlacedBuilding = Buildings.Num() > 0 ? Buildings[0] : nullptr;
 }
 
 void AAshfrontierPlayerController::HandleSelectAllPressed()

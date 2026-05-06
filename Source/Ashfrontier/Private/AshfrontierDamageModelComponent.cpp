@@ -65,6 +65,19 @@ EAshfrontierConsciousState UAshfrontierDamageModelComponent::GetConsciousState()
     return ConsciousState;
 }
 
+const TArray<FAshfrontierBodyPartHealth>& UAshfrontierDamageModelComponent::GetBodyPartsForSave() const
+{
+    return BodyParts;
+}
+
+void UAshfrontierDamageModelComponent::RestoreFromSave(const TArray<FAshfrontierBodyPartHealth>& SavedBodyParts, float SavedBleedingRate, EAshfrontierConsciousState SavedConsciousState)
+{
+    BodyParts = SavedBodyParts;
+    BleedingRate = FMath::Max(0.0f, SavedBleedingRate);
+    ConsciousState = SavedConsciousState;
+    EnsureBodyParts();
+}
+
 bool UAshfrontierDamageModelComponent::IsDownedOrUnconscious() const
 {
     return ConsciousState == EAshfrontierConsciousState::Downed

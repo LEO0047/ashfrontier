@@ -139,3 +139,19 @@ Gate 09 必須提供 5 分鐘 golden path，從新遊戲開始驗證：
   - 事件記憶可查詢，並會在時間推進後過期。
 - `Scripts/run_tests.sh --smoke` 必須同時通過 legal、building / production、economy、combat、world、squad、data 與 smoke tests。
 - Gate 08 的人工 playable smoke 重點是在 UE Editor / PIE 中用游標指向鹽脊守衛 placeholder，再透過 `V`、`K`、`U`、`N` 觸發偷竊、攻擊、自衛與禁區闖入反應。
+
+## Gate 09 SaveGame / Package Test 策略
+
+- UE automation test `Ashfrontier.SaveGame.RoundTripCoreState` 必須驗證：
+  - 小隊角色位置可以 snapshot / restore。
+  - 7 個部位血量、流血與意識狀態可以保存並回復。
+  - 角色庫存與灰印幣數量可以保存並回復。
+  - 派系關係可以保存並回復。
+  - 已放置建築、建築儲物與生產隊列可以保存並回復。
+  - 事件記憶可以保存並回復，不得在讀檔後全部消失。
+- `Scripts/run_tests.sh --smoke` 必須同時通過 SaveGame、legal、building / production、economy、combat、world、squad、data 與 smoke tests。
+- `Scripts/soak_test.sh --smoke` 必須重新執行 UE automation smoke suite 並輸出 `Reports/soak-test.md`。若未執行完整 30 分鐘 soak，報告必須明確標示此限制。
+- `Scripts/perf_capture.sh --gate09` 必須輸出 `Reports/perf-summary.md`，記錄 macOS、Apple Silicon、顯示解析度、測試模式與缺少 UE Insights / Metal frame capture 的限制。
+- `Scripts/package_macos.sh` 必須嘗試產出 `Builds/macOS/Ashfrontier.app`。打包完成後需確認 `.app` 包含 `Contents/UE/Ashfrontier/Content/Paks` 與 runtime dylib，不得只保留淺層 launcher app。
+- packaged smoke 必須至少從命令列啟動 `.app` executable，確認不依賴 Unreal Editor、可掛載 pak、可初始化 UE runtime 並載入 `/Game/Maps/L_Ashfrontier_Prototype`。若 Finder / Gatekeeper 受簽章或 iCloud metadata 限制，必須列為已知問題。
+- 最終報告不得宣稱真人手動 5 分鐘 packaged golden path 已通過，除非確實完成該流程。若只有 automation + command-line map load smoke，必須明確標示 packaged golden path 尚待人工驗證。

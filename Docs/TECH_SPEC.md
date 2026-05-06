@@ -104,6 +104,8 @@ SaveGame schema 必須包含 `schema_version`。Gate 09 前至少保存：
 3. `content_lint.py` 與 UE automation tests 必須覆蓋常見 schema 缺漏。
 4. 不得用一次性 Blueprint 變數取代正式 SaveGame schema。
 
+Gate 09 的實作以 `UAshfrontierSaveGame` 與 `UAshfrontierSaveGameSystemComponent` 作為 runtime 入口。`schema_version` 目前為 `1`，保存角色位置、意識狀態、7 個部位血量與流血、角色庫存、玩家派系關係、已放置建築、建築儲物、生產隊列與事件記憶。`AAshfrontierPlayerController` 提供 `F5` 存到 `AshfrontierPrototype` slot，`F9` 從同一 slot 載入。Automation test `Ashfrontier.SaveGame.RoundTripCoreState` 會建立小隊、健康、庫存、派系、建築與生產隊列狀態，執行 snapshot / restore 後驗證資料沒有全部重置。
+
 ## 驗證方式
 
 - `Scripts/validate.sh`：主要 Gate 驗證入口。
@@ -191,3 +193,12 @@ SaveGame schema 必須包含 `schema_version`。Gate 09 前至少保存：
 - `AAshfrontierGameMode` 會生成 1 名鹽脊守衛 placeholder，供 Editor / PIE 的城市反應 smoke 使用。
 - `AAshfrontierPlayerController` Gate 08 提供 `V` 偷竊、`K` 攻擊、`U` 自衛、`N` 禁區闖入的 debug / prototype 操作入口。
 - `Ashfrontier.Legal.GuardReactionMemory` 驗證偷竊警告、攻擊追捕、自衛放行、禁區警告、玻璃屋市場偷竊追捕、派系關係變化與事件記憶過期。
+
+## Gate 09 存讀檔、打包與最終驗證
+
+- `UAshfrontierSaveGameSystemComponent` 從 `UAshfrontierSquadManagerComponent`、`UAshfrontierFactionSystemComponent`、`UAshfrontierCrimeEventMemoryComponent` 與 `AAshfrontierPlacedBuilding` 收集 snapshot，並可回寫到現有 runtime actor。
+- `UAshfrontierInventoryComponent`、`UAshfrontierDamageModelComponent`、`UAshfrontierFactionSystemComponent`、`UAshfrontierCrimeEventMemoryComponent` 與 `AAshfrontierPlacedBuilding` 都提供 SaveGame 專用 setter / getter，避免用反射或字串拼裝資料。
+- `Scripts/soak_test.sh --smoke` 目前以完整 UE automation smoke suite 作為短 soak。完整 30 分鐘巡邏 / 建造 / 戰鬥循環仍需後續接上 headless gameplay driver。
+- `Scripts/perf_capture.sh --gate09` 會輸出 macOS 版本、Apple Silicon 型號、顯示解析度、測試模式與目前效能限制。
+- `Scripts/package_macos.sh` 使用 `/tmp/ashfrontier-package-*` 乾淨工作區，避免 iCloud working tree 的 extended attributes 直接干擾 UE archive。腳本優先複製 `Saved/StagedBuilds/Mac/Ashfrontier.app` 的完整 staged app，確保 `Contents/UE/Ashfrontier/Content/Paks` 與 runtime dylib 一併進入 `Builds/macOS/Ashfrontier.app`。
+- macOS packaged smoke 目前已確認命令列啟動不依賴 Unreal Editor，且可掛載 `Ashfrontier-Mac.pak` 並載入 `/Game/Maps/L_Ashfrontier_Prototype`。`codesign --force --sign - --deep` 在 iCloud File Provider 工作區仍可能因 `com.apple.FinderInfo` 類 metadata 失敗，因此 Finder / Gatekeeper 行為必須視為已知限制，不得假裝 notarized 或完整簽章通過。

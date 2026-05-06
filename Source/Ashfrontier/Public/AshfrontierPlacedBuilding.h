@@ -29,6 +29,7 @@ public:
     int32 GetProductionQueueCount() const;
     float GetCurrentProductionRemainingSeconds() const;
     const TArray<FAshfrontierProductionQueueEntry>& GetProductionQueue() const;
+    void SetProductionQueueForSave(const TArray<FAshfrontierProductionQueueEntry>& NewQueue);
 
 private:
     UPROPERTY(VisibleAnywhere, Category = "Building")

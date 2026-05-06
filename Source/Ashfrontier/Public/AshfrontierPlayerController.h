@@ -21,6 +21,7 @@ class UAshfrontierOrderSystemComponent;
 class UAshfrontierProductionSystemComponent;
 class UAshfrontierRecruitSystemComponent;
 class UAshfrontierResourceNodeSystemComponent;
+class UAshfrontierSaveGameSystemComponent;
 class UAshfrontierSquadManagerComponent;
 class UAshfrontierStorageSystemComponent;
 class UAshfrontierTradingSystemComponent;
@@ -50,7 +51,9 @@ public:
     UAshfrontierLegalRuleSystemComponent* GetLegalRuleSystem() const;
     UAshfrontierCrimeEventMemoryComponent* GetCrimeEventMemory() const;
     UAshfrontierGuardAIComponent* GetGuardAI() const;
+    UAshfrontierSaveGameSystemComponent* GetSaveGameSystem() const;
     AAshfrontierPlacedBuilding* GetLastPlacedBuilding() const;
+    TArray<AAshfrontierPlacedBuilding*> GetPlacedBuildings() const;
 
 protected:
     virtual void BeginPlay() override;
@@ -73,6 +76,8 @@ private:
     void HandleSelfDefensePressed();
     void HandleRestrictedAreaPressed();
     void HandleLegalEvent(EAshfrontierLegalEventType EventType);
+    void HandleSavePressed();
+    void HandleLoadPressed();
     void HandleSelectAllPressed();
     void HandleSelectNextPressed();
     void HandleToggleTacticalCamera();
@@ -126,6 +131,9 @@ private:
     UPROPERTY(Transient)
     TWeakObjectPtr<AAshfrontierPlacedBuilding> LastPlacedBuilding;
 
+    UPROPERTY(Transient)
+    TArray<TObjectPtr<AAshfrontierPlacedBuilding>> PlacedBuildings;
+
     UPROPERTY(VisibleAnywhere, Category = "Legal")
     TObjectPtr<UAshfrontierFactionSystemComponent> FactionSystem;
 
@@ -137,4 +145,7 @@ private:
 
     UPROPERTY(VisibleAnywhere, Category = "Legal")
     TObjectPtr<UAshfrontierGuardAIComponent> GuardAI;
+
+    UPROPERTY(VisibleAnywhere, Category = "Save")
+    TObjectPtr<UAshfrontierSaveGameSystemComponent> SaveGameSystem;
 };

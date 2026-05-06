@@ -14,6 +14,8 @@ DerivedDataCache/
 Intermediate/
 Saved/
 Build/
+Builds/macOS/*.app/
+Builds/macOS/*.app.previous.*/
 *.sln
 *.xcodeproj
 *.xcworkspace

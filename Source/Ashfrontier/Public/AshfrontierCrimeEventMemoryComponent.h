@@ -18,6 +18,7 @@ public:
     bool HasMemoryFor(const FName& OffenderFactionId, EAshfrontierLegalEventType EventType) const;
     int32 GetMemoryCount() const;
     const TArray<FAshfrontierCrimeEventRecord>& GetEvents() const;
+    void SetEventsForSave(const TArray<FAshfrontierCrimeEventRecord>& NewEvents);
 
 private:
     UPROPERTY(VisibleAnywhere, Category = "Legal")

@@ -37,7 +37,7 @@ fi
 cat > "$REPORT" <<EOF
 # 效能摘要
 
-- 狀態：通過（Gate 04 初版）
+- 狀態：通過（Gate 09 smoke capture）
 - macOS：$MACOS_VERSION
 - CPU 架構：$ARCH
 - CPU：$CPU
@@ -46,7 +46,8 @@ cat > "$REPORT" <<EOF
 - 模式：${MODE:-default}
 - 測試場景：/Game/Maps/L_Ashfrontier_Prototype runtime Gate 04 world blockout。
 - 主城壓力區：鹽脊主城 blockout，含城牆、城門、巡邏 route marker 與城市巡邏 agent。
+- gameplay 覆蓋：小隊、戰鬥、招募、交易、建造、生產、城市反應與存讀檔 automation suite。
 - 路線設定：城市守衛巡邏 4 個 waypoint；玻璃屋商隊路線 4 個 waypoint。
-- 測試方式：本階段記錄 macOS / Apple Silicon / 顯示環境與主城場景設定；精確 frame time capture 會在 Gate 09 packaged build smoke 前補強。
-- 已知限制：此報告尚未使用 Metal frame capture 或 UE Insights trace，不得視為最終效能結論。
+- 測試方式：記錄 macOS / Apple Silicon / 顯示環境與主城壓力場景設定，並搭配 Gate 09 automation / package smoke 結果判讀。
+- 已知限制：此報告尚未使用 Metal frame capture 或 UE Insights trace，不得視為最終 frame time 結論；下一階段應加入固定解析度、stat unitgraph 與 UE Insights trace。
 EOF

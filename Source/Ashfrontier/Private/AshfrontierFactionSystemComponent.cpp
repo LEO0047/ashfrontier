@@ -43,6 +43,16 @@ bool UAshfrontierFactionSystemComponent::AreHostile(const FName& FactionA, const
     return GetRelation(FactionA, FactionB) <= -25;
 }
 
+const TMap<FName, int32>& UAshfrontierFactionSystemComponent::GetRelationsForSave() const
+{
+    return RelationByPair;
+}
+
+void UAshfrontierFactionSystemComponent::SetRelationsForSave(const TMap<FName, int32>& NewRelations)
+{
+    RelationByPair = NewRelations;
+}
+
 void UAshfrontierFactionSystemComponent::BuildDefaultRelations()
 {
     RelationByPair.Reset();

@@ -22,6 +22,8 @@ public:
     float GetBodyPartHealth(EAshfrontierBodyPart BodyPart) const;
     float GetBleedingRate() const;
     EAshfrontierConsciousState GetConsciousState() const;
+    const TArray<FAshfrontierBodyPartHealth>& GetBodyPartsForSave() const;
+    void RestoreFromSave(const TArray<FAshfrontierBodyPartHealth>& SavedBodyParts, float SavedBleedingRate, EAshfrontierConsciousState SavedConsciousState);
     bool IsDownedOrUnconscious() const;
     FString GetStateLabelZh() const;
 

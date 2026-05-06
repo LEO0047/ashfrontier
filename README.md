@@ -2,7 +2,7 @@
 
 Ashfrontier 是一個原創世界觀的 UE5 3D 單機小隊沙盒 RPG playable prototype。專案以「Kenshi 2 公開資訊與設計方向」作為系統設計標竿，但所有派系、角色、地點、文本與資產都必須使用 Ashfrontier 原創內容或 placeholder / 自有資產，不得複製 Kenshi / Kenshi 2 的名稱、角色、派系、美術、地圖、文本或商標。
 
-目前階段是 Gate 08：Gate 07 已完成並推送，`Unreal Engine 5.7.4` 位於 `/Users/Shared/Epic Games/UE_5.7`，Xcode 已完成 Apple SDK agreement。Gate 08 已建立派系關係、城市守衛反應、法規判定與事件記憶。此階段仍不是完整 packaged playable prototype；存讀檔、soak test 與 macOS `.app` 打包會在 Gate 09 完成或清楚記錄 blocker。
+目前階段是 Gate 09：Editor playable prototype 已包含小隊控制、世界 blockout、戰鬥與受傷、搬運醫療、招募、交易、基地建設、生產、城市守衛反應、事件記憶與 SaveGame round trip。`Unreal Engine 5.7.4` 位於 `/Users/Shared/Epic Games/UE_5.7`，完整 Xcode 與 Metal Toolchain 已可支援 macOS cook。Gate 09 正在以 `Builds/macOS/Ashfrontier.app` 作為 packaged smoke build；若 Finder / Gatekeeper 簽章受 iCloud File Provider metadata 影響，會如實記錄在 `Reports/known-issues.md` 與最終報告。
 
 ## macOS 開啟方式
 
@@ -30,7 +30,7 @@ cp Scripts/env.example .env.local
 
 Gate 01 起，`Ashfrontier.uproject` 已存在，因此 `Scripts/run_tests.sh` 會要求 `UE5_EDITOR` 可執行，並要求 `Content/Maps/L_Ashfrontier_Prototype.umap` 是由 UE Editor 建立的真實 map asset。Gate 02 起，`Scripts/content_lint.py` 會把缺少 `Content/Data/`、資料筆數不足、無效引用或 recipe 循環視為失敗；UE automation test 也會載入 JSON 資料。
 
-Gate 08 Editor / PIE 目前可使用既有小隊操作，再用 `R` 招募、`T` 交易、`G` 採集、`B` 在野外建造區放置營火灶、`P` 執行烤行糧 recipe。城市反應 debug 入口為 `V` 偷竊、`K` 攻擊、`U` 自衛、`N` 禁區闖入；需要游標指向鹽脊守衛 placeholder。這些是 prototype 操作入口，正式 UI 仍在後續 Gate。
+Gate 09 Editor / packaged smoke build 目前可使用既有小隊操作，再用 `R` 招募、`T` 交易、`G` 採集、`B` 在野外建造區放置營火灶、`P` 執行烤行糧 recipe、`F5` 存檔、`F9` 讀檔。城市反應 debug 入口為 `V` 偷竊、`K` 攻擊、`U` 自衛、`N` 禁區闖入；需要游標指向鹽脊守衛 placeholder。這些是 prototype 操作入口，正式 UI 仍在後續階段。
 
 可單獨執行：
 
@@ -52,6 +52,14 @@ Builds/macOS/Ashfrontier.app
 ```
 
 若本機 UE5、Xcode、macOS SDK、簽章或權限限制導致無法完成 macOS `.app`，不得偽造產物；必須輸出 `Reports/mac-build-blocker.md`，清楚記錄阻塞條件、替代驗證與下一步。
+
+若 `Builds/macOS/Ashfrontier.app` 已存在，可用命令列 smoke 啟動：
+
+```bash
+Builds/macOS/Ashfrontier.app/Contents/MacOS/Ashfrontier -nullrhi -unattended -nosplash -stdout -FullStdOutLogOutput
+```
+
+這個指令不依賴 Unreal Editor；它應能掛載 pak、啟動 UE runtime 並載入 `/Game/Maps/L_Ashfrontier_Prototype`。實際 5 分鐘 golden path 驗證結果以 `Reports/final-prototype-report.md` 為準。
 
 ## 文件與報告
 

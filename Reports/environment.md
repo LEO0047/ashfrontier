@@ -66,6 +66,15 @@
 - `/Users/Shared/Epic Games/UE_5.7` 約 `37G`。
 - 磁碟可用空間約 `16GiB`，後續 C++ build、DerivedDataCache、package 可能仍受空間限制影響。
 
+## 2026-05-06 Gate 09 打包環境更新
+
+- UE 版本：`5.7.4-51494982+++UE5+Release-5.7`。
+- UE5 Editor：`/Users/Shared/Epic Games/UE_5.7/Engine/Binaries/Mac/UnrealEditor.app`。
+- Xcode：`Xcode 26.4.1`，active developer directory 為 `/Applications/Xcode.app/Contents/Developer`。
+- Metal Toolchain：已執行 `xcodebuild -downloadComponent MetalToolchain`，並完成 `Metal Toolchain 17E188` 下載。
+- Gate 09 packaged smoke：`Builds/macOS/Ashfrontier.app` 可由命令列 executable 啟動、掛載 pak 並載入 prototype map。
+- 簽章限制：repo 位於 iCloud Drive File Provider 工作區，`Builds/macOS/Ashfrontier.app` 根目錄會被重新附加 `com.apple.FinderInfo`、`com.apple.fileprovider.fpfs#P` 與 `com.apple.provenance` extended attributes，導致 strict ad-hoc `codesign` 可能失敗。此限制不等同於 UE cook 失敗，但 Finder / Gatekeeper 行為需另行驗證。
+
 ## Git
 
 - Repo root：`/Users/leo/Library/Mobile Documents/com~apple~CloudDocs/Coding/Projects/Ashfrontier`

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Ashfrontier.Gate" tests="8" failures="0" skipped="0">
+<testsuite name="Ashfrontier.Gate" tests="9" failures="0" skipped="0">
   <testcase classname="UEAutomation" name="Ashfrontier.Building.ProductionFlow">
   </testcase>
   <testcase classname="UEAutomation" name="Ashfrontier.Combat.DamageCarryMedical">
@@ -9,6 +9,8 @@
   <testcase classname="UEAutomation" name="Ashfrontier.Economy.RecruitInventoryTrade">
   </testcase>
   <testcase classname="UEAutomation" name="Ashfrontier.Legal.GuardReactionMemory">
+  </testcase>
+  <testcase classname="UEAutomation" name="Ashfrontier.SaveGame.RoundTripCoreState">
   </testcase>
   <testcase classname="UEAutomation" name="Ashfrontier.Smoke.ModuleLoads">
   </testcase>
