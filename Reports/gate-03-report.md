@@ -65,3 +65,10 @@
 
 - Gate 04 要建立主城 blockout、小型前哨、野外建造區、巡邏與商隊路線。
 - Gate 04 需要開始驗證 NavMesh 與 NPC 路線，不再只依賴 Gate 03 的 runtime floor。
+
+## 推送紀錄
+
+- Gate commit：7a941ef054a2b5880e7836a54b3a6d1733f03846
+- Push 狀態：已推送到 origin/main
+- Remote SHA：7a941ef054a2b5880e7836a54b3a6d1733f03846
+- 記錄時間：2026-05-06 19:30:09 CST
