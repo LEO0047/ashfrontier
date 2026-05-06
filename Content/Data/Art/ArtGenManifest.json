@@ -241,7 +241,7 @@
         "暗銅",
         "可讀"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_icon_cooked_ration",
@@ -260,7 +260,7 @@
         "粗布",
         "可讀"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_icon_raw_grain",
@@ -279,7 +279,7 @@
         "穀物",
         "粗布"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_icon_water_flask",
@@ -298,7 +298,7 @@
         "鹽痕",
         "金屬"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_icon_scrap_ore",
@@ -317,7 +317,7 @@
         "暗鐵",
         "材料"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_icon_crude_ingot",
@@ -336,7 +336,7 @@
         "鐵鏽",
         "材料"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_icon_salvaged_plank",
@@ -355,7 +355,7 @@
         "焦黑",
         "建材"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_icon_building_plate",
@@ -374,7 +374,7 @@
         "拼裝",
         "鉚釘"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_icon_field_bandage",
@@ -393,7 +393,7 @@
         "粗布",
         "可讀"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_icon_medic_wrap",
@@ -412,7 +412,7 @@
         "草藥",
         "布包"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_icon_rustblade",
@@ -431,7 +431,7 @@
         "生鏽",
         "短刀"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_icon_quilted_vest",
@@ -450,7 +450,7 @@
         "布片",
         "補丁"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_emblem_saltwardens",
@@ -470,7 +470,7 @@
         "暗鐵"
       ],
       "faction_id": "faction_saltwardens",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_emblem_glasshouse",
@@ -490,7 +490,7 @@
         "氧化銅"
       ],
       "faction_id": "faction_glasshouse",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_emblem_dustrunners",
@@ -510,7 +510,7 @@
         "繩結"
       ],
       "faction_id": "faction_dustrunners",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_banner_saltwardens",
@@ -593,7 +593,7 @@
         "暗鐵"
       ],
       "faction_id": "faction_saltwardens",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_portrait_recruit_trader",
@@ -613,7 +613,7 @@
         "氧化銅"
       ],
       "faction_id": "faction_glasshouse",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_portrait_recruit_scout",
@@ -633,7 +633,7 @@
         "繩結"
       ],
       "faction_id": "faction_dustrunners",
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_portrait_recruit_mender",
@@ -652,7 +652,7 @@
         "草藥",
         "粗布"
       ],
-      "validation_status": "imported"
+      "validation_status": "assigned"
     },
     {
       "asset_id": "af_v02_decal_shop_sign",

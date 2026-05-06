@@ -76,15 +76,18 @@ void AAshfrontierGameMode::SpawnGate06Characters()
     struct FRecruitSeed
     {
         const TCHAR* Name;
+        const TCHAR* ArtCharacterId;
+        const TCHAR* PortraitTexturePath;
+        const TCHAR* FactionId;
         FVector Location;
         int32 Cost;
     };
 
     const FRecruitSeed Recruits[] = {
-        {TEXT("苦根醫士 露禾"), FVector(-260.0f, 340.0f, 120.0f), 60},
-        {TEXT("塵路斥候 迦南"), FVector(-360.0f, 410.0f, 120.0f), 70},
-        {TEXT("鹽棚工匠 莫澤"), FVector(-460.0f, 360.0f, 120.0f), 80},
-        {TEXT("舊牆守手 洛槌"), FVector(-540.0f, 440.0f, 120.0f), 90}
+        {TEXT("苦根醫士 露禾"), TEXT("recruit_mender_luhe"), TEXT("/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitMender"), TEXT("faction_dustrunners"), FVector(-260.0f, 340.0f, 120.0f), 60},
+        {TEXT("塵路斥候 迦南"), TEXT("recruit_scout_jianan"), TEXT("/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitScout"), TEXT("faction_dustrunners"), FVector(-360.0f, 410.0f, 120.0f), 70},
+        {TEXT("鹽棚工匠 莫澤"), TEXT("recruit_trader_moze"), TEXT("/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitTrader"), TEXT("faction_glasshouse"), FVector(-460.0f, 360.0f, 120.0f), 80},
+        {TEXT("舊牆守手 洛槌"), TEXT("recruit_guard_luochui"), TEXT("/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitGuard"), TEXT("faction_saltwardens"), FVector(-540.0f, 440.0f, 120.0f), 90}
     };
 
     FActorSpawnParameters SpawnParams;
@@ -100,8 +103,10 @@ void AAshfrontierGameMode::SpawnGate06Characters()
         }
 
         Recruit->SetSquadDisplayName(Seed.Name);
+        Recruit->SetArtCharacterId(Seed.ArtCharacterId);
+        Recruit->SetPortraitTexturePath(Seed.PortraitTexturePath);
         Recruit->SetCharacterTeam(EAshfrontierCharacterTeam::Neutral);
-        Recruit->SetFactionId(TEXT("faction_dustrunners"));
+        Recruit->SetFactionId(Seed.FactionId);
         Recruit->SetRecruitable(true, Seed.Cost);
         Recruit->SpawnDefaultController();
         Gate06Characters.Add(Recruit);
@@ -111,6 +116,8 @@ void AAshfrontierGameMode::SpawnGate06Characters()
     if (Merchant)
     {
         Merchant->SetSquadDisplayName(TEXT("玻璃屋販商 澄瓶"));
+        Merchant->SetArtCharacterId(TEXT("merchant_glasshouse_chengping"));
+        Merchant->SetPortraitTexturePath(TEXT("/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitTrader"));
         Merchant->SetCharacterTeam(EAshfrontierCharacterTeam::Neutral);
         Merchant->SetFactionId(TEXT("faction_glasshouse"));
         Merchant->SetShopkeeper(true);
@@ -142,6 +149,8 @@ void AAshfrontierGameMode::SpawnGate08Guards()
     if (CityGuard)
     {
         CityGuard->SetSquadDisplayName(TEXT("鹽脊守衛 磐哨"));
+        CityGuard->SetArtCharacterId(TEXT("guard_saltwardens_panshao"));
+        CityGuard->SetPortraitTexturePath(TEXT("/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitGuard"));
         CityGuard->SetCharacterTeam(EAshfrontierCharacterTeam::Neutral);
         CityGuard->SetFactionId(TEXT("faction_saltwardens"));
         CityGuard->SpawnDefaultController();

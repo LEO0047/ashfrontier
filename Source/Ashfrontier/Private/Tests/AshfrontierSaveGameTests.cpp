@@ -85,6 +85,8 @@ bool FAshfrontierSaveGameRoundTripTest::RunTest(const FString& Parameters)
     Leader->GetDamageModel()->ApplyDamage(EAshfrontierBodyPart::Chest, 44.0f);
 
     Ally->SetSquadDisplayName(TEXT("鹽路斥候"));
+    Ally->SetArtCharacterId(TEXT("recruit_scout_jianan"));
+    Ally->SetPortraitTexturePath(TEXT("/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitScout"));
     Ally->SetFactionId(TEXT("faction_player_squad"));
     Ally->SetCharacterTeam(EAshfrontierCharacterTeam::PlayerSquad);
     Ally->GetInventory()->AddItem(TEXT("item_field_bandage"), 1);
@@ -138,6 +140,8 @@ bool FAshfrontierSaveGameRoundTripTest::RunTest(const FString& Parameters)
     bPassed &= TestTrue(TEXT("Leader chest health should restore damaged state"), Characters[0]->GetDamageModel()->GetBodyPartHealth(EAshfrontierBodyPart::Chest) < 100.0f);
     bPassed &= TestTrue(TEXT("Leader bleeding should restore"), Characters[0]->GetDamageModel()->GetBleedingRate() > 0.0f);
     bPassed &= TestEqual(TEXT("Ally bandage should restore"), Characters[1]->GetInventory()->GetItemCount(TEXT("item_field_bandage")), 1);
+    bPassed &= TestEqual(TEXT("Ally art character id should restore"), Characters[1]->GetArtCharacterId(), FString(TEXT("recruit_scout_jianan")));
+    bPassed &= TestEqual(TEXT("Ally portrait path should restore"), Characters[1]->GetPortraitTexturePath(), FString(TEXT("/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitScout")));
     bPassed &= TestEqual(TEXT("Faction relation should restore"), Factions->GetRelation(TEXT("faction_player_squad"), TEXT("faction_saltwardens")), -12);
     bPassed &= TestTrue(TEXT("Crime memory should restore"), Memory->HasMemoryFor(TEXT("faction_player_squad"), EAshfrontierLegalEventType::Attack));
     bPassed &= TestEqual(TEXT("Building should be recreated"), Buildings.Num(), 1);

@@ -1,0 +1,49 @@
+{
+  "type": "character_portrait_assignments",
+  "records": [
+    {
+      "character_id": "recruit_mender_luhe",
+      "display_name_zh": "苦根醫士 露禾",
+      "faction_id": "faction_dustrunners",
+      "role_zh": "醫療修補者",
+      "asset_id": "af_v02_portrait_recruit_mender",
+      "portrait_texture_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitMender",
+      "portrait_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Portrait_RecruitMender",
+      "ui_targets": ["recruit_ui", "squad_panel"],
+      "validation_status": "assigned"
+    },
+    {
+      "character_id": "recruit_scout_jianan",
+      "display_name_zh": "塵路斥候 迦南",
+      "faction_id": "faction_dustrunners",
+      "role_zh": "荒野斥候",
+      "asset_id": "af_v02_portrait_recruit_scout",
+      "portrait_texture_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitScout",
+      "portrait_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Portrait_RecruitScout",
+      "ui_targets": ["recruit_ui", "squad_panel"],
+      "validation_status": "assigned"
+    },
+    {
+      "character_id": "recruit_trader_moze",
+      "display_name_zh": "鹽棚工匠 莫澤",
+      "faction_id": "faction_glasshouse",
+      "role_zh": "修補工匠",
+      "asset_id": "af_v02_portrait_recruit_trader",
+      "portrait_texture_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitTrader",
+      "portrait_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Portrait_RecruitTrader",
+      "ui_targets": ["recruit_ui", "trade_ui", "squad_panel"],
+      "validation_status": "assigned"
+    },
+    {
+      "character_id": "recruit_guard_luochui",
+      "display_name_zh": "舊牆守手 洛槌",
+      "faction_id": "faction_saltwardens",
+      "role_zh": "前守衛",
+      "asset_id": "af_v02_portrait_recruit_guard",
+      "portrait_texture_path": "/Game/GeneratedArt/Characters/T_AfV02_Portrait_RecruitGuard",
+      "portrait_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Portrait_RecruitGuard",
+      "ui_targets": ["recruit_ui", "squad_panel", "warning_notification"],
+      "validation_status": "assigned"
+    }
+  ]
+}

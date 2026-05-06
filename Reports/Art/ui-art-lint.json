@@ -1,0 +1,12 @@
+{
+  "status": "pass",
+  "stats": {
+    "item_icon_count": 12,
+    "faction_emblem_count": 3,
+    "portrait_count": 4,
+    "missing_icon_count": 0,
+    "missing_faction_emblem_count": 0,
+    "missing_portrait_count": 0
+  },
+  "issues": []
+}

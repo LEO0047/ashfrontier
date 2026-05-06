@@ -1,0 +1,125 @@
+{
+  "type": "ui_art_assignments",
+  "records": [
+    {
+      "item_id": "item_ash_credit",
+      "name_zh": "灰印幣",
+      "asset_id": "af_v02_icon_ash_credit",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_AshCredit",
+      "icon_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_AshCredit",
+      "ui_targets": ["inventory_ui", "trade_ui", "recruit_cost_ui"],
+      "small_size_role": "貨幣與招募付款圖示",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_cooked_ration",
+      "name_zh": "烤行糧",
+      "asset_id": "af_v02_icon_cooked_ration",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_CookedRation",
+      "icon_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_CookedRation",
+      "ui_targets": ["inventory_ui", "trade_ui", "storage_ui"],
+      "small_size_role": "食物補給圖示",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_raw_grain",
+      "name_zh": "乾穀袋",
+      "asset_id": "af_v02_icon_raw_grain",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_RawGrain",
+      "icon_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_RawGrain",
+      "ui_targets": ["inventory_ui", "trade_ui", "production_ui"],
+      "small_size_role": "原料食材圖示",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_water_flask",
+      "name_zh": "鹹水壺",
+      "asset_id": "af_v02_icon_water_flask",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_WaterFlask",
+      "icon_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_WaterFlask",
+      "ui_targets": ["inventory_ui", "trade_ui", "warning_notification"],
+      "small_size_role": "水源補給圖示",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_scrap_ore",
+      "name_zh": "碎鐵礦袋",
+      "asset_id": "af_v02_icon_scrap_ore",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_ScrapOre",
+      "icon_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_ScrapOre",
+      "ui_targets": ["inventory_ui", "trade_ui", "production_ui"],
+      "small_size_role": "礦物材料圖示",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_crude_ingot",
+      "name_zh": "粗鐵錠",
+      "asset_id": "af_v02_icon_crude_ingot",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_CrudeIngot",
+      "icon_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_CrudeIngot",
+      "ui_targets": ["inventory_ui", "trade_ui", "production_ui"],
+      "small_size_role": "冶煉材料圖示",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_salvaged_plank",
+      "name_zh": "回收木板",
+      "asset_id": "af_v02_icon_salvaged_plank",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_SalvagedPlank",
+      "icon_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_SalvagedPlank",
+      "ui_targets": ["inventory_ui", "trade_ui", "building_ui"],
+      "small_size_role": "建造木料圖示",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_building_plate",
+      "name_zh": "拼裝建材板",
+      "asset_id": "af_v02_icon_building_plate",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_BuildingPlate",
+      "icon_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_BuildingPlate",
+      "ui_targets": ["inventory_ui", "trade_ui", "building_ui"],
+      "small_size_role": "高價建材圖示",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_field_bandage",
+      "name_zh": "野外繃帶",
+      "asset_id": "af_v02_icon_field_bandage",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_FieldBandage",
+      "icon_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_FieldBandage",
+      "ui_targets": ["inventory_ui", "trade_ui", "medical_ui"],
+      "small_size_role": "基礎醫療用品圖示",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_medic_wrap",
+      "name_zh": "草藥壓布",
+      "asset_id": "af_v02_icon_medic_wrap",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_MedicWrap",
+      "icon_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_MedicWrap",
+      "ui_targets": ["inventory_ui", "trade_ui", "medical_ui"],
+      "small_size_role": "進階醫療用品圖示",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_rustblade",
+      "name_zh": "鏽刃短刀",
+      "asset_id": "af_v02_icon_rustblade",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_Rustblade",
+      "icon_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_Rustblade",
+      "ui_targets": ["inventory_ui", "trade_ui", "equipment_ui"],
+      "small_size_role": "武器裝備圖示",
+      "validation_status": "assigned"
+    },
+    {
+      "item_id": "item_quilted_vest",
+      "name_zh": "絎縫護背",
+      "asset_id": "af_v02_icon_quilted_vest",
+      "icon_texture_path": "/Game/GeneratedArt/UI/T_AfV02_Icon_QuiltedVest",
+      "icon_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Icon_QuiltedVest",
+      "ui_targets": ["inventory_ui", "trade_ui", "equipment_ui"],
+      "small_size_role": "護具裝備圖示",
+      "validation_status": "assigned"
+    }
+  ]
+}

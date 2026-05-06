@@ -215,6 +215,26 @@ FName AAshfrontierCharacter::GetFactionId() const
     return FactionId;
 }
 
+void AAshfrontierCharacter::SetArtCharacterId(const FString& NewArtCharacterId)
+{
+    ArtCharacterId = NewArtCharacterId;
+}
+
+const FString& AAshfrontierCharacter::GetArtCharacterId() const
+{
+    return ArtCharacterId;
+}
+
+void AAshfrontierCharacter::SetPortraitTexturePath(const FString& NewPortraitTexturePath)
+{
+    PortraitTexturePath = NewPortraitTexturePath;
+}
+
+const FString& AAshfrontierCharacter::GetPortraitTexturePath() const
+{
+    return PortraitTexturePath;
+}
+
 void AAshfrontierCharacter::SetCarriedTarget(AAshfrontierCharacter* Target)
 {
     CarriedTarget = Target;

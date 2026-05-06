@@ -20,6 +20,12 @@ struct ASHFRONTIER_API FAshfrontierSavedCharacterState
     FString DisplayNameZh;
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+    FString ArtCharacterId;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+    FString PortraitTexturePath;
+
+    UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
     FName FactionId;
 
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly)

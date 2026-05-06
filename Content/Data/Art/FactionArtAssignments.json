@@ -1,0 +1,44 @@
+{
+  "type": "faction_art_assignments",
+  "records": [
+    {
+      "faction_id": "faction_saltwardens",
+      "name_zh": "鹽脊守望",
+      "asset_id": "af_v02_emblem_saltwardens",
+      "emblem_texture_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Saltwardens",
+      "emblem_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Emblem_Saltwardens",
+      "banner_asset_id": "af_v02_banner_saltwardens",
+      "banner_texture_path": "/Game/GeneratedArt/Banners/T_AfV02_Banner_Saltwardens",
+      "ui_targets": ["map_marker", "character_panel", "warning_notification"],
+      "shape_language_zh": "垂直矛尖、秩序線條與灰白鹽痕",
+      "color_block_zh": "灰白、暗鐵與警戒黃",
+      "validation_status": "assigned"
+    },
+    {
+      "faction_id": "faction_glasshouse",
+      "name_zh": "玻璃屋商盟",
+      "asset_id": "af_v02_emblem_glasshouse",
+      "emblem_texture_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Glasshouse",
+      "emblem_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Emblem_Glasshouse",
+      "banner_asset_id": "af_v02_banner_glasshouse",
+      "banner_texture_path": "/Game/GeneratedArt/Banners/T_AfV02_Banner_Glasshouse",
+      "ui_targets": ["map_marker", "trade_ui", "character_panel"],
+      "shape_language_zh": "圓弧貨牌、修補銅框與商貿標記",
+      "color_block_zh": "氧化銅、褪色青綠與砂土底色",
+      "validation_status": "assigned"
+    },
+    {
+      "faction_id": "faction_dustrunners",
+      "name_zh": "塵路行者",
+      "asset_id": "af_v02_emblem_dustrunners",
+      "emblem_texture_path": "/Game/GeneratedArt/Factions/T_AfV02_Emblem_Dustrunners",
+      "emblem_material_path": "/Game/GeneratedArt/Materials/MI_AfV02_Emblem_Dustrunners",
+      "banner_asset_id": "af_v02_banner_dustrunners",
+      "banner_texture_path": "/Game/GeneratedArt/Banners/T_AfV02_Banner_Dustrunners",
+      "ui_targets": ["map_marker", "recruit_ui", "character_panel"],
+      "shape_language_zh": "斜切裂片、繩結與荒野路標",
+      "color_block_zh": "褪紅布、黑鐵與沙塵陰影",
+      "validation_status": "assigned"
+    }
+  ]
+}

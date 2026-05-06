@@ -1,0 +1,18 @@
+{
+  "status": "pass",
+  "ui_surface": "AAshfrontierHUD Canvas prototype",
+  "item_icons": 12,
+  "faction_emblems": 3,
+  "recruit_portraits": 4,
+  "missing_icon_count": 0,
+  "missing_faction_emblem_count": 0,
+  "missing_portrait_count": 0,
+  "runtime_targets": [
+    "inventory_ui",
+    "trade_ui",
+    "recruit_ui",
+    "squad_panel",
+    "character_panel",
+    "warning_notification"
+  ]
+}

@@ -51,6 +51,10 @@ public:
     bool IsHostileToPlayer() const;
     void SetFactionId(const FName& NewFactionId);
     FName GetFactionId() const;
+    void SetArtCharacterId(const FString& NewArtCharacterId);
+    const FString& GetArtCharacterId() const;
+    void SetPortraitTexturePath(const FString& NewPortraitTexturePath);
+    const FString& GetPortraitTexturePath() const;
 
     void SetCarriedTarget(AAshfrontierCharacter* Target);
     AAshfrontierCharacter* GetCarriedTarget() const;
@@ -116,6 +120,12 @@ private:
 
     UPROPERTY(VisibleAnywhere, Category = "Faction")
     FName FactionId;
+
+    UPROPERTY(VisibleAnywhere, Category = "Art")
+    FString ArtCharacterId;
+
+    UPROPERTY(VisibleAnywhere, Category = "Art")
+    FString PortraitTexturePath;
 
     UPROPERTY(Transient)
     TWeakObjectPtr<AAshfrontierCharacter> CarriedTarget;

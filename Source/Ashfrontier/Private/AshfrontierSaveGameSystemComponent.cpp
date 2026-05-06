@@ -37,6 +37,8 @@ UAshfrontierSaveGame* UAshfrontierSaveGameSystemComponent::CaptureState(
         FAshfrontierSavedCharacterState SavedCharacter;
         SavedCharacter.CharacterId = Character->GetName();
         SavedCharacter.DisplayNameZh = Character->GetSquadDisplayName();
+        SavedCharacter.ArtCharacterId = Character->GetArtCharacterId();
+        SavedCharacter.PortraitTexturePath = Character->GetPortraitTexturePath();
         SavedCharacter.FactionId = Character->GetFactionId();
         SavedCharacter.Team = Character->GetCharacterTeam();
         SavedCharacter.Location = Character->GetActorLocation();
@@ -122,6 +124,8 @@ bool UAshfrontierSaveGameSystemComponent::ApplyState(
         const FAshfrontierSavedCharacterState& SavedCharacter = SaveGame->Characters[Index];
         Character->SetActorLocation(SavedCharacter.Location);
         Character->SetSquadDisplayName(SavedCharacter.DisplayNameZh);
+        Character->SetArtCharacterId(SavedCharacter.ArtCharacterId);
+        Character->SetPortraitTexturePath(SavedCharacter.PortraitTexturePath);
         Character->SetFactionId(SavedCharacter.FactionId);
         Character->SetCharacterTeam(SavedCharacter.Team);
         Character->SetRecruitable(SavedCharacter.bRecruitable, SavedCharacter.RecruitCost);

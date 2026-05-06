@@ -134,6 +134,7 @@ pass() {
     "Scripts/art_prompt_lint.py"
     "Scripts/art_manifest_lint.py"
     "Scripts/art_coverage_lint.py"
+    "Scripts/ui_art_lint.py"
     "Scripts/build_texture_maps.py"
     "Scripts/generate_art_assets.sh"
     "Scripts/slice_generated_art_sheets.py"
@@ -144,6 +145,9 @@ pass() {
     "Content/Data/Art/ArtGenManifest.json"
     "Content/Data/Art/ArtSlotMapping.json"
     "Content/Data/Art/EnvironmentArtAssignments.json"
+    "Content/Data/Art/UIArtAssignments.json"
+    "Content/Data/Art/FactionArtAssignments.json"
+    "Content/Data/Art/CharacterPortraitAssignments.json"
     "Reports/environment.md"
     "Reports/gate-00-report.md"
     "Reports/Art/gate-10-report.md"
@@ -151,11 +155,14 @@ pass() {
     "Reports/Art/gate-12-report.md"
     "Reports/Art/gate-13-report.md"
     "Reports/Art/gate-14-report.md"
+    "Reports/Art/gate-15-report.md"
     "Reports/Art/generated-assets-inventory.md"
     "Reports/Art/texture-processing.md"
     "Reports/Art/import-generated-art.md"
     "Reports/Art/art-coverage.md"
     "Reports/Art/artslot-application.md"
+    "Reports/Art/ui-art-lint.md"
+    "Reports/Art/ui-art-application.md"
     "Content/Python/import_generated_art.py"
     "Content/Python/apply_art_slots.py"
     "Content/Data/Art/GeneratedMaterialInstances.json"
@@ -300,7 +307,7 @@ PY
     fail "Scripts/content_lint.py Python 語法失敗"
   fi
 
-  for py_script in Scripts/art_prompt_lint.py Scripts/art_manifest_lint.py Scripts/art_coverage_lint.py Scripts/build_texture_maps.py Scripts/slice_generated_art_sheets.py Content/Python/import_generated_art.py Content/Python/apply_art_slots.py; do
+  for py_script in Scripts/art_prompt_lint.py Scripts/art_manifest_lint.py Scripts/art_coverage_lint.py Scripts/ui_art_lint.py Scripts/build_texture_maps.py Scripts/slice_generated_art_sheets.py Content/Python/import_generated_art.py Content/Python/apply_art_slots.py; do
     if python3 -m py_compile "$py_script"; then
       pass "$py_script Python 語法通過"
     else
@@ -346,6 +353,14 @@ PY
     pass "art_coverage_lint.py 通過"
   else
     fail "art_coverage_lint.py 失敗"
+  fi
+
+  log ""
+  log "## UI Art Lint"
+  if python3 Scripts/ui_art_lint.py; then
+    pass "ui_art_lint.py 通過"
+  else
+    fail "ui_art_lint.py 失敗"
   fi
 
   log ""
